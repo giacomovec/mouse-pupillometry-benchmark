@@ -1,0 +1,2767 @@
+{
+  "schema": "mouse-pupillometry-benchmark-exact-gt-v21-severity-grid.v1",
+  "version": 1,
+  "sourceCorpus": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED",
+  "assetRoot": "/media/exact-gt/severity-grid/",
+  "selection": {
+    "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+    "sourceHash": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+    "sourceSplit": "validation",
+    "policy": "Lexicographically smallest source sample ID with the complete requested grid; corpus manifest and operation availability only.",
+    "caseCount": 18,
+    "familyCounts": {
+      "motion_blur": 2,
+      "crop_truncation": 12,
+      "latent_occlusion": 3,
+      "combined_pupil": 1
+    }
+  },
+  "frozenInputs": {
+    "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+    "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+    "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+    "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+    "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7"
+  },
+  "unavailableRequestedExamples": [
+    {
+      "family": "noise",
+      "status": "UNAVAILABLE",
+      "reason": "No standalone noise operation exists in the frozen 252-row V2.1 spatial corpus."
+    },
+    {
+      "family": "roi_shift",
+      "status": "UNAVAILABLE",
+      "reason": "No standalone ROI-shift operation exists in the frozen 252-row V2.1 spatial corpus."
+    },
+    {
+      "family": "translation_sweep",
+      "status": "UNAVAILABLE",
+      "reason": "No standalone translation sweep exists; translation is only one component of the combined pupil-local transform."
+    },
+    {
+      "family": "scale_sweep",
+      "status": "UNAVAILABLE",
+      "reason": "No standalone scale sweep exists; scale is only one component of the combined pupil-local transform."
+    }
+  ],
+  "assetPolicy": "Byte-exact PNG copies of one original mouse-eye ROI, the 18 frozen transformed source images, primary scoring GT, and separate latent GT where present. No raw videos, Allen data, or other source identities are copied.",
+  "cases": [
+    {
+      "id": "69208c355bd8764343eabd6580732b90a35a4eb301a98981ea411d1e717f093e",
+      "executionId": "69208c355bd8764343eabd6580732b90a35a4eb301a98981ea411d1e717f093e",
+      "rowIndex": 72,
+      "label": "Motion blur · 5 px · 0°",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "motion_blur",
+      "perturbation": "motion_blur",
+      "severity": "5 px motion-blur kernel at 0°",
+      "severityValue": 5.0,
+      "severityUnit": "kernel length (px)",
+      "parameters": {
+        "angle_deg": 0.0,
+        "family": "motion_blur",
+        "kernel_length_px": 5
+      },
+      "frozenMetadata": {
+        "kernel_angle_deg": 0.0,
+        "kernel_length_px": 5,
+        "kernel_nonzero_taps": 5,
+        "kernel_semantics": "odd square aperture; named length equals aperture width and discrete nonzero tap count",
+        "kernel_sha256_float32": "47b7db60032f8fc5387637cd35ce3cd0e81c061f64266288fe5bcf9ad706d5f4",
+        "kernel_shape_yx": [
+          5,
+          5
+        ],
+        "kernel_sum": 1.0
+      },
+      "coordinateTransform": null,
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519",
+      "sourceSplit": "validation",
+      "operationJson": "{\"angle_deg\":0.0,\"family\":\"motion_blur\",\"kernel_length_px\":5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "69208c355bd8764343eabd6580732b90a35a4eb301a98981ea411d1e717f093e",
+          "rowIndex": 72,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e.png",
+            "latentGt": null,
+            "visiblePupilGt": null,
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "rgb_labels_yellow_pupil"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e",
+            "primaryGtSha256": "28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": null
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/0a57668b30dbe4c1440bf722502ab9605d977ee7671191908efd20950425f519.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "2259dfe3fbba0c50e9b48ec07aac34cd6f70cc25e4348b68c2fdbb325a7f49ee",
+      "executionId": "2259dfe3fbba0c50e9b48ec07aac34cd6f70cc25e4348b68c2fdbb325a7f49ee",
+      "rowIndex": 73,
+      "label": "Motion blur · 9 px · 25°",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "motion_blur",
+      "perturbation": "motion_blur",
+      "severity": "9 px motion-blur kernel at 25°",
+      "severityValue": 9.0,
+      "severityUnit": "kernel length (px)",
+      "parameters": {
+        "angle_deg": 25.0,
+        "family": "motion_blur",
+        "kernel_length_px": 9
+      },
+      "frozenMetadata": {
+        "kernel_angle_deg": 25.0,
+        "kernel_length_px": 9,
+        "kernel_nonzero_taps": 9,
+        "kernel_semantics": "odd square aperture; named length equals aperture width and discrete nonzero tap count",
+        "kernel_sha256_float32": "e07bb95ff5bb410ce21999bf23e3d5552d04c32e0b74d52c6d2363a844e31697",
+        "kernel_shape_yx": [
+          9,
+          9
+        ],
+        "kernel_sum": 1.0
+      },
+      "coordinateTransform": null,
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d",
+      "sourceSplit": "validation",
+      "operationJson": "{\"angle_deg\":25.0,\"family\":\"motion_blur\",\"kernel_length_px\":9}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "2259dfe3fbba0c50e9b48ec07aac34cd6f70cc25e4348b68c2fdbb325a7f49ee",
+          "rowIndex": 73,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e.png",
+            "latentGt": null,
+            "visiblePupilGt": null,
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "rgb_labels_yellow_pupil"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e",
+            "primaryGtSha256": "28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": null
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/7278bae019e15eb0be0f6755f98f5e141eb0b15770e4458bf11cb62334ea105d.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/28784bb64157530018c92645b04ffea738a3e0d995f82e580869cca58d25335e.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "0806aaf9a24f1647e27152a4792d130d7fe2ca5a0a10266709e1511e041fb460",
+      "executionId": "0806aaf9a24f1647e27152a4792d130d7fe2ca5a0a10266709e1511e041fb460",
+      "rowIndex": 78,
+      "label": "Crop truncation · left edge · 75% target visible (75.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "25% truncated · 75% target visible",
+      "severityValue": 0.25,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "left",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.75
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.7547169811320755,
+        "crop_edge": "left",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -55.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          -55,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            55.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.75,
+        "visible_fraction_absolute_error": 0.004716981132075526,
+        "visible_pupil_area_px": 40
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -55.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            55.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"left\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.75}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "0806aaf9a24f1647e27152a4792d130d7fe2ca5a0a10266709e1511e041fb460",
+          "rowIndex": 78,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5",
+            "primaryGtSha256": "6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/881536fcca52c7290950b3c4376c7e22ae805fc01b36bc54ab2c71993014a708.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/6c7d74b3523c57c59fcd89a7f9c9fced9c083e944dec08d69daf4c25f0edfbe5.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1d749c9832e06e578a379d0532a46f61c541bc070cced2d29b3c628fc81f6a45",
+      "executionId": "1d749c9832e06e578a379d0532a46f61c541bc070cced2d29b3c628fc81f6a45",
+      "rowIndex": 79,
+      "label": "Crop truncation · left edge · 50% target visible (43.4% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "50% truncated · 50% target visible",
+      "severityValue": 0.5,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "left",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.5
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.4339622641509434,
+        "crop_edge": "left",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -57.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          -57,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            57.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.5,
+        "visible_fraction_absolute_error": 0.06603773584905659,
+        "visible_pupil_area_px": 23
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -57.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            57.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"left\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "1d749c9832e06e578a379d0532a46f61c541bc070cced2d29b3c628fc81f6a45",
+          "rowIndex": 79,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975",
+            "primaryGtSha256": "9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/40826b6065f855193a4caa96b6486d05345bba0cc78abc827d06c59b69e8cbcf.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/9c0f20c94c83655cbca07fd3eb42478c29323a0082189f433b408a6657926975.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c075e3cfdb72e9776e5464be1b4768324f15671fc16c0caeff4e07a361cd7054",
+      "executionId": "c075e3cfdb72e9776e5464be1b4768324f15671fc16c0caeff4e07a361cd7054",
+      "rowIndex": 80,
+      "label": "Crop truncation · left edge · 25% target visible (26.4% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "75% truncated · 25% target visible",
+      "severityValue": 0.75,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "left",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.2641509433962264,
+        "crop_edge": "left",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -58.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          -58,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            58.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.014150943396226412,
+        "visible_pupil_area_px": 14
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -58.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            58.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"left\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.25}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "c075e3cfdb72e9776e5464be1b4768324f15671fc16c0caeff4e07a361cd7054",
+          "rowIndex": 80,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4",
+            "primaryGtSha256": "b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/40acda017ce2f5c58421c7eb485864f3ebf1f89adb106ed27a14591882781ca2.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/b40af5c11be553042041b37c69a9464da37d291bbc4bd8b048a11585e40344b4.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dd0f8f04d4318bf00d26f0f68cb2f2af2cfe514a8a2bf690682ea93470c7bd96",
+      "executionId": "dd0f8f04d4318bf00d26f0f68cb2f2af2cfe514a8a2bf690682ea93470c7bd96",
+      "rowIndex": 81,
+      "label": "Crop truncation · right edge · 75% target visible (73.6% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "25% truncated · 75% target visible",
+      "severityValue": 0.25,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "right",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.75
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.7358490566037735,
+        "crop_edge": "right",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            97.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          97,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -97.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.75,
+        "visible_fraction_absolute_error": 0.014150943396226467,
+        "visible_pupil_area_px": 39
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            97.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -97.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"right\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.75}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "dd0f8f04d4318bf00d26f0f68cb2f2af2cfe514a8a2bf690682ea93470c7bd96",
+          "rowIndex": 81,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2",
+            "primaryGtSha256": "4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/8960873366e1cfacceb95b14a509655b059ef2f4a873ca911a2766c47925d865.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/4921845ba00348357bc749a04fa2b2df33dcd789b1aaf69e68c9a8f4fb28d9b2.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "427c41972b3e361c6f08f95a670484cce130872c7b682629ee95b1887967643f",
+      "executionId": "427c41972b3e361c6f08f95a670484cce130872c7b682629ee95b1887967643f",
+      "rowIndex": 82,
+      "label": "Crop truncation · right edge · 50% target visible (56.6% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "50% truncated · 50% target visible",
+      "severityValue": 0.5,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "right",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.5
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.5660377358490566,
+        "crop_edge": "right",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            98.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          98,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -98.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.5,
+        "visible_fraction_absolute_error": 0.06603773584905659,
+        "visible_pupil_area_px": 30
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            98.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -98.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"right\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "427c41972b3e361c6f08f95a670484cce130872c7b682629ee95b1887967643f",
+          "rowIndex": 82,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5",
+            "primaryGtSha256": "2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/790d4bb4fb8ff73dfb41d43d4fa5512a9f7425ca635913fc063269da73362690.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/2a77aa16a1c8b399bf1eb185f97d81b468038fd0a33cdf979825e74032148ee5.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3cfbb1a5076c23cd31aec78084304fa7695c2c8d4a9f0bdcfbc55e080fd8b3dc",
+      "executionId": "3cfbb1a5076c23cd31aec78084304fa7695c2c8d4a9f0bdcfbc55e080fd8b3dc",
+      "rowIndex": 83,
+      "label": "Crop truncation · right edge · 25% target visible (24.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "75% truncated · 25% target visible",
+      "severityValue": 0.75,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "right",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.24528301886792453,
+        "crop_edge": "right",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            100.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          100,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -100.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.004716981132075471,
+        "visible_pupil_area_px": 13
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            100.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            -100.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"right\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.25}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "3cfbb1a5076c23cd31aec78084304fa7695c2c8d4a9f0bdcfbc55e080fd8b3dc",
+          "rowIndex": 83,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440",
+            "primaryGtSha256": "7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/325f0e49a0078322d49595f9f6d3b5bf3a8108d67c45bf4ebff7074fa6b6f886.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/7ac5516475240938b5539a73cdb84d7c93e69b741fe1994a09d8efd1c0995440.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "780043dabf1b8399d06af9f08b2ef7bf5088156c61c71215dd823d0754652428",
+      "executionId": "780043dabf1b8399d06af9f08b2ef7bf5088156c61c71215dd823d0754652428",
+      "rowIndex": 84,
+      "label": "Crop truncation · top edge · 75% target visible (77.4% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "25% truncated · 75% target visible",
+      "severityValue": 0.25,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "top",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.75
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.7735849056603774,
+        "crop_edge": "top",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -85.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          -85
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            85.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.75,
+        "visible_fraction_absolute_error": 0.02358490566037741,
+        "visible_pupil_area_px": 41
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -85.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            85.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"top\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.75}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "780043dabf1b8399d06af9f08b2ef7bf5088156c61c71215dd823d0754652428",
+          "rowIndex": 84,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b",
+            "primaryGtSha256": "4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/c55c45f312e71aa6ebb2f7cf7b27606722e2827142d5f918a9151b8e259f652f.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/4e5db688de22097481bb5e3124998c4a72eb972af94c99bf2ea386824a3f515b.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "deafbf4185cefd465d9e8e2358b06bbea0160bcdf393d3eb1f70f26af30eb87e",
+      "executionId": "deafbf4185cefd465d9e8e2358b06bbea0160bcdf393d3eb1f70f26af30eb87e",
+      "rowIndex": 85,
+      "label": "Crop truncation · top edge · 50% target visible (50.9% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "50% truncated · 50% target visible",
+      "severityValue": 0.5,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "top",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.5
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.5094339622641509,
+        "crop_edge": "top",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -87.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          -87
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            87.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.5,
+        "visible_fraction_absolute_error": 0.009433962264150941,
+        "visible_pupil_area_px": 27
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -87.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            87.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"top\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "deafbf4185cefd465d9e8e2358b06bbea0160bcdf393d3eb1f70f26af30eb87e",
+          "rowIndex": 85,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6",
+            "primaryGtSha256": "16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/e047ef281eaa9bf14bc1a5454369351dc3ed8677bf2500f2c61da9546f082dde.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/16f2de858361aafe6cd8246f88187917b681d9eedf43c434ba41c767cc2f34b6.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0c958c6f8b6f9226dfce0fdf5a18cebdecf4efa9204bb9d45bc1f0ecf5c788f3",
+      "executionId": "0c958c6f8b6f9226dfce0fdf5a18cebdecf4efa9204bb9d45bc1f0ecf5c788f3",
+      "rowIndex": 86,
+      "label": "Crop truncation · top edge · 25% target visible (24.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "75% truncated · 25% target visible",
+      "severityValue": 0.75,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "top",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.24528301886792453,
+        "crop_edge": "top",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -89.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          -89
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            89.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.004716981132075471,
+        "visible_pupil_area_px": 13
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -89.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            89.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"top\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.25}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "0c958c6f8b6f9226dfce0fdf5a18cebdecf4efa9204bb9d45bc1f0ecf5c788f3",
+          "rowIndex": 86,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb",
+            "primaryGtSha256": "9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/cfb631455bb8c2e7d742f1f91fe8949c263903cb19802262d94d783ac30438f0.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/9396d805f43f1f50126c92b844e07fe0e27f67e9af0b82af6f58243af41722bb.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4730ee96a7e9d99185b2c13c719e9f17c0fba2e493219a00462895826ea000a",
+      "executionId": "c4730ee96a7e9d99185b2c13c719e9f17c0fba2e493219a00462895826ea000a",
+      "rowIndex": 87,
+      "label": "Crop truncation · bottom edge · 75% target visible (75.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "25% truncated · 75% target visible",
+      "severityValue": 0.25,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "bottom",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.75
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.7547169811320755,
+        "crop_edge": "bottom",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            66.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          66
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -66.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.75,
+        "visible_fraction_absolute_error": 0.004716981132075526,
+        "visible_pupil_area_px": 40
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            66.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -66.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"bottom\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.75}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "c4730ee96a7e9d99185b2c13c719e9f17c0fba2e493219a00462895826ea000a",
+          "rowIndex": 87,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778",
+            "primaryGtSha256": "d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/01a84f9f4ccfa5b4f9a3eadc5bb44ac6108a3eac5e6d530c6990a1f2699941f1.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/d2eb262dfb46c997d2d6ed7385d38eef43fcf8484b3e95139c5119bd786e2778.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f345b643c012e63f26dbc01dc288450763b4cf980c60f9181f1ffdb5bd8c3082",
+      "executionId": "f345b643c012e63f26dbc01dc288450763b4cf980c60f9181f1ffdb5bd8c3082",
+      "rowIndex": 88,
+      "label": "Crop truncation · bottom edge · 50% target visible (49.1% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "50% truncated · 50% target visible",
+      "severityValue": 0.5,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "bottom",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.5
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.49056603773584906,
+        "crop_edge": "bottom",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            68.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          68
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -68.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.5,
+        "visible_fraction_absolute_error": 0.009433962264150941,
+        "visible_pupil_area_px": 26
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            68.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -68.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"bottom\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "f345b643c012e63f26dbc01dc288450763b4cf980c60f9181f1ffdb5bd8c3082",
+          "rowIndex": 88,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b",
+            "primaryGtSha256": "1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/262325bf0c65d4fc76058c272fed70e3113a7fe1ef5c5ff2ddaf6c140d159278.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/1bbc478cb3ec0017592a023ac0c2af454527c277016eac6de02ddd485bc4393b.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2ed56a04f41030df2acc6a72d3ade8777f266ec0a82eced071009d29fac039de",
+      "executionId": "2ed56a04f41030df2acc6a72d3ade8777f266ec0a82eced071009d29fac039de",
+      "rowIndex": 89,
+      "label": "Crop truncation · bottom edge · 25% target visible (22.6% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "crop_truncation",
+      "perturbation": "crop_truncation",
+      "severity": "75% truncated · 25% target visible",
+      "severityValue": 0.75,
+      "severityUnit": "pupil area removed (fraction)",
+      "parameters": {
+        "edge": "bottom",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.22641509433962265,
+        "crop_edge": "bottom",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            70.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          0,
+          70
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -70.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 53,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.023584905660377353,
+        "visible_pupil_area_px": 12
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            70.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -70.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115",
+      "sourceSplit": "validation",
+      "operationJson": "{\"edge\":\"bottom\",\"family\":\"crop_truncation\",\"output_shape\":[155,155],\"target_visible_fraction\":0.25}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "2ed56a04f41030df2acc6a72d3ade8777f266ec0a82eced071009d29fac039de",
+          "rowIndex": 89,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070",
+            "primaryGtSha256": "81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/82c77426f356d14e6cf3a6bce2cd8d0a0972e843d633018dceb3a7a1a4397115.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/81472cd1a0596cf39ad01ae452ac336c93376aa4b82cb99e019b804f9292d070.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b7ac90f0829347115a39396bf40331ae80b08b159292c0b1ea2b0d9b14ff0784",
+      "executionId": "b7ac90f0829347115a39396bf40331ae80b08b159292c0b1ea2b0d9b14ff0784",
+      "rowIndex": 75,
+      "label": "Latent occlusion · 75% target visible (75.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "latent_occlusion",
+      "perturbation": "latent_occlusion",
+      "severity": "25% occluded · 75% target visible",
+      "severityValue": 0.25,
+      "severityUnit": "pupil area occluded (fraction)",
+      "parameters": {
+        "family": "latent_occlusion",
+        "occluder": "seeded_full_image_half_plane",
+        "seed_u64": 9056403111205495929,
+        "visible_fraction": 0.75
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.7547169811320755,
+        "half_plane_angle_rad": 1.0426866182254413,
+        "half_plane_threshold": 101.20631196134408,
+        "identity_check_latent_equals_visible_union_occluded": true,
+        "latent_area_px": 53,
+        "occluded_pupil_area_px": 13,
+        "occluder_area_px": 11275,
+        "occlusion_semantics": "full_image_half_plane_with_separate_latent_visible_and_occluder_truth",
+        "requested_visible_fraction": 0.75,
+        "seed_u64": 9056403111205495929,
+        "visible_area_px": 40
+      },
+      "coordinateTransform": null,
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063",
+      "sourceSplit": "validation",
+      "operationJson": "{\"family\":\"latent_occlusion\",\"occluder\":\"seeded_full_image_half_plane\",\"seed_u64\":9056403111205495929,\"visible_fraction\":0.75}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "b7ac90f0829347115a39396bf40331ae80b08b159292c0b1ea2b0d9b14ff0784",
+          "rowIndex": 75,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504.png",
+            "latentGt": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504",
+            "primaryGtSha256": "9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504",
+            "latentGtSha256": "c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359",
+            "exactGtPupilMaskSha256": "9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/ab5e3f6bd6d8680f4b628b01ab93ebd9e40252292769cb2442a5ab6b3ff6a063.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504.png",
+            "latentGtSrc": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/9e500ca3c7054214fc49e40244adc308051084f0b6ea664e81d605fe36171504.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b22fad09a3127a35aa9b656f98dfbb827e78d726ac1be447748bd1091ac8386c",
+      "executionId": "b22fad09a3127a35aa9b656f98dfbb827e78d726ac1be447748bd1091ac8386c",
+      "rowIndex": 76,
+      "label": "Latent occlusion · 50% target visible (50.9% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "latent_occlusion",
+      "perturbation": "latent_occlusion",
+      "severity": "50% occluded · 50% target visible",
+      "severityValue": 0.5,
+      "severityUnit": "pupil area occluded (fraction)",
+      "parameters": {
+        "family": "latent_occlusion",
+        "occluder": "seeded_full_image_half_plane",
+        "seed_u64": 759346606217949886,
+        "visible_fraction": 0.5
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.5094339622641509,
+        "half_plane_angle_rad": 0.09165777669095942,
+        "half_plane_threshold": 63.77377667702386,
+        "identity_check_latent_equals_visible_union_occluded": true,
+        "latent_area_px": 53,
+        "occluded_pupil_area_px": 26,
+        "occluder_area_px": 8907,
+        "occlusion_semantics": "full_image_half_plane_with_separate_latent_visible_and_occluder_truth",
+        "requested_visible_fraction": 0.5,
+        "seed_u64": 759346606217949886,
+        "visible_area_px": 27
+      },
+      "coordinateTransform": null,
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98",
+      "sourceSplit": "validation",
+      "operationJson": "{\"family\":\"latent_occlusion\",\"occluder\":\"seeded_full_image_half_plane\",\"seed_u64\":759346606217949886,\"visible_fraction\":0.5}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "b22fad09a3127a35aa9b656f98dfbb827e78d726ac1be447748bd1091ac8386c",
+          "rowIndex": 76,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1.png",
+            "latentGt": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1",
+            "primaryGtSha256": "6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1",
+            "latentGtSha256": "c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359",
+            "exactGtPupilMaskSha256": "6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/3f5d7967f413a6eb089707adfca14cca22d127bc05fd5d0b0f86cb1cb4b29c98.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1.png",
+            "latentGtSrc": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/6aaae671cb4e57647a91e78140ad8074fde0c98bf0a33b5fe2cc7a0d20f53bd1.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "7fba6fa6eee70b92a2d99f479707a37164dada45b01a43708e4a10356390fd32",
+      "executionId": "7fba6fa6eee70b92a2d99f479707a37164dada45b01a43708e4a10356390fd32",
+      "rowIndex": 77,
+      "label": "Latent occlusion · 25% target visible (24.5% achieved)",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "latent_occlusion",
+      "perturbation": "latent_occlusion",
+      "severity": "75% occluded · 25% target visible",
+      "severityValue": 0.75,
+      "severityUnit": "pupil area occluded (fraction)",
+      "parameters": {
+        "family": "latent_occlusion",
+        "occluder": "seeded_full_image_half_plane",
+        "seed_u64": 3320664105830608593,
+        "visible_fraction": 0.25
+      },
+      "frozenMetadata": {
+        "achieved_visible_fraction": 0.24528301886792453,
+        "half_plane_angle_rad": 2.901249335160086,
+        "half_plane_threshold": -32.34333358808388,
+        "identity_check_latent_equals_visible_union_occluded": true,
+        "latent_area_px": 53,
+        "occluded_pupil_area_px": 40,
+        "occluder_area_px": 15861,
+        "occlusion_semantics": "full_image_half_plane_with_separate_latent_visible_and_occluder_truth",
+        "requested_visible_fraction": 0.25,
+        "seed_u64": 3320664105830608593,
+        "visible_area_px": 13
+      },
+      "coordinateTransform": null,
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1",
+      "sourceSplit": "validation",
+      "operationJson": "{\"family\":\"latent_occlusion\",\"occluder\":\"seeded_full_image_half_plane\",\"seed_u64\":3320664105830608593,\"visible_fraction\":0.25}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "7fba6fa6eee70b92a2d99f479707a37164dada45b01a43708e4a10356390fd32",
+          "rowIndex": 77,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e.png",
+            "latentGt": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e",
+            "primaryGtSha256": "ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e",
+            "latentGtSha256": "c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359",
+            "exactGtPupilMaskSha256": "ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/57bb059b7bde296a912d23eec03fd638c441165e6564b83a67efc4b09a69bac1.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e.png",
+            "latentGtSrc": "/media/exact-gt/severity-grid/latent-gt/c26c77ee6a45d0ee1340dfdd31a57199e3a7f160bab8baad1eac5462f025d359.png",
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/ff550a1e52710ffcc136dc498b267f90ef44e74273b7f375aa35c854c9313b3e.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4bb894a2a3b724d5834f629c5efa8bdb74dde7f0469a1ce12be1a27da7d9250f",
+      "executionId": "4bb894a2a3b724d5834f629c5efa8bdb74dde7f0469a1ce12be1a27da7d9250f",
+      "rowIndex": 74,
+      "label": "Combined pupil-local transform · translate, scale, shear and rotate",
+      "mode": "representative",
+      "representative": true,
+      "outcomeSelected": false,
+      "category": "exact_gt",
+      "kind": "spatial",
+      "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+      "sourcePopulation": "EXACT_GT_V2_1_CORRECTED frozen synthetic spatial corpus; one authorized validation ROI identity",
+      "perturbationType": "combined_pupil",
+      "perturbation": "combined_pupil",
+      "severity": "combined pupil-local transform",
+      "severityValue": null,
+      "severityUnit": "multiple parameters",
+      "parameters": {
+        "family": "combined_pupil",
+        "rotate_deg": 4.0,
+        "scale_xy": [
+          1.1,
+          0.9
+        ],
+        "scope": "pupil_local",
+        "shear_xy": [
+          0.08,
+          0.0
+        ],
+        "translate_xy": [
+          2.0,
+          -1.0
+        ]
+      },
+      "frozenMetadata": {
+        "affected_union_area_px": 74,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0973204552858067,
+            0.01702429765107316,
+            -4.930465046563391
+          ],
+          [
+            0.07673212111853783,
+            0.9033881631333718,
+            3.069253265063793
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            0.912513296094315,
+            -0.017196260253609257,
+            4.551894588847647
+          ],
+          [
+            -0.07750719304902812,
+            1.1084045002886938,
+            -3.7841206377079497
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "pupil_local_only; frozen eye background outside source/target pupil union",
+        "outside_union_exactly_unchanged": true,
+        "parameters": {
+          "rotate_deg": 4.0,
+          "scale_xy": [
+            1.1,
+            0.9
+          ],
+          "shear_xy": [
+            0.08,
+            0.0
+          ],
+          "translate_xy": [
+            2.0,
+            -1.0
+          ]
+        },
+        "source_pupil_area_px": 53,
+        "target_pupil_area_px": 52
+      },
+      "coordinateTransform": {
+        "forwardAffineXYHomogeneous": [
+          [
+            1.0973204552858067,
+            0.01702429765107316,
+            -4.930465046563391
+          ],
+          [
+            0.07673212111853783,
+            0.9033881631333718,
+            3.069253265063793
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverseAffineXYHomogeneous": [
+          [
+            0.912513296094315,
+            -0.017196260253609257,
+            4.551894588847647
+          ],
+          [
+            -0.07750719304902812,
+            1.1084045002886938,
+            -3.7841206377079497
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operationSemantics": "pupil_local_only; frozen eye background outside source/target pupil union"
+      },
+      "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+      "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+      "originalSourceDimensions": {
+        "width": 155,
+        "height": 155
+      },
+      "originalSourceGTMaskSha256": "92fcb3b24abf711979ea202e003f98a3f29236c6216ef54097c71a8bbf878665",
+      "sourceHash": "757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5",
+      "sourceSplit": "validation",
+      "operationJson": "{\"family\":\"combined_pupil\",\"rotate_deg\":4.0,\"scale_xy\":[1.1,0.9],\"scope\":\"pupil_local\",\"shear_xy\":[0.08,0.0],\"translate_xy\":[2.0,-1.0]}",
+      "frozenCorpus": {
+        "version": "EXACT_GT_V2_1_CORRECTED",
+        "manifestPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/EXACT_GT_V2_1_CORRECTED_MANIFEST.json",
+        "manifestSha256": "d6238476026aff09b09ee8bf73b37ca072fe1bd879b54511c1d7a376dd7b7def",
+        "generatorSha256": "3066392d2d593a0bcb72b1beda35001f2b74b38b93da0a61b65d22e797d93ab7",
+        "executionRowsPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+        "executionRowsSha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9"
+      },
+      "selectionPolicy": "Lexicographically smallest source sample ID with the complete 18-operation grid, selected from frozen operation availability only; no prediction outputs or scores inspected.",
+      "frames": [
+        {
+          "frameIndex": 0,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "width": 155,
+          "height": 155,
+          "sourceSrc": "/media/exact-gt/severity-grid/transformed-source/757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5.png",
+          "sourceId": "Lucia__20181028_120144_CNNdataset_00r_frame_362.png",
+          "executionId": "4bb894a2a3b724d5834f629c5efa8bdb74dde7f0469a1ce12be1a27da7d9250f",
+          "rowIndex": 74,
+          "reference": {
+            "src": "/media/exact-gt/severity-grid/transformed-source/757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5.png",
+            "image": "/media/exact-gt/severity-grid/transformed-source/757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5.png",
+            "gt": "/media/exact-gt/severity-grid/primary-gt/8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770.png",
+            "latentGt": null,
+            "visiblePupilGt": "/media/exact-gt/severity-grid/pupil-gt/8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770.png",
+            "geometry": null,
+            "coordinateSpace": "transformed image pixel grid",
+            "primaryGtFormat": "binary"
+          },
+          "coordinateSpace": "transformed image pixel grid",
+          "mediaHashes": {
+            "transformedSourceSha256": "757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5",
+            "originalSourceSha256": "8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81",
+            "exactGtSha256": "8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770",
+            "primaryGtSha256": "8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770",
+            "latentGtSha256": null,
+            "exactGtPupilMaskSha256": "8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770"
+          },
+          "mediaPaths": {
+            "originalSourceSrc": "/media/exact-gt/severity-grid/original-source/8c8f5abe5b332d00f7a5740c6c0a114b5d580f3e39d191fe5613220e88b25f81.png",
+            "transformedSourceSrc": "/media/exact-gt/severity-grid/transformed-source/757311e752adcea6ad719da9757454f4ca80d7fca5d1ab7022f80eaf6c34bec5.png",
+            "primaryGtSrc": "/media/exact-gt/severity-grid/primary-gt/8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770.png",
+            "latentGtSrc": null,
+            "visiblePupilGtSrc": "/media/exact-gt/severity-grid/pupil-gt/8c3d746d6572a9268b164538a64097dea92a98e15e6b114a4fc27f8182bca770.png"
+          }
+        }
+      ]
+    }
+  ],
+  "assetCount": 53,
+  "assetBytes": 445495
+}

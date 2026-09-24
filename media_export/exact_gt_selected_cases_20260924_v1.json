@@ -1,0 +1,2218 @@
+{
+  "benchmarkVersion": "EXACT_GT_V2_1_CORRECTED",
+  "cases": [
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 155,
+        "nativeImageWidth": 155,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": null,
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "rgb_labels_yellow_pupil",
+            "geometry": {
+              "angle_rad": 0.8886128349849898,
+              "area": 955.0,
+              "center_x": 79.04397905759163,
+              "center_y": 76.67853403141362,
+              "equivalent_diameter": 34.870385217575105,
+              "major_axis": 38.44508289325577,
+              "minor_axis": 31.648562732663933
+            },
+            "nativeSrc": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/exact-gt-native.png",
+            "pupilMaskSha256": "11e927e03faea1447066c19b4ea297f4f22068deae0ca63f28206b02c5c6feb5",
+            "sha256": "c5211c7f39b3d56f9ee4f82d3c12a30e396cddd6a99b463edffb2826ee4cda7b",
+            "src": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/exact-gt-pupil-mask.png"
+          },
+          "height": 155,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "82beff44941baa2e3d9a9fe6a16bea0467a477a04d310ce981aee85427c68fa6",
+          "transformedSourceSrc": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/transformed.png",
+          "width": 155
+        }
+      ],
+      "gtFormat": "rgb_labels_yellow_pupil",
+      "gtGeometry": {
+        "angle_rad": 0.8886128349849898,
+        "area": 955.0,
+        "center_x": 79.04397905759163,
+        "center_y": 76.67853403141362,
+        "equivalent_diameter": 34.870385217575105,
+        "major_axis": 38.44508289325577,
+        "minor_axis": 31.648562732663933
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/GT_labels.png",
+      "height": 155,
+      "id": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 0 \u00b7 motion_blur",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.9999936819076538,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": null,
+          "geometry": {
+            "angle_rad": 0.9855385152512487,
+            "area": 896.6680546062194,
+            "center_x": 80.14608465949614,
+            "center_y": 76.81874046711529,
+            "equivalent_diameter": 33.78865527992179,
+            "major_axis": 35.44437002338348,
+            "minor_axis": 32.21028402739838
+          },
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.9999998807907104,
+              "x": 91.6694740653038,
+              "y": 67.88311499357224
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.9999984502792358,
+              "x": 78.2712938785553,
+              "y": 58.73000109195709
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.9999936819076538,
+              "x": 66.41666972637177,
+              "y": 65.70135521888733
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.9999997615814209,
+              "x": 65.54542183876038,
+              "y": 80.52196884155273
+            },
+            {
+              "name": "RVupil",
+              "score": 1.0,
+              "x": 87.77359867095947,
+              "y": 91.32746541500092
+            },
+            {
+              "name": "Rpupil",
+              "score": 1.0,
+              "x": 98.14287960529327,
+              "y": 80.29162287712097
+            },
+            {
+              "name": "VLpupil",
+              "score": 1.0,
+              "x": 69.21217453479767,
+              "y": 90.56525242328644
+            },
+            {
+              "name": "Vpupil",
+              "score": 1.0,
+              "x": 80.98772430419922,
+              "y": 94.03414368629456
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 8,
+          "threshold": 0.6,
+          "valid": true,
+          "values": {
+            "area_are": 0.061080571092964026,
+            "center_error_px": 1.1109881198111315,
+            "diameter_are": 0.03102145074979295,
+            "diameter_mae_px": 1.0817299376533143,
+            "diameter_signed_error_px": -1.0817299376533143,
+            "major_axis_are": 0.07805192872659134,
+            "minor_axis_are": 0.017748714198471457,
+            "orientation_error_deg": 5.553432405691085
+          }
+        },
+        "neuropupil_animal": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.40235579013824463,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": 4,
+          "geometry": {
+            "angle_rad": 1.3804830690599283,
+            "area": 941.6153443210976,
+            "center_x": 81.27982330322266,
+            "center_y": 78.15666961669922,
+            "equivalent_diameter": 34.625162704585776,
+            "major_axis": 37.45961952642883,
+            "minor_axis": 31.790705882742714
+          },
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": false,
+              "name": "top",
+              "score": 0.8196939826011658,
+              "x": 86.06128692626953,
+              "y": 95.84723663330078
+            },
+            {
+              "missing": false,
+              "name": "bottom",
+              "score": 0.40235579013824463,
+              "x": 78.97518157958984,
+              "y": 59.06394958496094
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.7160367965698242,
+              "x": 95.93667602539062,
+              "y": 78.80447387695312
+            },
+            {
+              "missing": false,
+              "name": "left",
+              "score": 0.8276720643043518,
+              "x": 64.14614868164062,
+              "y": 78.91101837158203
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "30ee2f8b84c911ad03a7b0c9baf3703d6a6bef36d5f7cbc3c669bdbeea2f71f7",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": true,
+          "values": {
+            "area_are": 0.014015346260630775,
+            "center_error_px": 2.6802769071886927,
+            "diameter_are": 0.0070324004584192005,
+            "diameter_mae_px": 0.2452225129893293,
+            "diameter_signed_error_px": -0.2452225129893293,
+            "major_axis_are": 0.02563301448882599,
+            "minor_axis_are": 0.0044912987448898255,
+            "orientation_error_deg": 28.182088480605874
+          }
+        }
+      },
+      "mode": "representative",
+      "operationMetadata": {
+        "kernel_angle_deg": 0.0,
+        "kernel_length_px": 5,
+        "kernel_nonzero_taps": 5,
+        "kernel_semantics": "odd square aperture; named length equals aperture width and discrete nonzero tap count",
+        "kernel_sha256_float32": "47b7db60032f8fc5387637cd35ce3cd0e81c061f64266288fe5bcf9ad706d5f4",
+        "kernel_shape_yx": [
+          5,
+          5
+        ],
+        "kernel_sum": 1.0
+      },
+      "originalGroundTruthSha256": "977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9.png",
+      "originalSourceSha256": "9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c",
+      "originalSourceSrc": "/media/exact-gt/sources/9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c.png",
+      "parameters": {
+        "angle_deg": 0.0,
+        "family": "motion_blur",
+        "kernel_length_px": 5
+      },
+      "perturbationType": "motion_blur",
+      "primaryGtSha256": "c5211c7f39b3d56f9ee4f82d3c12a30e396cddd6a99b463edffb2826ee4cda7b",
+      "reference": {
+        "geometry": {
+          "angle_rad": 0.8886128349849898,
+          "area": 955.0,
+          "center_x": 79.04397905759163,
+          "center_y": 76.67853403141362,
+          "equivalent_diameter": 34.870385217575105,
+          "major_axis": 38.44508289325577,
+          "minor_axis": 31.648562732663933
+        },
+        "gt": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/exact-gt-pupil-mask.png",
+        "gtFormat": "rgb_labels_yellow_pupil",
+        "gtNativeSrc": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/exact-gt-native.png",
+        "gtPupilMaskSha256": "11e927e03faea1447066c19b4ea297f4f22068deae0ca63f28206b02c5c6feb5",
+        "gtSha256": "c5211c7f39b3d56f9ee4f82d3c12a30e396cddd6a99b463edffb2826ee4cda7b",
+        "src": "/media/exact-gt/aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400/transformed.png"
+      },
+      "rowIndex": 0,
+      "selectionRoles": [
+        "frozen_model_blind_row_0"
+      ],
+      "severity": "5 px kernel at 0.0\u00b0",
+      "severityUnit": "kernel_length_px",
+      "severityValue": 5.0,
+      "sourceId": "Lucia__20181028_134237_CNNdataset_b00_frame_82.png",
+      "sourceImageSha256": "82beff44941baa2e3d9a9fe6a16bea0467a477a04d310ce981aee85427c68fa6",
+      "width": 155
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 155,
+        "nativeImageWidth": 155,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": null,
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "binary",
+            "geometry": {
+              "angle_rad": 1.1839368524403098,
+              "area": 477.0,
+              "center_x": 72.26205450733752,
+              "center_y": 78.20754716981132,
+              "equivalent_diameter": 24.64417299969047,
+              "major_axis": 37.53461261839762,
+              "minor_axis": 17.078377000499636
+            },
+            "nativeSrc": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/exact-gt-native.png",
+            "pupilMaskSha256": "e2d422ea09aed8d89d06bdc1c8b39856ba897e0f402705b2083f00b46045142e",
+            "sha256": "e2d422ea09aed8d89d06bdc1c8b39856ba897e0f402705b2083f00b46045142e",
+            "src": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/exact-gt-pupil-mask.png"
+          },
+          "height": 155,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "2669157f7a086c27a363050994862f719915cc8f48fee7702fde2227ad16a427",
+          "transformedSourceSrc": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/transformed.png",
+          "width": 155
+        }
+      ],
+      "gtFormat": "binary",
+      "gtGeometry": {
+        "angle_rad": 1.1839368524403098,
+        "area": 477.0,
+        "center_x": 72.26205450733752,
+        "center_y": 78.20754716981132,
+        "equivalent_diameter": 24.64417299969047,
+        "major_axis": 37.53461261839762,
+        "minor_axis": 17.078377000499636
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/GT_visible_pupil.png",
+      "height": 155,
+      "id": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 4 \u00b7 latent_occlusion",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "REJECTED",
+          "confidence": 0.00021948011999484152,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "TOO_FEW_CONFIDENT_POINTS_OR_ELLIPSE_FIT_FAILED",
+          "finiteKeypointCount": null,
+          "geometry": null,
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.896121621131897,
+              "x": 157.52704870700836,
+              "y": 11.37099802494049
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.012132108211517334,
+              "x": 153.38465642929077,
+              "y": 0.5887832641601562
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.00021948011999484152,
+              "x": 150.3703064918518,
+              "y": 2.1485681533813477
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.42964327335357666,
+              "x": 71.60496282577515,
+              "y": 52.132503509521484
+            },
+            {
+              "name": "RVupil",
+              "score": 0.5853235125541687,
+              "x": 161.17965936660767,
+              "y": 152.99996519088745
+            },
+            {
+              "name": "Rpupil",
+              "score": 0.0005738933687098324,
+              "x": 58.00379800796509,
+              "y": 4.268446296453476
+            },
+            {
+              "name": "VLpupil",
+              "score": 0.946357786655426,
+              "x": 108.82693672180176,
+              "y": 150.91079235076904
+            },
+            {
+              "name": "Vpupil",
+              "score": 0.8022072315216064,
+              "x": 130.8436176776886,
+              "y": 157.3737895488739
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 3,
+          "threshold": 0.6,
+          "valid": false,
+          "values": null
+        },
+        "neuropupil_animal": {
+          "acceptance": "REJECTED",
+          "confidence": 0.23125560581684113,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "INCOMPLETE_KEYPOINTS",
+          "finiteKeypointCount": 1,
+          "geometry": null,
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": true,
+              "name": "top",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": true,
+              "name": "bottom",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.23125560581684113,
+              "x": 150.74581909179688,
+              "y": 123.07173156738281
+            },
+            {
+              "missing": true,
+              "name": "left",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "fce6523b0f452823c618202d3d2a8cbc7e3fe11d896894f5901ef06c41088c8a",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": false,
+          "values": null
+        }
+      },
+      "mode": "representative",
+      "operationMetadata": {
+        "achieved_visible_fraction": 0.49947643979057593,
+        "half_plane_angle_rad": 2.784199803416302,
+        "half_plane_threshold": -47.201343321226254,
+        "identity_check_latent_equals_visible_union_occluded": true,
+        "latent_area_px": 955,
+        "occluded_pupil_area_px": 478,
+        "occluder_area_px": 11682,
+        "occlusion_semantics": "full_image_half_plane_with_separate_latent_visible_and_occluder_truth",
+        "requested_visible_fraction": 0.5,
+        "seed_u64": 678390215862976916,
+        "visible_area_px": 477
+      },
+      "originalGroundTruthSha256": "977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9.png",
+      "originalSourceSha256": "9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c",
+      "originalSourceSrc": "/media/exact-gt/sources/9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c.png",
+      "parameters": {
+        "family": "latent_occlusion",
+        "occluder": "seeded_full_image_half_plane",
+        "seed_u64": 678390215862976916,
+        "visible_fraction": 0.5
+      },
+      "perturbationType": "latent_occlusion",
+      "primaryGtSha256": "e2d422ea09aed8d89d06bdc1c8b39856ba897e0f402705b2083f00b46045142e",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.1839368524403098,
+          "area": 477.0,
+          "center_x": 72.26205450733752,
+          "center_y": 78.20754716981132,
+          "equivalent_diameter": 24.64417299969047,
+          "major_axis": 37.53461261839762,
+          "minor_axis": 17.078377000499636
+        },
+        "gt": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/exact-gt-pupil-mask.png",
+        "gtFormat": "binary",
+        "gtNativeSrc": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/exact-gt-native.png",
+        "gtPupilMaskSha256": "e2d422ea09aed8d89d06bdc1c8b39856ba897e0f402705b2083f00b46045142e",
+        "gtSha256": "e2d422ea09aed8d89d06bdc1c8b39856ba897e0f402705b2083f00b46045142e",
+        "src": "/media/exact-gt/30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243/transformed.png"
+      },
+      "rowIndex": 4,
+      "selectionRoles": [
+        "frozen_model_blind_row_4"
+      ],
+      "severity": "50.1% occluded; 49.9% visible",
+      "severityUnit": "occluded_fraction",
+      "severityValue": 0.500523560209424,
+      "sourceId": "Lucia__20181028_134237_CNNdataset_b00_frame_82.png",
+      "sourceImageSha256": "2669157f7a086c27a363050994862f719915cc8f48fee7702fde2227ad16a427",
+      "width": 155
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 155,
+        "nativeImageWidth": 155,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": [
+          [
+            1.0,
+            0.0,
+            -86.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "binary",
+            "geometry": {
+              "angle_rad": 1.5308497537995889,
+              "area": 255.0,
+              "center_x": 3.992156862745098,
+              "center_y": 78.85098039215686,
+              "equivalent_diameter": 18.01877032173579,
+              "major_axis": 30.656982760731058,
+              "minor_axis": 11.49377395659299
+            },
+            "nativeSrc": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/exact-gt-native.png",
+            "pupilMaskSha256": "a739b74ea92ef09dcf9030289284db45eeb301cc6df523985498b11f73ae4b2a",
+            "sha256": "a739b74ea92ef09dcf9030289284db45eeb301cc6df523985498b11f73ae4b2a",
+            "src": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/exact-gt-pupil-mask.png"
+          },
+          "height": 155,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "6cbfe7faeee5337b01eea3f9db4db60fe4b3418c8feec9a21b884499b50a77fe",
+          "transformedSourceSrc": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/transformed.png",
+          "width": 155
+        }
+      ],
+      "gtFormat": "binary",
+      "gtGeometry": {
+        "angle_rad": 1.5308497537995889,
+        "area": 255.0,
+        "center_x": 3.992156862745098,
+        "center_y": 78.85098039215686,
+        "equivalent_diameter": 18.01877032173579,
+        "major_axis": 30.656982760731058,
+        "minor_axis": 11.49377395659299
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/GT_visible_pupil.png",
+      "height": 155,
+      "id": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 8 \u00b7 crop_truncation",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.008997882716357708,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": null,
+          "geometry": {
+            "angle_rad": 2.3209339496362977,
+            "area": 20890.015169512983,
+            "center_x": 70.31155964703797,
+            "center_y": 94.18786619411989,
+            "equivalent_diameter": 163.08891257207324,
+            "major_axis": 244.56188123847713,
+            "minor_axis": 108.75772327742737
+          },
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.938735842704773,
+              "x": 159.28730487823486,
+              "y": 12.464494735002518
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.008997882716357708,
+              "x": 153.09836840629578,
+              "y": 1.0447585582733154
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.02265878953039646,
+              "x": 74.30310523509979,
+              "y": 2.1228832006454468
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.9998821020126343,
+              "x": 65.38864421844482,
+              "y": 25.548598766326904
+            },
+            {
+              "name": "RVupil",
+              "score": 0.9994992017745972,
+              "x": 2.8872305154800415,
+              "y": 89.76313424110413
+            },
+            {
+              "name": "Rpupil",
+              "score": 0.99954754114151,
+              "x": 10.379262685775757,
+              "y": 84.10798505693674
+            },
+            {
+              "name": "VLpupil",
+              "score": 0.8100073933601379,
+              "x": 78.84053158760071,
+              "y": 159.9152238368988
+            },
+            {
+              "name": "Vpupil",
+              "score": 0.026408011093735695,
+              "x": 2.75011146068573,
+              "y": 90.13923764228821
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 5,
+          "threshold": 0.6,
+          "valid": true,
+          "values": {
+            "area_are": 80.92162811573719,
+            "center_error_px": 68.06969407723034,
+            "diameter_are": 8.051056740278296,
+            "diameter_mae_px": 145.07014225033745,
+            "diameter_signed_error_px": 145.07014225033745,
+            "major_axis_are": 6.977363041471247,
+            "minor_axis_are": 8.462316179886452,
+            "orientation_error_deg": 45.26848988143102
+          }
+        },
+        "neuropupil_animal": {
+          "acceptance": "REJECTED",
+          "confidence": 0.23803958296775818,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "INCOMPLETE_KEYPOINTS",
+          "finiteKeypointCount": 1,
+          "geometry": null,
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": true,
+              "name": "top",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": true,
+              "name": "bottom",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.23803958296775818,
+              "x": 142.7975616455078,
+              "y": 27.252798080444336
+            },
+            {
+              "missing": true,
+              "name": "left",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "684d4f9ea922525842874e42b73c1d2963c2b9059c449d8dc07b3f59676d94ed",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": false,
+          "values": null
+        }
+      },
+      "mode": "representative",
+      "operationMetadata": {
+        "achieved_visible_fraction": 0.2670157068062827,
+        "crop_edge": "left",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -86.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          -86,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            86.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 955,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.017015706806282727,
+        "visible_pupil_area_px": 255
+      },
+      "originalGroundTruthSha256": "977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9.png",
+      "originalSourceSha256": "9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c",
+      "originalSourceSrc": "/media/exact-gt/sources/9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c.png",
+      "parameters": {
+        "edge": "left",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "perturbationType": "crop_truncation",
+      "primaryGtSha256": "a739b74ea92ef09dcf9030289284db45eeb301cc6df523985498b11f73ae4b2a",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.5308497537995889,
+          "area": 255.0,
+          "center_x": 3.992156862745098,
+          "center_y": 78.85098039215686,
+          "equivalent_diameter": 18.01877032173579,
+          "major_axis": 30.656982760731058,
+          "minor_axis": 11.49377395659299
+        },
+        "gt": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/exact-gt-pupil-mask.png",
+        "gtFormat": "binary",
+        "gtNativeSrc": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/exact-gt-native.png",
+        "gtPupilMaskSha256": "a739b74ea92ef09dcf9030289284db45eeb301cc6df523985498b11f73ae4b2a",
+        "gtSha256": "a739b74ea92ef09dcf9030289284db45eeb301cc6df523985498b11f73ae4b2a",
+        "src": "/media/exact-gt/582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db/transformed.png"
+      },
+      "rowIndex": 8,
+      "selectionRoles": [
+        "frozen_model_blind_row_8"
+      ],
+      "severity": "left edge; 26.7% pupil visible",
+      "severityUnit": "pupil_truncated_fraction",
+      "severityValue": 0.7329842931937173,
+      "sourceId": "Lucia__20181028_134237_CNNdataset_b00_frame_82.png",
+      "sourceImageSha256": "6cbfe7faeee5337b01eea3f9db4db60fe4b3418c8feec9a21b884499b50a77fe",
+      "width": 155
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 155,
+        "nativeImageWidth": 155,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": [
+          [
+            1.0,
+            0.0,
+            75.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "binary",
+            "geometry": {
+              "angle_rad": 1.5052768505637113,
+              "area": 494.0,
+              "center_x": 146.9655870445344,
+              "center_y": 75.28744939271255,
+              "equivalent_diameter": 25.079480359432697,
+              "major_axis": 35.79596203017139,
+              "minor_axis": 18.451721182409383
+            },
+            "nativeSrc": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/exact-gt-native.png",
+            "pupilMaskSha256": "28f439606754885b060f824c944fcfb7b74ef379017b96d82b557bce8de6bdc1",
+            "sha256": "28f439606754885b060f824c944fcfb7b74ef379017b96d82b557bce8de6bdc1",
+            "src": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/exact-gt-pupil-mask.png"
+          },
+          "height": 155,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "13be5938ea30165f3e81380833526304b6ff4c9eec7579abfb288fcaed7c88f0",
+          "transformedSourceSrc": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/transformed.png",
+          "width": 155
+        }
+      ],
+      "gtFormat": "binary",
+      "gtGeometry": {
+        "angle_rad": 1.5052768505637113,
+        "area": 494.0,
+        "center_x": 146.9655870445344,
+        "center_y": 75.28744939271255,
+        "equivalent_diameter": 25.079480359432697,
+        "major_axis": 35.79596203017139,
+        "minor_axis": 18.451721182409383
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/GT_visible_pupil.png",
+      "height": 155,
+      "id": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 10 \u00b7 crop_truncation",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "REJECTED",
+          "confidence": 0.0006866781041026115,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "TOO_FEW_CONFIDENT_POINTS_OR_ELLIPSE_FIT_FAILED",
+          "finiteKeypointCount": null,
+          "geometry": null,
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.005381705705076456,
+              "x": 73.93819093704224,
+              "y": 5.558232665061951
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.01266060397028923,
+              "x": 29.17141616344452,
+              "y": 1.7409446239471436
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.7292340993881226,
+              "x": 141.3516570329666,
+              "y": 62.8850884437561
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.995405912399292,
+              "x": 136.09270191192627,
+              "y": 78.18700170516968
+            },
+            {
+              "name": "RVupil",
+              "score": 0.8392325043678284,
+              "x": 71.03934264183044,
+              "y": 161.88278484344482
+            },
+            {
+              "name": "Rpupil",
+              "score": 0.023104282096028328,
+              "x": 85.17656719684601,
+              "y": 108.13483594357967
+            },
+            {
+              "name": "VLpupil",
+              "score": 0.6912358999252319,
+              "x": 145.24373626708984,
+              "y": 90.98390972614288
+            },
+            {
+              "name": "Vpupil",
+              "score": 0.0006866781041026115,
+              "x": 1.3177905082702637,
+              "y": 5.717301368713379
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 4,
+          "threshold": 0.6,
+          "valid": false,
+          "values": null
+        },
+        "neuropupil_animal": {
+          "acceptance": "REJECTED",
+          "confidence": 0.26290374994277954,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "INCOMPLETE_KEYPOINTS",
+          "finiteKeypointCount": 1,
+          "geometry": null,
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": true,
+              "name": "top",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": true,
+              "name": "bottom",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.26290374994277954,
+              "x": 53.70573043823242,
+              "y": 17.177165985107422
+            },
+            {
+              "missing": true,
+              "name": "left",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "08c59fe39c2667c4f4b43d6d1a26764f69fef522ca74b34096ec817159829444",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": false,
+          "values": null
+        }
+      },
+      "mode": "worst_case",
+      "operationMetadata": {
+        "achieved_visible_fraction": 0.5172774869109947,
+        "crop_edge": "right",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            75.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          75,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -75.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 955,
+        "target_visible_fraction": 0.5,
+        "visible_fraction_absolute_error": 0.017277486910994733,
+        "visible_pupil_area_px": 494
+      },
+      "originalGroundTruthSha256": "977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/977bb4e18d3694153c217353363d00bebfbda4be81f10d3d653bc74ef1aa5ae9.png",
+      "originalSourceSha256": "9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c",
+      "originalSourceSrc": "/media/exact-gt/sources/9441fc9560b3cc60ecd23bf69978e08ad7e6f81e3a8e9f4ff04c69ab05da017c.png",
+      "parameters": {
+        "edge": "right",
+        "family": "crop_truncation",
+        "output_shape": [
+          155,
+          155
+        ],
+        "target_visible_fraction": 0.5
+      },
+      "perturbationType": "crop_truncation",
+      "primaryGtSha256": "28f439606754885b060f824c944fcfb7b74ef379017b96d82b557bce8de6bdc1",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.5052768505637113,
+          "area": 494.0,
+          "center_x": 146.9655870445344,
+          "center_y": 75.28744939271255,
+          "equivalent_diameter": 25.079480359432697,
+          "major_axis": 35.79596203017139,
+          "minor_axis": 18.451721182409383
+        },
+        "gt": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/exact-gt-pupil-mask.png",
+        "gtFormat": "binary",
+        "gtNativeSrc": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/exact-gt-native.png",
+        "gtPupilMaskSha256": "28f439606754885b060f824c944fcfb7b74ef379017b96d82b557bce8de6bdc1",
+        "gtSha256": "28f439606754885b060f824c944fcfb7b74ef379017b96d82b557bce8de6bdc1",
+        "src": "/media/exact-gt/fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d/transformed.png"
+      },
+      "rowIndex": 10,
+      "selectionRoles": [
+        "dlc_zoo_mouse_pupil_vclose_least_incomplete_abstention"
+      ],
+      "severity": "right edge; 51.7% pupil visible",
+      "severityUnit": "pupil_truncated_fraction",
+      "severityValue": 0.48272251308900527,
+      "sourceId": "Lucia__20181028_134237_CNNdataset_b00_frame_82.png",
+      "sourceImageSha256": "13be5938ea30165f3e81380833526304b6ff4c9eec7579abfb288fcaed7c88f0",
+      "width": 155
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 122,
+        "nativeImageWidth": 122,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": null,
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "rgb_labels_yellow_pupil",
+            "geometry": {
+              "angle_rad": 1.200447770458084,
+              "area": 855.0,
+              "center_x": 73.95906432748538,
+              "center_y": 59.43625730994152,
+              "equivalent_diameter": 32.99423905394037,
+              "major_axis": 36.03600363242856,
+              "minor_axis": 30.215831807042857
+            },
+            "nativeSrc": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/exact-gt-native.png",
+            "pupilMaskSha256": "878a5c494e36ac1002521c6ae786fe36a0fc7022a1a716321b49c4910a5df4d1",
+            "sha256": "b044e1ef749d8acfbb1d58981de38d66e6f1a6c48b525cbf1ae9f7feb4056d2c",
+            "src": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/exact-gt-pupil-mask.png"
+          },
+          "height": 122,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "2cba49dbc7dbd53b325518dd69e128c06ff45ea3feffeb5e2d835c1329892ba2",
+          "transformedSourceSrc": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/transformed.png",
+          "width": 122
+        }
+      ],
+      "gtFormat": "rgb_labels_yellow_pupil",
+      "gtGeometry": {
+        "angle_rad": 1.200447770458084,
+        "area": 855.0,
+        "center_x": 73.95906432748538,
+        "center_y": 59.43625730994152,
+        "equivalent_diameter": 32.99423905394037,
+        "major_axis": 36.03600363242856,
+        "minor_axis": 30.215831807042857
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/GT_labels.png",
+      "height": 122,
+      "id": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 54 \u00b7 motion_blur",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "ACCEPTED",
+          "confidence": 1.0,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": null,
+          "geometry": {
+            "angle_rad": 1.3706914958080463,
+            "area": 827.1601338850016,
+            "center_x": 73.40157123961865,
+            "center_y": 59.364276898168754,
+            "equivalent_diameter": 32.4526268935323,
+            "major_axis": 33.84260365889529,
+            "minor_axis": 31.119738980661925
+          },
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 1.0,
+              "x": 84.81965136528015,
+              "y": 47.55810832977295
+            },
+            {
+              "name": "Dpupil",
+              "score": 1.0,
+              "x": 73.90327262878418,
+              "y": 43.108184695243835
+            },
+            {
+              "name": "LDpupil",
+              "score": 1.0,
+              "x": 62.43172764778137,
+              "y": 46.515480518341064
+            },
+            {
+              "name": "Lpupil",
+              "score": 1.0,
+              "x": 57.911521911621094,
+              "y": 60.75748246908188
+            },
+            {
+              "name": "RVupil",
+              "score": 1.0,
+              "x": 83.05854207277298,
+              "y": 72.95139026641846
+            },
+            {
+              "name": "Rpupil",
+              "score": 1.0,
+              "x": 88.64063453674316,
+              "y": 61.9505295753479
+            },
+            {
+              "name": "VLpupil",
+              "score": 1.0,
+              "x": 63.33044767379761,
+              "y": 71.60784912109375
+            },
+            {
+              "name": "Vpupil",
+              "score": 1.0,
+              "x": 73.3713002204895,
+              "y": 76.47819671034813
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 8,
+          "threshold": 0.6,
+          "valid": true,
+          "values": {
+            "area_are": 0.032561246918126736,
+            "center_error_px": 0.5621207367622725,
+            "diameter_are": 0.01641535540560948,
+            "diameter_mae_px": 0.5416121604080715,
+            "diameter_signed_error_px": -0.5416121604080715,
+            "major_axis_are": 0.06086690399707479,
+            "minor_axis_are": 0.02991501870249293,
+            "orientation_error_deg": 9.75424695113718
+          }
+        },
+        "neuropupil_animal": {
+          "acceptance": "REJECTED",
+          "confidence": 0.9214304685592651,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "INCOMPLETE_KEYPOINTS",
+          "finiteKeypointCount": 3,
+          "geometry": null,
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": false,
+              "name": "top",
+              "score": 0.9214304685592651,
+              "x": 77.65009307861328,
+              "y": 40.87582778930664
+            },
+            {
+              "missing": true,
+              "name": "bottom",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.9283341765403748,
+              "x": 90.84519958496094,
+              "y": 59.82185745239258
+            },
+            {
+              "missing": false,
+              "name": "left",
+              "score": 1.004203200340271,
+              "x": 58.22782516479492,
+              "y": 59.76591110229492
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "c84b2c6fa31e8d6fc4a8d52b490ec3de9e96d3a17fe601226c77c31a48b33e84",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": false,
+          "values": null
+        }
+      },
+      "mode": "worst_case",
+      "operationMetadata": {
+        "kernel_angle_deg": 0.0,
+        "kernel_length_px": 5,
+        "kernel_nonzero_taps": 5,
+        "kernel_semantics": "odd square aperture; named length equals aperture width and discrete nonzero tap count",
+        "kernel_sha256_float32": "47b7db60032f8fc5387637cd35ce3cd0e81c061f64266288fe5bcf9ad706d5f4",
+        "kernel_shape_yx": [
+          5,
+          5
+        ],
+        "kernel_sum": 1.0
+      },
+      "originalGroundTruthSha256": "efd378b936f84ba6b3f7012524b08e6fa21adcc0bf28456b99049e1b9e65d817",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/efd378b936f84ba6b3f7012524b08e6fa21adcc0bf28456b99049e1b9e65d817.png",
+      "originalSourceSha256": "17efdebb9c715517bd739cd880881b9c17feee263bc8082b791d8db4250e8212",
+      "originalSourceSrc": "/media/exact-gt/sources/17efdebb9c715517bd739cd880881b9c17feee263bc8082b791d8db4250e8212.png",
+      "parameters": {
+        "angle_deg": 0.0,
+        "family": "motion_blur",
+        "kernel_length_px": 5
+      },
+      "perturbationType": "motion_blur",
+      "primaryGtSha256": "b044e1ef749d8acfbb1d58981de38d66e6f1a6c48b525cbf1ae9f7feb4056d2c",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.200447770458084,
+          "area": 855.0,
+          "center_x": 73.95906432748538,
+          "center_y": 59.43625730994152,
+          "equivalent_diameter": 32.99423905394037,
+          "major_axis": 36.03600363242856,
+          "minor_axis": 30.215831807042857
+        },
+        "gt": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/exact-gt-pupil-mask.png",
+        "gtFormat": "rgb_labels_yellow_pupil",
+        "gtNativeSrc": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/exact-gt-native.png",
+        "gtPupilMaskSha256": "878a5c494e36ac1002521c6ae786fe36a0fc7022a1a716321b49c4910a5df4d1",
+        "gtSha256": "b044e1ef749d8acfbb1d58981de38d66e6f1a6c48b525cbf1ae9f7feb4056d2c",
+        "src": "/media/exact-gt/97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50/transformed.png"
+      },
+      "rowIndex": 54,
+      "selectionRoles": [
+        "neuropupil_animal_highest_confidence_three_point_abstention"
+      ],
+      "severity": "5 px kernel at 0.0\u00b0",
+      "severityUnit": "kernel_length_px",
+      "severityValue": 5.0,
+      "sourceId": "Raffaele__20190122_110912_CNNdataset_0r0_frame_28.png",
+      "sourceImageSha256": "2cba49dbc7dbd53b325518dd69e128c06ff45ea3feffeb5e2d835c1329892ba2",
+      "width": 122
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 134,
+        "nativeImageWidth": 134,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": [
+          [
+            1.0,
+            0.0,
+            -56.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "binary",
+            "geometry": {
+              "angle_rad": 1.5945647103295533,
+              "area": 193.0,
+              "center_x": 3.7202072538860103,
+              "center_y": 64.43005181347151,
+              "equivalent_diameter": 15.67594437773643,
+              "major_axis": 24.63857269309446,
+              "minor_axis": 10.763763869441126
+            },
+            "nativeSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-native.png",
+            "pupilMaskSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+            "sha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+            "src": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-pupil-mask.png"
+          },
+          "height": 134,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+          "transformedSourceSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png",
+          "width": 134
+        }
+      ],
+      "gtFormat": "binary",
+      "gtGeometry": {
+        "angle_rad": 1.5945647103295533,
+        "area": 193.0,
+        "center_x": 3.7202072538860103,
+        "center_y": 64.43005181347151,
+        "equivalent_diameter": 15.67594437773643,
+        "major_axis": 24.63857269309446,
+        "minor_axis": 10.763763869441126
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/GT_visible_pupil.png",
+      "height": 134,
+      "id": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 116 \u00b7 crop_truncation",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.002510224934667349,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": null,
+          "geometry": {
+            "angle_rad": 0.9952360213495831,
+            "area": 6856.686921887623,
+            "center_x": 31.883788866289336,
+            "center_y": 87.17853630403688,
+            "equivalent_diameter": 93.4355656846778,
+            "major_axis": 141.36045519609561,
+            "minor_axis": 61.75846648700428
+          },
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.9987653493881226,
+              "x": 37.34943187236786,
+              "y": 39.576106548309326
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.8615342378616333,
+              "x": 3.8221571892499924,
+              "y": 22.273783922195435
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.002510224934667349,
+              "x": 84.04953543096781,
+              "y": 6.249904155731201
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.12241090834140778,
+              "x": 72.56984400749207,
+              "y": 83.13609313964844
+            },
+            {
+              "name": "RVupil",
+              "score": 0.9997510313987732,
+              "x": 40.22732448577881,
+              "y": 102.60334253311157
+            },
+            {
+              "name": "Rpupil",
+              "score": 0.9983968138694763,
+              "x": 59.765779465436935,
+              "y": 79.31655478477478
+            },
+            {
+              "name": "VLpupil",
+              "score": 0.9406571984291077,
+              "x": 86.36468362808228,
+              "y": 144.01499605178833
+            },
+            {
+              "name": "Vpupil",
+              "score": 0.8493046760559082,
+              "x": 6.336691856384277,
+              "y": 112.84162497520447
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 6,
+          "threshold": 0.6,
+          "valid": true,
+          "values": {
+            "area_are": 34.52687524294105,
+            "center_error_px": 36.20332686171253,
+            "diameter_are": 4.9604425375085235,
+            "diameter_mae_px": 77.75962130694137,
+            "diameter_signed_error_px": 77.75962130694137,
+            "major_axis_are": 4.737363805806625,
+            "minor_axis_are": 4.737627398380571,
+            "orientation_error_deg": 34.33900441966106
+          }
+        },
+        "neuropupil_animal": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.21494871377944946,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": 4,
+          "geometry": {
+            "angle_rad": 2.7416842566783863,
+            "area": 8066.902153334447,
+            "center_x": 70.41936349868774,
+            "center_y": 83.57785558700562,
+            "equivalent_diameter": 101.34642976017781,
+            "major_axis": 120.80222986767181,
+            "minor_axis": 81.89062965268383
+          },
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": false,
+              "name": "top",
+              "score": 0.24905027449131012,
+              "x": 104.5151138305664,
+              "y": 130.24093627929688
+            },
+            {
+              "missing": false,
+              "name": "bottom",
+              "score": 0.594313383102417,
+              "x": 27.65201759338379,
+              "y": 101.98957061767578
+            },
+            {
+              "missing": false,
+              "name": "right",
+              "score": 0.21494871377944946,
+              "x": 130.3904266357422,
+              "y": 27.52425193786621
+            },
+            {
+              "missing": false,
+              "name": "left",
+              "score": 0.3228822946548462,
+              "x": 19.119895935058594,
+              "y": 74.5566635131836
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "3759d5c64a1f2113837ee11530de51918b73cfc1eb5b6d3e722b359037549108",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": true,
+          "values": {
+            "area_are": 40.79742048359817,
+            "center_error_px": 69.39319731153941,
+            "diameter_are": 5.465092457467114,
+            "diameter_mae_px": 85.67048538244138,
+            "diameter_signed_error_px": 85.67048538244138,
+            "major_axis_are": 3.9029719120673527,
+            "minor_axis_are": 6.607992022676705,
+            "orientation_error_deg": 65.72510860274976
+          }
+        }
+      },
+      "mode": "worst_case",
+      "operationMetadata": {
+        "achieved_visible_fraction": 0.2618724559023066,
+        "crop_edge": "left",
+        "edge_truncation": true,
+        "forward_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            -56.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_shift_xy": [
+          -56,
+          0
+        ],
+        "inverse_affine_xy_homogeneous": [
+          [
+            1.0,
+            0.0,
+            56.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "operation_semantics": "fixed_output_ROI_translation_with_real_pupil_edge_truncation",
+        "remaining_pupil_touches_requested_edge": true,
+        "source_pupil_area_px": 737,
+        "target_visible_fraction": 0.25,
+        "visible_fraction_absolute_error": 0.011872455902306622,
+        "visible_pupil_area_px": 193
+      },
+      "originalGroundTruthSha256": "6c3e0f16a412883273970ded41aaff7e24de9678934cc5665d486a602d6fef65",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/6c3e0f16a412883273970ded41aaff7e24de9678934cc5665d486a602d6fef65.png",
+      "originalSourceSha256": "ab04e8eb0c6d5d2536f9dc82b56e7487e2bad53c4d0da9f6c80c4729b433ab00",
+      "originalSourceSrc": "/media/exact-gt/sources/ab04e8eb0c6d5d2536f9dc82b56e7487e2bad53c4d0da9f6c80c4729b433ab00.png",
+      "parameters": {
+        "edge": "left",
+        "family": "crop_truncation",
+        "output_shape": [
+          134,
+          134
+        ],
+        "target_visible_fraction": 0.25
+      },
+      "perturbationType": "crop_truncation",
+      "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.5945647103295533,
+          "area": 193.0,
+          "center_x": 3.7202072538860103,
+          "center_y": 64.43005181347151,
+          "equivalent_diameter": 15.67594437773643,
+          "major_axis": 24.63857269309446,
+          "minor_axis": 10.763763869441126
+        },
+        "gt": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-pupil-mask.png",
+        "gtFormat": "binary",
+        "gtNativeSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-native.png",
+        "gtPupilMaskSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+        "gtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+        "src": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png"
+      },
+      "rowIndex": 116,
+      "selectionRoles": [
+        "neuropupil_animal_worst_valid"
+      ],
+      "severity": "left edge; 26.2% pupil visible",
+      "severityUnit": "pupil_truncated_fraction",
+      "severityValue": 0.7381275440976933,
+      "sourceId": "Matteo__20240723_120756_frame_389.png",
+      "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+      "width": 134
+    },
+    {
+      "coordinateTransform": {
+        "exactGTRasterToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "nativeImageHeight": 155,
+        "nativeImageWidth": 155,
+        "nativePredictionToTransformedSourceXY": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "originalSourceToTransformedSourceXY": null,
+        "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+        "verified": true
+      },
+      "executionId": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+      "frames": [
+        {
+          "exactGT": {
+            "classExtraction": "binary mask extracted from exact GT using the frozen target format rule",
+            "format": "binary",
+            "geometry": {
+              "angle_rad": 1.2792065818840854,
+              "area": 15.0,
+              "center_x": 73.33333333333333,
+              "center_y": 78.86666666666666,
+              "equivalent_diameter": 4.370193722368317,
+              "major_axis": 7.696591038210525,
+              "minor_axis": 3.1885625029128537
+            },
+            "nativeSrc": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/exact-gt-native.png",
+            "pupilMaskSha256": "89ebaaad46f40a255b4ec2794212cefc02eb670e07c58fd89a6d75430c833892",
+            "sha256": "89ebaaad46f40a255b4ec2794212cefc02eb670e07c58fd89a6d75430c833892",
+            "src": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/exact-gt-pupil-mask.png"
+          },
+          "height": 155,
+          "sourceFrameNumber": null,
+          "timestampMs": null,
+          "transformedSourceSha256": "5d38410707fdaa1f6c83a753d48f9d162a846a0a20a3d89ce4fcea5aecd1be86",
+          "transformedSourceSrc": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/transformed.png",
+          "width": 155
+        }
+      ],
+      "gtFormat": "binary",
+      "gtGeometry": {
+        "angle_rad": 1.2792065818840854,
+        "area": 15.0,
+        "center_x": 73.33333333333333,
+        "center_y": 78.86666666666666,
+        "equivalent_diameter": 4.370193722368317,
+        "major_axis": 7.696591038210525,
+        "minor_axis": 3.1885625029128537
+      },
+      "gtPath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/GT_visible_pupil.png",
+      "height": 155,
+      "id": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+      "imagePath": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_expansion_v2_1_corrected/EXACT_GT_V2_1_CORRECTED/spatial/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/image.png",
+      "label": "Exact-GT V2.1 \u00b7 row 185 \u00b7 latent_occlusion",
+      "methods": {
+        "dlc_zoo_mouse_pupil_vclose": {
+          "acceptance": "ACCEPTED",
+          "confidence": 0.00029240999720059335,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": null,
+          "finiteKeypointCount": null,
+          "geometry": {
+            "angle_rad": 1.1050204330679363,
+            "area": 28437.895918612405,
+            "center_x": 95.28525636995467,
+            "center_y": 44.47204865731091,
+            "equivalent_diameter": 190.28466478578878,
+            "major_axis": 256.49202163332745,
+            "minor_axis": 141.16717324019586
+          },
+          "geometryDefinition": "released 8-landmark EllipseModel fit",
+          "keypoints": [
+            {
+              "name": "DRpupil",
+              "score": 0.9013649821281433,
+              "x": 157.699462890625,
+              "y": 11.487909495830536
+            },
+            {
+              "name": "Dpupil",
+              "score": 0.013043390586972237,
+              "x": 153.4454984664917,
+              "y": 0.6363935470581055
+            },
+            {
+              "name": "LDpupil",
+              "score": 0.00029240999720059335,
+              "x": 150.30002784729004,
+              "y": 2.110563039779663
+            },
+            {
+              "name": "Lpupil",
+              "score": 0.9999226331710815,
+              "x": 32.01950550079346,
+              "y": 75.77105665206909
+            },
+            {
+              "name": "RVupil",
+              "score": 0.8793958425521851,
+              "x": 160.22129917144775,
+              "y": 154.27155208587646
+            },
+            {
+              "name": "Rpupil",
+              "score": 0.000324400287354365,
+              "x": 57.64559984207153,
+              "y": 4.624345242977142
+            },
+            {
+              "name": "VLpupil",
+              "score": 0.9998224377632141,
+              "x": 102.89333176612854,
+              "y": 154.83465909957886
+            },
+            {
+              "name": "Vpupil",
+              "score": 0.7691137194633484,
+              "x": 125.4259819984436,
+              "y": 162.647967338562
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+            "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+            "nativeRowIdentity": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+            "scoredRowIdentity": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad"
+          },
+          "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+          "predictionMask": null,
+          "retainedPointCount": 5,
+          "threshold": 0.6,
+          "valid": true,
+          "values": {
+            "area_are": 1894.8597279074936,
+            "center_error_px": 40.80290030151344,
+            "diameter_are": 42.5414713567134,
+            "diameter_mae_px": 185.91447106342045,
+            "diameter_signed_error_px": 185.91447106342045,
+            "major_axis_are": 32.325406060936096,
+            "minor_axis_are": 43.272982922942596,
+            "orientation_error_deg": 9.980131176803026
+          }
+        },
+        "neuropupil_animal": {
+          "acceptance": "REJECTED",
+          "confidence": 0.25131118297576904,
+          "coordinateSystem": "x/y pixel coordinates in transformed source image; origin top-left",
+          "failureCode": "INCOMPLETE_KEYPOINTS",
+          "finiteKeypointCount": 1,
+          "geometry": null,
+          "geometryDefinition": "paper mean of Top-Bottom and Left-Right keypoint distances",
+          "keypoints": [
+            {
+              "missing": false,
+              "name": "top",
+              "score": 0.25131118297576904,
+              "x": 123.06865692138672,
+              "y": 150.5529022216797
+            },
+            {
+              "missing": true,
+              "name": "bottom",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": true,
+              "name": "right",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            },
+            {
+              "missing": true,
+              "name": "left",
+              "score": 0.0,
+              "x": null,
+              "y": null
+            }
+          ],
+          "maskMetrics": {
+            "assd_px": null,
+            "dice": null,
+            "hd95_px": null,
+            "iou": null,
+            "status": "NOT_APPLICABLE_NO_NATIVE_MASK"
+          },
+          "nativeIdentity": {
+            "keypointArraySha256": "908e7cc16e9daad372f02d975ae1be5ee8f8f40773fd971af67c0bbe34fe7064",
+            "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+            "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+            "nativeRowIdentity": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+            "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+            "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+            "scoredRowIdentity": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad"
+          },
+          "nativeMethodId": "neuropupil_animal",
+          "predictionMask": null,
+          "retainedPointCount": null,
+          "threshold": null,
+          "valid": false,
+          "values": null
+        }
+      },
+      "mode": "worst_case",
+      "operationMetadata": {
+        "achieved_visible_fraction": 0.2459016393442623,
+        "half_plane_angle_rad": 2.858916739473975,
+        "half_plane_threshold": -49.5080862395169,
+        "identity_check_latent_equals_visible_union_occluded": true,
+        "latent_area_px": 61,
+        "occluded_pupil_area_px": 46,
+        "occluder_area_px": 12490,
+        "occlusion_semantics": "full_image_half_plane_with_separate_latent_visible_and_occluder_truth",
+        "requested_visible_fraction": 0.25,
+        "seed_u64": 11846941409299682459,
+        "visible_area_px": 15
+      },
+      "originalGroundTruthSha256": "41e50ddce2a92c9b6a59968bfd8043c14ed2cd03a50732cbc8609aeb4a87f9c2",
+      "originalGroundTruthSrc": "/media/exact-gt/sources/41e50ddce2a92c9b6a59968bfd8043c14ed2cd03a50732cbc8609aeb4a87f9c2.png",
+      "originalSourceSha256": "c107efdb77bbebba652ee88391db8d807078bd965f3a2636b7e4c3d884bd1ed8",
+      "originalSourceSrc": "/media/exact-gt/sources/c107efdb77bbebba652ee88391db8d807078bd965f3a2636b7e4c3d884bd1ed8.png",
+      "parameters": {
+        "family": "latent_occlusion",
+        "occluder": "seeded_full_image_half_plane",
+        "seed_u64": 11846941409299682459,
+        "visible_fraction": 0.25
+      },
+      "perturbationType": "latent_occlusion",
+      "primaryGtSha256": "89ebaaad46f40a255b4ec2794212cefc02eb670e07c58fd89a6d75430c833892",
+      "reference": {
+        "geometry": {
+          "angle_rad": 1.2792065818840854,
+          "area": 15.0,
+          "center_x": 73.33333333333333,
+          "center_y": 78.86666666666666,
+          "equivalent_diameter": 4.370193722368317,
+          "major_axis": 7.696591038210525,
+          "minor_axis": 3.1885625029128537
+        },
+        "gt": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/exact-gt-pupil-mask.png",
+        "gtFormat": "binary",
+        "gtNativeSrc": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/exact-gt-native.png",
+        "gtPupilMaskSha256": "89ebaaad46f40a255b4ec2794212cefc02eb670e07c58fd89a6d75430c833892",
+        "gtSha256": "89ebaaad46f40a255b4ec2794212cefc02eb670e07c58fd89a6d75430c833892",
+        "src": "/media/exact-gt/c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad/transformed.png"
+      },
+      "rowIndex": 185,
+      "selectionRoles": [
+        "dlc_zoo_mouse_pupil_vclose_worst_valid"
+      ],
+      "severity": "75.4% occluded; 24.6% visible",
+      "severityUnit": "occluded_fraction",
+      "severityValue": 0.7540983606557377,
+      "sourceId": "Lucia__20181028_145323_CNNdataset_r00_frame_483.png",
+      "sourceImageSha256": "5d38410707fdaa1f6c83a753d48f9d162a846a0a20a3d89ce4fcea5aecd1be86",
+      "width": 155
+    }
+  ],
+  "limitations": [
+    "DLC Zoo output is eight keypoints plus fitted ellipse geometry; no prediction mask exists.",
+    "NeuroPupil output is four keypoints and direct paper diameter geometry; no prediction mask exists.",
+    "GT pupil-only PNGs are exact pixel-class extractions from the frozen primary GT raster, not model predictions.",
+    "Selected cases are a bounded manual panel; population-level identity checks are automated and do not imply manual review of all 252 frames.",
+    "This manifest does not alter canonical scientific results, gates, or the canonical FINAL_VISUAL_QC_STATUS.csv."
+  ],
+  "mediaRoot": "/media/exact-gt/",
+  "schema": "EXACT_GT_SELECTED_MEDIA_V1",
+  "selectionProtocol": {
+    "outcomeSelection": {
+      "NeuroPupilAbstention": "maximum finite keypoint count, then highest minimum score among present keypoints, then row-index tie-break; a high-confidence incomplete prediction, not an error metric",
+      "ZooAbstention": "maximum retained native point count among rejected rows; row-index tie-break",
+      "worstValid": "maximum accepted diameter_are, computed per method over the 252 frozen spatial rows"
+    },
+    "representativeRows": [
+      0,
+      4,
+      8
+    ],
+    "scope": "selected-case visual QC and static exact-GT media only; not representative accuracy claims"
+  }
+}
