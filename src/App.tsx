@@ -102,6 +102,25 @@ function App() {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
+    if (!data) return
+    const scrollToHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1))
+      if (id) document.getElementById(id)?.scrollIntoView({ block: 'start' })
+    }
+    scrollToHash()
+    // Nearby lazy charts can change the document height after the first jump.
+    const observer = new ResizeObserver(scrollToHash)
+    observer.observe(document.body)
+    const stop = window.setTimeout(() => observer.disconnect(), 1500)
+    window.addEventListener('hashchange', scrollToHash)
+    return () => {
+      window.clearTimeout(stop)
+      observer.disconnect()
+      window.removeEventListener('hashchange', scrollToHash)
+    }
+  }, [data])
+
+  useEffect(() => {
     let alive = true
     loadBenchmarkData().then((loaded) => { if (alive) setData(loaded) }).catch((error) => {
       if (alive) setLoadError(error instanceof Error ? error.message : String(error))
@@ -148,6 +167,7 @@ function App() {
 
   const goTo = (id: string) => {
     setActive(id)
+    window.history.replaceState(null, '', `#${encodeURIComponent(id)}`)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
@@ -155,7 +175,7 @@ function App() {
     <header className="masthead">
       <div className="masthead-top">
         <a className="wordmark" href="#overview" onClick={(event) => { event.preventDefault(); goTo('overview') }}><span className="mark-eye"><i /></span><span>Mouse Pupillometry Benchmark</span></a>
-        <span className="internal-badge"><span /> INTERNAL COLLABORATOR EXPLORER</span>
+        <span className="internal-badge"><span /> COLLABORATOR BENCHMARK EXPLORER</span>
       </div>
       <div className="masthead-meta">
         <div><span className="development-label">DEVELOPMENT BENCHMARK</span><span className="subheader">Development benchmark · {data?.manifest.version ?? data?.manifest.freeze ?? 'version pending export'}</span></div>

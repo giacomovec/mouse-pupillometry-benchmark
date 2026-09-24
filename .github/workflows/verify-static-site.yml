@@ -1,8 +1,6 @@
-name: Verify private benchmark site
+name: Verify benchmark site pull request
 
 on:
-  push:
-    branches: [main]
   pull_request:
 
 permissions:

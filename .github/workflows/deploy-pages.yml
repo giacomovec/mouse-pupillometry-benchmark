@@ -1,0 +1,70 @@
+name: Verify and deploy benchmark Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+      - name: Verify packaged scientific export and media hashes
+        run: python3 export/build_benchmark_data.py --verify-export-only --output-dir public/data
+      - name: Test standalone scientific export structure
+        run: python3 -m unittest discover -s export/tests -p 'test_*.py'
+      - name: Build static site
+        run: npm run build
+      - name: Verify built scientific export and media hashes
+        run: python3 export/build_benchmark_data.py --verify-export-only --output-dir dist/data
+      - name: Report Pages eligibility boundary
+        if: vars.PAGES_DEPLOY_ENABLED != 'true'
+        run: echo 'GitHub Pages deployment is paused because this private repository is not eligible under the current GitHub plan. Enable Pages after a plan change, then set PAGES_DEPLOY_ENABLED=true.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Configure GitHub Pages
+        if: vars.PAGES_DEPLOY_ENABLED == 'true'
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Upload GitHub Pages artifact
+        if: vars.PAGES_DEPLOY_ENABLED == 'true'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: vars.PAGES_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
