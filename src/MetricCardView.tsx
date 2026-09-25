@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { findVisualCases } from './data'
 import type { BenchmarkData, MethodIdentity, MethodRecord, MetricCard } from './types'
+import { methodColor as fixedMethodColor } from './palette'
 import EvidenceViewer from './EvidenceViewer'
 import MetricChart, { orderedMethods, type SortMode } from './MetricChart'
 import { RiskCoveragePlot } from './ScientificFigures'
@@ -30,7 +31,7 @@ function SeedObservationPanel({ methods, identities, primary = false }: { method
   const span = max - min || Math.abs(max) || 1
   const y = (value: number) => 20 + (max - value + span * 0.08) * 125 / (span * 1.16)
   const x = (index: number) => 46 + (seeds.length < 2 ? 0 : index * 680 / (seeds.length - 1))
-  const colorFor = (method: MethodRecord) => method.color ?? identities.find((identity) => [identity.methodId, identity.id, identity.variantId].includes(method.methodId))?.color ?? '#75858a'
+  const colorFor = (method: MethodRecord) => fixedMethodColor(method.methodId, method.family)
   return <details className="seed-observations" open={primary || undefined}>
     <summary><span className="chevron">⌄</span> RAW PER-SEED OBSERVATIONS <small>{rows.length} source rows · no cross-seed mean</small></summary>
     <div className="seed-panel-body">
@@ -95,7 +96,7 @@ function Provenance({ card, data, identities, methods }: {
       <div className="provenance-methods">
         <div className="provenance-method-head"><strong>Method records</strong><span>Unavailable entries and hash references remain visible here.</span></div>
         {methods.map((method) => <div className="provenance-method-row" key={method.methodId}>
-          <span className="method-dot" style={{ background: method.color ?? identities.find((identity) => [identity.methodId, identity.id, identity.variantId].includes(method.methodId))?.color ?? '#829098' }} />
+          <span className="method-dot" style={{ background: fixedMethodColor(method.methodId, method.family) }} />
           <b>{labelFor(method, identities)}</b>
           <span>{method.representation ?? 'Representation not reported'}</span>
           <span>{method.backend || method.precision ? `${method.backend ?? 'backend n/a'} · ${method.precision ?? 'precision n/a'}` : method.operatingPoint ?? ''}</span>
@@ -115,21 +116,20 @@ export default function MetricCardView({ card, data, identities, flags }: {
   flags: { representations: boolean; deployments: boolean }
 }) {
   const [expanded, setExpanded] = useState(false)
-  const [sort, setSort] = useState<SortMode>('best')
+  const [sort, setSort] = useState<SortMode>('registry')
   const articleRef = useRef<HTMLElement | null>(null)
   const [chartReady, setChartReady] = useState(false)
   const filteredMethods = useMemo(() => metricMethods(card, flags), [card, flags])
   const ordered = useMemo(() => orderedMethods(card, filteredMethods, identities, sort), [card, filteredMethods, identities, sort])
   const orderedWithColors = ordered.map((method) => {
-    const identity = identities.find((item) => [item.methodId, item.id, item.variantId].includes(method.methodId))
-    return { ...method, color: method.color ?? identity?.color, familyColor: method.familyColor ?? identity?.familyColor }
+    return { ...method, color: fixedMethodColor(method.methodId, method.family), familyColor: fixedMethodColor(method.methodId, method.family) }
   })
   const missing = filteredMethods.filter((method) => !hasValue(method))
   const methodIdentities = identities.map((identity) => ({
     methodId: identity.methodId ?? '',
     id: identity.id,
     variantId: identity.variantId,
-    color: identity.color,
+    color: fixedMethodColor(identity.methodId, identity.family),
     familyColor: identity.familyColor,
   }))
   const available = filteredMethods.filter(hasValue)

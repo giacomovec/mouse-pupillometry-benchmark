@@ -1,5 +1,6 @@
 import { useMemo, type CSSProperties } from 'react'
 import type { CapabilityDefinition, CapabilityMethod, MethodIdentity } from './types'
+import { methodColor as fixedMethodColor } from './palette'
 
 function textStatus(value: unknown) {
   if (value === null || value === undefined || value === '') return 'NOT REPORTED'
@@ -73,7 +74,7 @@ export default function CapabilityMatrix({ definitions, identities, query }: {
               const identity = methodMap.get(methodId)
               const rowMethod = rows.flatMap((row) => row.methods).find((method) => method.methodId === methodId)
               const name = identity?.label ?? rowMethod?.methodName ?? methodId
-              const color = identity?.color ?? (typeof rowMethod?.color === 'string' ? rowMethod.color : '#7e928a')
+              const color = fixedMethodColor(methodId, identity?.family ?? rowMethod?.family)
               return <th className="capability-method-head" key={methodId} style={{ '--method-color': color } as CSSProperties}>
                 <i />{name}<small>{identity?.family ?? rowMethod?.family ?? 'Method'} · {methodId}</small>
               </th>

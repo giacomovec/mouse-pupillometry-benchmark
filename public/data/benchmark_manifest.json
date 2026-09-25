@@ -1,6 +1,6 @@
 {
   "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
-  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "version": "benchmark-data-dev-v2+63463ce661afff36",
   "freeze": null,
   "freezeStatus": "DEVELOPMENT_NOT_FORMALLY_FROZEN",
   "status": "DEVELOPMENT",
@@ -8,8 +8,8 @@
   "generatedAt": null,
   "generatedAtPolicy": "Omitted to keep identical canonical inputs byte-reproducible.",
   "reproducible": true,
-  "sourceFingerprintSha256": "387caf3b9034bbc41437c1423875f675ebf9f2f940a68ae6056022e950534180",
-  "cardCount": 146,
+  "sourceFingerprintSha256": "63463ce661afff3694b8f0779ba3935692e31d971e37489ebe21f9c73fdcc5dc",
+  "cardCount": 149,
   "cardsByCategory": {
     "real_validation": 15,
     "geometry": 13,
@@ -18,7 +18,7 @@
     "exact_gt": 38,
     "temporal": 42,
     "runtime": 9,
-    "deployment": 16,
+    "deployment": 19,
     "capabilities": 0
   },
   "methodIdentityCount": 47,
@@ -66,35 +66,35 @@
   },
   "files": {
     "methods.json": {
-      "sha256": "9d484bc648a0cf1cfa1242688d982f93aabac5dae3e4f4d0c8b96a8af700d129",
+      "sha256": "2598c68e6c00aa2a2a238f1560ecd6c750beefa42804b226f2c78b4abd3e2f43",
       "sizeBytes": 27168
     },
     "real_validation.json": {
-      "sha256": "70a86ab6b2a1a45cd643ba5a7b69215d41a365f8939638cc0fb4ab03fabe8163",
+      "sha256": "b7700982617f254467c7802a499dc5e39b24c8fb15ab7cf7053445f94a9ea07f",
       "sizeBytes": 523365
     },
     "geometry.json": {
-      "sha256": "05585242a0b1a6c72030289aa0a3ae2281dca373a2e911f26f8843ec2a7f6f30",
+      "sha256": "c248e22c4d98033597a2c1a27a3296ec593a036a65e06e347d799064b51aa2cc",
       "sizeBytes": 97318
     },
     "segmentation.json": {
-      "sha256": "323a9903d1e781b9db681ad180934d885504fddd2724e3e01a53fc4eec84bdcf",
+      "sha256": "bae468e2405c4aa764ae56771af12a16b1e0a34ebaa26a101ca10b3d1bef05f7",
       "sizeBytes": 61566
     },
     "coverage_risk.json": {
-      "sha256": "ab7c7dcb6c859b4b2a193cffd391e499962cc4feec4c9de05eb8c198a46bcf6f",
+      "sha256": "c90048fd4e94e019f0a8b2ab40879f0c1d87923ba854631ace01006a19f7f046",
       "sizeBytes": 6048876
     },
     "exact_gt.json": {
-      "sha256": "2d8104dfce7343049198cab801c1c76357fade7cf9e81e754fb1b7069df4f5c8",
+      "sha256": "6382770c2a9381e85fce373dae25717ca24da401e8719ca38cfc772913b29ac3",
       "sizeBytes": 2562562
     },
     "temporal.json": {
-      "sha256": "a5278cf5ea9e4566eac8e41246fef2fa53482fa6067bbf918857ad71b71f6a57",
+      "sha256": "39d024b5e11ec56d59820efd3de6915cad9c72fb25575ad824051c91219fbb04",
       "sizeBytes": 1513879
     },
     "runtime.json": {
-      "sha256": "bb8de4b7486d751a898e40b996767ba4c4c615b022138a8c31698231fecacf19",
+      "sha256": "9093356bdea1805ade51ea1e8084e078a67c9e7a100a2a0c83e65690df9e0d99",
       "sizeBytes": 162214
     },
     "native_cpu_runtime_v2.json": {
@@ -102,8 +102,8 @@
       "sizeBytes": 23101
     },
     "deployment.json": {
-      "sha256": "014472564d4e863d5017fca9360140aaacb3f590913b4694c2d67478671d5662",
-      "sizeBytes": 1043318
+      "sha256": "fb84c2f7607750251eed573c4bfd5a0ca11c4b7c967d631289a5b51bd851e710",
+      "sizeBytes": 1217118
     },
     "capabilities.json": {
       "sha256": "308e653c94cc573ceba889ecbcac905d25b399eaad9637dd14fffb7b40ebcca0",
@@ -118,15 +118,15 @@
       "sizeBytes": 163608
     },
     "overview_v2.json": {
-      "sha256": "656e1e4346d950a453a62962fdbf92798575f78293000b65d449bf1cc35e1996",
+      "sha256": "4b3ffa04dac4ebac37895a93dc33e4943485ebbed7adec92f33dc2ecc84aeb91",
       "sizeBytes": 82209
     },
     "real_validation_v2.json": {
-      "sha256": "1b320cb8dc6facb325007f7affab0219c938363fda92f2b258c05df8f2cec4bc",
+      "sha256": "2cbd571ab9df8692e76a329b8e419d98f5eff3de2f44e4ed6d5946f7669548da",
       "sizeBytes": 58909
     },
     "visual_case_index_v2.json": {
-      "sha256": "f25b3912f02eae3ebcf12cda379675e3565c0c589fdf18c26cc01de6335a9fad",
+      "sha256": "e5ad6a51e38952adcdf3af2ad4883fdfeeb7782b5a112d5497d667054a4963d6",
       "sizeBytes": 22312
     },
     "WEBSITE_VISUAL_CASES.json": {
@@ -134,8 +134,8 @@
       "sizeBytes": 214962
     },
     "provenance.json": {
-      "sha256": "618ec181881b14ab4e324bed0484af68b2ccc22e4e4d99936d7d8c9f366f23d3",
-      "sizeBytes": 4850998
+      "sha256": "684f9c72cb30b689d1cbcf45778ddf74cb318cd5b7f4fabc41f786e826d3a455",
+      "sizeBytes": 4851338
     },
     "cases/fa8350ea2f16e7635e2d.json": {
       "sha256": "e2e2f14037acdbd7b42b5ee42b01c0c297c554f54083bdd29bb5789d0f285371",

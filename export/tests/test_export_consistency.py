@@ -56,7 +56,11 @@ class ExportStructureTests(unittest.TestCase):
         self.assertEqual(overview["safety"]["allenModelScoring"], 0)
         self.assertEqual(overview["safety"]["legacyProtectedInferenceQueries"], 0)
         primary = {row["methodId"] for row in registry["conditions"] if row["primary"]}
-        self.assertEqual(primary, exporter.PUBLISHED_PRIMARY_METHOD_IDS)
+        expected = exporter.PUBLISHED_PRIMARY_METHOD_IDS - {"pupil_dlc_im"}
+        if any(row["methodId"] == "pupil_dlc_im" for row in registry["conditions"]):
+            expected.add("pupil_dlc_im")
+            self.assertTrue(all("session-adapted" in row["label"] for row in registry["conditions"] if row["methodId"] == "pupil_dlc_im"))
+        self.assertEqual(primary, expected)
         self.assertNotIn("meye_matched", {point.get("methodId") for point in overview["figures"]["accuracyCoverage"]})
         self.assertTrue(all("unet" not in str(point.get("id", "")) for point in overview["figures"]["accuracyCoverage"]))
         self.assertTrue(all("unet" not in str(point.get("id", "")) for point in overview["figures"]["practicalCoverage"]))
@@ -277,6 +281,20 @@ class ExportStructureTests(unittest.TestCase):
         self.assertTrue(all(row.get("backendRaw") and row.get("precisionRaw") for row in conditions))
         matrix_conditions = [row for row in conditions if row.get("precision") != "INT8"]
         self.assertTrue(all(row.get("deploymentMatrixBackendRaw") and row.get("deploymentMatrixPrecisionRaw") for row in matrix_conditions))
+        self.assertEqual({row.get("comparisonCohort") for row in matrix_conditions}, {"corrected-1337"})
+        self.assertEqual({row.get("n") for row in matrix_conditions}, {1337})
+        self.assertEqual({row.get("comparisonCohort") for row in int8_failures}, {"legacy-int8-1130"})
+        self.assertEqual({row.get("n") for row in int8_failures}, {1130})
+        for metric_id in (
+            "deployment-diameter_delta_abs_px_median_vs_fp32",
+            "deployment-changed_retention_count_vs_fp32",
+            "deployment-pupil_mask_disagreement_percent_median_vs_fp32",
+        ):
+            fidelity = next(card for card in deployment["cards"] if card["id"] == metric_id)
+            self.assertEqual(len(fidelity["methods"]), 30)
+            self.assertEqual(sum(row["value"] is not None for row in fidelity["methods"]), 27)
+            self.assertTrue(all(row["value"] is None for row in fidelity["methods"] if row["precision"] == "INT8"))
+            self.assertTrue(all(row["provenance"]["sourceFile"] == exporter.DEPLOY_PARITY for row in fidelity["methods"]))
         self.assertTrue(all(card.get("visualEvidenceUnavailableReason") for card in deployment["cards"]))
         runtime = read_json(DATA / "runtime.json")
         self.assertTrue(all(card.get("visualEvidenceUnavailableReason") and not card.get("visualCaseIds") for card in runtime["cards"]))

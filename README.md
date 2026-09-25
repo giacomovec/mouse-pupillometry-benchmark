@@ -36,9 +36,10 @@ The parent research workspace contains the canonical score tables, checkpoint an
 - The 31 real-validation visual cases contain 155 selected frames, GT masks, and scored geometry, but no retained prediction-mask arrays joined to those exact source hashes. Their mask overlays are marked unavailable; the aggregate mask scores still come from canonical tables.
 - Low coverage and rejected frames remain visible. Conditional error values must be read with coverage.
 - Common batch-one A5000 runtime is separate from native video/folder workflow time. Synchronized visual playback is for evidence comparison, not a latency measurement.
+- Deployment has 27 corrected 1,337-frame FP32/BF16/FP16 conditions and three executed INT8 extensions from a different 1,130-frame validation and different checkpoints. The INT8 failures are shown separately; they are not paired with the corrected FP32 conditions. See [WEBSITE_RESULT_INTEGRITY_V3.md](WEBSITE_RESULT_INTEGRITY_V3.md).
 - The runtime tournament retained timing rows and output hashes, but no same-stream output images; runtime evidence grids are explicitly marked pending.
 - Representative real cases are selected without model outcomes; worst-case mode is explicitly outcome-selected QC material.
-- Methods retain the canonical family color across model, representation, operating point, backend, and precision variants.
+- The presentation uses fixed family colors across bars, trade-off plots, evidence, and deployment variants. B0/B1/B2 use distinct shades of blue; U-Net controls use slate.
 
 Each card links its population, units, operating point, hashes, and score provenance to the export manifest. The parent project gate ledger controls any future change from development to frozen pre-external status.
 

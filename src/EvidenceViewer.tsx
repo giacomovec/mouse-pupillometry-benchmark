@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useState, type CSSProperties } from 'react'
 import type { FrameGeometry, MetricCard, MethodRecord, Point, VisualCase, VisualFrame } from './types'
+import { methodColor as fixedMethodColor } from './palette'
 import './EvidenceViewer.css'
 
 type ViewerMode = 'representative' | 'worst_case'
@@ -24,7 +25,7 @@ type EvidenceNumbers = {
   difference?: number
 }
 
-export const CENTER_REFERENCE_NOTE = 'The vector joins the displayed GT-mask centroid and prediction center. The frozen score-plane centroid_error_px uses the score row’s true_center_x/y reference; this display uses the centroid of the exported GT mask. Those definitions can differ fractionally, so the visible vector length may not reproduce the frozen score.'
+export const CENTER_REFERENCE_NOTE = 'The vector joins the displayed human-reference mask centroid and prediction center. The frozen score-plane centroid_error_px uses the score row’s true_center_x/y reference; this display uses the centroid of the exported human-reference mask. Those definitions can differ fractionally, so the visible vector length may not reproduce the frozen score.'
 const PUBLISHED_METHOD_PRIORITY = [
   'meye_released',
   'pupil_dlc_gm',
@@ -57,7 +58,7 @@ function centerOf(geometry?: FrameGeometry): Point | undefined {
 
 /**
  * Keep the visible coordinate distance and the frozen score value separate.
- * Real-validation GT-mask centroids and score-plane GT centers are distinct
+ * Real-validation reference-mask centroids and score-plane reference centers are distinct
  * exported references, so one must not silently replace the other.
  */
 export function centerEvidenceNumbers(gtCenter?: Point, predictionCenter?: Point, scorePlaneError?: number): EvidenceNumbers {
@@ -350,7 +351,7 @@ function metricReadouts(raw: FrameGeometry | undefined, geometry: FrameGeometry 
   if (kind === 'diameter') {
     const gtValue = getDiameter(gt)
     const prediction = getDiameter(geometry)
-    if (gtValue !== undefined) rows.push(['GT diameter', `${gtValue.toFixed(2)} ${unit}`])
+    if (gtValue !== undefined) rows.push(['Human reference diameter', `${gtValue.toFixed(2)} ${unit}`])
     if (prediction !== undefined) rows.push(['Predicted diameter', `${prediction.toFixed(2)} ${unit}`])
     const signed = finite(geometry?.signedDifference)
     if (signed !== undefined) rows.push(['Signed difference', `${signed >= 0 ? '+' : ''}${signed.toFixed(2)} ${unit}`])
@@ -359,14 +360,14 @@ function metricReadouts(raw: FrameGeometry | undefined, geometry: FrameGeometry 
   }
   if (kind === 'center') {
     const centerNumbers = centerEvidenceNumbers(gtCenter, predictionCenter, finite(raw?.errorPx) ?? scoreValue(raw, 'center')?.value)
-    if (gtCenter) rows.push(['Displayed GT mask centroid', pointText(gtCenter)!])
+    if (gtCenter) rows.push(['Displayed human-reference mask centroid', pointText(gtCenter)!])
     if (predictionCenter) rows.push(['Prediction center', pointText(predictionCenter)!])
     if (centerNumbers.displayedDistance !== undefined) rows.push(['Displayed point distance', `${centerNumbers.displayedDistance.toFixed(4)} px`])
     if (centerNumbers.scorePlaneError !== undefined) rows.push(['Frozen score-plane error', `${centerNumbers.scorePlaneError.toFixed(4)} px`])
   }
   if (kind === 'area') {
     if (finite(geometry?.area) !== undefined) rows.push(['Predicted area', `${geometry!.area!.toFixed(1)} px²`])
-    if (finite(gt?.area) !== undefined) rows.push(['GT area', `${gt!.area!.toFixed(1)} px²`])
+    if (finite(gt?.area) !== undefined) rows.push(['Human-reference area', `${gt!.area!.toFixed(1)} px²`])
     if (finite(geometry?.falsePositiveArea) !== undefined) rows.push(['False-positive area', `${geometry!.falsePositiveArea!.toFixed(1)} px²`])
     if (finite(geometry?.falseNegativeArea) !== undefined) rows.push(['False-negative area', `${geometry!.falseNegativeArea!.toFixed(1)} px²`])
   }
@@ -419,7 +420,7 @@ function Overlay({ geometry, color, width, height, kind, reference = false }: {
     />}
     {kind === 'axes' && geometry.axes?.major && <line x1={geometry.axes.major[0].x} y1={geometry.axes.major[0].y} x2={geometry.axes.major[1].x} y2={geometry.axes.major[1].y} stroke={stroke} strokeWidth="2" vectorEffect="non-scaling-stroke" />}
     {kind === 'axes' && geometry.axes?.minor && <line x1={geometry.axes.minor[0].x} y1={geometry.axes.minor[0].y} x2={geometry.axes.minor[1].x} y2={geometry.axes.minor[1].y} stroke={stroke} strokeWidth="2" vectorEffect="non-scaling-stroke" />}
-    {kind === 'center' && center && <g><circle cx={center.x} cy={center.y} r="4.8" fill={stroke} stroke="#152326" strokeWidth="1.4" vectorEffect="non-scaling-stroke" /><text className="ev-point-label" x={center.x + 6} y={center.y - 6}>{reference ? 'GT' : 'pred'}</text></g>}
+    {kind === 'center' && center && <g><circle cx={center.x} cy={center.y} r="4.8" fill={stroke} stroke="#152326" strokeWidth="1.4" vectorEffect="non-scaling-stroke" /><text className="ev-point-label" x={center.x + 6} y={center.y - 6}>{reference ? 'REF' : 'pred'}</text></g>}
     {kind === 'orientation' && ellipse?.orientationAvailable && <line
       x1={ellipse.cx - ellipse.rx} y1={ellipse.cy} x2={ellipse.cx + ellipse.rx} y2={ellipse.cy}
       transform={`rotate(${ellipse.rotation} ${ellipse.cx} ${ellipse.cy})`} stroke={stroke} strokeWidth="2.4" vectorEffect="non-scaling-stroke"
@@ -480,7 +481,7 @@ function Tile({ item, frame, gt, method, raw, kind, outputMode, onOutputModeChan
     (metricEvidenceAvailable(kind, output, raw) || (outputMode === 'native' && Boolean(nativeAsset(raw))))
     && (kind !== 'center' || centerOf(gt) !== undefined)
   )
-  const color = method?.color ?? method?.familyColor ?? (isReference ? '#75d8c4' : '#557fbd')
+  const color = isReference ? '#75d8c4' : method ? fixedMethodColor(method.methodId, method.family) : '#557fbd'
   const rows = isReference ? [] : metricReadouts(raw, output, gt, kind, outputMode, method ?? { methodId: 'method' })
   const outputOptions = isReference ? { native: false, scored: false } : outputModeOptions(raw, kind)
   const canToggleOutput = outputOptions.native && outputOptions.scored
@@ -502,15 +503,15 @@ function Tile({ item, frame, gt, method, raw, kind, outputMode, onOutputModeChan
 
   return <article className={`ev-tile ${isReference ? 'ev-reference-tile' : ''}`} style={{ '--ev-color': color } as CSSProperties} aria-labelledby={labelId}>
     <header className="ev-tile-head">
-      <div><span className="ev-eyebrow">{isReference ? 'REFERENCE' : 'METHOD OUTPUT'}</span><h3 id={labelId}>{label}</h3>{conditionLine && <p className="ev-condition-line">{conditionLine}</p>}</div>
+      <div><span className="ev-eyebrow">{isReference ? label.toLowerCase().includes('exact known reference') || label.toLowerCase().includes('exact reference') ? 'EXACT KNOWN REFERENCE' : 'HUMAN REFERENCE' : 'METHOD OUTPUT'}</span><h3 id={labelId}>{label}</h3>{conditionLine && <p className="ev-condition-line">{conditionLine}</p>}</div>
       <span className="ev-frame-meta">Frame {frameLabel(frame)}<br />{timeLabel(frame)}</span>
     </header>
-    {exactOriginal && <figure className="ev-original-source"><img src={assetUrl(exactOriginal)} alt="Original source frame before the Exact-GT transform" loading="lazy" /><figcaption>ORIGINAL SOURCE</figcaption></figure>}
+    {exactOriginal && <figure className="ev-original-source"><img src={assetUrl(exactOriginal)} alt="Original source frame before the exact known reference transform" loading="lazy" /><figcaption>ORIGINAL SOURCE</figcaption></figure>}
     {hasEvidence
       ? <MediaCanvas item={item} frame={frame} geometry={output} gt={isReference ? undefined : gt} kind={kind} color={color} isReference={isReference} />
       : <div className="ev-unavailable" role="status"><strong>Metric-specific evidence unavailable</strong><span>{metricUnavailableMessage(kind, raw)}</span></div>}
     {nativeSrc && outputMode === 'native' && hasEvidence && <figure className="ev-native-asset"><img src={assetUrl(nativeSrc)} alt={`${label}: exported native model output`} loading="lazy" /><figcaption>EXPORTED NATIVE OUTPUT</figcaption></figure>}
-    {comparisonSrc && hasEvidence && <figure className="ev-mask-comparison"><img src={comparisonSrc} alt={`${label}: exported pixel comparison of predicted and ground-truth masks`} loading="lazy" /><figcaption><strong>EXPORTED MASK COMPARISON</strong><span><i className="ev-overlap" />overlap</span><span><i className="ev-fp" />prediction only</span><span><i className="ev-fn" />GT only</span></figcaption></figure>}
+    {comparisonSrc && hasEvidence && <figure className="ev-mask-comparison"><img src={comparisonSrc} alt={`${label}: exported pixel comparison of predicted and human-reference masks`} loading="lazy" /><figcaption><strong>EXPORTED MASK COMPARISON</strong><span><i className="ev-overlap" />overlap</span><span><i className="ev-fp" />prediction only</span><span><i className="ev-fn" />reference only</span></figcaption></figure>}
     <div className="ev-tile-foot">
       {!isReference && <div className="ev-output-control">
         {canToggleOutput
@@ -522,7 +523,7 @@ function Tile({ item, frame, gt, method, raw, kind, outputMode, onOutputModeChan
         {conversionLabel && <small>{conversionLabel}</small>}
       </div>}
       {rows.length > 0 && <dl className="ev-readouts">{rows.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>}
-      {isReference && <p className="ev-reference-caption">Raw source with the exported reference geometry. Exact-GT cases show the transformed input and exact GT.</p>}
+      {isReference && <p className="ev-reference-caption">{label.toLowerCase().includes('exact known reference') || label.toLowerCase().includes('exact reference') ? 'Source image paired with the exported exact known reference geometry.' : 'Raw source with the exported human reference geometry.'}</p>}
       {!isReference && kind === 'diameter' && output && getDiameter(output) !== undefined && !getEllipse(output)?.orientationAvailable && !output.diameterLine && !output.ellipse?.diameterLine && <p className="ev-note">Horizontal line shows exported area-equivalent diameter; ellipse orientation is unavailable.</p>}
       {!isReference && kind === 'center' && <p className="ev-note">{CENTER_REFERENCE_NOTE}</p>}
       {!isReference && (kind === 'coverage' || kind === 'risk') && output?.rejectionReason && <p className="ev-rejection">{output.rejectionReason}</p>}
@@ -606,8 +607,7 @@ function TemporalTraces({ item, methods, identities, frameIndex }: { item: Visua
       <line x1={currentX} x2={currentX} y1="7" y2="121" className="ev-trace-cursor" />
       <path d={pathFor()} className="ev-trace-gt" />
       {methods.map((method) => {
-        const identity = identities.find((row) => [row.methodId, row.id, row.variantId].includes(method.methodId))
-        return <path key={method.methodId} d={pathFor(method.methodId)} stroke={method.color ?? identity?.color ?? '#6487a5'} className="ev-trace-method" />
+        return <path key={method.methodId} d={pathFor(method.methodId)} stroke={fixedMethodColor(method.methodId, method.family)} className="ev-trace-method" />
       })}
       <text x={Math.min(594, currentX + 4)} y="13">{timeLabel(frames[Math.min(frameIndex, frames.length - 1)])}</text>
     </svg>
@@ -627,7 +627,7 @@ function FrameMethodPair({ methods, activeCase, frame, gt, kind, identities, mod
 }) {
   const sourceOriginal = caseCategory === 'exact_gt' ? originalSource(activeCase, frame) : undefined
   return <div className={`ev-grid ${methods.length > 2 ? 'ev-grid-many' : ''}`}>
-    <Tile item={activeCase} frame={frame} gt={gt} kind={kind} outputMode="scored" isReference label={caseCategory === 'exact_gt' ? 'Transformed input + exact GT' : 'Raw source + GT'} exactOriginal={sourceOriginal} />
+    <Tile item={activeCase} frame={frame} gt={gt} kind={kind} outputMode="scored" isReference label={caseCategory === 'exact_gt' ? 'Transformed input + exact known reference' : caseCategory === 'temporal' ? 'Raw source + exact known reference' : 'Raw source + human reference'} exactOriginal={sourceOriginal} />
     {methods.map((method) => {
       const raw = methodPayload(frame, method, identities)
       const mode = modeByMethod[method.methodId] ?? 'scored'
@@ -644,12 +644,16 @@ function frameMethodsForCase(methods: MethodRecord[], item?: VisualCase, identit
 
 function deploymentUnavailableText(methods: MethodRecord[], initialA?: string, initialB?: string): string {
   const baselineIds = new Set(['segformer_b2', 'segformer_b2__pytorch_fp32'])
-  const selected = [initialB, initialA]
-    .filter((id): id is string => Boolean(id) && !baselineIds.has(id!))
-    .map((id) => methods.find((method) => method.methodId === id))
-    .find((method): method is MethodRecord => Boolean(method))
-    ?? methods.find((method) => method.methodId !== 'segformer_b2__pytorch_fp32' && method.methodId !== 'segformer_b2')
-  const variant = selected ? methodLabel(selected) : 'selected backend and precision condition'
+  const selectedId = [initialA, initialB].find((id) => Boolean(id) && !baselineIds.has(id!))
+  const selected = selectedId
+    ? methods.find((method) => method.methodId === selectedId)
+    : undefined
+  const parsedId = selectedId?.match(/^segformer_(b[0-2])__(pytorch|inductor|tensorrt)_(fp32|bf16|fp16|int8)$/i)
+  const variant = selected
+    ? methodLabel(selected)
+    : parsedId
+      ? `SegFormer ${parsedId[1].toUpperCase()} · ${parsedId[2] === 'pytorch' ? 'PyTorch' : parsedId[2] === 'tensorrt' ? 'TensorRT' : 'Inductor'} · ${parsedId[3].toUpperCase()}`
+      : 'this deployment condition'
   return `Per-condition deployment outputs are not exported for ${variant}. The current visual export has canonical SegFormer B0/B1/B2 frames, but no paired PyTorch FP32 baseline and selected-variant predictions or masks for the same frame. Deployment point evidence is unavailable.`
 }
 
@@ -724,9 +728,13 @@ export default function EvidenceViewer({ card, methods, identities, cases, initi
   const caseName = activeCase?.label ?? 'No visual case selected'
   const caseMetadata = [activeCase?.sourceId ?? activeCase?.source, caseTransform(activeCase), activeCase?.crop, caseSeverity(activeCase) !== undefined ? `severity ${String(caseSeverity(activeCase))}` : undefined].filter((value): value is string => typeof value === 'string' && value.length > 0)
   const deploymentBaselineIds = new Set(['segformer_b2', 'segformer_b2__pytorch_fp32'])
-  const selectedDeploymentId = [initialMethodBId, initialMethodAId].find((id) => id && !deploymentBaselineIds.has(id))
+  const selectedDeploymentId = [initialMethodAId, initialMethodBId].find((id) => id && !deploymentBaselineIds.has(id))
   const selectedMethodLabel = selectedDeploymentId
-    ? methodLabel(methods.find((method) => method.methodId === selectedDeploymentId))
+    ? methods.find((method) => method.methodId === selectedDeploymentId)
+      ? methodLabel(methods.find((method) => method.methodId === selectedDeploymentId))
+      : selectedDeploymentId.match(/^segformer_(b[0-2])__(pytorch|inductor|tensorrt)_(fp32|bf16|fp16|int8)$/i)
+        ? `SegFormer ${selectedDeploymentId.match(/^segformer_(b[0-2])__(pytorch|inductor|tensorrt)_(fp32|bf16|fp16|int8)$/i)![1].toUpperCase()} · ${selectedDeploymentId.match(/^segformer_(b[0-2])__(pytorch|inductor|tensorrt)_(fp32|bf16|fp16|int8)$/i)![2]} · ${selectedDeploymentId.match(/^segformer_(b[0-2])__(pytorch|inductor|tensorrt)_(fp32|bf16|fp16|int8)$/i)![3].toUpperCase()}`
+        : 'Selected deployment condition'
     : undefined
 
   if (!cases.length) {
@@ -783,7 +791,7 @@ export default function EvidenceViewer({ card, methods, identities, cases, initi
         </select></label>
       </div>}
     </header>
-    {mode === 'worst_case' && <p className="ev-outcome-note"><strong>Outcome-selected QC examples</strong> — not representative. Representative anchors are source/GT selected without using predictions or errors.</p>}
+    {mode === 'worst_case' && <p className="ev-outcome-note"><strong>Outcome-selected QC examples</strong> — not representative. Representative anchors are source/reference selected without using predictions or errors.</p>}
     {activeCase.category === 'exact_gt' && transformOptions.length > 0 && <div className="ev-transform-controls">
       <label>TRANSFORM<select value={caseTransform(activeCase) ?? ''} onChange={(event) => {
         const selected = filteredCases.find((item) => caseTransform(item) === event.target.value)
@@ -822,6 +830,6 @@ export default function EvidenceViewer({ card, methods, identities, cases, initi
     <div className="ev-grid-heading"><strong>{compareAll ? 'ALL METHODS' : 'SAME-FRAME COMPARISON'}</strong><span>Same source frame and crop · time shown when exported</span></div>
     <FrameMethodPair methods={visibleMethods} activeCase={activeCase} frame={frame} gt={gt} kind={kind} identities={identities} modeByMethod={outputModes} onModeChange={setOutputMode} caseCategory={activeCase.category} />
     {kind === 'temporal' && <TemporalTraces item={activeCase} methods={visibleMethods} identities={identities} frameIndex={frameIndex} />}
-    <div className="ev-overlay-legend" aria-label="Overlay legend"><span><i className="ev-legend-gt" />GT mask / geometry</span>{visibleMethods.map((method) => <span key={method.methodId}><i style={{ background: method.color ?? method.familyColor ?? '#557fbd' }} />{methodLabel(method)}</span>)}{kind === 'center' && <span><i className="ev-legend-vector" />Displayed center displacement</span>}</div>
+    <div className="ev-overlay-legend" aria-label="Overlay legend"><span><i className="ev-legend-gt" />{activeCase.category === 'temporal' || activeCase.category === 'exact_gt' ? 'Exact known reference geometry' : 'Human reference geometry'}</span>{visibleMethods.map((method) => <span key={method.methodId}><i style={{ background: fixedMethodColor(method.methodId, method.family) }} />{methodLabel(method)}</span>)}{kind === 'center' && <span><i className="ev-legend-vector" />Displayed center displacement</span>}</div>
   </section>
 }

@@ -87,6 +87,23 @@
   opacity: .86;
 }
 
+.sf-chart .sf-family-connector {
+  fill:none;
+  stroke:#3977b2;
+  stroke-width:1.7;
+  opacity:.42;
+  pointer-events:none;
+}
+.sf-gate-failure-ring { pointer-events: none; }
+.sf-deployment-key { display: flex; flex-wrap: wrap; gap: 14px 26px; padding: 10px 14px; border-top: 1px solid #dce4e8; color: #4b5b62; font-size: 12px; }
+.sf-deployment-key > span { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.sf-deployment-key b { color: #20333b; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+.sf-backend-symbol { display: inline-flex; width: 15px; height: 15px; align-items: center; justify-content: center; color: #334d5b; font-size: 16px; font-style: normal; line-height: 1; }
+.sf-precision-swatch { display: inline-block; width: 12px; height: 12px; border: 2px solid #496f9e; border-radius: 50%; background: #496f9e; vertical-align: -2px; }
+.sf-precision-bf16 { opacity: .68; }
+.sf-precision-fp16 { opacity: .3; }
+.sf-precision-int8 { border-style: dashed; }
+
 .sf-chart .sf-interval line,
 .sf-chart .sf-vertical-interval line {
   stroke-width: 1.7;

@@ -1,4 +1,5 @@
 import type { MethodIdentity, MethodRecord, MetricCard } from './types'
+import { methodColor as fixedMethodColor, methodOrder } from './palette'
 
 export type SortMode = 'best' | 'registry' | 'worst'
 
@@ -15,12 +16,11 @@ export function orderedMethods(
   const identityOrder = new Map<string, number>()
   identities.forEach((item, index) => [item.id, item.variantId, item.methodId].forEach((key) => { if (key) identityOrder.set(key, index) }))
   const copy = [...methods]
-  if (sort === 'registry') {
-    return copy.sort((a, b) =>
-      (identityOrder.get(a.methodId ?? a.id ?? '') ?? identityOrder.get(a.id ?? '') ?? Number.MAX_SAFE_INTEGER)
+  if (sort === 'registry') return copy.sort((a, b) =>
+    methodOrder(a.methodId ?? a.id ?? '', a.family) - methodOrder(b.methodId ?? b.id ?? '', b.family)
+      || (identityOrder.get(a.methodId ?? a.id ?? '') ?? identityOrder.get(a.id ?? '') ?? Number.MAX_SAFE_INTEGER)
       - (identityOrder.get(b.methodId ?? b.id ?? '') ?? identityOrder.get(b.id ?? '') ?? Number.MAX_SAFE_INTEGER),
-    )
-  }
+  )
   if (card.direction === 'target' && typeof card.targetValue !== 'number') {
     throw new Error(`Target metric ${card.id} must declare targetValue`)
   }
@@ -36,9 +36,8 @@ export function orderedMethods(
   })
 }
 
-function methodColor(method: MethodRecord, identities: MethodIdentity[]) {
-  const identity = identities.find((item) => [item.methodId, item.id, item.variantId].includes(method.methodId ?? method.id ?? ''))
-  return method.color ?? identity?.color ?? method.familyColor ?? identity?.familyColor ?? '#77838b'
+function methodColor(method: MethodRecord) {
+  return fixedMethodColor(method.methodId ?? method.id ?? '', method.family)
 }
 
 function errorBounds(method: MethodRecord, value: number) {
@@ -105,7 +104,7 @@ export default function MetricChart({ card, methods, identities, ordered }: Metr
           const center = columnLeft + slot / 2
           const x = center - 26
           const value = getValue(method)
-          const color = methodColor(method, identities)
+          const color = methodColor(method)
           const identity = identities.find((m) => [m.methodId, m.id, m.variantId].includes(method.methodId ?? method.id ?? ''))
           const label = method.methodName ?? method.label ?? method.name ?? identity?.label ?? method.methodId
           const failedCoverage = method.status === 'FAIL COVERAGE'

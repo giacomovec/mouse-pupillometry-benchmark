@@ -1,6 +1,6 @@
 {
   "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
-  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "version": "benchmark-data-dev-v2+63463ce661afff36",
   "freeze": null,
   "freezeStatus": "DEVELOPMENT_NOT_FORMALLY_FROZEN",
   "generatedAt": null,
@@ -79,6 +79,14 @@
       "sizeBytes": 192694,
       "roles": [
         "precomputed family-macro risk-coverage curve"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/deployment_summary/QUANTIZATION_PARITY.csv",
+      "sha256": "be6184582b5ea1eb43d8ae96253109095494c8f436c523d925346f8b6b5637c8",
+      "sizeBytes": 69077,
+      "roles": [
+        "same-checkpoint corrected deployment output fidelity"
       ]
     },
     {
@@ -71510,7 +71518,7 @@
         "overlayType": "risk",
         "runtimeProtocol": null,
         "visualEvidenceUnavailableReason": "This card contains population-level precomputed risk curves; synchronized alternate-threshold frame states are unavailable.",
-        "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
+        "benchmarkVersion": "benchmark-data-dev-v2+63463ce661afff36"
       },
       "methods": {
         "classical_fixed": {

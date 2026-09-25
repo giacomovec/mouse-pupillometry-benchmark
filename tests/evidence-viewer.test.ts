@@ -9,7 +9,7 @@ function asRecord(value: unknown): Record<string, unknown> | undefined {
 }
 
 describe('center evidence provenance', () => {
-  it('keeps the visible GT-mask distance distinct from the frozen score-plane error', () => {
+  it('keeps the visible human-reference mask distance distinct from the frozen score-plane error', () => {
     const file = JSON.parse(readFileSync(new URL('../public/data/visual_cases.json', import.meta.url), 'utf8')) as EvidenceCaseFile
     const item = file.cases.find((candidate) => candidate.id === 'Raffaele__20181028_134237_CNNdataset_b00_frame_107.png')
     const frame = item?.frames.find((candidate) => candidate.sourceFrameNumber === 107)
@@ -32,7 +32,7 @@ describe('center evidence provenance', () => {
     expect(result.displayedDistance).toBeCloseTo(0.2491839, 6)
     expect(result.scorePlaneError).toBeCloseTo(0.2515339559765779, 9)
     expect(result.difference).toBeCloseTo(0.0023500445754468, 9)
-    expect(CENTER_REFERENCE_NOTE).toContain('centroid of the exported GT mask')
+    expect(CENTER_REFERENCE_NOTE).toContain('centroid of the exported human-reference mask')
     expect(CENTER_REFERENCE_NOTE).toContain('score row’s true_center_x/y reference')
     expect(CENTER_REFERENCE_NOTE).toContain('centroid_error_px')
   })

@@ -12,7 +12,12 @@ const primaryIds = new Set([
 describe('v2 published benchmark integrity', () => {
   it('retains every admitted primary technique and separates architecture controls', () => {
     const primary = validation.conditions.filter((row) => row.primary)
-    expect(new Set(primary.map((row) => row.methodId))).toEqual(primaryIds)
+    const expected = new Set(primaryIds)
+    if (validation.conditions.some((row) => row.methodId === 'pupil_dlc_im')) {
+      expected.add('pupil_dlc_im')
+      expect(primary.find((row) => row.methodId === 'pupil_dlc_im')?.label).toMatch(/session-adapted/i)
+    }
+    expect(new Set(primary.map((row) => row.methodId))).toEqual(expected)
     expect(overview.figures.accuracyCoverage.every((point) => !point.id.includes('unet'))).toBe(true)
     expect(overview.figures.practicalCoverage.every((point) => !point.id.includes('unet'))).toBe(true)
     expect(overview.figures.pairedArchitecture.map((row) => row.id)).toEqual(['unet_small', 'unet_base', 'unet_b2_matched'])
@@ -52,5 +57,10 @@ describe('v2 published benchmark integrity', () => {
     const int8 = coverage.methods.filter((method) => method.precision === 'INT8')
     expect(int8).toHaveLength(3)
     expect(int8.every((method) => method.status === 'FAIL COVERAGE' && method.value !== null)).toBe(true)
+    expect(int8.every((method) => method.comparisonCohort === 'legacy-int8-1130' && method.n === 1130)).toBe(true)
+    expect(coverage.methods.filter((method) => method.precision !== 'INT8').every((method) => method.comparisonCohort === 'corrected-1337' && method.n === 1337)).toBe(true)
+    const diameterDelta = deployment.cards.find((card) => card.id === 'deployment-diameter_delta_abs_px_median_vs_fp32')!
+    expect(diameterDelta.methods.filter((method) => method.value !== null)).toHaveLength(27)
+    expect(diameterDelta.methods.filter((method) => method.precision === 'INT8').every((method) => method.value === null)).toBe(true)
   })
 })

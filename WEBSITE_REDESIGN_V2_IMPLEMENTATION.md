@@ -1,5 +1,7 @@
 # Website redesign v2 implementation
 
+Historical implementation record. The current deployment cohort distinction and output-fidelity export are documented in [WEBSITE_RESULT_INTEGRITY_V3.md](WEBSITE_RESULT_INTEGRITY_V3.md).
+
 ## Scientific presentation
 
 The public site now leads with a measured development result: SegFormer B2 diameter ARE and coverage, alongside Standard DLC's native conditional ARE and coverage. The five destinations are Overview, Published-method benchmark, Robustness & time, SegFormer deployment, and Methods & data. Matched U-Nets remain available as architecture controls under Methods & data and as an optional overlay, without turning the primary comparison into a Transformer-versus-U-Net story.

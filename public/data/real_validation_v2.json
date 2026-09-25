@@ -1,6 +1,6 @@
 {
   "schema": "mouse-pupillometry-real-validation-registry.v2",
-  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "version": "benchmark-data-dev-v2+63463ce661afff36",
   "status": "DEVELOPMENT",
   "population": {
     "acquisitionFamilyCount": 7,
@@ -1376,5 +1376,5 @@
     "NATIVE_WORKFLOW_ONLY",
     "BLOCKED"
   ],
-  "sourceFingerprintSha256": "387caf3b9034bbc41437c1423875f675ebf9f2f940a68ae6056022e950534180"
+  "sourceFingerprintSha256": "63463ce661afff3694b8f0779ba3935692e31d971e37489ebe21f9c73fdcc5dc"
 }

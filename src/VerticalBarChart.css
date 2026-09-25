@@ -1,0 +1,26 @@
+.vertical-bar-figure { min-width:0; margin:0; }
+.vertical-bar-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:6px 15px; margin:0 0 5px 62px; color:#53636d; font-size:12px; }
+.vertical-bar-toolbar b { color:#304957; letter-spacing:.055em; }
+.vertical-bar-scroll { width:100%; min-width:0; overflow-x:auto; overscroll-behavior-x:contain; }
+.vertical-bar-chart { display:block; width:100%; height:auto; overflow:visible; font-family:inherit; }
+.vertical-bar-chart text { font-family:inherit; user-select:none; }
+.vb-axis-title { fill:#3d515e; font-size:12px; font-weight:650; }
+.vb-tick { fill:#657680; font-size:12px; }
+.vb-gridline { stroke:#e1e7eb; stroke-width:1; }
+.vb-axis-line { stroke:#8a9ba4; stroke-width:1.2; }
+.vb-reference-line { stroke:#bb7045; stroke-width:1.5; stroke-dasharray:5 4; }
+.vb-reference-label { fill:#945c3a; font-size:11px; font-weight:700; }
+.vb-bar { cursor:pointer; transition:opacity .12s ease; }
+.vb-bar:hover { opacity:.8; }
+.vb-bar:focus-visible { stroke:#172a35; stroke-width:3; outline:none; }
+.vb-bar-low-coverage { stroke:#a24736; stroke-width:2; stroke-dasharray:4 2; }
+.vb-interval { stroke:#263943; stroke-width:1.5; pointer-events:none; }
+.vb-value { fill:#253944; font-size:12px; font-weight:750; font-variant-numeric:tabular-nums; }
+.vb-outscale-marker { fill:#a34534; font-size:15px; font-weight:800; }
+.vb-missing { fill:#8a5d45; font-size:10px; font-weight:750; }
+.vb-label-wrap { display:flex; height:60px; flex-direction:column; align-items:center; justify-content:flex-start; gap:2px; text-align:center; }
+.vb-method-label { display:-webkit-box; max-width:100%; overflow:hidden; color:#3d505b; font-size:11px; font-weight:650; line-height:1.25; overflow-wrap:anywhere; -webkit-box-orient:vertical; -webkit-line-clamp:3; }
+.vb-coverage { color:#63737b; font-size:10px; line-height:1.2; font-variant-numeric:tabular-nums; white-space:normal; }
+.vb-low { color:#a34534; font-weight:750; }
+@media(max-width:700px) { .vertical-bar-toolbar { margin-left:0; }.vertical-bar-chart { margin-left:0; }.vb-method-label { font-size:10px; } }
+@media(prefers-reduced-motion:reduce) { .vb-bar { transition:none; } }

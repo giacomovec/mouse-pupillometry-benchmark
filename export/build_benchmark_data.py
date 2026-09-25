@@ -33,6 +33,7 @@ else:
 DEFAULT_OUT = SITE_ROOT / "public" / "data"
 EXP = "parallel_handoffs/benchmark_expansion_20260919"
 DEPLOY = "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/deployment_summary/SEGFORMER_DEPLOYMENT_MATRIX.csv"
+DEPLOY_PARITY = "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/deployment_summary/QUANTIZATION_PARITY.csv"
 SCHEMA_VERSION = "mouse-pupillometry-benchmark-export.v2"
 OVERVIEW_SCHEMA = "mouse-pupillometry-overview.v2"
 REAL_VALIDATION_REGISTRY_SCHEMA = "mouse-pupillometry-real-validation-registry.v2"
@@ -81,14 +82,14 @@ METHOD_IDENTITY_ALIASES = {
 }
 PUBLISHED_PRIMARY_METHOD_IDS = {
     "segformer_b0", "segformer_b1", "segformer_b2", "meye_released",
-    "standard_dlc_matched", "pupil_dlc_gm", "dlc_zoo_mouse_pupil_vclose",
+    "standard_dlc_matched", "pupil_dlc_gm", "pupil_dlc_im", "dlc_zoo_mouse_pupil_vclose",
     "neuropupil_animal", "mouse_pupil_analysis_v020", "classical_fixed",
 }
 ROSTER_ROLE_BY_METHOD = {
     "segformer_b0": "INTERNAL_CUSTOM", "segformer_b1": "INTERNAL_CUSTOM", "segformer_b2": "INTERNAL_CUSTOM",
     "unet_small": "MATCHED_CONTROL", "unet_base": "MATCHED_CONTROL", "unet_b2_matched": "MATCHED_CONTROL",
     "meye_released": "PUBLISHED", "meye_matched": "MATCHED_CONTROL",
-    "standard_dlc_matched": "PUBLISHED", "pupil_dlc_gm": "PUBLISHED",
+    "standard_dlc_matched": "PUBLISHED", "pupil_dlc_gm": "PUBLISHED", "pupil_dlc_im": "PUBLISHED",
     "dlc_zoo_mouse_pupil_vclose": "PUBLISHED", "neuropupil_animal": "PUBLISHED",
     "mouse_pupil_analysis_v020": "PUBLISHED", "classical_fixed": "INTERNAL_CUSTOM",
     "facemap_raw": "NATIVE_WORKFLOW_ONLY", "facemap_processed": "NATIVE_WORKFLOW_ONLY", "eyeloop": "NATIVE_WORKFLOW_ONLY",
@@ -1435,6 +1436,7 @@ def build_deployment_rows(
     identity: dict[str, Any], categories: dict[str, list[dict[str, Any]]], all_method_ids: set[str]
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     raw_rows, source_info = read_csv(DEPLOY, "corrected SegFormer 30-condition deployment matrix")
+    parity_rows, parity_info = read_csv(DEPLOY_PARITY, "same-checkpoint corrected deployment output fidelity")
     variant_by_method, family_map = get_identity_maps(identity)
     int8_results: dict[str, dict[str, Any]] = {}
     int8_info: dict[str, dict[str, Any]] = {}
@@ -1456,6 +1458,7 @@ def build_deployment_rows(
         row["sourceFile"] = source_info["path"]
         row["sourceSha256"] = source_info["sha256"]
         row["int8Extension"] = False
+        row["comparisonCohort"] = "corrected-1337"
         if runtime_id == "tensorrt_int8":
             extension = int8_results[model]
             extension_info = int8_info[model]
@@ -1496,6 +1499,7 @@ def build_deployment_rows(
                 "sourceFile": extension_info["path"],
                 "sourceSha256": extension_info["sha256"],
                 "int8Extension": True,
+                "comparisonCohort": "legacy-int8-1130",
                 "scientificStatus": scientific.get("primary_endpoint_status"),
                 "runtimeSourceStatus": extension.get("status"),
                 "provenance": {
@@ -1603,7 +1607,7 @@ def build_deployment_rows(
                     "operatingPoint", "backend", "precision", "backendRaw", "precisionRaw",
                     "deploymentMatrixBackendRaw", "deploymentMatrixPrecisionRaw", "quantization", "colorKey", "color",
                     "familyColor", "canonical", "isCanonical", "checkpointHash", "scoreManifestHash",
-                    "runtimeProtocol", "n", "provenance",
+                    "runtimeProtocol", "n", "provenance", "comparisonCohort", "int8Extension",
                 ] if k in row
             }
             value = as_number(row.get(field))
@@ -1622,16 +1626,66 @@ def build_deployment_rows(
             records.append(method)
         add_category_card(categories, "deployment", card_base(
             card_id=f"deployment-{field}", title=title, category="deployment",
-            explanation="All thirty canonical B0/B1/B2 deployment conditions remain in this file, including executed TensorRT INT8 conditions whose primary endpoint failed the coverage gate.",
+            explanation="All thirty executed B0/B1/B2 conditions remain accessible. The 27 corrected 1,337-frame conditions and three executed legacy 1,130-frame INT8 extensions use different checkpoints and validation populations; their accuracy and coverage are not directly comparable.",
             direction=direction, unit=unit,
-            source_population="Corrected SegFormer deployment matrix with 30 model/backend/precision configurations.",
+            source_population="Twenty-seven corrected 1,337-frame conditions plus three separately labeled legacy 1,130-frame INT8 extensions.",
             n=None, canonical_condition="deployment variants; one PyTorch FP32 row per model is marked canonical for the default view",
             methods=records,
             provenance={"matrixFile": source_info["path"], "matrixSha256": source_info["sha256"], "int8ResultFiles": [{"path": info["path"], "sha256": info["sha256"]} for info in int8_info.values()]},
             overlay_type=field,
             visual_evidence_unavailable_reason="The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
         ))
-    return rows, {"matrixInfo": source_info, "int8Info": int8_info}
+    parity_by_key = {(r["model"], r["runtime"], r["metric"]): r for r in parity_rows}
+    if len(parity_by_key) != len(parity_rows):
+        raise ValueError("Deployment output-fidelity source has duplicate model/runtime/metric rows.")
+    fidelity_fields = (
+        ("diameter_delta_abs_px", "median", "diameter_delta_abs_px_median_vs_fp32", "Median absolute diameter change vs FP32", "px", 1),
+        ("diameter_delta_abs_px", "changed_retention_count", "changed_retention_count_vs_fp32", "Changed retention decisions vs FP32", "frames", 1),
+        ("pupil_C512_mask_disagreement_fraction", "median", "pupil_mask_disagreement_percent_median_vs_fp32", "Median pupil-mask disagreement vs FP32", "%", 100),
+    )
+    for source_metric, source_column, card_suffix, title, unit, scale in fidelity_fields:
+        records = []
+        for row in rows:
+            method_id = row["methodId"]
+            parity = parity_by_key.get((row["model"], row["runtime"], source_metric))
+            if row["int8Extension"]:
+                value = None
+            else:
+                if parity is None or as_number(parity.get("comparison_frames")) != 1337:
+                    raise ValueError(f"Missing corrected same-frame output fidelity for {method_id}: {source_metric}")
+                value = as_number(parity.get(source_column))
+                if value is None:
+                    raise ValueError(f"Missing measured output-fidelity value for {method_id}: {source_metric}")
+                value *= scale
+            record = {key: row.get(key) for key in (
+                "methodId", "methodName", "family", "familyId", "architecture", "representation", "operatingPoint",
+                "backend", "precision", "colorKey", "color", "familyColor", "checkpointHash", "comparisonCohort", "int8Extension",
+            )}
+            record.update(available_or_not(
+                value,
+                status="MEASURED_SAME_CHECKPOINT_1337" if value is not None else "NOT_COMPARABLE_DIFFERENT_VALIDATION_AND_CHECKPOINT",
+                reason=None if value is not None else "INT8 used a different checkpoint and 1,130-frame legacy validation; no same-frame FP32 fidelity comparison is available.",
+            ))
+            record["n"] = as_number(parity.get("n")) if parity else None
+            record["provenance"] = {
+                "sourceFile": parity_info["path"], "sourceSha256": parity_info["sha256"],
+                "metric": source_metric, "sourceColumn": source_column,
+                "reference": parity.get("reference") if parity else None,
+                "comparisonFrames": as_number(parity.get("comparison_frames")) if parity else None,
+            }
+            records.append(record)
+        add_category_card(categories, "deployment", card_base(
+            card_id=f"deployment-{card_suffix}", title=title, category="deployment",
+            explanation="Same-frame output fidelity against each model's own PyTorch FP32 checkpoint on the corrected development validation. INT8 is unavailable for this comparison because its executed extension used a different checkpoint and validation set.",
+            direction="lower", unit=unit,
+            source_population="Corrected 1,337-frame SegFormer deployment parity; 27 comparable conditions.",
+            n=None, canonical_condition="same checkpoint and same frames vs model-specific PyTorch FP32; per-metric paired N is recorded on each condition",
+            methods=records,
+            provenance={"parityCsv": parity_info["path"], "parityCsvSha256": parity_info["sha256"]},
+            overlay_type=card_suffix,
+            visual_evidence_unavailable_reason="The parity source contains paired aggregate summaries but no frame-synchronized prediction media.",
+        ))
+    return rows, {"matrixInfo": source_info, "int8Info": int8_info, "parityInfo": parity_info}
 
 
 def parse_capabilities(
@@ -2657,6 +2711,7 @@ def display_method(method_id: str, label: str | None = None) -> str:
         "segformer_b0": "SegFormer B0", "segformer_b1": "SegFormer B1", "segformer_b2": "SegFormer B2",
         "unet_small": "U-Net small", "unet_base": "U-Net base", "unet_b2_matched": "U-Net B2-matched",
         "standard_dlc_matched": "Standard DLC", "pupil_dlc_gm": "Pupil-DLC General Model",
+        "pupil_dlc_im": "Pupil-DLC Individual Model (session-adapted)",
         "dlc_zoo_mouse_pupil_vclose": "DLC Zoo", "neuropupil_animal": "NeuroPupil",
         "meye_released": "MEYE v0.1.1", "meye_matched": "MEYE matched",
         "classical_fixed": "Fixed ellipse", "mouse_pupil_analysis_v020": "mouse-pupil-analysis v0.2.0",
@@ -2704,8 +2759,8 @@ def build_overview_exports(
         cat_fraction = as_number(row.get("catastrophic_gt20_fraction_retained"))
         condition = {
             "conditionId": condition_id, "methodId": method_id,
-            "label": display_method(method_id, row.get("label")), "family": row.get("family_id") or None,
-            "model": display_method(method_id, row.get("label")), "representation": row.get("representation") or None,
+            "label": display_method(method_id) if method_id == "pupil_dlc_im" else display_method(method_id, row.get("label")), "family": row.get("family_id") or None,
+            "model": display_method(method_id) if method_id == "pupil_dlc_im" else display_method(method_id, row.get("label")), "representation": row.get("representation") or None,
             "operatingPoint": row.get("condition") or None, "plane": plane, "truthView": row.get("truth_view") or None,
             "coverage": as_number(row.get("coverage")), "coveragePercent": as_number(row.get("coverage")) * 100 if as_number(row.get("coverage")) is not None else None,
             "accepted": as_number(row.get("retained")), "attempted": as_number(row.get("attempted")),

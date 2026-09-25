@@ -1,5 +1,7 @@
 # Website result integrity v2
 
+Historical v2 spot check. For the current corrected 27-condition deployment cohort and separate three-run INT8 extension, see [WEBSITE_RESULT_INTEGRITY_V3.md](WEBSITE_RESULT_INTEGRITY_V3.md).
+
 Independent values checked from the rendered figure/table input through its generated JSON and its hash-bound canonical input. These checks use the exact fields consumed by `src/App.tsx`; `python3 qa/spot_check_v2.py` regenerates this record and fails on disagreement.
 
 | UI figure/table input | Condition | Display value | Canonical source |

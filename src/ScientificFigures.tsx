@@ -144,6 +144,7 @@ export interface TradeoffDatum {
   color?: string
   status?: string
   comparisonGroup?: string
+  familyConnection?: string
   comparable?: boolean
   metadata?: Record<string, string | number | null | undefined>
 }
@@ -199,6 +200,9 @@ export interface DeploymentMatrixRow {
   modelSizeMb?: number | null
   gateStatus: CoverageGateStatus
   gateLabel?: string
+  comparisonCohort?: string
+  cohortLabel?: string
+  int8Extension?: boolean
   detail?: string
 }
 
@@ -850,6 +854,9 @@ export function TradeoffScatter({ points, xLabel, yLabel, xDirection, yDirection
     })).sort((a, b) => a.x! - b.x!)
     return { group, frontier }
   })
+  const familyLinks = new Map<string, TradeoffDatum[]>()
+  for (const point of visible) if (point.familyConnection) familyLinks.set(point.familyConnection, [...(familyLinks.get(point.familyConnection) ?? []), point])
+  const familyOrder = (point: TradeoffDatum) => /b0/i.test(String(point.metadata?.model ?? point.label)) ? 0 : /b1/i.test(String(point.metadata?.model ?? point.label)) ? 1 : /b2/i.test(String(point.metadata?.model ?? point.label)) ? 2 : 9
   const meetsThreshold = (point: TradeoffDatum) => (!finite(xThreshold) || (xDirection === 'lower' ? point.x! <= xThreshold : point.x! >= xThreshold))
     && (!finite(yThreshold) || (yDirection === 'lower' ? point.y! <= yThreshold : point.y! >= yThreshold))
   const describePoint = (point: TradeoffDatum) => {
@@ -872,14 +879,28 @@ export function TradeoffScatter({ points, xLabel, yLabel, xDirection, yDirection
         {finite(yTarget) && <g><line className="sf-reference-line sf-reference-strong" x1={box.left} y1={yScale(yTarget)} x2={box.width - box.right} y2={yScale(yTarget)} /><AxisText x={box.width - box.right - 3} y={yScale(yTarget) - 6} value={`Target ${nice(yTarget)}`} anchor="end" className="sf-reference-label" /></g>}
         {finite(xThreshold) && <g><line className="sf-threshold-line" x1={xScale(xThreshold)} y1={box.top} x2={xScale(xThreshold)} y2={box.height - box.bottom} /><AxisText x={Math.min(box.width - box.right - 3, xScale(xThreshold) + 5)} y={box.height - box.bottom - 8} value={xThresholdLabel ?? `Gate ${nice(xThreshold)}`} anchor="start" className="sf-reference-label" /></g>}
         {finite(yThreshold) && <g><line className="sf-threshold-line" x1={box.left} y1={yScale(yThreshold)} x2={box.width - box.right} y2={yScale(yThreshold)} /><AxisText x={box.width - box.right - 3} y={yScale(yThreshold) - 6} value={yThresholdLabel ?? `Gate ${nice(yThreshold)}`} anchor="end" className="sf-reference-label" /></g>}
+        {[...familyLinks.entries()].map(([family, members]) => members.length > 1 && <path key={family} d={[...members].sort((a, b) => familyOrder(a) - familyOrder(b)).map((point, index) => `${index ? 'L' : 'M'} ${xScale(point.x!)} ${yScale(point.y!)}`).join(' ')} className="sf-family-connector" />)}
         {showFrontier && frontierByGroup.map(({ group, frontier }) => frontier.length > 1 && <path key={group} d={frontier.map((point, index) => `${index ? 'L' : 'M'} ${xScale(point.x!)} ${yScale(point.y!)} `).join(' ')} className="sf-frontier-line" />)}
         {visible.map((point, index) => {
           const color = colorFor(point.color, index)
+          const backend = String(point.metadata?.backend ?? '').toLowerCase()
+          const marker = backend.includes('tensorrt') ? 'diamond' : backend.includes('inductor') ? 'square' : 'circle'
+          const precision = String(point.metadata?.precision ?? '').toLowerCase()
+          const fillOpacity = precision === 'bf16' ? 0.68 : precision === 'fp16' ? 0.3 : 1
+          const precisionStroke = precision === 'fp16' ? '2 2' : precision === 'int8' ? '3 2' : undefined
           const isFrontier = frontierByGroup.some(({ frontier }) => frontier.some((entry) => entry.id === point.id))
+          const radius = isFrontier ? 6 : 4.7
           const passes = meetsThreshold(point)
           const targetText = [xDirection === 'target' ? `x target ${nice(xTarget!)}` : '', yDirection === 'target' ? `y target ${nice(yTarget!)}` : ''].filter(Boolean).join(', ')
           const aria = `${describePoint(point)}${targetText ? `; ${targetText}` : ''}${point.comparable === false ? '; excluded from frontier because the points are not comparable' : isFrontier ? '; Pareto non-dominated within its comparison group' : '; dominated within its comparison group'}${passes ? '; passes plotted thresholds' : '; outside one or more plotted thresholds'}`
-          return <circle key={point.id} className={`${onPointClick ? 'sf-clickable-point' : ''} ${isFrontier ? 'sf-frontier-point' : ''} ${passes ? '' : 'sf-fails-threshold'}`} cx={xScale(point.x!)} cy={yScale(point.y!)} r={isFrontier ? 6 : 4.7} fill={color} stroke={isFrontier ? '#122b2a' : '#ffffff'} strokeWidth={isFrontier ? 2 : 1.8} tabIndex={onPointClick ? 0 : undefined} aria-label={aria} onClick={() => onPointClick?.(point)} onKeyDown={(event) => { if ((event.key === 'Enter' || event.key === ' ') && onPointClick) onPointClick(point) }}><title>{aria}</title></circle>
+          return <g key={point.id}>
+            {/fail/i.test(point.status ?? '') && <circle cx={xScale(point.x!)} cy={yScale(point.y!)} r="9" fill="none" stroke="#c23c3c" strokeWidth="2.5" className="sf-gate-failure-ring" />}
+            {marker === 'square'
+              ? <rect className={`${onPointClick ? 'sf-clickable-point' : ''} ${isFrontier ? 'sf-frontier-point' : ''} ${passes ? '' : 'sf-fails-threshold'}`} x={xScale(point.x!) - radius} y={yScale(point.y!) - radius} width={radius * 2} height={radius * 2} rx="1" fill={color} fillOpacity={fillOpacity} stroke={isFrontier ? '#122b2a' : color} strokeDasharray={precisionStroke} strokeWidth={isFrontier ? 2 : 1.8} tabIndex={onPointClick ? 0 : undefined} aria-label={aria} onClick={() => onPointClick?.(point)} onKeyDown={(event) => { if ((event.key === 'Enter' || event.key === ' ') && onPointClick) onPointClick(point) }}><title>{aria}</title></rect>
+              : marker === 'diamond'
+                ? <path className={`${onPointClick ? 'sf-clickable-point' : ''} ${isFrontier ? 'sf-frontier-point' : ''} ${passes ? '' : 'sf-fails-threshold'}`} d={`M ${xScale(point.x!)} ${yScale(point.y!) - radius - 1} L ${xScale(point.x!) + radius + 1} ${yScale(point.y!)} L ${xScale(point.x!)} ${yScale(point.y!) + radius + 1} L ${xScale(point.x!) - radius - 1} ${yScale(point.y!)} Z`} fill={color} fillOpacity={fillOpacity} stroke={isFrontier ? '#122b2a' : color} strokeDasharray={precisionStroke} strokeWidth={isFrontier ? 2 : 1.8} tabIndex={onPointClick ? 0 : undefined} aria-label={aria} onClick={() => onPointClick?.(point)} onKeyDown={(event) => { if ((event.key === 'Enter' || event.key === ' ') && onPointClick) onPointClick(point) }}><title>{aria}</title></path>
+                : <circle className={`${onPointClick ? 'sf-clickable-point' : ''} ${isFrontier ? 'sf-frontier-point' : ''} ${passes ? '' : 'sf-fails-threshold'}`} cx={xScale(point.x!)} cy={yScale(point.y!)} r={radius} fill={color} fillOpacity={fillOpacity} stroke={isFrontier ? '#122b2a' : color} strokeDasharray={precisionStroke} strokeWidth={isFrontier ? 2 : 1.8} tabIndex={onPointClick ? 0 : undefined} aria-label={aria} onClick={() => onPointClick?.(point)} onKeyDown={(event) => { if ((event.key === 'Enter' || event.key === ' ') && onPointClick) onPointClick(point) }}><title>{aria}</title></circle>}
+          </g>
         })}
         <AxisText x={box.left + box.plotWidth / 2} y={box.height - 14} value={xLabel} className="sf-axis-title" />
         <AxisY x={16} y={box.top + box.plotHeight / 2} value={yLabel} />
@@ -909,20 +930,30 @@ export function DeploymentFrontierScatter({ points, view = 'latency-accuracy', c
   }))
   const maximumLatency = Math.max(1, ...points.map((point) => finite(point.latencyMs) ? point.latencyMs! : 0))
   const maximumError = Math.max(1, ...points.map((point) => finite(point.diameterArePercent) ? point.diameterArePercent! : 0))
-  return <TradeoffScatter
-    points={tradeoffPoints}
-    xLabel="End-to-end latency p50 (ms)"
-    yLabel={view === 'latency-accuracy' ? 'Family-macro diameter ARE (%)' : 'Accepted-frame coverage (%)'}
-    xDirection="lower"
-    yDirection={view === 'latency-accuracy' ? 'lower' : 'higher'}
-    xDomain={[0, Math.ceil(maximumLatency * 1.1 / 5) * 5]}
-    yDomain={view === 'latency-accuracy' ? [0, Math.ceil(maximumError * 1.1 / 5) * 5] : [0, 100]}
-    yThreshold={view === 'latency-coverage' ? 95 : undefined}
-    yThresholdLabel={view === 'latency-coverage' ? '≥95% coverage gate' : undefined}
-    coverageThresholdPercent={coverageThresholdPercent}
-    height={height}
-    onPointClick={onPointClick ? (point) => { const source = points.find((entry) => entry.id === point.id); if (source) onPointClick(source) } : undefined}
-  />
+  const backends = [...new Set(points.map((point) => String(point.metadata?.backend ?? '')).filter(Boolean))]
+  const precisions = [...new Set(points.map((point) => String(point.metadata?.precision ?? '')).filter(Boolean))]
+  const backendSymbol = (backend: string) => /tensorrt/i.test(backend) ? '◇' : /inductor/i.test(backend) ? '□' : '○'
+  const precisionLabel = (precision: string) => /bf16/i.test(precision) ? 'lighter fill' : /fp16/i.test(precision) ? 'faint fill' : /int8/i.test(precision) ? 'dashed outline' : 'solid fill'
+  return <div className="sf-deployment-frontier">
+    <TradeoffScatter
+      points={tradeoffPoints}
+      xLabel="End-to-end latency p50 (ms)"
+      yLabel={view === 'latency-accuracy' ? 'Family-macro diameter ARE (%)' : 'Accepted-frame coverage (%)'}
+      xDirection="lower"
+      yDirection={view === 'latency-accuracy' ? 'lower' : 'higher'}
+      xDomain={[0, Math.ceil(maximumLatency * 1.1 / 5) * 5]}
+      yDomain={view === 'latency-accuracy' ? [0, Math.ceil(maximumError * 1.1 / 5) * 5] : [0, 100]}
+      yThreshold={view === 'latency-coverage' ? 95 : undefined}
+      yThresholdLabel={view === 'latency-coverage' ? '≥95% coverage gate' : undefined}
+      coverageThresholdPercent={coverageThresholdPercent}
+      height={height}
+      onPointClick={onPointClick ? (point) => { const source = points.find((entry) => entry.id === point.id); if (source) onPointClick(source) } : undefined}
+    />
+    {(backends.length > 0 || precisions.length > 0) && <div className="sf-deployment-key" aria-label="Deployment chart encodings">
+      {backends.length > 0 && <span><b>Backend · shape</b>{backends.map((backend) => <span key={backend}><i className="sf-backend-symbol">{backendSymbol(backend)}</i>{backend}</span>)}</span>}
+      {precisions.length > 0 && <span><b>Precision · fill</b>{precisions.map((precision) => <span key={precision}><i className={`sf-precision-swatch sf-precision-${precision.toLowerCase()}`} />{precision} · {precisionLabel(precision)}</span>)}</span>}
+    </div>}
+  </div>
 }
 
 const showValue = (value: number | null | undefined, digits = 2, suffix = '') => finite(value) ? `${nice(value, digits)}${suffix}` : 'Not reported'
@@ -939,6 +970,7 @@ export function DeploymentMatrix({ rows }: { rows: DeploymentMatrixRow[] }) {
   const cells = (row: DeploymentMatrixRow) => [
     ['Model-only p50', showValue(row.modelOnlyP50Ms, 3, ' ms')],
     ['End-to-end p50', showValue(row.endToEndP50Ms, 3, ' ms')],
+    ['Validation cohort', row.cohortLabel ?? 'Not reported'],
     ['Coverage', showValue(row.coveragePercent, 2, '%')],
     ['Family-macro diameter ARE', showValue(row.diameterArePercent, 3, '%')],
     ['ARE difference vs PyTorch FP32', showValue(row.accuracyDeltaPp, 3, ' pp')],
@@ -950,9 +982,9 @@ export function DeploymentMatrix({ rows }: { rows: DeploymentMatrixRow[] }) {
     <div className="sf-deployment-desktop">
       <table>
         <caption>Deployment variants by model, backend, and precision</caption>
-        <thead><tr><th scope="col">Model</th><th scope="col">Backend</th><th scope="col">Precision</th><th scope="col">Model-only p50</th><th scope="col">End-to-end p50</th><th scope="col">Coverage</th><th scope="col">Diameter ARE (%)</th><th scope="col">ARE Δ vs FP32 (pp)</th><th scope="col">VRAM (MB)</th><th scope="col">Model size (MB)</th><th scope="col">≥95% coverage gate</th></tr></thead>
+        <thead><tr><th scope="col">Model</th><th scope="col">Backend</th><th scope="col">Precision</th><th scope="col">Validation cohort</th><th scope="col">Model-only p50</th><th scope="col">End-to-end p50</th><th scope="col">Coverage</th><th scope="col">Diameter ARE (%)</th><th scope="col">ARE Δ vs FP32 (pp)</th><th scope="col">VRAM (MB)</th><th scope="col">Model size (MB)</th><th scope="col">≥95% coverage gate</th></tr></thead>
         <tbody>{rows.map((row) => <tr key={row.id}>
-          <th scope="row">{row.model}</th><td>{row.backend}</td><td>{row.precision}</td>
+          <th scope="row">{row.model}</th><td>{row.backend}</td><td>{row.precision}</td><td>{row.cohortLabel ?? 'Not reported'}</td>
           <td>{showValue(row.modelOnlyP50Ms, 3)}</td><td className="sf-emphasis-cell">{showValue(row.endToEndP50Ms, 3)}</td><td>{showValue(row.coveragePercent, 2, '%')}</td><td>{showValue(row.diameterArePercent, 3)}</td><td>{showValue(row.accuracyDeltaPp, 3)}</td><td>{showValue(row.vramMb, 0)}</td><td>{showValue(row.modelSizeMb, 1)}</td>
           <td><span className={`sf-gate sf-gate-${row.gateStatus}`}>{row.gateLabel ?? gateDescription[row.gateStatus]}</span></td>
         </tr>)}</tbody>
