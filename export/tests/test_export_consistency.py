@@ -109,6 +109,14 @@ class ExportStructureTests(unittest.TestCase):
                 self.assertNotIn("lower", cell)
                 self.assertNotIn("upper", cell)
                 self.assertTrue(all(ref["path"] and ref["sha256"] and ref["type"] for ref in cell["sourceRefs"]))
+        b2_blur5 = next(row for row in severity["rows"] if row["methodId"] == "segformer_b2" and row["operationFamily"] == "motion_blur" and row["severityValue"] == 5)
+        self.assertGreater(b2_blur5["valuePercent"], 0)
+
+    @unittest.skipUnless(CANONICAL_AVAILABLE, "Canonical Exact-GT frame tables are not packaged with the standalone site repository.")
+    def test_quantitative_exact_gt_severity_matches_private_frame_tables(self):
+        severity = read_json(DATA / "exact_gt_severity_v2.json")
+        for method_id in severity["methodIds"]:
+            cells = [row for row in severity["rows"] if row["methodId"] == method_id]
             source_path = SOURCE_ROOT / exporter.EXACT_GT_FRAME_METRIC_PATHS[method_id]
             with source_path.open("r", encoding="utf-8-sig", newline="") as stream:
                 source_rows = list(csv.DictReader(stream))

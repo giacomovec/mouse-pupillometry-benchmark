@@ -5,7 +5,7 @@
 | Check | Result |
 |---|---|
 | Export build and canonical verification | Pass: 145 input hashes, 76 output files, 820 media hashes, zero broken assets |
-| Exporter tests | 20/20 pass |
+| Exporter tests | 21/21 pass locally; canonical-source joins are skipped in the standalone Pages checkout |
 | Frontend tests | 16/16 pass |
 | Typecheck and ESLint | Pass |
 | Production Vite build | Pass |
