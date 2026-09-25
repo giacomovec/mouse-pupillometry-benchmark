@@ -246,7 +246,7 @@ function App() {
       {data && <ProvenanceOverview data={data} />}
     </main>
 
-    <footer className="site-footer"><span><span className="mark-eye small"><i /></span> Mouse Pupillometry Benchmark</span><span>Internal collaborator-facing scientific explorer · Development benchmark</span><button onClick={() => goTo('overview')}>Back to top ↑</button></footer>
+    <footer className="site-footer"><span><span className="mark-eye small"><i /></span> Mouse Pupillometry Benchmark</span><span>Public scientific explorer · Development benchmark</span><button onClick={() => goTo('overview')}>Back to top ↑</button></footer>
   </div>
 }
 

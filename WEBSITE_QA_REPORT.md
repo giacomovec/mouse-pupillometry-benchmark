@@ -1,6 +1,6 @@
 # Mouse Pupillometry Benchmark Website QA
 
-**Result: PASS for the private development preview, with pre-external qualifications.** No browser-visible functional blocker was found in the final exporter-stable build. This does not certify a formal benchmark freeze or external evaluation.
+**Result: PASS for the development preview and public Pages deployment, with pre-external qualifications.** No browser-visible functional blocker was found in the exporter-stable build or live Pages spot check. This does not certify a formal benchmark freeze or external evaluation.
 
 ## Test target and export
 
@@ -63,11 +63,19 @@
 
 Live screenshots were inspected during the browser session, including the 390 × 844 layout. The available browser API returns in-memory image bytes without a filesystem path, so there are no screenshot files in `benchmark_site/qa/`.
 
-## 2026-09-25 Pages-path production preview and deployment status
+## 2026-09-25 pre-publication Pages-path preview
 
 - GitHub API confirmed `giacomovec/mouse-pupillometry-benchmark` remains **private**, with repository admin access. Creating a workflow-based Pages site returned HTTP 422: `Your current plan does not support GitHub Pages for this repository.` GitHub Pages is not deployed; the expected URL cannot receive deployed browser QA under this account plan.
 - The prepared production build uses Vite base `/mouse-pupillometry-benchmark/`. Its HTML assets and favicon resolve within that path. The standalone export verifier passed on both `public/data/` and `dist/data/`, including 820 referenced media hashes and zero broken local references. All 848 bounded PNGs are present in `dist/media/`.
 - Public artifact audit found 14 JSON files, 848 PNGs, one favicon SVG, and `.nojekyll` under `public/`; no raw video, checkpoint, NPZ file, symlink, or file over 20 MB was present. The 848 PNGs have no textual metadata chunks. Exported JSON has no credential, person/subject identifier, private home path, or Allen/protected output row; its Allen/protected safety fields report zero or false. Provenance references some source NPZ paths and hashes, but no NPZ files are deployed. This audit concerns the current build and must be repeated if the export changes.
 - Local production preview at `http://127.0.0.1:4173/mouse-pupillometry-benchmark/` loaded 146 metric cards and 146 visual-comparison toggles, with no data-load error, horizontal overflow, or console warning/error. At 390 × 844 px, document and client widths both measured 390 px. The first expanded real-validation grid showed 11 synchronized tiles and loaded source media from the project path.
 - A direct `#metric-real-validation-center-mae-px` link loaded and scrolled its card into view after the data and nearby lazy charts rendered. The temporal grid showed 12 synchronized tiles; advancing one frame changed source media and the trace cursor from frame 0 / 0.000 s to frame 1 / 0.017 s, with zero broken completed images. The tested provenance disclosure opened and showed the version and source hashes.
-- The deployment workflow runs all scientific and frontend checks on `main`. Official Pages artifact upload and deployment are paused until the account supports private-repository Pages and `PAGES_DEPLOY_ENABLED=true` is set. The pull-request verification workflow remains separate. Live Pages URL, HTTPS asset access, and deployed responsive browser QA remain **BLOCKED BY GITHUB PLAN**.
+- At this point, official Pages artifact upload and deployment were paused because the account plan did not support Pages from a private repository. The user subsequently requested public repository visibility; the live deployment below supersedes this temporary block.
+
+## 2026-09-25 live public Pages QA
+
+- The user requested public visibility. A full tracked-file audit found 904 files across two commits, including the same bounded 848 PNGs, versioned exports, source code, and no raw video, checkpoint, NPZ file, credential, person identifier, or Allen/protected output. The repository visibility change was read back as `public` through GitHub's API. Pages was then created with `build_type=workflow` and `public=true`.
+- The [Pages workflow](https://github.com/giacomovec/mouse-pupillometry-benchmark/actions/runs/36104504006) passed all build, frontend, scientific export, artifact upload, and deployment steps. `https://giacomovec.github.io/mouse-pupillometry-benchmark/` returned HTTP 200 without authentication.
+- Browser QA on the actual HTTPS URL loaded 146 metric cards, 146 comparison toggles, and the development export version with no data-load error, horizontal overflow, or console warning/error. The first expanded real-validation grid rendered 11 synchronized tiles and loaded its source PNGs under the Pages project path; no completed image was broken.
+- The live temporal grid rendered 12 synchronized tiles. Advancing from frame 0 / 0.000 s to frame 1 / 0.017 s changed the source asset and trace cursor together, with no broken completed images. A method-card provenance disclosure opened and showed version and SHA-256 evidence.
+- A direct `#metric-real-validation-center-mae-px` link loaded the card into view after lazy charts settled. At 390 × 844 px, document and client widths both measured 390 px, with zero page-level overflow and zero broken completed images. A live screenshot was visually inspected. This checks the live deployed build, while the original three-viewport preview QA remains documented above.
