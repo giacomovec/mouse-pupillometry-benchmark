@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "cases": [
     {
       "id": "Raffaele__20181028_134237_CNNdataset_b00_frame_107.png",

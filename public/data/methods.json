@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "families": [
     {
       "familyId": "mouse_pupil_analysis",
@@ -906,5 +906,5 @@
       "aliasPolicy": "Uses canonical family color and shade; keeps the source table method ID as the exported ID."
     }
   ],
-  "version": "benchmark-data-dev-v1+40f1e28815b5f39c"
+  "version": "benchmark-data-dev-v2+387caf3b9034bbc4"
 }

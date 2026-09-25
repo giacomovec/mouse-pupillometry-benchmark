@@ -1,0 +1,1922 @@
+{
+  "case": {
+    "id": "Lucia__20190122_110904_CNNdataset_0r0_frame_40.png",
+    "label": "af-567b2466c274 · within-family medium · prediction-blind representative",
+    "mode": "representative",
+    "outcomeSelected": false,
+    "representative": true,
+    "category": "real_validation",
+    "sourceId": "Lucia__20190122_110904_CNNdataset_0r0",
+    "sourceHash": "1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b",
+    "family": "af-567b2466c274",
+    "sizeStratum": "within-family medium",
+    "difficultyProxyFlags": "small_eye_label_proxy",
+    "perturbation": "real validation; no synthetic perturbation",
+    "sourcePopulation": "REAL_VALIDATION_VISUAL_FREEZE_V1; frozen source and GT only for representative selection",
+    "triggerMethodIds": [],
+    "qcTriggers": [],
+    "selectionPolicy": "one deterministic SHA256-minimum sample per within-family pupil-area tertile; SOURCE+GT only",
+    "frames": [
+      {
+        "frameIndex": 0,
+        "sourceFrameNumber": 8,
+        "timestampMs": null,
+        "width": 155,
+        "height": 155,
+        "sourceId": "Lucia__20190122_110904_CNNdataset_0r0_frame_8.png",
+        "sourceSrc": "/media/real-validation/source/dee7bc8f8a313c3eb2db856e66c12311f92b0393048b418298e86a847789fd5a.png",
+        "reference": {
+          "src": "/media/real-validation/source/dee7bc8f8a313c3eb2db856e66c12311f92b0393048b418298e86a847789fd5a.png",
+          "image": "/media/real-validation/source/dee7bc8f8a313c3eb2db856e66c12311f92b0393048b418298e86a847789fd5a.png",
+          "gt": "/media/real-validation/gt/19bfd79f419d34931661b39589153bedd8ea7e830ffd571b5228cb10ff0cdf06.png",
+          "mask": {
+            "src": "/media/real-validation/gt/19bfd79f419d34931661b39589153bedd8ea7e830ffd571b5228cb10ff0cdf06.png"
+          },
+          "sourceSha256": "dee7bc8f8a313c3eb2db856e66c12311f92b0393048b418298e86a847789fd5a",
+          "gtSha256": "19bfd79f419d34931661b39589153bedd8ea7e830ffd571b5228cb10ff0cdf06",
+          "coordinateSpace": "frozen scored ROI pixels",
+          "geometry": {
+            "mask": {
+              "src": "/media/real-validation/gt/19bfd79f419d34931661b39589153bedd8ea7e830ffd571b5228cb10ff0cdf06.png"
+            },
+            "diameter": 24.384480051691096,
+            "area": 467,
+            "orientationAvailable": false,
+            "coordinateSpace": "frozen scored ROI pixels",
+            "center": {
+              "x": 77.593147751606,
+              "y": 88.58244111349036
+            },
+            "ellipse": {
+              "cx": 77.593147751606,
+              "cy": 88.58244111349036,
+              "orientationAvailable": false,
+              "major": 26.435495644097994,
+              "minor": 22.50825400127074
+            }
+          },
+          "diameter": 24.384480051691096,
+          "area": 467,
+          "orientationAvailable": false,
+          "center": {
+            "x": 77.593147751606,
+            "y": 88.58244111349036
+          },
+          "ellipse": {
+            "cx": 77.593147751606,
+            "cy": 88.58244111349036,
+            "orientationAvailable": false,
+            "major": 26.435495644097994,
+            "minor": 22.50825400127074
+          }
+        },
+        "methods": {
+          "classical_fixed": {
+            "accepted": true,
+            "confidence": 0.7187682688236237,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.7187682688236237,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 42.20500116200085,
+              "area": 1399,
+              "errorPx": 9.560461238048104,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 79.19013581129379,
+                "y": 98.00857755539671
+              },
+              "ellipse": {
+                "cx": 79.19013581129379,
+                "cy": 98.00857755539671,
+                "orientationAvailable": false,
+                "major": 49.27571550205165,
+                "minor": 37.98538748521172
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/classical_roi_corrected/metrics_mask_native/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b0": {
+            "accepted": true,
+            "confidence": 0.9634798765182495,
+            "threshold": 0.9346616268157959,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9634798765182495,
+              "threshold": 0.9346616268157959,
+              "rejectionReason": null,
+              "diameter": 24.025553256663766,
+              "area": 453.3531900384477,
+              "errorPx": 0.5003596372542197,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.89399818178924,
+                "y": 89.01106137379725
+              },
+              "ellipse": {
+                "cx": 77.89399818178924,
+                "cy": 89.01106137379725,
+                "orientationAvailable": false,
+                "major": 25.766348302697818,
+                "minor": 22.402367712631957
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B0/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b1": {
+            "accepted": true,
+            "confidence": 0.9687612056732178,
+            "threshold": 0.935444176197052,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9687612056732178,
+              "threshold": 0.935444176197052,
+              "rejectionReason": null,
+              "diameter": 24.611571431832726,
+              "area": 475.738796245288,
+              "errorPx": 0.61625336786667,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.88409455872564,
+                "y": 89.1531684669285
+              },
+              "ellipse": {
+                "cx": 77.88409455872564,
+                "cy": 89.1531684669285,
+                "orientationAvailable": false,
+                "major": 26.23222823054366,
+                "minor": 23.0910406474323
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B1/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b2": {
+            "accepted": true,
+            "confidence": 0.9666485786437988,
+            "threshold": 0.9338858723640442,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9666485786437988,
+              "threshold": 0.9338858723640442,
+              "rejectionReason": null,
+              "diameter": 24.332370112109416,
+              "area": 465.0061629964742,
+              "errorPx": 0.5359766346843478,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.89559063648429,
+                "y": 89.05332170609653
+              },
+              "ellipse": {
+                "cx": 77.89559063648429,
+                "cy": 89.05332170609653,
+                "orientationAvailable": false,
+                "major": 25.919610709338368,
+                "minor": 22.842327452833448
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B2/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "standard_dlc_matched": {
+            "accepted": false,
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/standard_dlc/selected_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_matched": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 22.96040517057414,
+              "area": 414.04636525531623,
+              "errorPx": 0.15830257679037582,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.57892805120592,
+                "y": 88.76358125795541
+              },
+              "ellipse": {
+                "cx": 77.57892805120592,
+                "cy": 88.76358125795541,
+                "orientationAvailable": false,
+                "major": 25.213611965881817,
+                "minor": 20.908555517959492
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_matched/selected_current_recipe/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_released": {
+            "accepted": true,
+            "confidence": 0.9380923509597778,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9380923509597778,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 24.47379833586656,
+              "area": 470.4274285709933,
+              "errorPx": 0.253706198096598,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.53972122996197,
+                "y": 88.85319351678287
+              },
+              "ellipse": {
+                "cx": 77.53972122996197,
+                "cy": 88.85319351678287,
+                "orientationAvailable": false,
+                "major": 26.14287918458339,
+                "minor": 22.91127923422754
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_released/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "pupil_dlc_gm": {
+            "accepted": false,
+            "confidence": 0.7478266358375549,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0.7478266358375549,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/pupil_dlc_gm/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 26.18402920642207,
+              "area": 538.4716397772356,
+              "errorPx": 1.9260069052159967,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 76.58158298948125,
+                "y": 86.9715200314721
+              },
+              "ellipse": {
+                "cx": 76.58158298948125,
+                "cy": 86.9715200314721,
+                "orientationAvailable": false,
+                "major": 27.51202961507971,
+                "minor": 24.92013112354952
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/dlc_model_zoo_mouse_pupil_vclose/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "neuropupil_animal": {
+            "accepted": true,
+            "confidence": 0.35718226432800293,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.35718226432800293,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 27.278252952267614,
+              "area": 584.4171956524272,
+              "errorPx": 3.133072556788484,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 80.50584411621094,
+                "y": 87.42816925048828
+              },
+              "ellipse": {
+                "cx": 80.50584411621094,
+                "cy": 87.42816925048828,
+                "orientationAvailable": false,
+                "major": 32.276749819171556,
+                "minor": 22.27975608536367
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/neuropupil_animal_released/official_native/native_direct_geometry/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          }
+        },
+        "mediaHashes": {
+          "sourceScoredRoiSha256": "dee7bc8f8a313c3eb2db856e66c12311f92b0393048b418298e86a847789fd5a",
+          "gtScoredRoiSha256": "19bfd79f419d34931661b39589153bedd8ea7e830ffd571b5228cb10ff0cdf06",
+          "sourceOriginalSha256": "28b3f4385c4c861073e8a4390aed03af0c7d4ed11afc3d252ec06159392ff659",
+          "gtOriginalSha256": "120225f0518364df88c8224319dc44751f0bce70c9481bfca9fe53edbd9c97d4"
+        }
+      },
+      {
+        "frameIndex": 1,
+        "sourceFrameNumber": 17,
+        "timestampMs": null,
+        "width": 155,
+        "height": 155,
+        "sourceId": "Lucia__20190122_110904_CNNdataset_0r0_frame_17.png",
+        "sourceSrc": "/media/real-validation/source/09ced6ba67a764554a223291a5cc2b19f33174719af57f7dd87e60c008726fe7.png",
+        "reference": {
+          "src": "/media/real-validation/source/09ced6ba67a764554a223291a5cc2b19f33174719af57f7dd87e60c008726fe7.png",
+          "image": "/media/real-validation/source/09ced6ba67a764554a223291a5cc2b19f33174719af57f7dd87e60c008726fe7.png",
+          "gt": "/media/real-validation/gt/1fa5259e8a60f34417e5667351fe76f86c356ee3925a9c452107160c61c9b937.png",
+          "mask": {
+            "src": "/media/real-validation/gt/1fa5259e8a60f34417e5667351fe76f86c356ee3925a9c452107160c61c9b937.png"
+          },
+          "sourceSha256": "09ced6ba67a764554a223291a5cc2b19f33174719af57f7dd87e60c008726fe7",
+          "gtSha256": "1fa5259e8a60f34417e5667351fe76f86c356ee3925a9c452107160c61c9b937",
+          "coordinateSpace": "frozen scored ROI pixels",
+          "geometry": {
+            "mask": {
+              "src": "/media/real-validation/gt/1fa5259e8a60f34417e5667351fe76f86c356ee3925a9c452107160c61c9b937.png"
+            },
+            "diameter": 24.436639426909572,
+            "area": 469,
+            "orientationAvailable": false,
+            "coordinateSpace": "frozen scored ROI pixels",
+            "center": {
+              "x": 77.57142857142857,
+              "y": 89.11940298507463
+            },
+            "ellipse": {
+              "cx": 77.57142857142857,
+              "cy": 89.11940298507463,
+              "orientationAvailable": false,
+              "major": 26.594047495266693,
+              "minor": 22.467868188952558
+            }
+          },
+          "diameter": 24.436639426909572,
+          "area": 469,
+          "orientationAvailable": false,
+          "center": {
+            "x": 77.57142857142857,
+            "y": 89.11940298507463
+          },
+          "ellipse": {
+            "cx": 77.57142857142857,
+            "cy": 89.11940298507463,
+            "orientationAvailable": false,
+            "major": 26.594047495266693,
+            "minor": 22.467868188952558
+          }
+        },
+        "methods": {
+          "classical_fixed": {
+            "accepted": true,
+            "confidence": 0.7122086882591248,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.7122086882591248,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 43.01182463579279,
+              "area": 1453,
+              "errorPx": 8.97744837787371,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 79.75223675154852,
+                "y": 97.82794218857536
+              },
+              "ellipse": {
+                "cx": 79.75223675154852,
+                "cy": 97.82794218857536,
+                "orientationAvailable": false,
+                "major": 50.50778849327763,
+                "minor": 38.53244116846848
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/classical_roi_corrected/metrics_mask_native/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b0": {
+            "accepted": true,
+            "confidence": 0.963772714138031,
+            "threshold": 0.9346616268157959,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.963772714138031,
+              "threshold": 0.9346616268157959,
+              "rejectionReason": null,
+              "diameter": 23.739691240510275,
+              "area": 442.6291521694647,
+              "errorPx": 0.6498589275673522,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 78.04044699215989,
+                "y": 89.58997722509132
+              },
+              "ellipse": {
+                "cx": 78.04044699215989,
+                "cy": 89.58997722509132,
+                "orientationAvailable": false,
+                "major": 25.57718984828733,
+                "minor": 22.034200924246477
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B0/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b1": {
+            "accepted": true,
+            "confidence": 0.9665059447288513,
+            "threshold": 0.935444176197052,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9665059447288513,
+              "threshold": 0.935444176197052,
+              "rejectionReason": null,
+              "diameter": 24.487621813163308,
+              "area": 470.9589994624609,
+              "errorPx": 0.719604986831463,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.97029463710457,
+                "y": 89.738009630245
+              },
+              "ellipse": {
+                "cx": 77.97029463710457,
+                "cy": 89.738009630245,
+                "orientationAvailable": false,
+                "major": 26.171366680275973,
+                "minor": 22.912201314898557
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B1/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b2": {
+            "accepted": true,
+            "confidence": 0.9654555320739746,
+            "threshold": 0.9338858723640442,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9654555320739746,
+              "threshold": 0.9338858723640442,
+              "rejectionReason": null,
+              "diameter": 24.28055415027643,
+              "area": 463.02780359145464,
+              "errorPx": 0.6831665739826085,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.98397958010332,
+                "y": 89.68386423865863
+              },
+              "ellipse": {
+                "cx": 77.98397958010332,
+                "cy": 89.68386423865863,
+                "orientationAvailable": false,
+                "major": 25.919579978764833,
+                "minor": 22.74517219520932
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B2/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "standard_dlc_matched": {
+            "accepted": false,
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/standard_dlc/selected_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_matched": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 22.85986433308975,
+              "area": 410.42818650120205,
+              "errorPx": 0.06030398825158227,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.62813743045672,
+                "y": 89.164404456106
+              },
+              "ellipse": {
+                "cx": 77.62813743045672,
+                "cy": 89.164404456106,
+                "orientationAvailable": false,
+                "major": 25.170135461271133,
+                "minor": 20.761644216470106
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_matched/selected_current_recipe/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_released": {
+            "accepted": true,
+            "confidence": 0.9383895397186279,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9383895397186279,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 24.512056933205766,
+              "area": 471.8993669189701,
+              "errorPx": 0.047485947858121554,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.6215815258682,
+                "y": 89.14210391841235
+              },
+              "ellipse": {
+                "cx": 77.6215815258682,
+                "cy": 89.14210391841235,
+                "orientationAvailable": false,
+                "major": 26.484315738608316,
+                "minor": 22.68667014193713
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_released/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "pupil_dlc_gm": {
+            "accepted": false,
+            "confidence": 0.76201993227005,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0.76201993227005,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/pupil_dlc_gm/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 25.38614649537227,
+              "area": 506.1548995625568,
+              "errorPx": 1.9357405215741237,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 76.00026958140427,
+                "y": 88.01047346012
+              },
+              "ellipse": {
+                "cx": 76.00026958140427,
+                "cy": 88.01047346012,
+                "orientationAvailable": false,
+                "major": 27.04896795637945,
+                "minor": 23.825546132620854
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/dlc_model_zoo_mouse_pupil_vclose/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "neuropupil_animal": {
+            "accepted": true,
+            "confidence": 0.34048429131507874,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.34048429131507874,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 27.972262205023696,
+              "area": 614.5327924364369,
+              "errorPx": 3.19843273808558,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 80.55433654785156,
+                "y": 87.96517944335938
+              },
+              "ellipse": {
+                "cx": 80.55433654785156,
+                "cy": 87.96517944335938,
+                "orientationAvailable": false,
+                "major": 33.714979878312995,
+                "minor": 22.2295445317344
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/neuropupil_animal_released/official_native/native_direct_geometry/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          }
+        },
+        "mediaHashes": {
+          "sourceScoredRoiSha256": "09ced6ba67a764554a223291a5cc2b19f33174719af57f7dd87e60c008726fe7",
+          "gtScoredRoiSha256": "1fa5259e8a60f34417e5667351fe76f86c356ee3925a9c452107160c61c9b937",
+          "sourceOriginalSha256": "e584cdc25917f02ae0215d2935458b33685d2f7440f831f02838d953d7f08bde",
+          "gtOriginalSha256": "cd2e92adb7c6f42c96fcec4e5d1a027aaddfbe719feb5413c2aa3224d46c1945"
+        }
+      },
+      {
+        "frameIndex": 2,
+        "sourceFrameNumber": 40,
+        "timestampMs": null,
+        "width": 155,
+        "height": 155,
+        "sourceId": "Lucia__20190122_110904_CNNdataset_0r0_frame_40.png",
+        "sourceSrc": "/media/real-validation/source/1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b.png",
+        "reference": {
+          "src": "/media/real-validation/source/1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b.png",
+          "image": "/media/real-validation/source/1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b.png",
+          "gt": "/media/real-validation/gt/337386f900834ddc2f536653f1536e9afcf933fa50ca5622f6419ee4644964a1.png",
+          "mask": {
+            "src": "/media/real-validation/gt/337386f900834ddc2f536653f1536e9afcf933fa50ca5622f6419ee4644964a1.png"
+          },
+          "sourceSha256": "1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b",
+          "gtSha256": "337386f900834ddc2f536653f1536e9afcf933fa50ca5622f6419ee4644964a1",
+          "coordinateSpace": "frozen scored ROI pixels",
+          "geometry": {
+            "mask": {
+              "src": "/media/real-validation/gt/337386f900834ddc2f536653f1536e9afcf933fa50ca5622f6419ee4644964a1.png"
+            },
+            "diameter": 24.436639426909572,
+            "area": 469,
+            "orientationAvailable": false,
+            "coordinateSpace": "frozen scored ROI pixels",
+            "center": {
+              "x": 77.55650319829424,
+              "y": 89.1684434968017
+            },
+            "ellipse": {
+              "cx": 77.55650319829424,
+              "cy": 89.1684434968017,
+              "orientationAvailable": false,
+              "major": 26.6733344844389,
+              "minor": 22.391420729537
+            }
+          },
+          "diameter": 24.436639426909572,
+          "area": 469,
+          "orientationAvailable": false,
+          "center": {
+            "x": 77.55650319829424,
+            "y": 89.1684434968017
+          },
+          "ellipse": {
+            "cx": 77.55650319829424,
+            "cy": 89.1684434968017,
+            "orientationAvailable": false,
+            "major": 26.6733344844389,
+            "minor": 22.391420729537
+          }
+        },
+        "methods": {
+          "classical_fixed": {
+            "accepted": true,
+            "confidence": 0.6913271844387054,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.6913271844387054,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 49.7639519583191,
+              "area": 1945,
+              "errorPx": 11.131453760299992,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 71.76401028277635,
+                "y": 98.67403598971723
+              },
+              "ellipse": {
+                "cx": 71.76401028277635,
+                "cy": 98.67403598971723,
+                "orientationAvailable": false,
+                "major": 64.42410758872667,
+                "minor": 45.03900991523865
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/classical_roi_corrected/metrics_mask_native/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b0": {
+            "accepted": true,
+            "confidence": 0.962622344493866,
+            "threshold": 0.9346616268157959,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.962622344493866,
+              "threshold": 0.9346616268157959,
+              "rejectionReason": null,
+              "diameter": 23.61276326744927,
+              "area": 437.9086334775882,
+              "errorPx": 0.6156320341171581,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.94302463378318,
+                "y": 89.66431025081182
+              },
+              "ellipse": {
+                "cx": 77.94302463378318,
+                "cy": 89.66431025081182,
+                "orientationAvailable": false,
+                "major": 25.407104182114892,
+                "minor": 21.945145150272296
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B0/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b1": {
+            "accepted": true,
+            "confidence": 0.9662267565727234,
+            "threshold": 0.935444176197052,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9662267565727234,
+              "threshold": 0.935444176197052,
+              "rejectionReason": null,
+              "diameter": 24.367051353401436,
+              "area": 466.33266624058956,
+              "errorPx": 0.7244616131776981,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.89630518307051,
+                "y": 89.82401724592874
+              },
+              "ellipse": {
+                "cx": 77.89630518307051,
+                "cy": 89.82401724592874,
+                "orientationAvailable": false,
+                "major": 26.108115485648366,
+                "minor": 22.74209304710978
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B1/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b2": {
+            "accepted": true,
+            "confidence": 0.9639562964439392,
+            "threshold": 0.9338858723640442,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9639562964439392,
+              "threshold": 0.9338858723640442,
+              "rejectionReason": null,
+              "diameter": 24.152544423146782,
+              "area": 458.15840744517254,
+              "errorPx": 0.682410221907132,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.89881851782039,
+                "y": 89.77470014852985
+              },
+              "ellipse": {
+                "cx": 77.89881851782039,
+                "cy": 89.77470014852985,
+                "orientationAvailable": false,
+                "major": 25.873270363624354,
+                "minor": 22.546256963797408
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B2/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "standard_dlc_matched": {
+            "accepted": false,
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/standard_dlc/selected_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_matched": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 22.681721979116872,
+              "area": 404.0563412165796,
+              "errorPx": 0.14992511848614595,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.63153974165743,
+                "y": 89.31410040654667
+              },
+              "ellipse": {
+                "cx": 77.63153974165743,
+                "cy": 89.31410040654667,
+                "orientationAvailable": false,
+                "major": 24.880781620927383,
+                "minor": 20.677023727632307
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_matched/selected_current_recipe/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_released": {
+            "accepted": true,
+            "confidence": 0.9367817640304565,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9367817640304565,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 24.399449153031604,
+              "area": 467.57353824979214,
+              "errorPx": 0.18436879099969183,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.50672289070211,
+                "y": 89.35886170765647
+              },
+              "ellipse": {
+                "cx": 77.50672289070211,
+                "cy": 89.35886170765647,
+                "orientationAvailable": false,
+                "major": 26.455917902250984,
+                "minor": 22.502833625769643
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_released/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "pupil_dlc_gm": {
+            "accepted": false,
+            "confidence": 0.7699183225631714,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0.7699183225631714,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/pupil_dlc_gm/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 25.653673788555896,
+              "area": 516.879154100204,
+              "errorPx": 1.8403333862001459,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 76.13550380393748,
+                "y": 88.01715631619008
+              },
+              "ellipse": {
+                "cx": 76.13550380393748,
+                "cy": 88.01715631619008,
+                "orientationAvailable": false,
+                "major": 27.370683043151782,
+                "minor": 24.04437542943602
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/dlc_model_zoo_mouse_pupil_vclose/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "neuropupil_animal": {
+            "accepted": true,
+            "confidence": 0.3406839966773987,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.3406839966773987,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 27.947138460568148,
+              "area": 613.4293828398382,
+              "errorPx": 3.1831264774186594,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 80.52748107910156,
+                "y": 88.02582168579102
+              },
+              "ellipse": {
+                "cx": 80.52748107910156,
+                "cy": 88.02582168579102,
+                "orientationAvailable": false,
+                "major": 33.70820331929931,
+                "minor": 22.18607360183699
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/neuropupil_animal_released/official_native/native_direct_geometry/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          }
+        },
+        "mediaHashes": {
+          "sourceScoredRoiSha256": "1b7bc092f5ce6fa7cda254c664ca7f5279048d85f3805d003c6d312cd4b09b2b",
+          "gtScoredRoiSha256": "337386f900834ddc2f536653f1536e9afcf933fa50ca5622f6419ee4644964a1",
+          "sourceOriginalSha256": "acff8807abad670dcc264e2a151724e0375f08aa5c012cc92d9c3c94965c5664",
+          "gtOriginalSha256": "7f7b787a2988ac13164eae4dc5aa6ad2ce0d8de37c9c93136785ef9bde72b9f3"
+        }
+      },
+      {
+        "frameIndex": 3,
+        "sourceFrameNumber": 42,
+        "timestampMs": null,
+        "width": 155,
+        "height": 155,
+        "sourceId": "Lucia__20190122_110904_CNNdataset_0r0_frame_42.png",
+        "sourceSrc": "/media/real-validation/source/a819d5654096d233748864074b34cb73f46c3936a41913ad7db47b24e9ce5d63.png",
+        "reference": {
+          "src": "/media/real-validation/source/a819d5654096d233748864074b34cb73f46c3936a41913ad7db47b24e9ce5d63.png",
+          "image": "/media/real-validation/source/a819d5654096d233748864074b34cb73f46c3936a41913ad7db47b24e9ce5d63.png",
+          "gt": "/media/real-validation/gt/0b692b37862e718d6b34770661a954f38ad16307ef8d1703cbf52f33a3966a31.png",
+          "mask": {
+            "src": "/media/real-validation/gt/0b692b37862e718d6b34770661a954f38ad16307ef8d1703cbf52f33a3966a31.png"
+          },
+          "sourceSha256": "a819d5654096d233748864074b34cb73f46c3936a41913ad7db47b24e9ce5d63",
+          "gtSha256": "0b692b37862e718d6b34770661a954f38ad16307ef8d1703cbf52f33a3966a31",
+          "coordinateSpace": "frozen scored ROI pixels",
+          "geometry": {
+            "mask": {
+              "src": "/media/real-validation/gt/0b692b37862e718d6b34770661a954f38ad16307ef8d1703cbf52f33a3966a31.png"
+            },
+            "diameter": 24.35835848013133,
+            "area": 466,
+            "orientationAvailable": false,
+            "coordinateSpace": "frozen scored ROI pixels",
+            "center": {
+              "x": 77.50429184549357,
+              "y": 89.2489270386266
+            },
+            "ellipse": {
+              "cx": 77.50429184549357,
+              "cy": 89.2489270386266,
+              "orientationAvailable": false,
+              "major": 26.677728059195207,
+              "minor": 22.2535673374361
+            }
+          },
+          "diameter": 24.35835848013133,
+          "area": 466,
+          "orientationAvailable": false,
+          "center": {
+            "x": 77.50429184549357,
+            "y": 89.2489270386266
+          },
+          "ellipse": {
+            "cx": 77.50429184549357,
+            "cy": 89.2489270386266,
+            "orientationAvailable": false,
+            "major": 26.677728059195207,
+            "minor": 22.2535673374361
+          }
+        },
+        "methods": {
+          "classical_fixed": {
+            "accepted": true,
+            "confidence": 0.6909647285938263,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.6909647285938263,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 49.8789541832275,
+              "area": 1954,
+              "errorPx": 10.706488339528013,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 72.010747185261,
+                "y": 98.43858751279427
+              },
+              "ellipse": {
+                "cx": 72.010747185261,
+                "cy": 98.43858751279427,
+                "orientationAvailable": false,
+                "major": 64.20233020305866,
+                "minor": 46.0853269039901
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/classical_roi_corrected/metrics_mask_native/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b0": {
+            "accepted": true,
+            "confidence": 0.9622864127159119,
+            "threshold": 0.9346616268157959,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9622864127159119,
+              "threshold": 0.9346616268157959,
+              "rejectionReason": null,
+              "diameter": 23.617429029092026,
+              "area": 438.08170760217723,
+              "errorPx": 0.6064374122046206,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.94944029883557,
+                "y": 89.67822030782487
+              },
+              "ellipse": {
+                "cx": 77.94944029883557,
+                "cy": 89.67822030782487,
+                "orientationAvailable": false,
+                "major": 25.465758233497585,
+                "minor": 21.903253334530316
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B0/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b1": {
+            "accepted": true,
+            "confidence": 0.967377781867981,
+            "threshold": 0.935444176197052,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.967377781867981,
+              "threshold": 0.935444176197052,
+              "rejectionReason": null,
+              "diameter": 24.30871065541631,
+              "area": 464.10230986947704,
+              "errorPx": 0.7207527723767385,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.86234238891502,
+                "y": 89.89241593625056
+              },
+              "ellipse": {
+                "cx": 77.86234238891502,
+                "cy": 89.89241593625056,
+                "orientationAvailable": false,
+                "major": 26.034390994504182,
+                "minor": 22.697416423279932
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B1/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b2": {
+            "accepted": true,
+            "confidence": 0.9650163054466248,
+            "threshold": 0.9338858723640442,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9650163054466248,
+              "threshold": 0.9338858723640442,
+              "rejectionReason": null,
+              "diameter": 24.09261460311707,
+              "area": 455.88756712317314,
+              "errorPx": 0.6589452224931609,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.86343853857105,
+                "y": 89.81928099637322
+              },
+              "ellipse": {
+                "cx": 77.86343853857105,
+                "cy": 89.81928099637322,
+                "orientationAvailable": false,
+                "major": 25.782167917195444,
+                "minor": 22.51378085344
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B2/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "standard_dlc_matched": {
+            "accepted": false,
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/standard_dlc/selected_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_matched": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 22.641013717209148,
+              "area": 402.6072739120572,
+              "errorPx": 0.16730577847452008,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.61035571539885,
+                "y": 89.39602823652433
+              },
+              "ellipse": {
+                "cx": 77.61035571539885,
+                "cy": 89.39602823652433,
+                "orientationAvailable": false,
+                "major": 24.887398755267903,
+                "minor": 20.597391763747414
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_matched/selected_current_recipe/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_released": {
+            "accepted": true,
+            "confidence": 0.9408354759216309,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9408354759216309,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 24.283630517445015,
+              "area": 463.1451430692447,
+              "errorPx": 0.19150258619873547,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.44522914947046,
+                "y": 89.44994105295937
+              },
+              "ellipse": {
+                "cx": 77.44522914947046,
+                "cy": 89.44994105295937,
+                "orientationAvailable": false,
+                "major": 26.322595437310074,
+                "minor": 22.402605112106233
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_released/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "pupil_dlc_gm": {
+            "accepted": false,
+            "confidence": 0.7530352473258972,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0.7530352473258972,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/pupil_dlc_gm/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 25.764535692218242,
+              "area": 521.3561754191842,
+              "errorPx": 1.8376356840101855,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 76.11002479434899,
+                "y": 88.06925634168917
+              },
+              "ellipse": {
+                "cx": 76.11002479434899,
+                "cy": 88.06925634168917,
+                "orientationAvailable": false,
+                "major": 27.584234778637907,
+                "minor": 24.064879985348153
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/dlc_model_zoo_mouse_pupil_vclose/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "neuropupil_animal": {
+            "accepted": true,
+            "confidence": 0.3420528173446655,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.3420528173446655,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 27.21702195152121,
+              "area": 581.7964788893428,
+              "errorPx": 3.5882193625514955,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 81.00423240661621,
+                "y": 88.45789337158203
+              },
+              "ellipse": {
+                "cx": 81.00423240661621,
+                "cy": 88.45789337158203,
+                "orientationAvailable": false,
+                "major": 32.25567450559364,
+                "minor": 22.178369397448787
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/neuropupil_animal_released/official_native/native_direct_geometry/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          }
+        },
+        "mediaHashes": {
+          "sourceScoredRoiSha256": "a819d5654096d233748864074b34cb73f46c3936a41913ad7db47b24e9ce5d63",
+          "gtScoredRoiSha256": "0b692b37862e718d6b34770661a954f38ad16307ef8d1703cbf52f33a3966a31",
+          "sourceOriginalSha256": "0e68164f41895824ad56d1dc349f16785bccf9d984f5a9331c5bd1e0448f5680",
+          "gtOriginalSha256": "65e2bf2211a8bbdca2a961e3cc2fd472f598d08d502e3d92e88c56e04b08cded"
+        }
+      },
+      {
+        "frameIndex": 4,
+        "sourceFrameNumber": 55,
+        "timestampMs": null,
+        "width": 155,
+        "height": 155,
+        "sourceId": "Lucia__20190122_110904_CNNdataset_0r0_frame_55.png",
+        "sourceSrc": "/media/real-validation/source/d40e5c31f8e4e30d380f6ef7e7d7456dffedac60b31e357e17bb3899a0d3ce74.png",
+        "reference": {
+          "src": "/media/real-validation/source/d40e5c31f8e4e30d380f6ef7e7d7456dffedac60b31e357e17bb3899a0d3ce74.png",
+          "image": "/media/real-validation/source/d40e5c31f8e4e30d380f6ef7e7d7456dffedac60b31e357e17bb3899a0d3ce74.png",
+          "gt": "/media/real-validation/gt/8bf42a3fc6b33b2313e0c0cd619552c0dd949f365e0a4e1894671bf0539495da.png",
+          "mask": {
+            "src": "/media/real-validation/gt/8bf42a3fc6b33b2313e0c0cd619552c0dd949f365e0a4e1894671bf0539495da.png"
+          },
+          "sourceSha256": "d40e5c31f8e4e30d380f6ef7e7d7456dffedac60b31e357e17bb3899a0d3ce74",
+          "gtSha256": "8bf42a3fc6b33b2313e0c0cd619552c0dd949f365e0a4e1894671bf0539495da",
+          "coordinateSpace": "frozen scored ROI pixels",
+          "geometry": {
+            "mask": {
+              "src": "/media/real-validation/gt/8bf42a3fc6b33b2313e0c0cd619552c0dd949f365e0a4e1894671bf0539495da.png"
+            },
+            "diameter": 23.398568422792877,
+            "area": 430,
+            "orientationAvailable": false,
+            "coordinateSpace": "frozen scored ROI pixels",
+            "center": {
+              "x": 77.63488372093023,
+              "y": 89.24651162790698
+            },
+            "ellipse": {
+              "cx": 77.63488372093023,
+              "cy": 89.24651162790698,
+              "orientationAvailable": false,
+              "major": 25.386696711646337,
+              "minor": 21.58641180672688
+            }
+          },
+          "diameter": 23.398568422792877,
+          "area": 430,
+          "orientationAvailable": false,
+          "center": {
+            "x": 77.63488372093023,
+            "y": 89.24651162790698
+          },
+          "ellipse": {
+            "cx": 77.63488372093023,
+            "cy": 89.24651162790698,
+            "orientationAvailable": false,
+            "major": 25.386696711646337,
+            "minor": 21.58641180672688
+          }
+        },
+        "methods": {
+          "classical_fixed": {
+            "accepted": true,
+            "confidence": 0.682916909456253,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.682916909456253,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 55.02511824049283,
+              "area": 2378,
+              "errorPx": 17.50370134970152,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 61.32043734230446,
+                "y": 95.5883095037847
+              },
+              "ellipse": {
+                "cx": 61.32043734230446,
+                "cy": 95.5883095037847,
+                "orientationAvailable": false,
+                "major": 99.64815516368876,
+                "minor": 45.37821402255794
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/classical_roi_corrected/metrics_mask_native/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b0": {
+            "accepted": true,
+            "confidence": 0.9658249616622925,
+            "threshold": 0.9346616268157959,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9658249616622925,
+              "threshold": 0.9346616268157959,
+              "rejectionReason": null,
+              "diameter": 22.704409433358016,
+              "area": 404.86506239073793,
+              "errorPx": 0.510847054480877,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.96281222558157,
+                "y": 89.67112549482184
+              },
+              "ellipse": {
+                "cx": 77.96281222558157,
+                "cy": 89.67112549482184,
+                "orientationAvailable": false,
+                "major": 24.703311499190924,
+                "minor": 20.867251248256316
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B0/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b1": {
+            "accepted": true,
+            "confidence": 0.9653123021125793,
+            "threshold": 0.935444176197052,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9653123021125793,
+              "threshold": 0.935444176197052,
+              "rejectionReason": null,
+              "diameter": 23.174686727496727,
+              "area": 421.81073242531454,
+              "errorPx": 0.5665522540054012,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.93898849064401,
+                "y": 89.75693990211794
+              },
+              "ellipse": {
+                "cx": 77.93898849064401,
+                "cy": 89.75693990211794,
+                "orientationAvailable": false,
+                "major": 24.926505935746995,
+                "minor": 21.54598427481201
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B1/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "segformer_b2": {
+            "accepted": true,
+            "confidence": 0.9675636291503906,
+            "threshold": 0.9338858723640442,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9675636291503906,
+              "threshold": 0.9338858723640442,
+              "rejectionReason": null,
+              "diameter": 22.887329077324623,
+              "area": 411.4149882163039,
+              "errorPx": 0.5181341875823575,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.96893493913682,
+                "y": 89.67551470955635
+              },
+              "ellipse": {
+                "cx": 77.96893493913682,
+                "cy": 89.67551470955635,
+                "orientationAvailable": false,
+                "major": 24.824846201741583,
+                "minor": 21.10103031603072
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/segformer_exact_scores/B2/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "standard_dlc_matched": {
+            "accepted": false,
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/standard_dlc/selected_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_matched": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 21.572810371386094,
+              "area": 365.5134253755721,
+              "errorPx": 0.097698193250559,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.5738737303216,
+                "y": 89.35152193841684
+              },
+              "ellipse": {
+                "cx": 77.5738737303216,
+                "cy": 89.35152193841684,
+                "orientationAvailable": false,
+                "major": 23.879895602123625,
+                "minor": 19.48861733207899
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_matched/selected_current_recipe/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "meye_released": {
+            "accepted": true,
+            "confidence": 0.9545360207557678,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.9545360207557678,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 22.900246611444928,
+              "area": 411.8795218334787,
+              "errorPx": 0.06713446773309013,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 77.67511911389505,
+                "y": 89.3328674420005
+              },
+              "ellipse": {
+                "cx": 77.67511911389505,
+                "cy": 89.3328674420005,
+                "orientationAvailable": false,
+                "major": 24.951315693211704,
+                "minor": 21.017781238993738
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/meye_released/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "pupil_dlc_gm": {
+            "accepted": false,
+            "confidence": 0.7515782713890076,
+            "threshold": null,
+            "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+            "geometry": {
+              "accepted": false,
+              "confidence": 0.7515782713890076,
+              "threshold": null,
+              "rejectionReason": "COMMON_LT_FIXED_MINIMUM_ACCEPTED_POINTS",
+              "diameter": null,
+              "area": null,
+              "errorPx": null,
+              "mask": null,
+              "orientationAvailable": false
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/pupil_dlc_gm/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "accepted": true,
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 1,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 24.848719154460962,
+              "area": 484.95104175052,
+              "errorPx": 2.2262937899966038,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 75.92112544358119,
+                "y": 87.85932093386633
+              },
+              "ellipse": {
+                "cx": 75.92112544358119,
+                "cy": 87.85932093386633,
+                "orientationAvailable": false,
+                "major": 26.56486512621754,
+                "minor": 23.24343980982193
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/dlc_model_zoo_mouse_pupil_vclose/official_common/common_ellipse/FRAME_METRICS.csv",
+              "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          },
+          "neuropupil_animal": {
+            "accepted": true,
+            "confidence": 0.33346912264823914,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "accepted": true,
+              "confidence": 0.33346912264823914,
+              "threshold": null,
+              "rejectionReason": null,
+              "diameter": 26.22826548385915,
+              "area": 540.2926049040418,
+              "errorPx": 3.027534359704676,
+              "mask": null,
+              "orientationAvailable": false,
+              "center": {
+                "x": 80.56184768676758,
+                "y": 88.47266006469727
+              },
+              "ellipse": {
+                "cx": 80.56184768676758,
+                "cy": 88.47266006469727,
+                "orientationAvailable": false,
+                "major": 32.17910368306292,
+                "minor": 20.27742728465538
+              }
+            },
+            "predictionMask": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/native_exact_scores/neuropupil_animal_released/official_native/native_direct_geometry/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+              "coordinateSpace": "frozen scored ROI pixels"
+            }
+          }
+        },
+        "mediaHashes": {
+          "sourceScoredRoiSha256": "d40e5c31f8e4e30d380f6ef7e7d7456dffedac60b31e357e17bb3899a0d3ce74",
+          "gtScoredRoiSha256": "8bf42a3fc6b33b2313e0c0cd619552c0dd949f365e0a4e1894671bf0539495da",
+          "sourceOriginalSha256": "fb094611687317fa98f6233a8658b300fcca0ec62f84b5fae1272d608a1eaa57",
+          "gtOriginalSha256": "ed52a48db66afaea8f6c06bd6f8629d272006785088d09880d6efcf73fefd25e"
+        }
+      }
+    ]
+  }
+}

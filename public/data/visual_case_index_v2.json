@@ -1,0 +1,586 @@
+{
+  "schema": "mouse-pupillometry-visual-case-index.v2",
+  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "cases": [
+    {
+      "id": "Raffaele__20181028_134237_CNNdataset_b00_frame_107.png",
+      "label": "af-01083608f999 · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/fa8350ea2f16e7635e2d.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20181028_134237_CNNdataset_b00_frame_84.png",
+      "label": "af-01083608f999 · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/b29302757171557de29c.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Raffaele__20181028_134237_CNNdataset_b00_frame_8.png",
+      "label": "af-01083608f999 · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/aa3d2f87445353cd18fa.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Lucia__20190122_110904_CNNdataset_0r0_frame_59.png",
+      "label": "af-567b2466c274 · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/2786b6d3d0523cf5641e.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Lucia__20190122_110904_CNNdataset_0r0_frame_40.png",
+      "label": "af-567b2466c274 · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/9c463f2af758092514e1.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20190122_110912_CNNdataset_0r0_frame_25.png",
+      "label": "af-567b2466c274 · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/02538e70aa5204b238af.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Raffaele__20181028_120144_CNNdataset_00r_frame_260.png",
+      "label": "af-ba49bcf024b5 · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/1f9a1a811ebdc0deb27c.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Raffaele__20181028_120144_CNNdataset_00r_frame_280.png",
+      "label": "af-ba49bcf024b5 · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/96e2129e67b1b4fce7f7.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20181028_120144_CNNdataset_00r_frame_27.png",
+      "label": "af-ba49bcf024b5 · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/e93e004d20b21c5fb73b.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20240723_120506_frame_178.png",
+      "label": "af-c21406208ca4 · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/cc38e7513601011ee240.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20240723_120506_frame_1251.png",
+      "label": "af-c21406208ca4 · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/159edbf052696849326b.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Raffaele__20240723_120756_frame_382.png",
+      "label": "af-c21406208ca4 · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/722763073c0d406e9473.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Mattia__20250219_112952_frame_054.png",
+      "label": "af-cfc57fcf9e24 · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/f6b04ea822fa1d58f302.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Mattia__20250219_112402_frame_029.png",
+      "label": "af-cfc57fcf9e24 · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/9173e92d0638aee322b6.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Mattia__20250219_112952_frame_080.png",
+      "label": "af-cfc57fcf9e24 · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/6ade1802b1a7410e3ec8.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Lucia__20181028_145323_CNNdataset_r00_frame_483.png",
+      "label": "af-fad9e17ab76a · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/519ecd34fed0b7b0be79.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20181028_145323_CNNdataset_r00_frame_217.png",
+      "label": "af-fad9e17ab76a · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/a98285972fd72d2e5543.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__20181028_145323_CNNdataset_r00_frame_72.png",
+      "label": "af-fad9e17ab76a · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/54825ea8c62d5e66568d.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Matteo__pupillometry 24-05-08 14-31-55_frame_3202.png",
+      "label": "af-fd425cee2ecd · within-family small · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/09aaae4375223431f478.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Raffaele__pupillometry 24-05-08 14-31-55_frame_4064.png",
+      "label": "af-fd425cee2ecd · within-family medium · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/0b693d24e482ad24f0bb.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "Lucia__pupillometry 24-05-08 14-31-55_frame_5314.png",
+      "label": "af-fd425cee2ecd · within-family large · prediction-blind representative",
+      "category": "real_validation",
+      "mode": "representative",
+      "file": "cases/201baef30efdf262de19.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-classical_fixed-Raffaele__20181028_120144_CNNdataset_00r_frame_363.png",
+      "label": "Outcome-selected QC example · classical_fixed · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/12d6c0b0e5bc74dbe7d9.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-dlc_zoo_mouse_pupil_vclose-Matteo__20181028_145323_CNNdataset_r00_frame_427.png",
+      "label": "Outcome-selected QC example · dlc_zoo_mouse_pupil_vclose · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/9efd52a072666b3cbf29.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-meye_matched-Matteo__20240723_120506_frame_2227.png",
+      "label": "Outcome-selected QC example · meye_matched · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/754ab4c8bc3e9d563116.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-meye_released-Raffaele__20240723_120938_frame_1346.png",
+      "label": "Outcome-selected QC example · meye_released · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/1213fe8a40a226a3624c.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-neuropupil_animal-Raffaele__20181028_120144_CNNdataset_00r_frame_363.png",
+      "label": "Outcome-selected QC example · neuropupil_animal · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/a00f7735d3e9d41a69d8.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-pupil_dlc_gm-Raffaele__pupillometry-24-05-08-14-31-55_frame_7278.png",
+      "label": "Outcome-selected QC example · pupil_dlc_gm · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/cd619a686669adb82c22.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-segformer_b0-Raffaele__20181028_145323_CNNdataset_r00_frame_400.png",
+      "label": "Outcome-selected QC example · segformer_b0 · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/4693c5e9af8a0660b80c.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-segformer_b1-Raffaele__20181028_120144_CNNdataset_00r_frame_292.png",
+      "label": "Outcome-selected QC example · segformer_b1 · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/60ae543a59d10e59c2cd.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-segformer_b2-Raffaele__20181028_145323_CNNdataset_r00_frame_408.png",
+      "label": "Outcome-selected QC example · segformer_b2 · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/abbde107037045008cb6.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "wc-standard_dlc_matched-Mattia__20250219_112402_frame_158.png",
+      "label": "Outcome-selected QC example · standard_dlc_matched · max retained diameter error",
+      "category": "real_validation",
+      "mode": "worst_case",
+      "file": "cases/d3ccc67e70073292922b.json",
+      "metricIds": [],
+      "perturbationType": null,
+      "severity": null
+    },
+    {
+      "id": "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+      "label": "Exact-GT V2.1 · row 0 · motion_blur",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/e227ecd6846477c44640.json",
+      "metricIds": [],
+      "perturbationType": "motion_blur",
+      "severity": "5 px kernel at 0.0°"
+    },
+    {
+      "id": "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+      "label": "Exact-GT V2.1 · row 4 · latent_occlusion",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/99bff7f0e9e528c5ab98.json",
+      "metricIds": [],
+      "perturbationType": "latent_occlusion",
+      "severity": "50.1% occluded; 49.9% visible"
+    },
+    {
+      "id": "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+      "label": "Exact-GT V2.1 · row 8 · crop_truncation",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/de2f595253721725d9d0.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "left edge; 26.7% pupil visible"
+    },
+    {
+      "id": "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+      "label": "Exact-GT V2.1 · row 10 · crop_truncation",
+      "category": "exact_gt",
+      "mode": "worst_case",
+      "file": "cases/88c80a6a45699c7db5c1.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "right edge; 51.7% pupil visible"
+    },
+    {
+      "id": "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+      "label": "Exact-GT V2.1 · row 54 · motion_blur",
+      "category": "exact_gt",
+      "mode": "worst_case",
+      "file": "cases/2f9c1aa934b07df9cb63.json",
+      "metricIds": [],
+      "perturbationType": "motion_blur",
+      "severity": "5 px kernel at 0.0°"
+    },
+    {
+      "id": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+      "label": "Exact-GT V2.1 · row 116 · crop_truncation",
+      "category": "exact_gt",
+      "mode": "worst_case",
+      "file": "cases/07fa2dacfe33b3c283e0.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "left edge; 26.2% pupil visible"
+    },
+    {
+      "id": "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+      "label": "Exact-GT V2.1 · row 185 · latent_occlusion",
+      "category": "exact_gt",
+      "mode": "worst_case",
+      "file": "cases/ec4f76cba0c531d26a54.json",
+      "metricIds": [],
+      "perturbationType": "latent_occlusion",
+      "severity": "75.4% occluded; 24.6% visible"
+    },
+    {
+      "id": "69208c355bd8764343eabd6580732b90a35a4eb301a98981ea411d1e717f093e",
+      "label": "Motion blur · 5 px · 0°",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/4aaeda288d2f51939f1d.json",
+      "metricIds": [],
+      "perturbationType": "motion_blur",
+      "severity": "5 px motion-blur kernel at 0°"
+    },
+    {
+      "id": "2259dfe3fbba0c50e9b48ec07aac34cd6f70cc25e4348b68c2fdbb325a7f49ee",
+      "label": "Motion blur · 9 px · 25°",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/762d8af8b1d1ddd663f6.json",
+      "metricIds": [],
+      "perturbationType": "motion_blur",
+      "severity": "9 px motion-blur kernel at 25°"
+    },
+    {
+      "id": "0806aaf9a24f1647e27152a4792d130d7fe2ca5a0a10266709e1511e041fb460",
+      "label": "Crop truncation · left edge · 75% target visible (75.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/fab6f4c3efb7726f4ed7.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "25% truncated · 75% target visible"
+    },
+    {
+      "id": "1d749c9832e06e578a379d0532a46f61c541bc070cced2d29b3c628fc81f6a45",
+      "label": "Crop truncation · left edge · 50% target visible (43.4% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/ff7d2b7235843a1a076a.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "50% truncated · 50% target visible"
+    },
+    {
+      "id": "c075e3cfdb72e9776e5464be1b4768324f15671fc16c0caeff4e07a361cd7054",
+      "label": "Crop truncation · left edge · 25% target visible (26.4% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/a6f5b6ae07d83589aec2.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "75% truncated · 25% target visible"
+    },
+    {
+      "id": "dd0f8f04d4318bf00d26f0f68cb2f2af2cfe514a8a2bf690682ea93470c7bd96",
+      "label": "Crop truncation · right edge · 75% target visible (73.6% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/93d17bda5ce4aedee010.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "25% truncated · 75% target visible"
+    },
+    {
+      "id": "427c41972b3e361c6f08f95a670484cce130872c7b682629ee95b1887967643f",
+      "label": "Crop truncation · right edge · 50% target visible (56.6% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/afb437c51a9f37f227a7.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "50% truncated · 50% target visible"
+    },
+    {
+      "id": "3cfbb1a5076c23cd31aec78084304fa7695c2c8d4a9f0bdcfbc55e080fd8b3dc",
+      "label": "Crop truncation · right edge · 25% target visible (24.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/a3f360d5567fe5dcfa5a.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "75% truncated · 25% target visible"
+    },
+    {
+      "id": "780043dabf1b8399d06af9f08b2ef7bf5088156c61c71215dd823d0754652428",
+      "label": "Crop truncation · top edge · 75% target visible (77.4% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/7e15f49c5278a860f21a.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "25% truncated · 75% target visible"
+    },
+    {
+      "id": "deafbf4185cefd465d9e8e2358b06bbea0160bcdf393d3eb1f70f26af30eb87e",
+      "label": "Crop truncation · top edge · 50% target visible (50.9% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/05153eae150b7ad081b3.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "50% truncated · 50% target visible"
+    },
+    {
+      "id": "0c958c6f8b6f9226dfce0fdf5a18cebdecf4efa9204bb9d45bc1f0ecf5c788f3",
+      "label": "Crop truncation · top edge · 25% target visible (24.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/815cd5c7d3c814676922.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "75% truncated · 25% target visible"
+    },
+    {
+      "id": "c4730ee96a7e9d99185b2c13c719e9f17c0fba2e493219a00462895826ea000a",
+      "label": "Crop truncation · bottom edge · 75% target visible (75.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/07126f6af7fb181d3d83.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "25% truncated · 75% target visible"
+    },
+    {
+      "id": "f345b643c012e63f26dbc01dc288450763b4cf980c60f9181f1ffdb5bd8c3082",
+      "label": "Crop truncation · bottom edge · 50% target visible (49.1% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/3893cbfdb05e3194dec9.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "50% truncated · 50% target visible"
+    },
+    {
+      "id": "2ed56a04f41030df2acc6a72d3ade8777f266ec0a82eced071009d29fac039de",
+      "label": "Crop truncation · bottom edge · 25% target visible (22.6% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/ee49db41f1016135b50f.json",
+      "metricIds": [],
+      "perturbationType": "crop_truncation",
+      "severity": "75% truncated · 25% target visible"
+    },
+    {
+      "id": "b7ac90f0829347115a39396bf40331ae80b08b159292c0b1ea2b0d9b14ff0784",
+      "label": "Latent occlusion · 75% target visible (75.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/ee11d9b78cbdfe408e8e.json",
+      "metricIds": [],
+      "perturbationType": "latent_occlusion",
+      "severity": "25% occluded · 75% target visible"
+    },
+    {
+      "id": "b22fad09a3127a35aa9b656f98dfbb827e78d726ac1be447748bd1091ac8386c",
+      "label": "Latent occlusion · 50% target visible (50.9% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/2f9f7bd82f9ba2b795fe.json",
+      "metricIds": [],
+      "perturbationType": "latent_occlusion",
+      "severity": "50% occluded · 50% target visible"
+    },
+    {
+      "id": "7fba6fa6eee70b92a2d99f479707a37164dada45b01a43708e4a10356390fd32",
+      "label": "Latent occlusion · 25% target visible (24.5% achieved)",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/0c8834af5acbb010b7ba.json",
+      "metricIds": [],
+      "perturbationType": "latent_occlusion",
+      "severity": "75% occluded · 25% target visible"
+    },
+    {
+      "id": "4bb894a2a3b724d5834f629c5efa8bdb74dde7f0469a1ce12be1a27da7d9250f",
+      "label": "Combined pupil-local transform · translate, scale, shear and rotate",
+      "category": "exact_gt",
+      "mode": "representative",
+      "file": "cases/17346f56580b70cd0759.json",
+      "metricIds": [],
+      "perturbationType": "combined_pupil",
+      "severity": "combined pupil-local transform"
+    },
+    {
+      "id": "exact-gt-v22-tms02-diameter-sine",
+      "label": "TMS02 · diameter_sine · 96 frozen frames · 60 fps",
+      "category": "temporal",
+      "mode": "representative",
+      "file": "cases/ab378b1d1e26a58bd2db.json",
+      "metricIds": [],
+      "perturbationType": "diameter_sine",
+      "severity": null
+    },
+    {
+      "id": "exact-gt-v22-tms07-diameter-sine",
+      "label": "TMS07 · diameter_sine · conditional Pupil-DLC coverage example · 96 frozen frames",
+      "category": "temporal",
+      "mode": "conditional_example",
+      "file": "cases/07a7fb2c7cdcc5085ee7.json",
+      "metricIds": [],
+      "perturbationType": "diameter_sine",
+      "severity": null
+    }
+  ]
+}

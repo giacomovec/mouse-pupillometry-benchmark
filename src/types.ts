@@ -68,6 +68,7 @@ export interface MetricCard {
   explanation?: string
   description?: string
   direction?: Direction
+  targetValue?: number
   unit?: string
   metric?: string
   metricId?: string

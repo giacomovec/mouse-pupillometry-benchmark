@@ -43,7 +43,120 @@ class ExportStructureTests(unittest.TestCase):
         self.assertEqual(self.manifest["externalEvaluation"], "NOT_OPENED")
         self.assertIsNone(self.manifest["freeze"])
         self.assertEqual(self.manifest["freezeStatus"], "DEVELOPMENT_NOT_FORMALLY_FROZEN")
-        self.assertTrue(self.manifest["version"].startswith("benchmark-data-dev-v1+"))
+        self.assertTrue(self.manifest["version"].startswith("benchmark-data-dev-v2+"))
+
+    def test_v2_overview_registry_are_compact_typed_and_roster_safe(self):
+        overview = read_json(DATA / "overview_v2.json")
+        registry = read_json(DATA / "real_validation_v2.json")
+        self.assertLess((DATA / "overview_v2.json").stat().st_size, 100_000)
+        self.assertEqual(overview["schema"], "mouse-pupillometry-overview.v2")
+        self.assertEqual(overview["population"]["acquisitionFamilyCount"], 7)
+        self.assertEqual(overview["population"]["validationFrameCount"], 1337)
+        self.assertEqual(overview["population"]["exactGtCaseCount"], 252)
+        self.assertEqual(overview["safety"]["allenModelScoring"], 0)
+        self.assertEqual(overview["safety"]["legacyProtectedInferenceQueries"], 0)
+        primary = {row["methodId"] for row in registry["conditions"] if row["primary"]}
+        self.assertEqual(primary, exporter.PUBLISHED_PRIMARY_METHOD_IDS)
+        self.assertNotIn("meye_matched", {point.get("methodId") for point in overview["figures"]["accuracyCoverage"]})
+        self.assertTrue(all("unet" not in str(point.get("id", "")) for point in overview["figures"]["accuracyCoverage"]))
+        self.assertTrue(all("unet" not in str(point.get("id", "")) for point in overview["figures"]["practicalCoverage"]))
+        for point in overview["figures"]["accuracyCoverage"]:
+            self.assertTrue(point.get("methodId"))
+            self.assertTrue(point.get("sourceRefs"))
+            self.assertEqual(point["accuracyPercent"], point.get("accuracyPercent"))
+        standard_dlc = [point for point in overview["figures"]["accuracyCoverage"] if point.get("methodId") == "standard_dlc_matched"]
+        self.assertEqual(len(standard_dlc), 2)
+        self.assertEqual(standard_dlc[0]["connectionId"], standard_dlc[1]["connectionId"])
+        self.assertEqual(len(overview["figures"]["commonSpeedAccuracy"]), 9)
+        self.assertTrue(all(point["comparable"] and point["runtimeProtocol"] and point["sourceRefs"] for point in overview["figures"]["commonSpeedAccuracy"]))
+        self.assertEqual(len(overview["figures"]["pairedArchitecture"]), 3)
+        source_hashes = {entry["path"]: entry["sha256"] for entry in read_json(DATA / "provenance.json")["inputs"]}
+        for condition in registry["conditions"]:
+            self.assertIsInstance(condition["primary"], bool)
+            self.assertIsNotNone(condition.get("coveragePercent"))
+            for ref in condition["sourceRefs"]:
+                self.assertEqual(ref["sha256"], source_hashes[ref["path"]])
+                self.assertTrue(ref["type"])
+                self.assertTrue(ref.get("rowId") is None or isinstance(ref["rowId"], str))
+
+    def test_split_case_index_and_per_case_payloads_equal_full_bundle(self):
+        index = read_json(DATA / "visual_case_index_v2.json")
+        self.assertEqual(len(index["cases"]), len(self.visual["cases"]))
+        full = {case["id"]: case for case in self.visual["cases"]}
+        self.assertEqual(set(full), {row["id"] for row in index["cases"]})
+        for row in index["cases"]:
+            payload_path = DATA / row["file"]
+            payload = read_json(payload_path)
+            self.assertEqual(payload["case"], full[row["id"]])
+            manifest_file = self.manifest["files"][row["file"]]
+            self.assertEqual(exporter.sha256_file(payload_path), manifest_file["sha256"])
+            self.assertEqual(row["category"], full[row["id"]]["category"])
+
+    def test_quantitative_exact_gt_severity_is_joined_to_frozen_rows(self):
+        severity = read_json(DATA / "exact_gt_severity_v2.json")
+        self.assertEqual(severity["schema"], "mouse-pupillometry-exact-gt-severity.v2")
+        self.assertEqual(severity["caseCount"], 252)
+        self.assertEqual(len(severity["rows"]), len(severity["methodIds"]) * 9)
+        for method_id in severity["methodIds"]:
+            cells = [row for row in severity["rows"] if row["methodId"] == method_id]
+            self.assertEqual(len(cells), 9)
+            self.assertEqual(sum(row["attempted"] for row in cells), 252)
+            for cell in cells:
+                self.assertLessEqual(cell["accepted"], cell["attempted"])
+                self.assertEqual(len(cell["caseIds"]), cell["attempted"])
+                self.assertEqual(cell["metricId"], "diameter_are")
+                self.assertEqual(cell["value"], cell["valuePercent"])
+                self.assertNotIn("lower", cell)
+                self.assertNotIn("upper", cell)
+                self.assertTrue(all(ref["path"] and ref["sha256"] and ref["type"] for ref in cell["sourceRefs"]))
+            source_path = SOURCE_ROOT / exporter.EXACT_GT_FRAME_METRIC_PATHS[method_id]
+            with source_path.open("r", encoding="utf-8-sig", newline="") as stream:
+                source_rows = list(csv.DictReader(stream))
+            source_valid = sum(
+                row.get("kind") in (None, "", "spatial")
+                and exporter.as_bool(row.get("valid")) is True
+                and row.get("diameter_are") not in (None, "")
+                for row in source_rows
+            )
+            self.assertEqual(sum(row["accepted"] for row in cells), source_valid)
+        b2_blur5 = next(row for row in severity["rows"] if row["methodId"] == "segformer_b2" and row["operationFamily"] == "motion_blur" and row["severityValue"] == 5)
+        case_rows_path = SOURCE_ROOT / exporter.EXACT_GT_FRAME_METRIC_PATHS["segformer_b2"]
+        execution_path = SOURCE_ROOT / f"{exporter.EXP}/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv"
+        with execution_path.open("r", encoding="utf-8-sig", newline="") as stream:
+            execution = [row for row in csv.DictReader(stream) if row.get("kind") == "spatial" and row.get("operation_family") == "motion_blur" and json.loads(row["operation_json"]).get("kernel_length_px") == 5]
+        with case_rows_path.open("r", encoding="utf-8-sig", newline="") as stream:
+            by_id = {row.get("execution_id"): row for row in csv.DictReader(stream)}
+        values = [float(by_id[row["execution_id"]]["diameter_are"]) for row in execution if by_id[row["execution_id"]].get("valid", "").lower() == "true"]
+        self.assertEqual(b2_blur5["attempted"], len(execution))
+        self.assertEqual(b2_blur5["accepted"], len(values))
+        self.assertAlmostEqual(b2_blur5["valuePercent"], sum(values) / len(values) * 100)
+
+    def test_native_cpu_timing_stays_protocol_separate_from_a5000(self):
+        native = read_json(DATA / "native_cpu_runtime_v2.json")
+        self.assertEqual(native["schema"], "mouse-pupillometry-native-cpu-runtime.v2")
+        self.assertFalse(native["comparableToCommonA5000"])
+        self.assertEqual(len(native["conditions"]), 8)
+        self.assertEqual(native["hardware"]["machine"], "arm64")
+        self.assertEqual(native["sharedStreamSamples"], 14)
+        self.assertEqual({row["batchSize"] for row in native["conditions"]}, {1})
+        self.assertEqual({row["sharedStreamIdentitySha256"] for row in native["conditions"]}, {native["sharedStreamIdentitySha256"]})
+        self.assertTrue(all(row["latencyMs"] > 0 and row["endToEndP95Ms"] >= row["latencyMs"] for row in native["conditions"]))
+        unavailable = {row["methodId"] for row in native["excludedMethods"]}
+        self.assertTrue({"facemap_raw", "facemap_processed", "eyeloop"}.issubset(unavailable))
+        provenance_hashes = {row["path"]: row["sha256"] for row in read_json(DATA / "provenance.json")["inputs"]}
+        for row in native["conditions"]:
+            for ref in row["sourceRefs"]:
+                self.assertEqual(ref["sha256"], provenance_hashes[ref["path"]])
+
+    def test_target_direction_cards_include_numeric_target(self):
+        for path in DATA.glob("*.json"):
+            if path.name == "benchmark_manifest.json":
+                continue
+            document = read_json(path)
+            for card in document.get("cards", []):
+                if card.get("direction") == "target":
+                    expected = 1 if "gain" in card["id"].lower() else 0
+                    self.assertEqual(card.get("targetValue"), expected)
 
     def test_exact_gt_selected_grid_has_all_canonical_method_rows(self):
         cases = [case for case in self.visual["cases"] if case.get("category") == "exact_gt"]

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "capabilities",
   "cards": [],
   "matrix": [

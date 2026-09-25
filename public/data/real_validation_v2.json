@@ -1,0 +1,1380 @@
+{
+  "schema": "mouse-pupillometry-real-validation-registry.v2",
+  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "status": "DEVELOPMENT",
+  "population": {
+    "acquisitionFamilyCount": 7,
+    "validationFrameCount": 1337,
+    "exactGtCaseCount": 252,
+    "temporalSeedCount": 7,
+    "temporalTrajectoryCount": 126,
+    "temporalTrajectoriesPerSeed": 18,
+    "temporalFramesPerTrajectory": 96,
+    "temporalTruthFrameCount": 12096,
+    "temporalObservedInputCount": 12054,
+    "temporalNoCallCount": 42,
+    "temporalMethodCount": 11,
+    "temporalObservationCount": 70
+  },
+  "conditions": [
+    {
+      "conditionId": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+      "methodId": "classical_fixed",
+      "label": "Fixed dark-component ellipse v1",
+      "family": "classical_fixed",
+      "model": "Fixed dark-component ellipse v1",
+      "representation": "mask_component_covariance",
+      "operatingPoint": "native_unfiltered",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 1,
+      "coveragePercent": 100,
+      "accepted": 1337,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 98.39960460885301,
+        "diameterFamilyCi": {
+          "lower": 27.68631956117995,
+          "upper": 178.70169516427697
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 45.99850411368736,
+        "centerErrorPx": 15.567809950170291,
+        "dice": null
+      },
+      "primary": true,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "0de3190e55f2af4142d582f2f528655ca903b5d6c824c05436ff825d52de912b",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+      "methodId": "segformer_b0",
+      "label": "SegFormer B0",
+      "family": "segformer",
+      "model": "SegFormer B0",
+      "representation": "mask_native",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.9513836948391923,
+      "coveragePercent": 95.13836948391923,
+      "accepted": 1272,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 17.886146765667462,
+        "diameterFamilyCi": {
+          "lower": 2.047278602427253,
+          "upper": 41.778645162004125
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 1.8867924528301887,
+        "centerErrorPx": 1.0176028219895155,
+        "dice": 0.8436545200298028
+      },
+      "primary": true,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "2f4c501a41d8a5dde70635d841b0efa4fc1ab93c3d81e5d292310bedacfcadfe",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "2f4c501a41d8a5dde70635d841b0efa4fc1ab93c3d81e5d292310bedacfcadfe",
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 17.59066,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b0"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+      "methodId": "segformer_b1",
+      "label": "SegFormer B1",
+      "family": "segformer",
+      "model": "SegFormer B1",
+      "representation": "mask_native",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 18.30258579931329,
+        "diameterFamilyCi": {
+          "lower": 1.5967562979305223,
+          "upper": 38.51593785840274
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 1.730920535011802,
+        "centerErrorPx": 1.1256471281280922,
+        "dice": 0.83149303597579
+      },
+      "primary": true,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "c95b6ea8cb7b0a76b1bf8c677a8bb67ac20e5f61a778878638b89096b5ce0ca7",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "c95b6ea8cb7b0a76b1bf8c677a8bb67ac20e5f61a778878638b89096b5ce0ca7",
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 17.751826,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b1"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+      "methodId": "segformer_b2",
+      "label": "SegFormer B2",
+      "family": "segformer",
+      "model": "SegFormer B2",
+      "representation": "mask_native",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 4.7908750653418615,
+        "diameterFamilyCi": {
+          "lower": 1.7004518074985326,
+          "upper": 8.468396412517155
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0.5507474429583006,
+        "centerErrorPx": 0.8579479017767752,
+        "dice": 0.8832901980399982
+      },
+      "primary": true,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+        },
+        {
+          "type": "architecture_control_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+          "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+          "rowId": "segformer_b2"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "1099cadafd641df9d6c092a883a017c29d4107878e680b498ce97fad32399e40",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "1099cadafd641df9d6c092a883a017c29d4107878e680b498ce97fad32399e40",
+      "architectureControl": {
+        "coverage": 0.9506357516828721,
+        "diameterArePercent": 4.790865563637739
+      },
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 26.643721499999998,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b2"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+      "methodId": "standard_dlc_matched",
+      "label": "Standard DLC matched adapter",
+      "family": "deeplabcut",
+      "model": "Standard DLC matched adapter",
+      "representation": "unchanged_native_diameter_vs_GT_mask",
+      "operatingPoint": "common_GT_mask_scalar_diameter",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.4091249065071055,
+      "coveragePercent": 40.912490650710545,
+      "accepted": 547,
+      "attempted": 1337,
+      "familyCount": 4,
+      "metrics": {
+        "diameterArePercent": 2.205556294504891,
+        "diameterFamilyCi": {
+          "lower": 1.0999574500020324,
+          "upper": 3.3111551390077496
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0,
+        "centerErrorPx": 1.8289633265565264,
+        "dice": null
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "c3d3b6b88675dfdbc2cfbe2f1e023d6c46847daca63072bf6fa36ddfa2d00f3d",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "c3d3b6b88675dfdbc2cfbe2f1e023d6c46847daca63072bf6fa36ddfa2d00f3d",
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 9.5149075,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "standard_dlc_matched"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "meye_matched__shared_scalar_mask_gt__selected_current_recipe__native_mask",
+      "methodId": "meye_matched",
+      "label": "MEYE matched mask-only",
+      "family": "meye",
+      "model": "MEYE matched mask-only",
+      "representation": "native_mask",
+      "operatingPoint": "selected_current_recipe",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.975317875841436,
+      "coveragePercent": 97.5317875841436,
+      "accepted": 1304,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 6.885803210037807,
+        "diameterFamilyCi": {
+          "lower": 3.1974756422247417,
+          "upper": 10.975503051216984
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 2.6840490797546015,
+        "centerErrorPx": 1.0291053012941678,
+        "dice": 0.8257963460364752
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::meye_matched"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::meye_matched"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "2b0ace09b1cf4bdd8080cf631fcc28e720df7b23c46999173330efef40e6d112",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "architecture_control",
+      "frameMetricsSha256": "2b0ace09b1cf4bdd8080cf631fcc28e720df7b23c46999173330efef40e6d112",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+      "methodId": "meye_released",
+      "label": "MEYE v0.1.1",
+      "family": "meye",
+      "model": "MEYE v0.1.1",
+      "representation": "native_mask",
+      "operatingPoint": "official_native",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.9835452505609573,
+      "coveragePercent": 98.35452505609574,
+      "accepted": 1315,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 6.405354917457654,
+        "diameterFamilyCi": {
+          "lower": 1.7791389895114216,
+          "upper": 12.754527851417004
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 5.171102661596958,
+        "centerErrorPx": 1.780255741649355,
+        "dice": 0.86379166360316
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "17f84ad325c42f5c876a6537d74609b9d75b837c0686049f1a3cc553219ebac4",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "17f84ad325c42f5c876a6537d74609b9d75b837c0686049f1a3cc553219ebac4",
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 49.1895995,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "meye_released"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+      "methodId": "pupil_dlc_gm",
+      "label": "Pupil-DLC General Model",
+      "family": "pupil_dlc",
+      "model": "Pupil-DLC General Model",
+      "representation": "unchanged_native_diameter_vs_GT_mask",
+      "operatingPoint": "common_GT_mask_scalar_diameter",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.1787584143605086,
+      "coveragePercent": 17.87584143605086,
+      "accepted": 239,
+      "attempted": 1337,
+      "familyCount": 1,
+      "metrics": {
+        "diameterArePercent": 3.4397274116362273,
+        "diameterFamilyCi": {
+          "lower": 3.4397274116362273,
+          "upper": 3.4397274116362273
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0,
+        "centerErrorPx": 1.321827741844707,
+        "dice": null
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "6966b33e52c202a34813d0470e651f499d6e132922de5246c54957cc955a5ce7",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "6966b33e52c202a34813d0470e651f499d6e132922de5246c54957cc955a5ce7",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+      "methodId": "dlc_zoo_mouse_pupil_vclose",
+      "label": "DLC Model Zoo mouse_pupil_vclose",
+      "family": "deeplabcut",
+      "model": "DLC Model Zoo mouse_pupil_vclose",
+      "representation": "unchanged_native_diameter_vs_GT_mask",
+      "operatingPoint": "common_GT_mask_scalar_diameter",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.8212415856394913,
+      "coveragePercent": 82.12415856394914,
+      "accepted": 1098,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 54.06716018093426,
+        "diameterFamilyCi": {
+          "lower": 7.133113753503512,
+          "upper": 125.34226272705602
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 27.140255009107467,
+        "centerErrorPx": 7.194288395797153,
+        "dice": null
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "ad5ab551c969858c37a8548091eb9cfe4dcf1aacf5dd6a68dc7d8e0df023ae6e",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "ad5ab551c969858c37a8548091eb9cfe4dcf1aacf5dd6a68dc7d8e0df023ae6e",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+      "methodId": "neuropupil_animal",
+      "label": "NeuroPupil Animal Model",
+      "family": "neuropupil",
+      "model": "NeuroPupil Animal Model",
+      "representation": "native_direct_geometry",
+      "operatingPoint": "official_native",
+      "plane": "shared_scalar_mask_gt",
+      "truthView": "mask",
+      "coverage": 0.6888556469708302,
+      "coveragePercent": 68.88556469708303,
+      "accepted": 921,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 76.09172145280462,
+        "diameterFamilyCi": {
+          "lower": 22.383517148548037,
+          "upper": 138.83146601778932
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 41.80238870792617,
+        "centerErrorPx": 9.689940923692047,
+        "dice": null
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "frameMetricsSha256": "ea7996deaa0c7a4e85359213c4b033dd27864369beb12ef8ca0f2b2a22957eb9",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "segformer_b0__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+      "methodId": "segformer_b0",
+      "label": "SegFormer B0",
+      "family": "segformer",
+      "model": "SegFormer B0",
+      "representation": "common_ellipse",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.9513836948391923,
+      "coveragePercent": 95.13836948391923,
+      "accepted": 1272,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 17.80424870755597,
+        "diameterFamilyCi": {
+          "lower": 2.047278602427253,
+          "upper": 41.778645162004125
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 1.8867924528301887,
+        "centerErrorPx": 1.0216693613511019,
+        "dice": 0.8436545200298028
+      },
+      "primary": false,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b0"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b0"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "ca725048d96c766e08989194a04af6e69cd6b2f9a6b3251dd131882d8aac7c83",
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "segformer_b1__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+      "methodId": "segformer_b1",
+      "label": "SegFormer B1",
+      "family": "segformer",
+      "model": "SegFormer B1",
+      "representation": "common_ellipse",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 18.36720910138821,
+        "diameterFamilyCi": {
+          "lower": 1.5967562979305223,
+          "upper": 38.51593785840274
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 1.730920535011802,
+        "centerErrorPx": 1.1286574212449572,
+        "dice": 0.83149303597579
+      },
+      "primary": false,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b1"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b1"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "25f31e1ed67873f2a7653aefe7d2f3ad39a06c065992b077e946cb508e3142c2",
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "segformer_b2__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+      "methodId": "segformer_b2",
+      "label": "SegFormer B2",
+      "family": "segformer",
+      "model": "SegFormer B2",
+      "representation": "common_ellipse",
+      "operatingPoint": "frozen_selected_checkpoint_cutoff",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 4.79067919538295,
+        "diameterFamilyCi": {
+          "lower": 1.7004518074985326,
+          "upper": 8.468396412517155
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0.5507474429583006,
+        "centerErrorPx": 0.8597404287895376,
+        "dice": 0.8832901980399982
+      },
+      "primary": false,
+      "rosterRole": "INTERNAL_CUSTOM",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b2"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::segformer_b2"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "0dd4e0714312774a5a91d6cd3cd1473fbb38982dfaa7a3975731933b27b230a2",
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "standard_dlc_matched__common_ellipse_geometry__selected_common__common_ellipse",
+      "methodId": "standard_dlc_matched",
+      "label": "Standard DLC matched adapter",
+      "family": "deeplabcut",
+      "model": "Standard DLC matched adapter",
+      "representation": "common_ellipse",
+      "operatingPoint": "selected_common",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.4091249065071055,
+      "coveragePercent": 40.912490650710545,
+      "accepted": 547,
+      "attempted": 1337,
+      "familyCount": 4,
+      "metrics": {
+        "diameterArePercent": 2.2443009884843557,
+        "diameterFamilyCi": {
+          "lower": 1.0999574500020324,
+          "upper": 3.3111551390077496
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0,
+        "centerErrorPx": 1.8235213633204823,
+        "dice": null
+      },
+      "primary": false,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::standard_dlc_matched"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::standard_dlc_matched"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "8173613658ec391e5e6d9519cf25a00c4d7d58a5e888b64bf8ebd4255951eb71",
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "meye_matched__common_ellipse_geometry__selected_current_recipe__common_ellipse",
+      "methodId": "meye_matched",
+      "label": "MEYE matched mask-only",
+      "family": "meye",
+      "model": "MEYE matched mask-only",
+      "representation": "common_ellipse",
+      "operatingPoint": "selected_current_recipe",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.975317875841436,
+      "coveragePercent": 97.5317875841436,
+      "accepted": 1304,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 6.868869295455114,
+        "diameterFamilyCi": {
+          "lower": 3.1974756422247417,
+          "upper": 10.975503051216984
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 2.7607361963190185,
+        "centerErrorPx": 1.027181820973679,
+        "dice": 0.8257963460364752
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::meye_matched"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::meye_matched"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "88184d0a9f57c72760ebc20e0dd8f4ae39d4fd6139dcaf0efa2157abacd40d3f",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "meye_released__common_ellipse_geometry__official_common__common_ellipse",
+      "methodId": "meye_released",
+      "label": "MEYE v0.1.1",
+      "family": "meye",
+      "model": "MEYE v0.1.1",
+      "representation": "common_ellipse",
+      "operatingPoint": "official_common",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.9835452505609573,
+      "coveragePercent": 98.35452505609574,
+      "accepted": 1315,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 6.380017978167809,
+        "diameterFamilyCi": {
+          "lower": 1.7791389895114216,
+          "upper": 12.754527851417004
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 5.095057034220532,
+        "centerErrorPx": 1.7651585317064074,
+        "dice": 0.86379166360316
+      },
+      "primary": false,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::meye_released"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::meye_released"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "1776d0d2452f2ca43aa93ec4f107532e5f74cc73934da8dc126e1e800e1d896d",
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "pupil_dlc_gm__common_ellipse_geometry__official_common__common_ellipse",
+      "methodId": "pupil_dlc_gm",
+      "label": "Pupil-DLC General Model",
+      "family": "pupil_dlc",
+      "model": "Pupil-DLC General Model",
+      "representation": "common_ellipse",
+      "operatingPoint": "official_common",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.1787584143605086,
+      "coveragePercent": 17.87584143605086,
+      "accepted": 239,
+      "attempted": 1337,
+      "familyCount": 1,
+      "metrics": {
+        "diameterArePercent": 3.3791979607728604,
+        "diameterFamilyCi": {
+          "lower": 3.4397274116362273,
+          "upper": 3.4397274116362273
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 0,
+        "centerErrorPx": 1.3318814724378238,
+        "dice": null
+      },
+      "primary": false,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::pupil_dlc_gm"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::pupil_dlc_gm"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "123cd2b063e0aea4ce2471ed9048f2d909e786a2ef8619ba72241edacc4170f4",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "dlc_zoo_mouse_pupil_vclose__common_ellipse_geometry__official_common__common_ellipse",
+      "methodId": "dlc_zoo_mouse_pupil_vclose",
+      "label": "DLC Model Zoo mouse_pupil_vclose",
+      "family": "deeplabcut",
+      "model": "DLC Model Zoo mouse_pupil_vclose",
+      "representation": "common_ellipse",
+      "operatingPoint": "official_common",
+      "plane": "common_ellipse_geometry",
+      "truthView": "ellipse",
+      "coverage": 0.8212415856394913,
+      "coveragePercent": 82.12415856394914,
+      "accepted": 1098,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 53.82979066389828,
+        "diameterFamilyCi": {
+          "lower": 7.133113753503512,
+          "upper": 125.34226272705602
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": 26.958105646630237,
+        "centerErrorPx": 7.196889890203101,
+        "dice": null
+      },
+      "primary": false,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "real_validation_summary_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+          "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+          "rowId": "real-validation::common_ellipse_geometry::dlc_zoo_mouse_pupil_vclose"
+        },
+        {
+          "type": "real_validation_evidence_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::common_ellipse_geometry::dlc_zoo_mouse_pupil_vclose"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+        "validationManifestSha256": "433d5167f802e585aaf297ed8ba6e8d8f9c862844cf96d1f567ba12f1333e768"
+      },
+      "controlType": "representation_variant",
+      "frameMetricsSha256": "145398e9597216ce933c9cd6c67edfdf7e74dbc0b449a5c503f7d73b922db7d2",
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    },
+    {
+      "conditionId": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+      "methodId": "mouse_pupil_analysis_v020",
+      "label": "mouse-pupil-analysis v0.2.0",
+      "family": "mouse_pupil_analysis",
+      "model": "mouse-pupil-analysis v0.2.0",
+      "representation": null,
+      "operatingPoint": "official v0.2.0; mapping-fixed; native mapped pupil mask",
+      "plane": "official_native_mask",
+      "coverage": 0.9865370231862378,
+      "coveragePercent": 98.65370231862379,
+      "accepted": 1319,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 32.69900612519963,
+        "diameterFamilyCi": {
+          "lower": 13.072294371861087,
+          "upper": 56.361643357081654
+        },
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": null,
+        "centerErrorPx": null,
+        "dice": 0.6809112805044141
+      },
+      "primary": true,
+      "rosterRole": "PUBLISHED",
+      "sourceRefs": [
+        {
+          "type": "official_method_summary",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json",
+          "sha256": "f38869e22e8d5ad16c2a930d79d0577434f34beb719caedb2cd121da7917ca85",
+          "rowId": "mouse_pupil_analysis_v020"
+        },
+        {
+          "type": "official_run_manifest",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json",
+          "sha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede",
+          "rowId": "RUN_MANIFEST"
+        },
+        {
+          "type": "canonical_feature_aggregate",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+          "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e",
+          "rowId": "feature_v10.aggregates.diameter_are.mouse_pupil_analysis_v020"
+        },
+        {
+          "type": "official_frame_metrics",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv",
+          "sha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+          "rowId": "mouse_pupil_analysis_v020"
+        }
+      ],
+      "sourceHashes": {
+        "frameMetricsSha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+        "validationManifestSha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede"
+      },
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 3.0485085,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "mouse_pupil_analysis_v020"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "unet_small__architecture_matched_validation",
+      "methodId": "unet_small",
+      "label": "U-Net small",
+      "family": "vanilla_unet",
+      "model": "U-Net small",
+      "representation": "native mask + common geometry",
+      "operatingPoint": "frozen corrected validation operating point",
+      "plane": "matched_architecture_control",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 4.143333557794118,
+        "diameterFamilyCi": {
+          "lower": 1.268131205861101,
+          "upper": 8.507744052270105
+        },
+        "gt20Count": 25,
+        "gt20FractionRetainedPercent": 1.9669551534225018,
+        "centerErrorPx": 1.0495660373334448,
+        "dice": 0.9486613663304532
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "controlType": "architecture_control",
+      "checkpointHash": "b84c3c24c6f6adaffd02522e2584c90803d1dd94265a78c4b2398edc32785bc8",
+      "protocolHash": "f16e6ca5423ff92d444e19fc06300a7af975c261533fb78994d428dbd1675d04",
+      "sourceRefs": [
+        {
+          "type": "architecture_control_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+          "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+          "rowId": "unet_small"
+        }
+      ],
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 17.7328795,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_small"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "unet_base__architecture_matched_validation",
+      "methodId": "unet_base",
+      "label": "U-Net base",
+      "family": "vanilla_unet",
+      "model": "U-Net base",
+      "representation": "native mask + common geometry",
+      "operatingPoint": "frozen corrected validation operating point",
+      "plane": "matched_architecture_control",
+      "coverage": 0.955871353777113,
+      "coveragePercent": 95.58713537771129,
+      "accepted": 1278,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 4.418546842497433,
+        "diameterFamilyCi": {
+          "lower": 1.636878354939243,
+          "upper": 7.657972544247809
+        },
+        "gt20Count": 27,
+        "gt20FractionRetainedPercent": 2.112676056338028,
+        "centerErrorPx": 0.8985715020781246,
+        "dice": 0.9506871041285885
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "controlType": "architecture_control",
+      "checkpointHash": "8b0c1aa2c1420c6fef9df4dbca1326ec032bb450019fd940110da935cc5db37e",
+      "protocolHash": "f16e6ca5423ff92d444e19fc06300a7af975c261533fb78994d428dbd1675d04",
+      "sourceRefs": [
+        {
+          "type": "architecture_control_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+          "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+          "rowId": "unet_base"
+        }
+      ],
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 22.353036,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_base"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "unet_b2_matched__architecture_matched_validation",
+      "methodId": "unet_b2_matched",
+      "label": "U-Net B2-matched",
+      "family": "vanilla_unet",
+      "model": "U-Net B2-matched",
+      "representation": "native mask + common geometry",
+      "operatingPoint": "frozen corrected validation operating point",
+      "plane": "matched_architecture_control",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 3.6774840628706467,
+        "diameterFamilyCi": {
+          "lower": 1.4170412787009228,
+          "upper": 6.4096804454950185
+        },
+        "gt20Count": 11,
+        "gt20FractionRetainedPercent": 0.865460267505901,
+        "centerErrorPx": 0.8292687823458416,
+        "dice": 0.9546546933065004
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "controlType": "architecture_control",
+      "checkpointHash": "40bee2f8b45e65d6d31ed4520a1fa21c4c08ec9fc1cb30347e62fa47a0729378",
+      "protocolHash": "f16e6ca5423ff92d444e19fc06300a7af975c261533fb78994d428dbd1675d04",
+      "sourceRefs": [
+        {
+          "type": "architecture_control_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+          "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+          "rowId": "unet_b2_matched"
+        }
+      ],
+      "commonRuntime": {
+        "status": "COMMON_BATCH1_VALID",
+        "latencyMs": 29.211889499999998,
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_b2_matched"
+          }
+        ]
+      }
+    },
+    {
+      "conditionId": "standard_dlc_matched__prospective_95pct_coverage",
+      "methodId": "standard_dlc_matched",
+      "label": "Standard DLC · ≥95% prospective coverage",
+      "family": "deeplabcut",
+      "model": "Standard DLC",
+      "representation": "unchanged native confidence-ranked geometry",
+      "operatingPoint": "confidence threshold 0.19200456142425534; prospective ≥95% coverage",
+      "plane": "prospective_coverage_matched",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 52.99304504731545,
+        "diameterFamilyCi": null,
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": null,
+        "centerErrorPx": null,
+        "dice": null
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "controlType": "coverage_matched_operating_point",
+      "sourceRefs": [
+        {
+          "type": "prospective_threshold_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+          "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+          "rowId": "standard_dlc_matched:coverage_95"
+        },
+        {
+          "type": "population_identity_evidence",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+        }
+      ],
+      "sourceHashes": {
+        "populationFrameMetricsSha256": "c3d3b6b88675dfdbc2cfbe2f1e023d6c46847daca63072bf6fa36ddfa2d00f3d"
+      },
+      "commonRuntime": {
+        "status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION",
+        "latencyMs": null,
+        "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."
+      }
+    },
+    {
+      "conditionId": "pupil_dlc_gm__prospective_95pct_coverage",
+      "methodId": "pupil_dlc_gm",
+      "label": "Pupil-DLC General Model · ≥95% prospective coverage",
+      "family": "pupil_dlc",
+      "model": "Pupil-DLC General Model",
+      "representation": "unchanged native confidence-ranked geometry",
+      "operatingPoint": "confidence threshold 0.028481286019086796; prospective ≥95% coverage",
+      "plane": "prospective_coverage_matched",
+      "coverage": 0.9506357516828721,
+      "coveragePercent": 95.0635751682872,
+      "accepted": 1271,
+      "attempted": 1337,
+      "familyCount": 7,
+      "metrics": {
+        "diameterArePercent": 19.03488536223801,
+        "diameterFamilyCi": null,
+        "gt20Count": null,
+        "gt20FractionRetainedPercent": null,
+        "centerErrorPx": null,
+        "dice": null
+      },
+      "primary": false,
+      "rosterRole": "MATCHED_CONTROL",
+      "controlType": "coverage_matched_operating_point",
+      "sourceRefs": [
+        {
+          "type": "prospective_threshold_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+          "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+          "rowId": "pupil_dlc_gm:coverage_95"
+        },
+        {
+          "type": "population_identity_evidence",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+          "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+          "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+        }
+      ],
+      "sourceHashes": {
+        "populationFrameMetricsSha256": "6966b33e52c202a34813d0470e651f499d6e132922de5246c54957cc955a5ce7"
+      },
+      "commonRuntime": {
+        "status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT",
+        "latencyMs": null,
+        "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."
+      }
+    }
+  ],
+  "metricDefinitions": {
+    "diameterArePercent": {
+      "label": "Family-macro diameter absolute relative error",
+      "unit": "%",
+      "direction": "lower",
+      "aggregation": "unweighted acquisition-family means"
+    },
+    "gt20FractionRetainedPercent": {
+      "label": "Retained frames with diameter ARE >20%",
+      "unit": "%",
+      "direction": "lower",
+      "denominator": "retained frames"
+    }
+  },
+  "rosterRoles": [
+    "PUBLISHED",
+    "MATCHED_CONTROL",
+    "INTERNAL_CUSTOM",
+    "DEPLOYMENT_VARIANT",
+    "NATIVE_WORKFLOW_ONLY",
+    "BLOCKED"
+  ],
+  "sourceFingerprintSha256": "387caf3b9034bbc41437c1423875f675ebf9f2f940a68ae6056022e950534180"
+}

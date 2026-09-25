@@ -1,0 +1,1701 @@
+{
+  "schema": "mouse-pupillometry-overview.v2",
+  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
+  "status": {
+    "label": "DEVELOPMENT",
+    "externalEvaluation": "NOT_OPENED",
+    "sourceFingerprintSha256": "387caf3b9034bbc41437c1423875f675ebf9f2f940a68ae6056022e950534180"
+  },
+  "population": {
+    "acquisitionFamilyCount": 7,
+    "validationFrameCount": 1337,
+    "exactGtCaseCount": 252,
+    "temporalSeedCount": 7,
+    "temporalTrajectoryCount": 126,
+    "temporalTrajectoriesPerSeed": 18,
+    "temporalFramesPerTrajectory": 96,
+    "temporalTruthFrameCount": 12096,
+    "temporalObservedInputCount": 12054,
+    "temporalNoCallCount": 42,
+    "temporalMethodCount": 11,
+    "temporalObservationCount": 70
+  },
+  "safety": {
+    "allenModelScoring": 0,
+    "legacyProtectedInferenceQueries": 0,
+    "externalEvaluation": "NOT_OPENED"
+  },
+  "statements": [],
+  "figures": {
+    "accuracyCoverage": [
+      {
+        "id": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "conditionId": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "methodId": "classical_fixed",
+        "label": "Fixed dark-component ellipse v1",
+        "coveragePercent": 100,
+        "accuracyPercent": 98.39960460885301,
+        "accuracyLowerPercent": 27.68631956117995,
+        "accuracyUpperPercent": 178.70169516427697,
+        "family": "classical_fixed",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "Fixed dark-component ellipse v1",
+        "representation": "mask_component_covariance",
+        "operatingPoint": "native_unfiltered",
+        "accepted": 1337,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b0",
+        "label": "SegFormer B0",
+        "coveragePercent": 95.13836948391923,
+        "accuracyPercent": 17.886146765667462,
+        "accuracyLowerPercent": 2.047278602427253,
+        "accuracyUpperPercent": 41.778645162004125,
+        "family": "segformer",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "SegFormer B0",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "accepted": 1272,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b1",
+        "label": "SegFormer B1",
+        "coveragePercent": 95.0635751682872,
+        "accuracyPercent": 18.30258579931329,
+        "accuracyLowerPercent": 1.5967562979305223,
+        "accuracyUpperPercent": 38.51593785840274,
+        "family": "segformer",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "SegFormer B1",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "accepted": 1271,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b2",
+        "label": "SegFormer B2",
+        "coveragePercent": 95.0635751682872,
+        "accuracyPercent": 4.7908750653418615,
+        "accuracyLowerPercent": 1.7004518074985326,
+        "accuracyUpperPercent": 8.468396412517155,
+        "family": "segformer",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "SegFormer B2",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "accepted": 1271,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "segformer_b2"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC matched adapter",
+        "coveragePercent": 40.912490650710545,
+        "accuracyPercent": 2.205556294504891,
+        "accuracyLowerPercent": 1.0999574500020324,
+        "accuracyUpperPercent": 3.3111551390077496,
+        "family": "deeplabcut",
+        "familyCount": 4,
+        "plane": "shared_scalar_mask_gt",
+        "model": "Standard DLC matched adapter",
+        "representation": "unchanged_native_diameter_vs_GT_mask",
+        "operatingPoint": "common_GT_mask_scalar_diameter",
+        "accepted": 547,
+        "attempted": 1337,
+        "connectionId": "standard_dlc_matched__coverage_operating_points",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "conditionId": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "methodId": "meye_released",
+        "label": "MEYE v0.1.1",
+        "coveragePercent": 98.35452505609574,
+        "accuracyPercent": 6.405354917457654,
+        "accuracyLowerPercent": 1.7791389895114216,
+        "accuracyUpperPercent": 12.754527851417004,
+        "family": "meye",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "MEYE v0.1.1",
+        "representation": "native_mask",
+        "operatingPoint": "official_native",
+        "accepted": 1315,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model",
+        "coveragePercent": 17.87584143605086,
+        "accuracyPercent": 3.4397274116362273,
+        "accuracyLowerPercent": 3.4397274116362273,
+        "accuracyUpperPercent": 3.4397274116362273,
+        "family": "pupil_dlc",
+        "familyCount": 1,
+        "plane": "shared_scalar_mask_gt",
+        "model": "Pupil-DLC General Model",
+        "representation": "unchanged_native_diameter_vs_GT_mask",
+        "operatingPoint": "common_GT_mask_scalar_diameter",
+        "accepted": 239,
+        "attempted": 1337,
+        "connectionId": "pupil_dlc_gm__coverage_operating_points",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          }
+        ]
+      },
+      {
+        "id": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "dlc_zoo_mouse_pupil_vclose",
+        "label": "DLC Model Zoo mouse_pupil_vclose",
+        "coveragePercent": 82.12415856394914,
+        "accuracyPercent": 54.06716018093426,
+        "accuracyLowerPercent": 7.133113753503512,
+        "accuracyUpperPercent": 125.34226272705602,
+        "family": "deeplabcut",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "DLC Model Zoo mouse_pupil_vclose",
+        "representation": "unchanged_native_diameter_vs_GT_mask",
+        "operatingPoint": "common_GT_mask_scalar_diameter",
+        "accepted": 1098,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          }
+        ]
+      },
+      {
+        "id": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "conditionId": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "methodId": "neuropupil_animal",
+        "label": "NeuroPupil Animal Model",
+        "coveragePercent": 68.88556469708303,
+        "accuracyPercent": 76.09172145280462,
+        "accuracyLowerPercent": 22.383517148548037,
+        "accuracyUpperPercent": 138.83146601778932,
+        "family": "neuropupil",
+        "familyCount": 7,
+        "plane": "shared_scalar_mask_gt",
+        "model": "NeuroPupil Animal Model",
+        "representation": "native_direct_geometry",
+        "operatingPoint": "official_native",
+        "accepted": 921,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          }
+        ]
+      },
+      {
+        "id": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "conditionId": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "methodId": "mouse_pupil_analysis_v020",
+        "label": "mouse-pupil-analysis v0.2.0",
+        "coveragePercent": 98.65370231862379,
+        "accuracyPercent": 32.69900612519963,
+        "accuracyLowerPercent": 13.072294371861087,
+        "accuracyUpperPercent": 56.361643357081654,
+        "family": "mouse_pupil_analysis",
+        "familyCount": 7,
+        "plane": "official_native_mask",
+        "model": "mouse-pupil-analysis v0.2.0",
+        "representation": null,
+        "operatingPoint": "official v0.2.0; mapping-fixed; native mapped pupil mask",
+        "accepted": 1319,
+        "attempted": 1337,
+        "connectionId": null,
+        "sourceRefs": [
+          {
+            "type": "official_method_summary",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json",
+            "sha256": "f38869e22e8d5ad16c2a930d79d0577434f34beb719caedb2cd121da7917ca85",
+            "rowId": "mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_run_manifest",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json",
+            "sha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede",
+            "rowId": "RUN_MANIFEST"
+          },
+          {
+            "type": "canonical_feature_aggregate",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+            "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e",
+            "rowId": "feature_v10.aggregates.diameter_are.mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_frame_metrics",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv",
+            "sha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+            "rowId": "mouse_pupil_analysis_v020"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__prospective_95pct_coverage",
+        "conditionId": "standard_dlc_matched__prospective_95pct_coverage",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC · ≥95% prospective coverage",
+        "coveragePercent": 95.0635751682872,
+        "accuracyPercent": 52.99304504731545,
+        "accuracyLowerPercent": null,
+        "accuracyUpperPercent": null,
+        "family": "deeplabcut",
+        "familyCount": 7,
+        "plane": "prospective_coverage_matched",
+        "model": "Standard DLC",
+        "representation": "unchanged native confidence-ranked geometry",
+        "operatingPoint": "confidence threshold 0.19200456142425534; prospective ≥95% coverage",
+        "accepted": 1271,
+        "attempted": 1337,
+        "connectionId": "standard_dlc_matched__coverage_operating_points",
+        "sourceRefs": [
+          {
+            "type": "prospective_threshold_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+            "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+            "rowId": "standard_dlc_matched:coverage_95"
+          },
+          {
+            "type": "population_identity_evidence",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__prospective_95pct_coverage",
+        "conditionId": "pupil_dlc_gm__prospective_95pct_coverage",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model · ≥95% prospective coverage",
+        "coveragePercent": 95.0635751682872,
+        "accuracyPercent": 19.03488536223801,
+        "accuracyLowerPercent": null,
+        "accuracyUpperPercent": null,
+        "family": "pupil_dlc",
+        "familyCount": 7,
+        "plane": "prospective_coverage_matched",
+        "model": "Pupil-DLC General Model",
+        "representation": "unchanged native confidence-ranked geometry",
+        "operatingPoint": "confidence threshold 0.028481286019086796; prospective ≥95% coverage",
+        "accepted": 1271,
+        "attempted": 1337,
+        "connectionId": "pupil_dlc_gm__coverage_operating_points",
+        "sourceRefs": [
+          {
+            "type": "prospective_threshold_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+            "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+            "rowId": "pupil_dlc_gm:coverage_95"
+          },
+          {
+            "type": "population_identity_evidence",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          }
+        ]
+      }
+    ],
+    "practicalCoverage": [
+      {
+        "id": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "conditionId": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "methodId": "classical_fixed",
+        "label": "Fixed dark-component ellipse v1",
+        "value": 98.39960460885301,
+        "lower": 27.68631956117995,
+        "upper": 178.70169516427697,
+        "coveragePercent": 100,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b0",
+        "label": "SegFormer B0",
+        "value": 17.886146765667462,
+        "lower": 2.047278602427253,
+        "upper": 41.778645162004125,
+        "coveragePercent": 95.13836948391923,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b1",
+        "label": "SegFormer B1",
+        "value": 18.30258579931329,
+        "lower": 1.5967562979305223,
+        "upper": 38.51593785840274,
+        "coveragePercent": 95.0635751682872,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b2",
+        "label": "SegFormer B2",
+        "value": 4.7908750653418615,
+        "lower": 1.7004518074985326,
+        "upper": 8.468396412517155,
+        "coveragePercent": 95.0635751682872,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "segformer_b2"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC matched adapter",
+        "value": 2.205556294504891,
+        "lower": 1.0999574500020324,
+        "upper": 3.3111551390077496,
+        "coveragePercent": 40.912490650710545,
+        "reachesTarget": false,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "conditionId": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "methodId": "meye_released",
+        "label": "MEYE v0.1.1",
+        "value": 6.405354917457654,
+        "lower": 1.7791389895114216,
+        "upper": 12.754527851417004,
+        "coveragePercent": 98.35452505609574,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model",
+        "value": 3.4397274116362273,
+        "lower": 3.4397274116362273,
+        "upper": 3.4397274116362273,
+        "coveragePercent": 17.87584143605086,
+        "reachesTarget": false,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          }
+        ]
+      },
+      {
+        "id": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "dlc_zoo_mouse_pupil_vclose",
+        "label": "DLC Model Zoo mouse_pupil_vclose",
+        "value": 54.06716018093426,
+        "lower": 7.133113753503512,
+        "upper": 125.34226272705602,
+        "coveragePercent": 82.12415856394914,
+        "reachesTarget": false,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          }
+        ]
+      },
+      {
+        "id": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "conditionId": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "methodId": "neuropupil_animal",
+        "label": "NeuroPupil Animal Model",
+        "value": 76.09172145280462,
+        "lower": 22.383517148548037,
+        "upper": 138.83146601778932,
+        "coveragePercent": 68.88556469708303,
+        "reachesTarget": false,
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          }
+        ]
+      },
+      {
+        "id": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "conditionId": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "methodId": "mouse_pupil_analysis_v020",
+        "label": "mouse-pupil-analysis v0.2.0",
+        "value": 32.69900612519963,
+        "lower": 13.072294371861087,
+        "upper": 56.361643357081654,
+        "coveragePercent": 98.65370231862379,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "official_method_summary",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json",
+            "sha256": "f38869e22e8d5ad16c2a930d79d0577434f34beb719caedb2cd121da7917ca85",
+            "rowId": "mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_run_manifest",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json",
+            "sha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede",
+            "rowId": "RUN_MANIFEST"
+          },
+          {
+            "type": "canonical_feature_aggregate",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+            "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e",
+            "rowId": "feature_v10.aggregates.diameter_are.mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_frame_metrics",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv",
+            "sha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+            "rowId": "mouse_pupil_analysis_v020"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__prospective_95pct_coverage",
+        "conditionId": "standard_dlc_matched__prospective_95pct_coverage",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC · ≥95% prospective coverage",
+        "value": 52.99304504731545,
+        "lower": null,
+        "upper": null,
+        "coveragePercent": 95.0635751682872,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "prospective_threshold_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+            "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+            "rowId": "standard_dlc_matched:coverage_95"
+          },
+          {
+            "type": "population_identity_evidence",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__prospective_95pct_coverage",
+        "conditionId": "pupil_dlc_gm__prospective_95pct_coverage",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model · ≥95% prospective coverage",
+        "value": 19.03488536223801,
+        "lower": null,
+        "upper": null,
+        "coveragePercent": 95.0635751682872,
+        "reachesTarget": true,
+        "sourceRefs": [
+          {
+            "type": "prospective_threshold_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+            "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+            "rowId": "pupil_dlc_gm:coverage_95"
+          },
+          {
+            "type": "population_identity_evidence",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          }
+        ]
+      }
+    ],
+    "pairedArchitecture": [
+      {
+        "id": "unet_small",
+        "label": "U-Net small",
+        "differencePercentagePoints": -0.6475320058436219,
+        "ciLow": -4.634190816276691,
+        "ciHigh": 2.913746248757943,
+        "comparison": "paired acquisition-family macro diameter ARE difference vs SegFormer B2",
+        "sourceRefs": [
+          {
+            "type": "paired_architecture_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_small"
+          }
+        ]
+      },
+      {
+        "id": "unet_base",
+        "label": "U-Net base",
+        "differencePercentagePoints": -0.37231872114030756,
+        "ciLow": -2.224841372183529,
+        "ciHigh": 1.147190139164942,
+        "comparison": "paired acquisition-family macro diameter ARE difference vs SegFormer B2",
+        "sourceRefs": [
+          {
+            "type": "paired_architecture_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_base"
+          }
+        ]
+      },
+      {
+        "id": "unet_b2_matched",
+        "label": "U-Net B2-matched",
+        "differencePercentagePoints": -1.1133815007670926,
+        "ciLow": -3.477896751677925,
+        "ciHigh": 0.4215541978890873,
+        "comparison": "paired acquisition-family macro diameter ARE difference vs SegFormer B2",
+        "sourceRefs": [
+          {
+            "type": "paired_architecture_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_b2_matched"
+          }
+        ]
+      }
+    ],
+    "commonSpeedAccuracy": [
+      {
+        "id": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b0",
+        "label": "SegFormer B0",
+        "latencyMs": 17.59066,
+        "accuracyPercent": 17.886146765667462,
+        "coveragePercent": 95.13836948391923,
+        "accepted": 1272,
+        "attempted": 1337,
+        "family": "segformer",
+        "model": "SegFormer B0",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b0"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM"
+      },
+      {
+        "id": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b1",
+        "label": "SegFormer B1",
+        "latencyMs": 17.751826,
+        "accuracyPercent": 18.30258579931329,
+        "coveragePercent": 95.0635751682872,
+        "accepted": 1271,
+        "attempted": 1337,
+        "family": "segformer",
+        "model": "SegFormer B1",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b1"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM"
+      },
+      {
+        "id": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b2",
+        "label": "SegFormer B2",
+        "latencyMs": 26.643721499999998,
+        "accuracyPercent": 4.7908750653418615,
+        "coveragePercent": 95.0635751682872,
+        "accepted": 1271,
+        "attempted": 1337,
+        "family": "segformer",
+        "model": "SegFormer B2",
+        "representation": "mask_native",
+        "operatingPoint": "frozen_selected_checkpoint_cutoff",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "segformer_b2"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "segformer_b2"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM"
+      },
+      {
+        "id": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC matched adapter",
+        "latencyMs": 9.5149075,
+        "accuracyPercent": 2.205556294504891,
+        "coveragePercent": 40.912490650710545,
+        "accepted": 547,
+        "attempted": 1337,
+        "family": "deeplabcut",
+        "model": "Standard DLC matched adapter",
+        "representation": "unchanged_native_diameter_vs_GT_mask",
+        "operatingPoint": "common_GT_mask_scalar_diameter",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "standard_dlc_matched"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "PUBLISHED"
+      },
+      {
+        "id": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "conditionId": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "methodId": "meye_released",
+        "label": "MEYE v0.1.1",
+        "latencyMs": 49.1895995,
+        "accuracyPercent": 6.405354917457654,
+        "coveragePercent": 98.35452505609574,
+        "accepted": 1315,
+        "attempted": 1337,
+        "family": "meye",
+        "model": "MEYE v0.1.1",
+        "representation": "native_mask",
+        "operatingPoint": "official_native",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "meye_released"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "PUBLISHED"
+      },
+      {
+        "id": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "conditionId": "mouse_pupil_analysis_v020__official_mapping_fixed__mask",
+        "methodId": "mouse_pupil_analysis_v020",
+        "label": "mouse-pupil-analysis v0.2.0",
+        "latencyMs": 3.0485085,
+        "accuracyPercent": 32.69900612519963,
+        "coveragePercent": 98.65370231862379,
+        "accepted": 1319,
+        "attempted": 1337,
+        "family": "mouse_pupil_analysis",
+        "model": "mouse-pupil-analysis v0.2.0",
+        "representation": null,
+        "operatingPoint": "official v0.2.0; mapping-fixed; native mapped pupil mask",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "official_method_summary",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json",
+            "sha256": "f38869e22e8d5ad16c2a930d79d0577434f34beb719caedb2cd121da7917ca85",
+            "rowId": "mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_run_manifest",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json",
+            "sha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede",
+            "rowId": "RUN_MANIFEST"
+          },
+          {
+            "type": "canonical_feature_aggregate",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+            "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e",
+            "rowId": "feature_v10.aggregates.diameter_are.mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "official_frame_metrics",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv",
+            "sha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+            "rowId": "mouse_pupil_analysis_v020"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "mouse_pupil_analysis_v020"
+          }
+        ],
+        "comparable": true,
+        "primary": true,
+        "rosterRole": "PUBLISHED"
+      },
+      {
+        "id": "unet_small__architecture_matched_validation",
+        "conditionId": "unet_small__architecture_matched_validation",
+        "methodId": "unet_small",
+        "label": "U-Net small",
+        "latencyMs": 17.7328795,
+        "accuracyPercent": 4.143333557794118,
+        "coveragePercent": 95.0635751682872,
+        "accepted": 1271,
+        "attempted": 1337,
+        "family": "vanilla_unet",
+        "model": "U-Net small",
+        "representation": "native mask + common geometry",
+        "operatingPoint": "frozen corrected validation operating point",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_small"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_small"
+          }
+        ],
+        "comparable": true,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL"
+      },
+      {
+        "id": "unet_base__architecture_matched_validation",
+        "conditionId": "unet_base__architecture_matched_validation",
+        "methodId": "unet_base",
+        "label": "U-Net base",
+        "latencyMs": 22.353036,
+        "accuracyPercent": 4.418546842497433,
+        "coveragePercent": 95.58713537771129,
+        "accepted": 1278,
+        "attempted": 1337,
+        "family": "vanilla_unet",
+        "model": "U-Net base",
+        "representation": "native mask + common geometry",
+        "operatingPoint": "frozen corrected validation operating point",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_base"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_base"
+          }
+        ],
+        "comparable": true,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL"
+      },
+      {
+        "id": "unet_b2_matched__architecture_matched_validation",
+        "conditionId": "unet_b2_matched__architecture_matched_validation",
+        "methodId": "unet_b2_matched",
+        "label": "U-Net B2-matched",
+        "latencyMs": 29.211889499999998,
+        "accuracyPercent": 3.6774840628706467,
+        "coveragePercent": 95.0635751682872,
+        "accepted": 1271,
+        "attempted": 1337,
+        "family": "vanilla_unet",
+        "model": "U-Net B2-matched",
+        "representation": "native mask + common geometry",
+        "operatingPoint": "frozen corrected validation operating point",
+        "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_b2_matched"
+          },
+          {
+            "type": "common_a5000_runtime_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+            "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876",
+            "rowId": "unet_b2_matched"
+          }
+        ],
+        "comparable": true,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL"
+      }
+    ],
+    "catastrophicFailure": [
+      {
+        "id": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "conditionId": "classical_fixed__shared_scalar_mask_gt__native_unfiltered__mask_component_covariance",
+        "methodId": "classical_fixed",
+        "label": "Fixed dark-component ellipse v1",
+        "value": 45.99850411368736,
+        "coveragePercent": 100,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::classical_fixed"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b0__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b0",
+        "label": "SegFormer B0",
+        "value": 1.8867924528301887,
+        "coveragePercent": 95.13836948391923,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b0"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b1__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b1",
+        "label": "SegFormer B1",
+        "value": 1.730920535011802,
+        "coveragePercent": 95.0635751682872,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b1"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "conditionId": "segformer_b2__shared_scalar_mask_gt__frozen_selected_checkpoint_cutoff__mask_native",
+        "methodId": "segformer_b2",
+        "label": "SegFormer B2",
+        "value": 0.5507474429583006,
+        "coveragePercent": 95.0635751682872,
+        "primary": true,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::segformer_b2"
+          },
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "segformer_b2"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "standard_dlc_matched__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC matched adapter",
+        "value": 0,
+        "coveragePercent": 40.912490650710545,
+        "primary": true,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_matched__shared_scalar_mask_gt__selected_current_recipe__native_mask",
+        "conditionId": "meye_matched__shared_scalar_mask_gt__selected_current_recipe__native_mask",
+        "methodId": "meye_matched",
+        "label": "MEYE matched mask-only",
+        "value": 2.6840490797546015,
+        "coveragePercent": 97.5317875841436,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "conditionId": "meye_released__shared_scalar_mask_gt__official_native__native_mask",
+        "methodId": "meye_released",
+        "label": "MEYE v0.1.1",
+        "value": 5.171102661596958,
+        "coveragePercent": 98.35452505609574,
+        "primary": true,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::meye_released"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "pupil_dlc_gm__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model",
+        "value": 0,
+        "coveragePercent": 17.87584143605086,
+        "primary": true,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::pupil_dlc_gm"
+          }
+        ]
+      },
+      {
+        "id": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "conditionId": "dlc_zoo_mouse_pupil_vclose__shared_scalar_mask_gt__common_GT_mask_scalar_diameter__unchanged_native_diameter_vs_GT_mask",
+        "methodId": "dlc_zoo_mouse_pupil_vclose",
+        "label": "DLC Model Zoo mouse_pupil_vclose",
+        "value": 27.140255009107467,
+        "coveragePercent": 82.12415856394914,
+        "primary": true,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::dlc_zoo_mouse_pupil_vclose"
+          }
+        ]
+      },
+      {
+        "id": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "conditionId": "neuropupil_animal__shared_scalar_mask_gt__official_native__native_direct_geometry",
+        "methodId": "neuropupil_animal",
+        "label": "NeuroPupil Animal Model",
+        "value": 41.80238870792617,
+        "coveragePercent": 68.88556469708303,
+        "primary": true,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::shared_scalar_mask_gt::neuropupil_animal"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b0__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "conditionId": "segformer_b0__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "methodId": "segformer_b0",
+        "label": "SegFormer B0",
+        "value": 1.8867924528301887,
+        "coveragePercent": 95.13836948391923,
+        "primary": false,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b0"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b0"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b1__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "conditionId": "segformer_b1__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "methodId": "segformer_b1",
+        "label": "SegFormer B1",
+        "value": 1.730920535011802,
+        "coveragePercent": 95.0635751682872,
+        "primary": false,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b1"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b1"
+          }
+        ]
+      },
+      {
+        "id": "segformer_b2__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "conditionId": "segformer_b2__common_ellipse_geometry__frozen_selected_checkpoint_cutoff__common_ellipse",
+        "methodId": "segformer_b2",
+        "label": "SegFormer B2",
+        "value": 0.5507474429583006,
+        "coveragePercent": 95.0635751682872,
+        "primary": false,
+        "rosterRole": "INTERNAL_CUSTOM",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b2"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::segformer_b2"
+          }
+        ]
+      },
+      {
+        "id": "standard_dlc_matched__common_ellipse_geometry__selected_common__common_ellipse",
+        "conditionId": "standard_dlc_matched__common_ellipse_geometry__selected_common__common_ellipse",
+        "methodId": "standard_dlc_matched",
+        "label": "Standard DLC matched adapter",
+        "value": 0,
+        "coveragePercent": 40.912490650710545,
+        "primary": false,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::standard_dlc_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::standard_dlc_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_matched__common_ellipse_geometry__selected_current_recipe__common_ellipse",
+        "conditionId": "meye_matched__common_ellipse_geometry__selected_current_recipe__common_ellipse",
+        "methodId": "meye_matched",
+        "label": "MEYE matched mask-only",
+        "value": 2.7607361963190185,
+        "coveragePercent": 97.5317875841436,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::meye_matched"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::meye_matched"
+          }
+        ]
+      },
+      {
+        "id": "meye_released__common_ellipse_geometry__official_common__common_ellipse",
+        "conditionId": "meye_released__common_ellipse_geometry__official_common__common_ellipse",
+        "methodId": "meye_released",
+        "label": "MEYE v0.1.1",
+        "value": 5.095057034220532,
+        "coveragePercent": 98.35452505609574,
+        "primary": false,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::meye_released"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::meye_released"
+          }
+        ]
+      },
+      {
+        "id": "pupil_dlc_gm__common_ellipse_geometry__official_common__common_ellipse",
+        "conditionId": "pupil_dlc_gm__common_ellipse_geometry__official_common__common_ellipse",
+        "methodId": "pupil_dlc_gm",
+        "label": "Pupil-DLC General Model",
+        "value": 0,
+        "coveragePercent": 17.87584143605086,
+        "primary": false,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::pupil_dlc_gm"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::pupil_dlc_gm"
+          }
+        ]
+      },
+      {
+        "id": "dlc_zoo_mouse_pupil_vclose__common_ellipse_geometry__official_common__common_ellipse",
+        "conditionId": "dlc_zoo_mouse_pupil_vclose__common_ellipse_geometry__official_common__common_ellipse",
+        "methodId": "dlc_zoo_mouse_pupil_vclose",
+        "label": "DLC Model Zoo mouse_pupil_vclose",
+        "value": 26.958105646630237,
+        "coveragePercent": 82.12415856394914,
+        "primary": false,
+        "rosterRole": "PUBLISHED",
+        "sourceRefs": [
+          {
+            "type": "real_validation_summary_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+            "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8",
+            "rowId": "real-validation::common_ellipse_geometry::dlc_zoo_mouse_pupil_vclose"
+          },
+          {
+            "type": "real_validation_evidence_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+            "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
+            "rowId": "real-validation::common_ellipse_geometry::dlc_zoo_mouse_pupil_vclose"
+          }
+        ]
+      },
+      {
+        "id": "unet_small__architecture_matched_validation",
+        "conditionId": "unet_small__architecture_matched_validation",
+        "methodId": "unet_small",
+        "label": "U-Net small",
+        "value": 1.9669551534225018,
+        "coveragePercent": 95.0635751682872,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_small"
+          }
+        ]
+      },
+      {
+        "id": "unet_base__architecture_matched_validation",
+        "conditionId": "unet_base__architecture_matched_validation",
+        "methodId": "unet_base",
+        "label": "U-Net base",
+        "value": 2.112676056338028,
+        "coveragePercent": 95.58713537771129,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_base"
+          }
+        ]
+      },
+      {
+        "id": "unet_b2_matched__architecture_matched_validation",
+        "conditionId": "unet_b2_matched__architecture_matched_validation",
+        "methodId": "unet_b2_matched",
+        "label": "U-Net B2-matched",
+        "value": 0.865460267505901,
+        "coveragePercent": 95.0635751682872,
+        "primary": false,
+        "rosterRole": "MATCHED_CONTROL",
+        "sourceRefs": [
+          {
+            "type": "architecture_control_row",
+            "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+            "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
+            "rowId": "unet_b2_matched"
+          }
+        ]
+      }
+    ]
+  },
+  "sourceRefs": [
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_SUMMARY.csv",
+      "sha256": "3e0a27e1252b701549a53f5d9dbbf835fb303ec4f0215e6979b9e3d7d9621df8"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv",
+      "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
+      "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv",
+      "sha256": "35045064adf5a218ed4efb17455c802c77698fb6e2c39919b0019fabb4016876"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+      "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+      "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0"
+    },
+    {
+      "type": "canonical_source_file",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/MEYE_RELEASED_V22_TEMPORAL_COMPLETION_20260923.json",
+      "sha256": "0a42dd5623e182daa161b236f234cbba6cf6a578dd1aec83e4b222c22e8fe1bb"
+    }
+  ]
+}

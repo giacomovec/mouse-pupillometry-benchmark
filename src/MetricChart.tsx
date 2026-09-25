@@ -21,6 +21,9 @@ export function orderedMethods(
       - (identityOrder.get(b.methodId ?? b.id ?? '') ?? identityOrder.get(b.id ?? '') ?? Number.MAX_SAFE_INTEGER),
     )
   }
+  if (card.direction === 'target' && typeof card.targetValue !== 'number') {
+    throw new Error(`Target metric ${card.id} must declare targetValue`)
+  }
   const direction = card.direction === 'higher' ? -1 : 1
   return copy.sort((a, b) => {
     const av = getValue(a)
@@ -28,7 +31,7 @@ export function orderedMethods(
     if (av === undefined && bv === undefined) return 0
     if (av === undefined) return 1
     if (bv === undefined) return -1
-    const compare = card.direction === 'target' ? Math.abs(av) - Math.abs(bv) : (av - bv) * direction
+    const compare = card.direction === 'target' ? Math.abs(av - card.targetValue!) - Math.abs(bv - card.targetValue!) : (av - bv) * direction
     return sort === 'best' ? compare : -compare
   })
 }
@@ -67,8 +70,10 @@ export default function MetricChart({ card, methods, identities, ordered }: Metr
   const minValue = Math.min(0, ...values)
   const maxValue = Math.max(0, ...values)
   const spread = maxValue - minValue || Math.abs(maxValue) || 1
-  const domainMin = minValue - spread * 0.12
-  const domainMax = maxValue + spread * 0.2
+  const coverage = /coverage/i.test(card.id) && card.direction === 'higher'
+  const coverageMax = card.unit === '%' ? 100 : 1
+  const domainMin = coverage ? 0 : minValue - spread * 0.12
+  const domainMax = coverage ? coverageMax : Math.max(maxValue + spread * 0.2, card.targetValue ?? -Infinity)
   const plotTop = 20
   const plotBottom = 146
   const plotHeight = plotBottom - plotTop
@@ -91,6 +96,10 @@ export default function MetricChart({ card, methods, identities, ordered }: Metr
           </g>
         })}
         <line x1={left - 12} x2={width - 10} y1={zeroY} y2={zeroY} className="chart-baseline" />
+        {card.direction === 'target' && typeof card.targetValue === 'number' && <g>
+          <line x1={left - 12} x2={width - 10} y1={scaleY(card.targetValue)} y2={scaleY(card.targetValue)} stroke="#176b6a" strokeWidth="1.5" strokeDasharray="5 4" />
+          <text x={left + 2} y={scaleY(card.targetValue) - 5} className="chart-tick">Target {fmt(card.targetValue)}</text>
+        </g>}
         {ordered.map((method, index) => {
           const columnLeft = left + index * slot
           const center = columnLeft + slot / 2

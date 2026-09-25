@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "exact_gt",
   "cards": [
     {
@@ -1106,7 +1106,7 @@
       "overlayType": "diameter_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_are-median",
@@ -2212,7 +2212,7 @@
       "overlayType": "diameter_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_are-p95",
@@ -3318,7 +3318,7 @@
       "overlayType": "diameter_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_mae_px-mean",
@@ -4424,7 +4424,7 @@
       "overlayType": "diameter_mae_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_mae_px-median",
@@ -5530,7 +5530,7 @@
       "overlayType": "diameter_mae_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_mae_px-p95",
@@ -6636,7 +6636,7 @@
       "overlayType": "diameter_mae_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_signed_error_px-mean",
@@ -7742,7 +7742,8 @@
       "overlayType": "diameter_signed_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 0,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_signed_error_px-median",
@@ -8848,7 +8849,8 @@
       "overlayType": "diameter_signed_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 0,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-diameter_signed_error_px-p95",
@@ -9954,7 +9956,8 @@
       "overlayType": "diameter_signed_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 0,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-center_error_px-mean",
@@ -11060,7 +11063,7 @@
       "overlayType": "center_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-center_error_px-median",
@@ -12166,7 +12169,7 @@
       "overlayType": "center_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-center_error_px-p95",
@@ -13272,7 +13275,7 @@
       "overlayType": "center_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-area_are-mean",
@@ -14378,7 +14381,7 @@
       "overlayType": "area_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-area_are-median",
@@ -15484,7 +15487,7 @@
       "overlayType": "area_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-area_are-p95",
@@ -16590,7 +16593,7 @@
       "overlayType": "area_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-major_axis_are-mean",
@@ -17696,7 +17699,7 @@
       "overlayType": "major_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-major_axis_are-median",
@@ -18802,7 +18805,7 @@
       "overlayType": "major_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-major_axis_are-p95",
@@ -19908,7 +19911,7 @@
       "overlayType": "major_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-minor_axis_are-mean",
@@ -21014,7 +21017,7 @@
       "overlayType": "minor_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-minor_axis_are-median",
@@ -22120,7 +22123,7 @@
       "overlayType": "minor_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-minor_axis_are-p95",
@@ -23226,7 +23229,7 @@
       "overlayType": "minor_axis_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-orientation_error_deg-mean",
@@ -24332,7 +24335,7 @@
       "overlayType": "orientation_error_deg",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-orientation_error_deg-median",
@@ -25438,7 +25441,7 @@
       "overlayType": "orientation_error_deg",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-orientation_error_deg-p95",
@@ -26544,7 +26547,7 @@
       "overlayType": "orientation_error_deg",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-dice-mean",
@@ -27650,7 +27653,7 @@
       "overlayType": "dice",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-dice-median",
@@ -28756,7 +28759,7 @@
       "overlayType": "dice",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-dice-p95",
@@ -29862,7 +29865,7 @@
       "overlayType": "dice",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-iou-mean",
@@ -30968,7 +30971,7 @@
       "overlayType": "iou",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-iou-median",
@@ -32074,7 +32077,7 @@
       "overlayType": "iou",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-iou-p95",
@@ -33180,7 +33183,7 @@
       "overlayType": "iou",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-assd_px-mean",
@@ -34286,7 +34289,7 @@
       "overlayType": "assd_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-assd_px-median",
@@ -35392,7 +35395,7 @@
       "overlayType": "assd_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-assd_px-p95",
@@ -36498,7 +36501,7 @@
       "overlayType": "assd_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-hd95_px-mean",
@@ -37604,7 +37607,7 @@
       "overlayType": "hd95_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-hd95_px-median",
@@ -38710,7 +38713,7 @@
       "overlayType": "hd95_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-hd95_px-p95",
@@ -39816,7 +39819,7 @@
       "overlayType": "hd95_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-coverage",
@@ -40873,7 +40876,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "exact-gt-valid",
@@ -41930,7 +41933,585 @@
       "overlayType": "valid",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
+    }
+  ],
+  "severityRows": [
+    {
+      "id": "segformer_b2__combined_pupil__single",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "combined_pupil",
+      "transform": "combined_pupil",
+      "severity": "single",
+      "severityValue": "single",
+      "severityLabel": "compound transform",
+      "severityField": "categorical_condition",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 33.90874377013724,
+      "valuePercent": 33.90874377013724,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "5b0bd57dc8b21c49148f77d4c871c7a29ff3e9fa74929a94db5d65854646e3e5",
+        "be55c93691f52c40cf0954de0a1ef19325c5448cce13fb26a11e750199d6a994",
+        "4328d145a8273af72d5cd3bf3b6be1e1f17524e9bf43cfe026131b9955306ea6",
+        "196400fd9de04ba740ded4af9813511eb55f72bd3948aea863cd7d9aaae40401",
+        "4bb894a2a3b724d5834f629c5efa8bdb74dde7f0469a1ce12be1a27da7d9250f",
+        "088db499be7aae2afab926070f85ca519f71ec59ded17c288dbab1966b099400",
+        "e8b568f1520f490389c88e17425bb7f0431b06939087e4c654b2c504dc0bc122",
+        "1a07da530d0f052ad63aa5a82f9052fd6a6ba47e2b4f568604c1ad17c6170253",
+        "edbd70d7552e95e66e4293a644ac94045b0cfeae6317328c884fddb00a032f6a",
+        "1b8781e758c12d4fdff8211d1bc700458eca0d606531596a7d48d5dcfb87d348",
+        "299d16f82cbfe6b997762eeed83ad78e0252515d754e6f4534e740319eec87e7",
+        "92b6dbb527d2991e21c75db909d521eaa1b63ed4b0b2ea5fb3a1628d959db69c",
+        "7880d14654df069e41f7abf44d3d03b98535395537c6e23f8751afa356439763",
+        "1ce4408d5c7e2bd6ae9dfe3e8ed223271f051bebf4608684bd50d2b8763f2315"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "combined_pupil:single"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__crop_truncation__0p25",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "crop_truncation",
+      "transform": "crop_truncation",
+      "severity": 0.25,
+      "severityValue": 0.25,
+      "severityLabel": "25% target visible",
+      "severityField": "target_visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 508.7083683747489,
+      "valuePercent": 508.7083683747489,
+      "accepted": 55,
+      "attempted": 56,
+      "coverage": 0.9821428571428571,
+      "caseIds": [
+        "582aeefe440af1e9a73afed99a8870c3685bcbe86f25777bd2b3640e7a1817db",
+        "847efc00eb17b8bdfa64d0b0e7c59913c27efe45447ec1cf3e3fe87c6dccae2f",
+        "c6352edf23991b4d25a947c831b622d0b543ed7a567c268a1348bee19324a10a",
+        "0e7875cb63e2fc37a4d1a12072fdbdb93abc4882f661666696605d2f05509732",
+        "f9ccb02d9f473323d4b4717c7c727d1ddb8ab0f19305f6028933f2dd69f09dd7",
+        "899a02c685f677cf79331ab059943b57833067510550cee8f629288297d8a333",
+        "63ae4d681e47897417ec991f6a15bc89feef3a27af0c83ef29469647dfc3262a",
+        "4e8b433fdfaf2dbdd56f2cf0eff18b5f9a3e113ebc82af08c359358535f460f3",
+        "addf4634ff6a31c9747c0c8ddf145a6a324d5a4619c62680cbf2923a8c2c2032",
+        "7875e9a1fb6d42208290ff0c3570c1db93f630214dd7d0c251279872aedafc2d",
+        "05ad801536f9e8a100383fb41ee54905b11d54155455e469f3b6bc5103ad3a4d",
+        "a8020ffb441d1afa800acf44a8a060b31ebe0aa15cd4f51eb56f528d2dc1fea9",
+        "aedefeebb1c7ceadd46da0ded69d71e83addc50b14423c283157083c5d08f3bf",
+        "63ff21c28acb7a591edade4bf092b690bb58135c68b28bb92ce3baf64f39fd8e",
+        "2b61b9a4e7e537d6c0553fe9846f685d691dab0a98460994ca8eccbf23f9b1f0",
+        "d1727536a2153b0aeda6e2b85a3ac9a37db9bc4c8177f7a0188b34418ee364e7",
+        "c075e3cfdb72e9776e5464be1b4768324f15671fc16c0caeff4e07a361cd7054",
+        "3cfbb1a5076c23cd31aec78084304fa7695c2c8d4a9f0bdcfbc55e080fd8b3dc",
+        "0c958c6f8b6f9226dfce0fdf5a18cebdecf4efa9204bb9d45bc1f0ecf5c788f3",
+        "2ed56a04f41030df2acc6a72d3ade8777f266ec0a82eced071009d29fac039de",
+        "7e81972680cc659ca1bc978fb4b3606221e378e6be2b72634b2a4d47d929549d",
+        "e8b407fdfff84852066679fc6b4133b3e27cbb4c6b051ef1606106125f4208c5",
+        "29962a74654fa6c9bc1844d0fb63ae87344400bdf3172ad07030d7a81b9eae7d",
+        "388db8dbcde1baf0e64b262a05a77d8c3638faf3981e0bfbecacb0e61ae9bb32",
+        "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+        "5b1ea4d999ef3b44e2e47438eaf60407bf6ea66f77b9ba112b4453c0c6c8648e",
+        "8056701e3e6131d6a905aac724f77e0e4b79ba2c4532e1a5ae8eb10c8241c7bb",
+        "b9ba4c7fe662ac144afca5cbf2699dfdf34b52791f300d7763ff65a932e3ad62",
+        "81b25658e55f40191c0d07d6d891e389d07faff8cb9b730f0dc92f718376b892",
+        "bb39b4cf9c297726ff780a3decffde22c6b327d6d03478f61d1e4a4f20b55a13",
+        "1b5a3395078acac2752b05169c46b052d20619d58d2d619db131d0a19703d786",
+        "df4e21b3c79cd48ec2a3698fd2b656b8e6d66e1d786a8bc5485c8cb24239b02d",
+        "c7f99938c80a7d035277ddebc67d0a0dc57fbefe494be3bed8e1f702fbe7ca47",
+        "8819f8b6f228bcdb0280480e3f0ee58c6fabe72b1690744d7cd25cd1dc1fe6b5",
+        "fc9000e87eb79cce7a07c6b25dc8d76c5769617645805985dcf1bcdfc00f3737",
+        "069214e4cd785b5672be206dd53a0e11ccc0af6f4d1d9bd96fc172df605e254a",
+        "e6d4f069c2871df3a82ded4721f6d1ec4f621c28c1d0c181452516d8abcbe8bf",
+        "e30774d329e53892b59fc557a9d196fe8ad43871aa5d541196885b292049223e",
+        "995c131304320086d104928425acac81797f99770baf66bab780b7c2420992ac",
+        "bc14fc19c9aae85e5a1a86a8f78977446348abcbcb2b9b561bef84121a963e58",
+        "70ecc429c37d32739948438300a07148d5ce44a4707a36d70b3ad882a1ce1a49",
+        "bd2e39e461d4a3ee7dffe0e2bcb7654d3d7b6e6eca0cd1dbf5acba68682d64e0",
+        "3ceff8b0be3ea2e2d387b2fe8d59981a2fd45aa7d9902ec48c2577e728a4dd04",
+        "666c1cfb779e8415242221f8168156045f2cd64d86bc63ddebbbcb8764703828",
+        "aa784c465e78c07f310eaf5f6465534154cb1b61eed7b29dc2c6bfbd2ccd3c3d",
+        "ae01b403fe9bde4d82dccc56d0dc0d1b2a545583c18ce5cfdd3bdc2686f7447e",
+        "575f59fcd4eb5530829721ca16c7ff105b938744ce3b8da5ec7b7b63b9c43b69",
+        "769c7181bb01caf167c3f7728aa24fc5c9f48421224aa1ff398528804baf7f43",
+        "37e1c6d456c9de139cb76eb376588b605990d84ddb509ae36a3ce1a7e64a6036",
+        "e084424b76faeae3cd32bac5b23fee1332648f182d3d4fb10de76051fe30269c",
+        "c7e57ac28c24cbdb62641af8b66ba09fc2ea948bff4c3c28761ce8f22470cb7f",
+        "b31d0a668e1a5720afd4bc8165dccd93303e732da852922f5c20fa9ca7ebb703",
+        "3aeb864e0c5a01f1fb1db820ceaf6d8efb73a21d1fd1945e4d156c870a0d8711",
+        "7d2ef9dfc6a3ed1781fdd6fedf1b99e1444d69b9e9b3c0742ddd8b0d4c4ce8db",
+        "6df1e0e1442705a3aa46568b6417372537101e9f4b6cfa0c5456b0d34a4a8129",
+        "ad627d2fff5e2afed49637323f534434c3934463ae5b3a3b17e3205beba336e0"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "crop_truncation:0.25"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__crop_truncation__0p5",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "crop_truncation",
+      "transform": "crop_truncation",
+      "severity": 0.5,
+      "severityValue": 0.5,
+      "severityLabel": "50% target visible",
+      "severityField": "target_visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 328.4348471172688,
+      "valuePercent": 328.4348471172688,
+      "accepted": 54,
+      "attempted": 56,
+      "coverage": 0.9642857142857143,
+      "caseIds": [
+        "ce707339eb04b9c8fd21c704e92ab59ed92897a71582ba25db02b4a26e241001",
+        "fa646fde83a415a45464b4370d0ea74988173820b62b79fbb4e9ac40ee70751d",
+        "96a62ebf15f29c2a58f6ac8ccef057a1d10beb879d379de5823f17fc3d618a04",
+        "0744fc9b79a10cdac5ddd0170d5e9aeecb9a901e140adaac8970d68b67160f36",
+        "677f7a56c05a0ca535e8010996ff56ea6d55440825760c846f9877c0bd8c9d81",
+        "e8b6c004870d7fb5adaafdfc76520f48d81bcb8328c03a2f2cb690f6a5b4a68d",
+        "118b763e0f7b81578f8adc82c9f7b7dfc63b3144971986069bf91215dc59a10c",
+        "29c48df59ad4d948bb61f45c14a616d8ea23f6fb63414bbfc449b302c6cea95b",
+        "41407f2171b574fc5f0caec581879f0f672164fead154f82e79329b847931aa7",
+        "821982036b46368388979d1c885b5c3258ceead08f4e364c9ae57ebba0ad19e8",
+        "f2b69ff7e4f687cfbeefe02cc927468f35b9b3bf24b7a5740b81580715962349",
+        "c580c2c8c4067c1574466fd868fddce92ef6020be330694f9e7bdd5d1642cb96",
+        "d173b49963224e6c54f87db112a55ae362954a66fb5a43af0df38a1fadd56797",
+        "a980bff5d1c59a94dcc4881737b9e311057ae7522d1430eb46de3a651c557b17",
+        "82649cd30eedd60935ff6390d44ab3231bc20631aeefc6ec2d96ea955ff14075",
+        "f26c06ee6e762890cc283f9a9f91b7f0afb4691d9fb672f6629104d8a052fb60",
+        "1d749c9832e06e578a379d0532a46f61c541bc070cced2d29b3c628fc81f6a45",
+        "427c41972b3e361c6f08f95a670484cce130872c7b682629ee95b1887967643f",
+        "deafbf4185cefd465d9e8e2358b06bbea0160bcdf393d3eb1f70f26af30eb87e",
+        "f345b643c012e63f26dbc01dc288450763b4cf980c60f9181f1ffdb5bd8c3082",
+        "a9efa5ae8e8f32cfe9c045306d61e175d1c98cbb44b2bda7bdecaed7aef095bd",
+        "b609c82968629a2da0f4f9430f36ff40ddd360bd7b57dea30c90517f120755bb",
+        "4798ccab4dcd07b8f092286273a0d2c70ac0c14e1a761f09116c1e5d9d4f05a6",
+        "7682d7cf7231f6cfd38bf87668d9585c79adb93b7823b6ee21b7d69c1cc0b13d",
+        "cb9d3b7a3cf4c307172545636c1357eec8ee0a766c7f2d628ee275bf047ce264",
+        "b7ff6e23ffc1de6ecef3f955b97d28824eb55bb265c601026baf0c2e504cb0aa",
+        "448bfa95faf7314e868b29847ca21cfcc95ac14e71483dfe4423368957ee9502",
+        "4afcca69a530c3a6f3e8feb113a6398b7ae57024891d1947458659fafd3c9a52",
+        "207fb9347dc07ce9d29eca5f5d7815ff42691681fff9f11159109b277ea85c21",
+        "89a774dea67dec413e016ac7be353172360aeebbcda57534dc2b19c3b07f8ad0",
+        "874754616ec174c1cb5ac89463f47a219b903368843857e80600f2bd44d83ff8",
+        "6c826e2e4c567f20b6f0d7a053682af7357e5398a24ac0aa8a4147eb2b40ab56",
+        "9e581c1713ebfdd917213fecaee8b9f6ab0a540ba35c4f0eb6f810a721e4ee18",
+        "e7721b2e3e4287bb415a745980ea5b19c0adcc859ae2677fc77d96a48d308328",
+        "b0bb2ee3c411788dd600b9c55501d8d784f86bb173aeb2e60ab95380e47b6878",
+        "023a40eb9538c1b6a590b7bd280fedf16c6955e1c6dfc60e638b17a43cbf7889",
+        "aa09120e3d9bc6b974ac7df1ff94aa35f766f5267d60c09571e8730730d575ab",
+        "9f7ea18a2530407599dd81948c956638daf0eb62692c1e6a2396ae1cb3087623",
+        "30a0eedd28eec00f46a434f2e0d83f45bc0e30664c7c325f3f75373d71cf318e",
+        "4a922cf9496bc732cb4e7d451a5b5ca603dcc6c6fa6cc51ec7691b5f9d85b804",
+        "785de759dff686f340a01f2b0a0a25491613263ff532790ede4c56facebace81",
+        "083d3087358c9b61893b1c7d5e33c909e837eedae841482f229b96f41797e0aa",
+        "fbe005c59017fb90d96f41c47bd6f5a3fd6cb75d9bb07b7476495e2d93f73a10",
+        "2f63e5ec368662908d92faed14a38387a9fc3473fee233782eb9ea5852bd52bb",
+        "d344a00f3f89f8fc85c04f311daee7823df80816ce1f846ffce5c99901a40c95",
+        "2600130c0d10a4bb4f96eaac4c512a0c66ca4d01e7a990969ab0b202dfa14bb0",
+        "71b669db58a4900f6e18254f6520ec7516ceea963e0b1412dcf68fe96996a4a6",
+        "92c497e805e3e1629e8ce853bd455476ecad31a32df8557dd98dde4e8f8d3693",
+        "bcabe44c4579961ec24ea051ff0bac7543a2a947e4fec1d6f45b6a650254c670",
+        "37237adbd33c599651c96ac8cf8c13901b9ab6cb17f21d77c7fe11de21872d49",
+        "8d2a3de95765a8dee709a9c4fe448a443dd15890231b96426c91ee3a77517fb9",
+        "64fff1097b80de02d518591546078d65205e83d63fea716594df70f36e3c5233",
+        "9659b50311e9751af27b549ecc559d61f0ad222e9c2333e30408d3602a0d8507",
+        "66e8bfa86ba2ba44a717ccf5eccfccea0b02a65eddede5189d3659fa44250f5c",
+        "5d9e52100aba87b5b61e4a40d62871632d75d7569df74df44be9433884338da9",
+        "7a9413ac2836ab3e80eb2c9d7c53c9625dbe91b4a1fc9becae2af5c0a2801632"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "crop_truncation:0.5"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__crop_truncation__0p75",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "crop_truncation",
+      "transform": "crop_truncation",
+      "severity": 0.75,
+      "severityValue": 0.75,
+      "severityLabel": "75% target visible",
+      "severityField": "target_visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 247.5667197625143,
+      "valuePercent": 247.5667197625143,
+      "accepted": 55,
+      "attempted": 56,
+      "coverage": 0.9821428571428571,
+      "caseIds": [
+        "6335215baba0b2eb38f097a43bcc774856194619ddae0eda82e7ccfac3e7f456",
+        "1a9a470387551269f605b5e2d387bf603bd13d5fe58bef8465e760484347f3cc",
+        "4b633d8c26edc681edb90a48653c2f0823d88c8bf14764399046394c8f2787bb",
+        "17c0e76aab6df6c75cf51eae97fcdc7616b4dff43e2d915faf1844be4384fdb7",
+        "c7b858bee1fa5eed286dc420ed4fe10fac4a8c29c601584568771152fb9ccd74",
+        "dea77864607f8ccdb4d8af7d7a6b1d6c4bebf7ab30153407d3c19e34233ea630",
+        "32ab74ee678105dc023a33c035950ea3072ff41a1ffddbb414fde1ff46a38f6b",
+        "3867f2060290c933f10a79eeb824ced19027f21b80ac09461ab6c72c10cb3647",
+        "9f1a6197db6d0006ddb7bdef61418df8a76ef3fd92629ad5a94f754cd1fcd981",
+        "453bd34a63d853f77fa22faa7379c3ea5448ff15d48fb1dcd59f48e95796d472",
+        "b000ed92133e8453ab8689be1dd51f92d84fa2cb2c33eeb15ecd7702c0acc055",
+        "383913e2f863f0044ef59493170898b4ddb35901334b62497b292a1ec8a0a547",
+        "223f87222355f449daa4b4cc86684e8395705faa68961bbcc4d40ef05a9f20d5",
+        "11bb0bf26f1f06be562b6564b65bee5b652a2e063499c0a95ca65f0cce235381",
+        "d06dbeaa95d860a43818f1c23fae10bfb59f603e1a2840513b4f28aa1cfe28d3",
+        "e975eccfc65961ebc40501e26a70bcb135d6c79495dbca225406621033420f7d",
+        "0806aaf9a24f1647e27152a4792d130d7fe2ca5a0a10266709e1511e041fb460",
+        "dd0f8f04d4318bf00d26f0f68cb2f2af2cfe514a8a2bf690682ea93470c7bd96",
+        "780043dabf1b8399d06af9f08b2ef7bf5088156c61c71215dd823d0754652428",
+        "c4730ee96a7e9d99185b2c13c719e9f17c0fba2e493219a00462895826ea000a",
+        "d6ccf6bdac9fd2050f8321753fee71adb2a6b1ad75318ddfc4b204ba16dc56e4",
+        "aa53fc50acc7036c638abda9c5244a207922164044fb02de2edd9056420f771b",
+        "6ccf2ed44f86904831667a82e95ac42350fb257f7c3c6b1cdf4bd47e04a2495c",
+        "f0c26eed48a81542e30911c07d45366c10040f6ed2abd6bf0b4e93741a2410a0",
+        "0dad1587b81ef6fae45b090a5b2aac9fcd8126c5b1257ec76079e040aeffb9e2",
+        "d2dbdcdabef3bf102d86bdf3d58a94f9c2a97c65329d4a0ef10bdb2e3bb54227",
+        "c763197d10cf740caed837162f559364f756e0bb2b9df1a4d51f2780f894a22f",
+        "475a47855c0c9798bf27eb842dc6b4b1437ed170458996d5fb168ee1022724f9",
+        "02262e7eef44dbfae996edded1333d481a64f3c0c4370cffd1ad6628de5f87ec",
+        "d0b4c653407347d19b273d14014ecdd58c0eb726fe58166a267ff6e9b941360f",
+        "df5b8b30aa3ae43ca645b9e1272b8334aaedaebba27262883cacaa90677587b9",
+        "83959a3fe97baec68ecf63b940987c4255a57b5e4fee7e0574680d30a9d20d5d",
+        "8cab7604badd36530049bcd47438be93bc9b9f173fec85fe7915b799bedd38fc",
+        "7a46c2bd7cf97aa6255517cf72042a9c0b32ddb82b5a52bda3f7d7eae38d56ba",
+        "49cf7bffca7d76b033105f5e7f7eae17862ea467166a179ebfb1e80f018b980d",
+        "682a414b9a2938b06c1dc7a63fd58d0f6ca436e31751c813941bb769cbaa90ed",
+        "d872f2dc443c20726fc487a66b96c353e6a3cba8fc3a35d88ef6438f02bb2cca",
+        "2091e7d40d95c315403640388dc96658479b8adddc61d4a2c960b4e9fe9764f4",
+        "3208e931f86e805bbcfcd8f4b090e6e9d667ec53b9f789c63bc77c15b252a55d",
+        "074f6a08e6ba45b5e19132fc64f5e2d9e498775bccb113a42d1f8c56d4ba0e16",
+        "8d0fad91496cdbb7cf3c2e287a9c0ea664aa48073f8325be42c8dd12b3ba3c30",
+        "be34c2b5e8a5da38cff1af2f5b57fa194dccabf19fadeeaeb760eb77560f2100",
+        "5332817c94194d1f93616ceede890831edf60c2b879443006d811e64c11aa870",
+        "6f1cdf7a0db598408a6897ff19eb65bd64d8d0019dcf709d2dcd0d07e0068c54",
+        "bf550de433a8fd8527b1a3ef5032a8f6fefc1fee0d4cf4057d30b863c55be626",
+        "2422cae5730ca8191c582d0dbf0796b3a776c4b8e9d017635a2f06e904d05519",
+        "45227b16005f4448bb490e011230a1a7bfd644432445b55670cd44038cd8c013",
+        "138291191528cbe01c322f958dac5048391a8b0e38728789169fe401ad983b00",
+        "33cab51cc982c3ef65c78573b368f6b33055f522713e1a2e369f0069f337c078",
+        "06bc2240035bfde0320f961790e4b1c963e7f506f0540a347af9059bbf382fe9",
+        "4658d510d53a588d6cb0f45391ed15375864d4cd1daaad7aaebbd78e3ac7d516",
+        "e56c2d7613a59e85ae9fff31f00b636784472a62795baa04975aee0edc53f856",
+        "cedc50a83b6efda32db9fdeb182034129c5410ff00f67f1c4883fa34943ce547",
+        "45271f99d11edf9d78841c4d4643e34753471d1b225d8582013f62a14956fd55",
+        "c3cbfac0fe941fc0d9c7a61555de58140e282c61d01c8a065423d85ee19fda21",
+        "66026506881ae7bd480c073e10454d5c95076abd7b92b4b352c4f799dbcc993a"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "crop_truncation:0.75"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__latent_occlusion__0p25",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "latent_occlusion",
+      "transform": "latent_occlusion",
+      "severity": 0.25,
+      "severityValue": 0.25,
+      "severityLabel": "25% visible",
+      "severityField": "visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 566.2425552876675,
+      "valuePercent": 566.2425552876675,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "5ced78cd33739d3e897e611a5b1eecb6a242e08d50c9758e72400bce20e4fa4b",
+        "4acc814b62e3ba8b24f561c02f0cd5a73eab226cc92787e858c84a543cff59c3",
+        "a41a09f87899f85f5a15242f2bdd30d78fbe534f9f82da4ea4f152e5b0efeb6e",
+        "37d6ca525d02fd85ac1986b436ad8c3e0cac55f242c326962fae3c9c3752a140",
+        "7fba6fa6eee70b92a2d99f479707a37164dada45b01a43708e4a10356390fd32",
+        "55ec862604cf278bbd973eb18083e870c84877e4fa458fcafd6c5849f1ecb4ca",
+        "d163594ff5c2366e02f2ebbef3fe14f00811023aa8fd891dbe38629699b62214",
+        "dba48ad6cb0b664c159ac4f0deed0c0cdfd167d70241fbe13a2da189e20521b5",
+        "89972ef133988e5e1fb67d4758c07e2b098f4bb2de656c2e87f869e39dea2692",
+        "f6239d19cc40cc52a556868c4764d721a36dae4408a4b8dd9db73a81079f65c2",
+        "c7f2d9e6bfe39d0c620e216b0a611df24701ba7de484b841225b8363e4c3d5ad",
+        "fa714f8852a4f1f25af0fc9ca94acee829481ae988c11f20fff2f397f815894b",
+        "7fa8ac8a55e7198aff359ac844e7666dd4f8d8d9655a9d1a17f1217aebb01ebd",
+        "c5a6210cbdf0c6b78e7d0558fbbec20de5ccd67f24864fe81bb25d63c043fae9"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "latent_occlusion:0.25"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__latent_occlusion__0p5",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "latent_occlusion",
+      "transform": "latent_occlusion",
+      "severity": 0.5,
+      "severityValue": 0.5,
+      "severityLabel": "50% visible",
+      "severityField": "visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 330.33966825749286,
+      "valuePercent": 330.33966825749286,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "30314fff3bc552db269331b9b3a05f3957ecfddaf2e5818c3ef0d60e250b2243",
+        "da93e8415ec9e74db529f723bb3b9979ac9ed3324a867deaa02e432884fd129c",
+        "fdfd4f0e15bf63cd09a3336c769437cf7459d8b8448dcee3f0d97fddcbd3c583",
+        "710353df182a7b316c7a706213858c9a42d00647b8e6069699421b9a5b9fd12d",
+        "b22fad09a3127a35aa9b656f98dfbb827e78d726ac1be447748bd1091ac8386c",
+        "0283fb29862e1b289c9321b24ba97b21385ea4a503faea0c7c97e12d76d7198d",
+        "3a87fe0e918056b1c557744501cbb581711dd11c1be7599aa198fe5bbd13decc",
+        "a9ee330bd1fc1281eadd1cbe90fe909ecbebcb3f5a732ff60a26d31705d064b0",
+        "1111a1f35144b891aee7f8b3bff91af551ff6647d0551a26b3e72f2a53c4af06",
+        "8a7dc1b2f6335cbc663537e26c37853b9521e92dcd3c0c1cb7e5d5ee697e08a6",
+        "69daa079b16fdaadee12d4b0d2f0c691b60f0a1a67f6a307c74cf3fd3f4e25ef",
+        "01a338539f030affa1891343aec2ef81de9f6e9b97f4b479db193de39e09ef3b",
+        "7c59dde2ed188e390108937936064613f718a51caaee07b09fca11041b6d6f1c",
+        "e2775ce37de81caa72267d0335eb340a567f7993d40b9d48ae6c3da6a6bd3750"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "latent_occlusion:0.5"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__latent_occlusion__0p75",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "latent_occlusion",
+      "transform": "latent_occlusion",
+      "severity": 0.75,
+      "severityValue": 0.75,
+      "severityLabel": "75% visible",
+      "severityField": "visible_fraction",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 235.64378219915443,
+      "valuePercent": 235.64378219915443,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "9ac7999aa6fc9ca8596760884161eb72c765f49ab0b297730e5555b5b00a7b71",
+        "8f8c18f32fb11b3dd541f3ada7660735cc7f821511b2d48589ba00d7e935826f",
+        "0b9ef8844b5f3ea65a448bbae2837db7ce0109012074813eafa81969e0d6e4f8",
+        "0bd00b27354eca3abebe9ba8acb6d9bf310e2ad998209e0c855add5766569f60",
+        "b7ac90f0829347115a39396bf40331ae80b08b159292c0b1ea2b0d9b14ff0784",
+        "90c1b3d8e88fd57fe9374c8c001aa518bb3fc76631b4aeb942b00bdbc021da14",
+        "8d2eb66f78be40d71afa99805b590262e5fc6328a8dd47e0688760cf8a4fc57c",
+        "358da5cdd8362a6f6e7b30f707a7d04183d98421efd770906dffc91fa68716e8",
+        "70cec67a4e5b201645d7608776202f5a69f3c13185c43a3e001b7f42621bbc5a",
+        "6860821ca2d42ff7d8e382337b8211a30a2f51fcef502e21b2da2c5697f7db00",
+        "229b3f3c6eb4d7eba065eacc67794671f4425b5d7dc03e63b2867d2c71913541",
+        "62a5186ee1f0be247a0a8493885580980c5217af74523d11ca725c81e12e8efc",
+        "8d2a88eae7dbc29eb85c769297fdff287fea802b6c561ee8db80a4e703cd2c41",
+        "25df15cecbaa87354a3e4917b9cb847146adaaeeee9138b6e0630d35913fadc4"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "latent_occlusion:0.75"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__motion_blur__5",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "motion_blur",
+      "transform": "motion_blur",
+      "severity": 5,
+      "severityValue": 5,
+      "severityLabel": "5 px",
+      "severityField": "kernel_length_px",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 35.54997157054779,
+      "valuePercent": 35.54997157054779,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "aa33560f96191ec8d5fc0b8a5684b39ae4b31bb49df547cf83d108215c4f5400",
+        "e4d695f0ba6949278f42a659d082735421ad596763630cdeb1f41bf9ccb9f6c3",
+        "e7f48ea5375ba4c10719b9b2b5672ead7bd8feb4f66b5e2d330b7cdf8bbf3365",
+        "97a2369d37b73c68785843aaafef0b6ab6f95039c6b428aa712a961dc0c92d50",
+        "69208c355bd8764343eabd6580732b90a35a4eb301a98981ea411d1e717f093e",
+        "308cc168b1e62facafb8c5785755ab6630cd7d3fd6c3375162fda200ede06976",
+        "db5a6c40135ceb63064e37bc08ceb8a0d9008801004567e822c7bfe4f8a1ab92",
+        "63762756993c20c7be29f6b035fd847b21424432842e89f8382be6a501bca086",
+        "1b72183b9bbb0b4970493eda3bb05bcb78394ccce20cb19e42faf4841f4df45f",
+        "a240da7c657c1cb44ed653dd2504b85bbcdbad244beaaf84f8e49546b01ff4ed",
+        "1bf0116b01f8807f1aec5a93806e3ecff8e7e40aefa6e4e5ba591e1db248add1",
+        "c5c94c02fd408d53f414afc513cb9eba74db71af581e139a96ac40ff19b31c7b",
+        "a4a3d1c23d196dc0a4fec541e108c6edf693e50ca815bc62ee8357d35a5f28a4",
+        "38a9ddb81d00f8cb83949058ec8996d7f170059ab61437d3b2688d8a9e55ef3d"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "motion_blur:5"
+        }
+      ]
+    },
+    {
+      "id": "segformer_b2__motion_blur__9",
+      "methodId": "segformer_b2",
+      "method": "SegFormer B2",
+      "operationFamily": "motion_blur",
+      "transform": "motion_blur",
+      "severity": 9,
+      "severityValue": 9,
+      "severityLabel": "9 px",
+      "severityField": "kernel_length_px",
+      "metric": "diameter_are",
+      "metricId": "diameter_are",
+      "unit": "%",
+      "value": 35.729255274093845,
+      "valuePercent": 35.729255274093845,
+      "accepted": 14,
+      "attempted": 14,
+      "coverage": 1.0,
+      "caseIds": [
+        "71fc306938ffdbbe5bd527e0bfaf91dd3e886e68466ce2a61ef925f8c30a8812",
+        "2bdfbe3908d8cfa3db664e8e9907430b49fd7fabb30fae245f580bd3fae2dcad",
+        "54ffa2461e3fb9f98e666bbbf4808c52d402a1307db6c8a040836b8abfac5c68",
+        "eb087d446f90c88d59d09a242a1297b391c7cb0e9ad3fb7a12af3ce69ea9ce4f",
+        "2259dfe3fbba0c50e9b48ec07aac34cd6f70cc25e4348b68c2fdbb325a7f49ee",
+        "1189fa8f025bdc3bd5f7c51f25e73b7061e0629f80573825e214b574f729995e",
+        "9fe45e9e233b1529a143272f20a66e67b66b0724fb4a55f39df7414b38d393e5",
+        "42d2c0470bd516b075bab48af49ece0b1b8282cfa556d7e5d12fafe3607b9128",
+        "71d665b3a88ed85add3df8d2213f4d8a8dc47d8c69f8586f58d6cef5e6f78d7a",
+        "2d5c9fcefc22455410b9678253fe3fa4c2b573d002acda636832845d3852798c",
+        "c4fa74484ca45798d67dbf7d7c73a23a53fc6e27ba94d0efffd9d1a87987ffb5",
+        "b2f9d8f11a658f21de5b375fa21a339bf108213fa01a64420fba76097de4c46d",
+        "37a174991989e2a96d9b8e30c87d41cde1294440c73d70e23493e530236bd65a",
+        "70bfb2c21d5ec477eb098ba440278cd49d7542ec30a57fb99d621a2385884aac"
+      ],
+      "status": "MEASURED",
+      "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+      "sourceRefs": [
+        {
+          "type": "exact_gt_frame_metric_source",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+          "sha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571"
+        },
+        {
+          "type": "exact_gt_execution_case_group",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv",
+          "sha256": "a0ed2e1f15fb77612ef0898a4c973508715bc6e70e81d620afb350391d934ea9",
+          "rowId": "motion_blur:9"
+        }
+      ]
     }
   ],
   "severityGrid": {

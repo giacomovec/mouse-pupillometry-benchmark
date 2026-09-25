@@ -31,8 +31,15 @@ describe('benchmark chart method order', () => {
       { methodId: 'near-zero', value: 0.1 },
       { methodId: 'positive', value: 1 },
     ]
-    expect(orderedMethods({ ...card, direction: 'target' }, signed, [], 'best').map((method) => method.methodId))
+    expect(orderedMethods({ ...card, direction: 'target', targetValue: 0 }, signed, [], 'best').map((method) => method.methodId))
       .toEqual(['near-zero', 'positive', 'negative'])
+  })
+
+  it('uses one as the gain target and refuses an unspecified target', () => {
+    const gain = [{ methodId: 'low', value: 0.1 }, { methodId: 'near', value: 0.9 }, { methodId: 'high', value: 1.2 }]
+    expect(orderedMethods({ ...card, direction: 'target', targetValue: 1 }, gain, [], 'best').map((method) => method.methodId))
+      .toEqual(['near', 'high', 'low'])
+    expect(() => orderedMethods({ ...card, direction: 'target' }, gain, [], 'best')).toThrow(/targetValue/)
   })
 
   it('keeps the canonical registry order when requested', () => {

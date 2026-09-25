@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "coverage_risk",
   "cards": [
     {
@@ -9564,7 +9564,7 @@
       "overlayType": "retained_catastrophic_gt20_fraction",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "unet-segformer-coverage",
@@ -19128,7 +19128,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-coverage-mean",
@@ -66284,7 +66284,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-coverage-median",
@@ -113440,7 +113440,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-risk-coverage",
@@ -183713,7 +183713,7 @@
       "overlayType": "risk",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "This card contains population-level precomputed risk curves; synchronized alternate-threshold frame states are unavailable.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     }
   ]
 }

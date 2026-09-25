@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "real_validation",
   "cards": [
     {
@@ -698,7 +698,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-family-macro-diameter-are",
@@ -1396,7 +1396,7 @@
       "overlayType": "family_macro_diameter_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-diameter-mae-px",
@@ -2094,7 +2094,7 @@
       "overlayType": "diameter_mae_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-diameter-rmse-px",
@@ -2792,7 +2792,7 @@
       "overlayType": "diameter_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-diameter-median-are",
@@ -3490,7 +3490,7 @@
       "overlayType": "diameter_median_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-diameter-p95-are",
@@ -4188,7 +4188,7 @@
       "overlayType": "diameter_p95_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-diameter-signed-bias-fraction",
@@ -4886,7 +4886,7 @@
       "overlayType": "diameter_signed_bias_fraction",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-catastrophic-gt20-fraction-retained",
@@ -5584,7 +5584,7 @@
       "overlayType": "catastrophic_gt20_fraction_retained",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-geometry-coverage",
@@ -6150,7 +6150,7 @@
       "overlayType": "geometry_coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-center-mae-px",
@@ -6716,7 +6716,7 @@
       "overlayType": "center_mae_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-center-normalized-mean",
@@ -7282,7 +7282,7 @@
       "overlayType": "center_normalized_mean",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-area-mean-are",
@@ -7848,7 +7848,7 @@
       "overlayType": "area_mean_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-major-mean-are",
@@ -8414,7 +8414,7 @@
       "overlayType": "major_mean_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-minor-mean-are",
@@ -8980,7 +8980,7 @@
       "overlayType": "minor_mean_are",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "real-validation-eccentricity-mean-abs-error",
@@ -9546,7 +9546,7 @@
       "overlayType": "eccentricity_mean_abs_error",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     }
   ]
 }

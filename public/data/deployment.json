@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "deployment",
   "cards": [
     {
@@ -1312,7 +1312,7 @@
       "overlayType": "pure_model_latency_p50_ms",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-end_to_end_latency_p50_ms",
@@ -2624,7 +2624,7 @@
       "overlayType": "end_to_end_latency_p50_ms",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-end_to_end_latency_p95_ms",
@@ -3936,7 +3936,7 @@
       "overlayType": "end_to_end_latency_p95_ms",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-end_to_end_latency_p99_ms",
@@ -5248,7 +5248,7 @@
       "overlayType": "end_to_end_latency_p99_ms",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-pure_model_FPS_from_mean",
@@ -6560,7 +6560,7 @@
       "overlayType": "pure_model_FPS_from_mean",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-end_to_end_FPS_from_mean",
@@ -7872,7 +7872,7 @@
       "overlayType": "end_to_end_FPS_from_mean",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-coverage",
@@ -9184,7 +9184,7 @@
       "overlayType": "coverage",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-acquisition_family_macro_diameter_ARE",
@@ -10496,7 +10496,7 @@
       "overlayType": "acquisition_family_macro_diameter_ARE",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-acquisition_family_macro_center_error_px",
@@ -11808,7 +11808,7 @@
       "overlayType": "acquisition_family_macro_center_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-acquisition_family_macro_area_ARE",
@@ -13120,7 +13120,7 @@
       "overlayType": "acquisition_family_macro_area_ARE",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-acquisition_family_macro_major_ARE",
@@ -14432,7 +14432,7 @@
       "overlayType": "acquisition_family_macro_major_ARE",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-acquisition_family_macro_minor_ARE",
@@ -15744,7 +15744,7 @@
       "overlayType": "acquisition_family_macro_minor_ARE",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-peak_PyTorch_allocated_VRAM_bytes",
@@ -17056,7 +17056,7 @@
       "overlayType": "peak_PyTorch_allocated_VRAM_bytes",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-persistent_engine_bytes",
@@ -18368,7 +18368,7 @@
       "overlayType": "persistent_engine_bytes",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-training_checkpoint_bytes",
@@ -19680,7 +19680,7 @@
       "overlayType": "training_checkpoint_bytes",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "deployment-parameter_count",
@@ -20992,7 +20992,7 @@
       "overlayType": "parameter_count",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": "The deployment matrix contains aggregate condition outcomes and no frame-synchronized prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     }
   ]
 }

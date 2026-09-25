@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "version": "benchmark-data-dev-v1+40f1e28815b5f39c",
+  "freeze": null,
+  "freezeStatus": "DEVELOPMENT_NOT_FORMALLY_FROZEN",
+  "status": "DEVELOPMENT",
+  "externalEvaluation": "NOT_OPENED",
+  "generatedAt": null,
+  "generatedAtPolicy": "Omitted to keep identical canonical inputs byte-reproducible.",
+  "reproducible": true,
+  "sourceFingerprintSha256": "40f1e28815b5f39ca025b4210b5d0653a28ff163751574c3485104b71bf74fcd",
+  "cardCount": 146,
+  "cardsByCategory": {
+    "real_validation": 15,
+    "geometry": 13,
+    "segmentation": 8,
+    "coverage_risk": 5,
+    "exact_gt": 38,
+    "temporal": 42,
+    "runtime": 9,
+    "deployment": 16,
+    "capabilities": 0
+  },
+  "methodIdentityCount": 47,
+  "capabilityDefinitionCount": 90,
+  "capabilityMethodCount": 34,
+  "visualCaseCount": 58,
+  "realValidationVisualCaseCount": 31,
+  "websiteVisualCaseCount": 31,
+  "exactGtVisualCaseCount": 25,
+  "temporalVisualCaseCount": 2,
+  "exactGtMethodCaseRecordCount": 500,
+  "exactGtMatchedMethodCaseRecordCount": 500,
+  "exactGtVisualMethodCount": 20,
+  "exactGtPredictionMaskAssetCount": 215,
+  "exactGtPredictionComparisonAssetCount": 215,
+  "exactGtPupilGtMaskAssetCount": 18,
+  "riskCoverageMethodCount": 13,
+  "riskCoveragePopulatedMethodCount": 8,
+  "exactGtSpatialMethodCount": 16,
+  "runtimeMethodCount": 9,
+  "deploymentConditionCount": 30,
+  "deploymentStatusCounts": {
+    "FAIL COVERAGE": 3,
+    "MEASURED_FAIL_95PCT": 16,
+    "MEASURED_PASS_95PCT": 11
+  },
+  "gates": {
+    "realValidation": "EXPORTED_FROM_CANONICAL_DEVELOPMENT_TABLES",
+    "exactGt": "EXPORTED_FROM_CANONICAL_SPATIAL_SUMMARIES",
+    "temporal": "EXPORTED_WITH_METHOD_SPECIFIC_COVERAGE_AND_PER_SEED_FIDELITY",
+    "runtime": "QUALIFIED_COMPLETE_VERIFIED_SUBSET_WITH_EXCLUSIONS",
+    "deployment": "ALL_30_CONDITIONS_INCLUDING_EXECUTED_INT8_FAIL_COVERAGE",
+    "externalEvaluation": "NOT_OPENED"
+  },
+  "safety": {
+    "allenModelScoring": 0,
+    "legacyProtectedInferenceQueries": 0,
+    "externalEvaluation": "NOT_OPENED"
+  },
+  "files": {
+    "methods.json": {
+      "sha256": "4ec5793bc635f8d26003d7d089153f25c68913a76374c598c5c2467efa047e74",
+      "sizeBytes": 27168
+    },
+    "real_validation.json": {
+      "sha256": "2705cce6db9dabb661eaae000e23a2a39a9d14f1c3dfdfcf87a192505f082930",
+      "sizeBytes": 523365
+    },
+    "geometry.json": {
+      "sha256": "eead68caadfc903f78d24a2abddb6406c179d408c2616f1bac0d8bcf89ac132d",
+      "sizeBytes": 97270
+    },
+    "segmentation.json": {
+      "sha256": "87de2a9e9ed04daa7da4305459a1a1039fa98d7ada938ada24c9f9f3c8b0da08",
+      "sizeBytes": 61566
+    },
+    "coverage_risk.json": {
+      "sha256": "fac1aa9c33d070ca17e5605d170ccfd49ea2eb2169dc9d287f45131ee1215e51",
+      "sizeBytes": 6048876
+    },
+    "exact_gt.json": {
+      "sha256": "8ab32787276dc240246188bcf7e8c98c298d9981eb6b3caf5fbc8e321dc484d6",
+      "sizeBytes": 2530559
+    },
+    "temporal.json": {
+      "sha256": "ec81033abc05b6921e621e931c58de9ff8af348d42d30e7c82e07e2deae7abe9",
+      "sizeBytes": 1513735
+    },
+    "runtime.json": {
+      "sha256": "cfd513fbf3bbfcc985b13744fab3a112bed8227c1ea1f7a58baf13aca9784c62",
+      "sizeBytes": 162214
+    },
+    "deployment.json": {
+      "sha256": "0553b6af2a73515d52b66512a37ed34672399df1e14cc9f1bcbc46a3f55d820b",
+      "sizeBytes": 1043318
+    },
+    "capabilities.json": {
+      "sha256": "d42f90b7d48b1ea2fea94a2d4da7195cc553b6f4fb29791690107a2433fad7e6",
+      "sizeBytes": 1631500
+    },
+    "visual_cases.json": {
+      "sha256": "eb559dfd05f8cc9ca66e4c7f7ac24b54629b7023e946366fad3c2e3f579ab2fb",
+      "sizeBytes": 13843646
+    },
+    "WEBSITE_VISUAL_CASES.json": {
+      "sha256": "859c2554c79fd8c9d453879cce9a7ff2917a22953fafd3b1b1469454035930ec",
+      "sizeBytes": 214962
+    },
+    "provenance.json": {
+      "sha256": "dfc7aeff65a0b8916c9ce5fd4207f41412dfc5b93d261f130724a29e9614faed",
+      "sizeBytes": 4847053
+    }
+  }
+}

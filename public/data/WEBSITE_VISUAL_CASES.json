@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "schema": "WEBSITE_VISUAL_CASES_V1",
   "sourceManifest": {
     "path": "benchmark_site/media_export/website_visual_media_manifest.json",

@@ -3,6 +3,8 @@ import { findVisualCases } from './data'
 import type { BenchmarkData, MethodIdentity, MethodRecord, MetricCard } from './types'
 import EvidenceViewer from './EvidenceViewer'
 import MetricChart, { orderedMethods, type SortMode } from './MetricChart'
+import { RiskCoveragePlot } from './ScientificFigures'
+import type { RiskCoverageSeries } from './ScientificFigures'
 
 function labelFor(method: MethodRecord, identities: MethodIdentity[]) {
   return method.methodName ?? method.label ?? method.name
@@ -14,7 +16,7 @@ function hasValue(method: MethodRecord) {
   return typeof method.value === 'number' && Number.isFinite(method.value) && !method.unavailable
 }
 
-function SeedObservationPanel({ methods, identities }: { methods: MethodRecord[]; identities: MethodIdentity[] }) {
+function SeedObservationPanel({ methods, identities, primary = false }: { methods: MethodRecord[]; identities: MethodIdentity[]; primary?: boolean }) {
   const rows = methods.flatMap((method) => (method.perSeed ?? []).flatMap((observation) =>
     typeof observation.value === 'number' && Number.isFinite(observation.value)
       ? [{ method, observation, seed: String(observation.seedId ?? observation.seed ?? 'seed') }]
@@ -29,7 +31,7 @@ function SeedObservationPanel({ methods, identities }: { methods: MethodRecord[]
   const y = (value: number) => 20 + (max - value + span * 0.08) * 125 / (span * 1.16)
   const x = (index: number) => 46 + (seeds.length < 2 ? 0 : index * 680 / (seeds.length - 1))
   const colorFor = (method: MethodRecord) => method.color ?? identities.find((identity) => [identity.methodId, identity.id, identity.variantId].includes(method.methodId))?.color ?? '#75858a'
-  return <details className="seed-observations">
+  return <details className="seed-observations" open={primary || undefined}>
     <summary><span className="chevron">⌄</span> RAW PER-SEED OBSERVATIONS <small>{rows.length} source rows · no cross-seed mean</small></summary>
     <div className="seed-panel-body">
       <svg viewBox="0 0 760 175" role="img" aria-label="Raw temporal metric values by frozen seed">
@@ -131,6 +133,14 @@ export default function MetricCardView({ card, data, identities, flags }: {
     familyColor: identity.familyColor,
   }))
   const available = filteredMethods.filter(hasValue)
+  const curveOnly = available.length === 0 && filteredMethods.some((method) => (method.riskCoverage?.length ?? 0) > 3)
+  const seedOnly = available.length === 0 && filteredMethods.some((method) => (method.perSeed?.length ?? 0) > 0)
+  const riskCurves: RiskCoverageSeries[] = curveOnly ? filteredMethods.filter((method) => (method.riskCoverage?.length ?? 0) > 3).map((method) => ({
+    id: method.methodId,
+    label: labelFor(method, identities),
+    color: method.color,
+    points: (method.riskCoverage ?? []).map((point) => ({ coveragePercent: point.coverage * 100, riskPercent: point.risk * 100, retained: point.retained, attempted: point.attempted })),
+  })) : []
   const cases = findVisualCases(data, card, 'representative').concat(findVisualCases(data, card, 'worst_case'))
   const displayTitle = card.title ?? card.label ?? card.id
 
@@ -163,13 +173,13 @@ export default function MetricCardView({ card, data, identities, flags }: {
         </div>
       </header>
       <div className="chart-header">
-        <div className="chart-title"><span>METHOD COMPARISON</span><b>{available.length} scored{missing.length ? ` · ${missing.length} not measured` : ''}</b></div>
+        <div className="chart-title"><span>{curveOnly ? 'RISK–COVERAGE CURVES' : seedOnly ? 'PER-SEED OBSERVATIONS' : 'METHOD COMPARISON'}</span><b>{curveOnly ? `${riskCurves.length} source curves` : seedOnly ? 'No pooled point estimate' : `${available.length} scored${missing.length ? ` · ${missing.length} not measured` : ''}`}</b></div>
         <label className="sort-select">SORT<select value={sort} onChange={(event) => setSort(event.target.value as SortMode)}>
           <option value="best">Best to worst</option><option value="registry">Method registry</option><option value="worst">Worst to best</option>
         </select></label>
       </div>
-      {filteredMethods.length ? chartReady ? <MetricChart card={card} methods={filteredMethods} identities={identities} ordered={ordered} /> : <div className="chart-lazy-space" aria-label="Chart loads when near the viewport"><span>SCIENTIFIC BAR CHART · LOADS ON APPROACH</span></div> : <div className="chart-empty">No method records were exported for this metric.</div>}
-      {card.category === 'temporal' && <SeedObservationPanel methods={filteredMethods} identities={identities} />}
+      {curveOnly ? <RiskCoveragePlot curves={riskCurves} /> : seedOnly ? <SeedObservationPanel methods={filteredMethods} identities={identities} primary /> : filteredMethods.length ? chartReady ? <MetricChart card={card} methods={filteredMethods} identities={identities} ordered={ordered} /> : <div className="chart-lazy-space" aria-label="Chart loads when near the viewport"><span>SCIENTIFIC CHART · LOADS ON APPROACH</span></div> : <div className="chart-empty">No method records were exported for this metric.</div>}
+      {card.category === 'temporal' && !seedOnly && <SeedObservationPanel methods={filteredMethods} identities={identities} />}
       {missing.length > 0 && <div className="missing-methods"><span>NOT MEASURED</span>{missing.map((method) => <em key={method.methodId}>{labelFor(method, identities)}{method.unavailableReason ? ` · ${method.unavailableReason}` : ''}</em>)}</div>}
       <button className={`evidence-toggle ${expanded ? 'open' : ''}`} aria-expanded={expanded} onClick={() => setExpanded((value) => !value)}>
         <span className="toggle-arrow">{expanded ? '⌃' : '⌄'}</span><span>{expanded ? 'HIDE VISUAL COMPARISON' : 'SHOW VISUAL COMPARISON'}</span>

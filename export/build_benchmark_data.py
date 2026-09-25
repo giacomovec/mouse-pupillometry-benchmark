@@ -14,6 +14,7 @@ import hashlib
 import json
 import math
 import re
+import shutil
 import sys
 from collections import defaultdict
 from pathlib import Path, PurePosixPath
@@ -32,7 +33,10 @@ else:
 DEFAULT_OUT = SITE_ROOT / "public" / "data"
 EXP = "parallel_handoffs/benchmark_expansion_20260919"
 DEPLOY = "parallel_handoffs/acquisition_family_corrected_wave_20260915/results/deployment_summary/SEGFORMER_DEPLOYMENT_MATRIX.csv"
-SCHEMA_VERSION = "mouse-pupillometry-benchmark-export.v1"
+SCHEMA_VERSION = "mouse-pupillometry-benchmark-export.v2"
+OVERVIEW_SCHEMA = "mouse-pupillometry-overview.v2"
+REAL_VALIDATION_REGISTRY_SCHEMA = "mouse-pupillometry-real-validation-registry.v2"
+VISUAL_CASE_INDEX_SCHEMA = "mouse-pupillometry-visual-case-index.v2"
 
 # Inputs are deliberately explicit. In particular, no source under external_gold,
 # v2/allen*, or protected material is read by this exporter.
@@ -40,6 +44,14 @@ IDENTITY_PATH = f"{EXP}/METHOD_VISUAL_IDENTITY_V2.json"
 REAL_PAYLOAD_PATH = f"{EXP}/real_validation_v7/REAL_VALIDATION_DASHBOARD_PAYLOAD.json"
 REAL_SUMMARY_PATH = f"{EXP}/real_validation_v7/REAL_VALIDATION_SUMMARY.csv"
 REAL_EVIDENCE_PATH = f"{EXP}/real_validation_v7/REAL_VALIDATION_EVIDENCE.csv"
+FEATURE_ATLAS_PATH = f"{EXP}/benchmark_ui_v10/BENCHMARK_UI_DATA.json"
+KEYPOINT_COVERAGE_PATH = f"{EXP}/KEYPOINT_COVERAGE_FORENSIC_V10.json"
+MPA_MAPPING_FIXED_SUMMARY_PATH = f"{EXP}/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json"
+MPA_MAPPING_FIXED_MANIFEST_PATH = f"{EXP}/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json"
+MPA_MAPPING_FIXED_FRAMES_PATH = f"{EXP}/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv"
+TEMPORAL_CANONICAL_COMPLETION_PATH = f"{EXP}/MEYE_RELEASED_V22_TEMPORAL_COMPLETION_20260923.json"
+NATIVE_CPU_RUNTIME_CSV_PATH = f"{EXP}/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv"
+NATIVE_CPU_RUNTIME_VERIFICATION_PATH = f"{EXP}/runtime_benchmark/population_v2/VERIFICATION.json"
 UNET_PATH = f"{EXP}/UNET_VS_SEGFORMER_FINAL.csv"
 CAPABILITIES_PATH = f"{EXP}/METHOD_CAPABILITY_MATRIX_V2.csv"
 RUNTIME_CSV_PATH = f"{EXP}/closure_common_a5000_runtime/tournament_v1/TOURNAMENT.csv"
@@ -66,6 +78,20 @@ METHOD_IDENTITY_ALIASES = {
     "unet_base": "vanilla_unet_base",
     "unet_base_matched": "vanilla_unet_base",
     "unet_b2_matched": "vanilla_unet_large",
+}
+PUBLISHED_PRIMARY_METHOD_IDS = {
+    "segformer_b0", "segformer_b1", "segformer_b2", "meye_released",
+    "standard_dlc_matched", "pupil_dlc_gm", "dlc_zoo_mouse_pupil_vclose",
+    "neuropupil_animal", "mouse_pupil_analysis_v020", "classical_fixed",
+}
+ROSTER_ROLE_BY_METHOD = {
+    "segformer_b0": "INTERNAL_CUSTOM", "segformer_b1": "INTERNAL_CUSTOM", "segformer_b2": "INTERNAL_CUSTOM",
+    "unet_small": "MATCHED_CONTROL", "unet_base": "MATCHED_CONTROL", "unet_b2_matched": "MATCHED_CONTROL",
+    "meye_released": "PUBLISHED", "meye_matched": "MATCHED_CONTROL",
+    "standard_dlc_matched": "PUBLISHED", "pupil_dlc_gm": "PUBLISHED",
+    "dlc_zoo_mouse_pupil_vclose": "PUBLISHED", "neuropupil_animal": "PUBLISHED",
+    "mouse_pupil_analysis_v020": "PUBLISHED", "classical_fixed": "INTERNAL_CUSTOM",
+    "facemap_raw": "NATIVE_WORKFLOW_ONLY", "facemap_processed": "NATIVE_WORKFLOW_ONLY", "eyeloop": "NATIVE_WORKFLOW_ONLY",
 }
 
 TEMPORAL_METRIC_PATHS = [
@@ -497,7 +523,7 @@ def card_base(
     overlay_type: str | None = None, runtime_protocol: str | None = None,
     visual_evidence_unavailable_reason: str | None = None,
 ) -> dict[str, Any]:
-    return {
+    card = {
         "id": card_id,
         "title": title,
         "category": category,
@@ -515,6 +541,9 @@ def card_base(
         "runtimeProtocol": runtime_protocol,
         "visualEvidenceUnavailableReason": visual_evidence_unavailable_reason,
     }
+    if direction == "target":
+        card["targetValue"] = 1 if "gain" in card_id.lower() else 0
+    return card
 
 
 def available_or_not(
@@ -2614,6 +2643,462 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
+def export_source_ref(path: str, sha256: str, *, row_id: str | None = None, kind: str = "canonical_row") -> dict[str, Any]:
+    ref: dict[str, Any] = {"type": kind, "path": path, "sha256": sha256}
+    if row_id:
+        ref["rowId"] = row_id
+    return ref
+
+
+def display_method(method_id: str, label: str | None = None) -> str:
+    if label:
+        return label
+    known = {
+        "segformer_b0": "SegFormer B0", "segformer_b1": "SegFormer B1", "segformer_b2": "SegFormer B2",
+        "unet_small": "U-Net small", "unet_base": "U-Net base", "unet_b2_matched": "U-Net B2-matched",
+        "standard_dlc_matched": "Standard DLC", "pupil_dlc_gm": "Pupil-DLC General Model",
+        "dlc_zoo_mouse_pupil_vclose": "DLC Zoo", "neuropupil_animal": "NeuroPupil",
+        "meye_released": "MEYE v0.1.1", "meye_matched": "MEYE matched",
+        "classical_fixed": "Fixed ellipse", "mouse_pupil_analysis_v020": "mouse-pupil-analysis v0.2.0",
+    }
+    return known.get(method_id, method_id.replace("_", " "))
+
+
+def build_overview_exports(
+    *, real_summary: list[dict[str, str]], real_info: dict[str, Any], unet_rows: list[dict[str, str]],
+    unet_info: dict[str, Any], runtime_rows: list[dict[str, str]], runtime_info: dict[str, Any],
+    feature_atlas: dict[str, Any], feature_info: dict[str, Any], keypoint: dict[str, Any], keypoint_info: dict[str, Any],
+    mpa_summary: dict[str, Any], mpa_summary_info: dict[str, Any], mpa_manifest_info: dict[str, Any], mpa_frame_info: dict[str, Any],
+    execution_rows: list[dict[str, str]], temporal_data: dict[str, Any], temporal_completion: dict[str, Any], temporal_completion_info: dict[str, Any], fingerprint: str, version: str,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Generate route-level values with hash-bound, typed canonical row references."""
+    evidence_rows, _ = read_csv(REAL_EVIDENCE_PATH, "v2 registry source-row joins")
+    evidence_by_key = {(r.get("plane"), r.get("method_id")): r for r in evidence_rows}
+    feature_methods = {m.get("method_id"): m for card in feature_atlas.get("cards", []) for m in card.get("methods", []) if m.get("method_id")}
+    aggregates = ((feature_atlas.get("feature_v10") or {}).get("aggregates") or {}).get("diameter_are", {})
+
+    def feature_metric(method_id: str, card_id: str) -> Any:
+        for card in feature_atlas.get("cards", []):
+            if card.get("id") == card_id:
+                return next((m.get("value") for m in card.get("methods", []) if m.get("method_id") == method_id), None)
+        return None
+    primary_plane = "shared_scalar_mask_gt"
+    conditions: list[dict[str, Any]] = []
+    primary_by_method: dict[str, dict[str, Any]] = {}
+
+    def ref(info: dict[str, Any], row_id: str, kind: str) -> dict[str, Any]:
+        return export_source_ref(info["path"], info["sha256"], row_id=row_id, kind=kind)
+
+    for row in real_summary:
+        method_id, plane = row.get("method_id", ""), row.get("plane", "")
+        if not method_id or not plane:
+            continue
+        evidence = evidence_by_key.get((plane, method_id), {})
+        row_id = row.get("evidence_id") or evidence.get("evidence_id") or f"{plane}:{method_id}:{row.get('condition')}"
+        condition_id = f"{method_id}__{plane}__{row.get('condition') or 'unspecified'}__{row.get('representation') or 'unspecified'}"
+        role = ROSTER_ROLE_BY_METHOD.get(method_id, "INTERNAL_CUSTOM")
+        is_primary = plane == primary_plane and method_id in PUBLISHED_PRIMARY_METHOD_IDS
+        are = as_number(row.get("family_macro_diameter_are"))
+        atlas = aggregates.get(method_id, {})
+        ci = atlas.get("grouped_ci95") or [None, None]
+        cat_fraction = as_number(row.get("catastrophic_gt20_fraction_retained"))
+        condition = {
+            "conditionId": condition_id, "methodId": method_id,
+            "label": display_method(method_id, row.get("label")), "family": row.get("family_id") or None,
+            "model": display_method(method_id, row.get("label")), "representation": row.get("representation") or None,
+            "operatingPoint": row.get("condition") or None, "plane": plane, "truthView": row.get("truth_view") or None,
+            "coverage": as_number(row.get("coverage")), "coveragePercent": as_number(row.get("coverage")) * 100 if as_number(row.get("coverage")) is not None else None,
+            "accepted": as_number(row.get("retained")), "attempted": as_number(row.get("attempted")),
+            "familyCount": as_number(row.get("families_with_retained_diameter")),
+            "metrics": {
+                "diameterArePercent": are * 100 if are is not None else None,
+                "diameterFamilyCi": {"lower": ci[0], "upper": ci[1]} if len(ci) == 2 and ci[0] is not None and ci[1] is not None else None,
+                "gt20Count": None,
+                "gt20FractionRetainedPercent": cat_fraction * 100 if cat_fraction is not None else None,
+                "centerErrorPx": as_number(row.get("center_mae_px")),
+                "dice": feature_metric(method_id, "feature-pupil-dice"),
+            },
+            "primary": bool(is_primary), "rosterRole": role,
+            "sourceRefs": [ref(real_info["summary"], str(row_id), "real_validation_summary_row"), ref(real_info["evidence"], str(evidence.get("evidence_id") or row_id), "real_validation_evidence_row")],
+            "sourceHashes": {"frameMetricsSha256": evidence.get("frame_metrics_sha256") or None, "validationManifestSha256": evidence.get("validation_manifest_sha256") or None},
+        }
+        if not is_primary:
+            condition["controlType"] = "representation_variant" if plane != primary_plane else ("architecture_control" if role == "MATCHED_CONTROL" else "advanced_comparator")
+        if evidence.get("frame_metrics_sha256"):
+            # Hash of the source row's immutable scored plane; sufficient to bind the denominator.
+            condition["frameMetricsSha256"] = evidence["frame_metrics_sha256"]
+        conditions.append(condition)
+        if plane == primary_plane:
+            primary_by_method[method_id] = condition
+
+    # The published mouse-pupil-analysis release has a separate official,
+    # mapping-fixed source and is joined only through its manifest-bound run.
+    mpa_feature = feature_methods.get("mouse_pupil_analysis_v020", {})
+    mpa_are = (aggregates.get("mouse_pupil_analysis_v020") or {}).get("value")
+    mpa_valid = as_number(mpa_summary.get("valid", mpa_summary.get("retained")))
+    mpa_attempted = as_number(mpa_summary.get("attempted"))
+    mpa_ci = (aggregates.get("mouse_pupil_analysis_v020") or {}).get("grouped_ci95") or [None, None]
+    mpa = {
+        "conditionId": "mouse_pupil_analysis_v020__official_mapping_fixed__mask", "methodId": "mouse_pupil_analysis_v020",
+        "label": "mouse-pupil-analysis v0.2.0", "family": "mouse_pupil_analysis", "model": "mouse-pupil-analysis v0.2.0",
+        "representation": mpa_feature.get("representation"), "operatingPoint": "official v0.2.0; mapping-fixed; native mapped pupil mask",
+        "plane": "official_native_mask", "coverage": (mpa_valid / mpa_attempted) if mpa_valid is not None and mpa_attempted else None,
+        "coveragePercent": (mpa_valid / mpa_attempted * 100) if mpa_valid is not None and mpa_attempted else None,
+        "accepted": mpa_valid, "attempted": mpa_attempted, "familyCount": (aggregates.get("mouse_pupil_analysis_v020") or {}).get("families"),
+        "metrics": {"diameterArePercent": mpa_are, "diameterFamilyCi": {"lower": mpa_ci[0], "upper": mpa_ci[1]} if len(mpa_ci) == 2 else None, "gt20Count": None, "gt20FractionRetainedPercent": None, "centerErrorPx": None, "dice": feature_metric("mouse_pupil_analysis_v020", "feature-pupil-dice")},
+        "primary": True, "rosterRole": "PUBLISHED",
+        "sourceRefs": [ref(mpa_summary_info, "mouse_pupil_analysis_v020", "official_method_summary"), ref(mpa_manifest_info, "RUN_MANIFEST", "official_run_manifest"), ref(feature_info, "feature_v10.aggregates.diameter_are.mouse_pupil_analysis_v020", "canonical_feature_aggregate"), ref(mpa_frame_info, "mouse_pupil_analysis_v020", "official_frame_metrics")],
+        "sourceHashes": {"frameMetricsSha256": mpa_frame_info.get("sha256"), "validationManifestSha256": mpa_manifest_info.get("sha256")},
+    }
+    conditions.append(mpa)
+    primary_by_method["mouse_pupil_analysis_v020"] = mpa
+
+    # Add the three U-Net controls without elevating them into the default roster.
+    unet_by_method = {str(r.get("method_id")): r for r in unet_rows}
+    for method_id, row in unet_by_method.items():
+        if method_id == "segformer_b2":
+            condition = primary_by_method.get(method_id)
+            if condition:
+                condition["sourceRefs"].append(ref(unet_info, method_id, "architecture_control_row"))
+                condition["architectureControl"] = {"coverage": as_number(row.get("coverage")), "diameterArePercent": (as_number(row.get("family_macro_diameter_are")) or 0) * 100}
+            continue
+        value, low, high = (as_number(row.get(k)) for k in ("family_macro_diameter_are", "family_bootstrap_ci95_low", "family_bootstrap_ci95_high"))
+        coverage = as_number(row.get("coverage"))
+        conditions.append({
+            "conditionId": f"{method_id}__architecture_matched_validation", "methodId": method_id,
+            "label": display_method(method_id), "family": "vanilla_unet", "model": display_method(method_id),
+            "representation": "native mask + common geometry", "operatingPoint": "frozen corrected validation operating point",
+            "plane": "matched_architecture_control", "coverage": coverage, "coveragePercent": coverage * 100 if coverage is not None else None,
+            "accepted": as_number(row.get("retained")), "attempted": as_number(row.get("attempted")), "familyCount": as_number(row.get("family_count")),
+            "metrics": {"diameterArePercent": value * 100 if value is not None else None, "diameterFamilyCi": {"lower": low * 100, "upper": high * 100} if low is not None and high is not None else None, "gt20Count": as_number(row.get("retained_catastrophic_gt20_count")), "gt20FractionRetainedPercent": as_number(row.get("retained_catastrophic_gt20_fraction")) * 100 if as_number(row.get("retained_catastrophic_gt20_fraction")) is not None else None, "centerErrorPx": as_number(row.get("retained_pupil_centroid_error_px_mean")), "dice": as_number(row.get("retained_pupil_dice_mean"))},
+            "primary": False, "rosterRole": "MATCHED_CONTROL", "controlType": "architecture_control",
+            "checkpointHash": row.get("selected_checkpoint_sha256") or None, "protocolHash": row.get("protocol_payload_sha256") or None,
+            "sourceRefs": [ref(unet_info, method_id, "architecture_control_row")],
+        })
+
+    # Keypoint systems have precomputed prospective 95% coverage thresholds;
+    # the exporter passes these source points through without interpolation.
+    matched_by_method: dict[str, dict[str, Any]] = {}
+    for method_id in ("standard_dlc_matched", "pupil_dlc_gm"):
+        point = keypoint.get(method_id, {}).get("coverage_95")
+        if not point:
+            continue
+        original = primary_by_method.get(method_id, {})
+        evi = evidence_by_key.get((primary_plane, method_id), {})
+        cond = {
+            "conditionId": f"{method_id}__prospective_95pct_coverage", "methodId": method_id,
+            "label": f"{display_method(method_id)} · ≥95% prospective coverage", "family": original.get("family"),
+            "model": display_method(method_id), "representation": "unchanged native confidence-ranked geometry",
+            "operatingPoint": f"confidence threshold {point.get('threshold')}; prospective ≥95% coverage", "plane": "prospective_coverage_matched",
+        "coverage": as_number(point.get("coverage")), "coveragePercent": as_number(point.get("coverage")) * 100 if as_number(point.get("coverage")) is not None else None,
+            "accepted": as_number(point.get("valid")), "attempted": as_number(point.get("attempted")),
+            "familyCount": as_number(point.get("families_with_valid")),
+            "metrics": {"diameterArePercent": as_number(point.get("family_macro_diameter_are")) * 100 if as_number(point.get("family_macro_diameter_are")) is not None else None, "diameterFamilyCi": None, "gt20Count": None, "gt20FractionRetainedPercent": None, "centerErrorPx": None, "dice": None},
+            "primary": False, "rosterRole": "MATCHED_CONTROL", "controlType": "coverage_matched_operating_point",
+            "sourceRefs": [ref(keypoint_info, f"{method_id}:coverage_95", "prospective_threshold_row"), ref(real_info["evidence"], evi.get("evidence_id") or method_id, "population_identity_evidence")],
+            "sourceHashes": {"populationFrameMetricsSha256": evi.get("frame_metrics_sha256") or None},
+        }
+        conditions.append(cond)
+        matched_by_method[method_id] = cond
+
+    runtime_by_method = {str(r.get("model_id")): r for r in runtime_rows if r.get("model_id")}
+    runtime_alias = {"unet_small_matched": "unet_small", "unet_base_matched": "unet_base", "unet_b2_matched": "unet_b2_matched"}
+    runtime_by_method = {runtime_alias.get(k, k): v for k, v in runtime_by_method.items()}
+    completion = runtime_info.get("completion") or {}
+    speed_points: list[dict[str, Any]] = []
+    catastrophic_rows: list[dict[str, Any]] = []
+    for condition in conditions:
+        metrics = condition.get("metrics") or {}
+        cat = metrics.get("gt20FractionRetainedPercent")
+        if cat is not None:
+            catastrophic_rows.append({"id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": condition["methodId"], "label": condition["label"], "value": cat, "coveragePercent": condition.get("coveragePercent"), "primary": condition.get("primary"), "rosterRole": condition.get("rosterRole"), "sourceRefs": condition["sourceRefs"]})
+        runtime = runtime_by_method.get(condition["methodId"])
+        condition_matches_common_plane = condition.get("plane") in {primary_plane, "matched_architecture_control", "official_native_mask"}
+        if not condition_matches_common_plane:
+            condition["commonRuntime"] = (
+                {"status": "METHOD_RUNTIME_NOT_JOINED_TO_CONDITION", "latencyMs": None, "reason": "A method runtime row exists, but this validation condition has a different representation or operating point and is not joined to the common A5000 accuracy plot."}
+                if runtime is not None
+                else {"status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT", "latencyMs": None, "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."}
+            )
+            continue
+        if runtime is None:
+            condition["commonRuntime"] = {"status": "NOT_MEASURED_IN_COMMON_A5000_TOURNAMENT", "latencyMs": None, "reason": "No compatible method row is present in the verified common A5000 batch-one tournament."}
+            continue
+        latency = as_number(runtime.get("end_to_end_p50_ms"))
+        error = metrics.get("diameterArePercent")
+        runtime_ref = ref(runtime_info["csvInfo"], condition["methodId"], "common_a5000_runtime_row")
+        if latency is None or error is None:
+            condition["commonRuntime"] = {"status": "INCOMPLETE_COMMON_JOIN", "latencyMs": latency, "reason": "Runtime and compatible validation accuracy are not both available."}
+            continue
+        speed_points.append({
+            "id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": condition["methodId"], "label": condition["label"],
+            "latencyMs": latency, "accuracyPercent": error, "coveragePercent": condition.get("coveragePercent"),
+            "accepted": condition.get("accepted"), "attempted": condition.get("attempted"), "family": condition.get("family"),
+            "model": condition.get("model"), "representation": condition.get("representation"), "operatingPoint": condition.get("operatingPoint"),
+            "runtimeProtocol": completion.get("protocol_sha256"), "sourceRefs": condition["sourceRefs"] + [runtime_ref],
+            "comparable": True, "primary": condition.get("primary"), "rosterRole": condition.get("rosterRole"),
+        })
+        condition["commonRuntime"] = {"status": "COMMON_BATCH1_VALID", "latencyMs": latency, "runtimeProtocol": completion.get("protocol_sha256"), "sourceRefs": [runtime_ref]}
+
+    accuracy_coverage: list[dict[str, Any]] = []
+    practical: list[dict[str, Any]] = []
+    for method_id, condition in primary_by_method.items():
+        if not condition.get("primary"):
+            continue
+        are = (condition.get("metrics") or {}).get("diameterArePercent")
+        if are is None:
+            continue
+        ci = (condition.get("metrics") or {}).get("diameterFamilyCi") or {}
+        connection = f"{method_id}__coverage_operating_points" if method_id in matched_by_method else None
+        accuracy_coverage.append({"id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": method_id, "label": condition["label"], "coveragePercent": condition.get("coveragePercent"), "accuracyPercent": are, "accuracyLowerPercent": ci.get("lower"), "accuracyUpperPercent": ci.get("upper"), "family": condition.get("family"), "familyCount": condition.get("familyCount"), "plane": condition.get("plane"), "model": condition.get("model"), "representation": condition.get("representation"), "operatingPoint": condition.get("operatingPoint"), "accepted": condition.get("accepted"), "attempted": condition.get("attempted"), "connectionId": connection, "sourceRefs": condition["sourceRefs"]})
+        practical.append({"id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": method_id, "label": condition["label"], "value": are, "lower": ci.get("lower"), "upper": ci.get("upper"), "coveragePercent": condition.get("coveragePercent"), "reachesTarget": condition.get("coveragePercent") is not None and condition["coveragePercent"] >= 95, "sourceRefs": condition["sourceRefs"]})
+    for method_id, condition in matched_by_method.items():
+        are = (condition.get("metrics") or {}).get("diameterArePercent")
+        if are is None:
+            continue
+        accuracy_coverage.append({"id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": method_id, "label": condition["label"], "coveragePercent": condition.get("coveragePercent"), "accuracyPercent": are, "accuracyLowerPercent": None, "accuracyUpperPercent": None, "family": condition.get("family"), "familyCount": condition.get("familyCount"), "plane": condition.get("plane"), "model": condition.get("model"), "representation": condition.get("representation"), "operatingPoint": condition.get("operatingPoint"), "accepted": condition.get("accepted"), "attempted": condition.get("attempted"), "connectionId": f"{method_id}__coverage_operating_points", "sourceRefs": condition["sourceRefs"]})
+        practical.append({"id": condition["conditionId"], "conditionId": condition["conditionId"], "methodId": method_id, "label": condition["label"], "value": are, "lower": None, "upper": None, "coveragePercent": condition.get("coveragePercent"), "reachesTarget": condition.get("coveragePercent") is not None and condition["coveragePercent"] >= 95, "sourceRefs": condition["sourceRefs"]})
+
+    paired = []
+    for method_id, row in unet_by_method.items():
+        delta = as_number(row.get("paired_family_macro_delta_vs_segformer_b2"))
+        if delta is None:
+            continue
+        low, high = as_number(row.get("paired_family_bootstrap_ci95_low")), as_number(row.get("paired_family_bootstrap_ci95_high"))
+        paired.append({"id": method_id, "label": display_method(method_id), "differencePercentagePoints": delta * 100, "ciLow": low * 100 if low is not None else None, "ciHigh": high * 100 if high is not None else None, "comparison": "paired acquisition-family macro diameter ARE difference vs SegFormer B2", "sourceRefs": [ref(unet_info, method_id, "paired_architecture_row")]})
+
+    temporal_scope = str(temporal_completion.get("scope") or "")
+    temporal_shape = re.search(r"(\d+) trajectories per seed,\s*(\d+) frames per trajectory", temporal_scope)
+    temporal_seed_count = as_number(temporal_completion.get("seed_count"))
+    temporal_sequences = as_number(temporal_completion.get("sequence_count"))
+    population = {
+        "acquisitionFamilyCount": max((as_number(r.get("families_attempted")) or 0 for r in real_summary if r.get("plane") == primary_plane), default=None),
+        "validationFrameCount": max((as_number(r.get("attempted")) or 0 for r in real_summary if r.get("plane") == primary_plane), default=None),
+        "exactGtCaseCount": sum(1 for row in execution_rows if row.get("kind") == "spatial"),
+        "temporalSeedCount": temporal_seed_count,
+        "temporalTrajectoryCount": temporal_sequences,
+        "temporalTrajectoriesPerSeed": as_number(temporal_shape.group(1)) if temporal_shape else None,
+        "temporalFramesPerTrajectory": as_number(temporal_shape.group(2)) if temporal_shape else None,
+        "temporalTruthFrameCount": as_number(temporal_completion.get("rows_replayed")),
+        "temporalObservedInputCount": as_number(temporal_completion.get("observed_inputs")),
+        "temporalNoCallCount": as_number(temporal_completion.get("missing_inputs_confirmed_no_call")),
+        "temporalMethodCount": (temporal_data.get("sourcePopulation") or {}).get("methodCount"),
+        "temporalObservationCount": len(temporal_data.get("perSeedObservations", [])),
+    }
+    overview = {
+        "schema": OVERVIEW_SCHEMA, "version": version,
+        "status": {"label": "DEVELOPMENT", "externalEvaluation": "NOT_OPENED", "sourceFingerprintSha256": fingerprint},
+        "population": population,
+        "safety": {"allenModelScoring": as_number(temporal_completion.get("allen_model_scoring")), "legacyProtectedInferenceQueries": as_number(temporal_completion.get("legacy_protected_inference_queries")), "externalEvaluation": "NOT_OPENED"},
+        "statements": [],
+        "figures": {"accuracyCoverage": accuracy_coverage, "practicalCoverage": practical, "pairedArchitecture": paired, "commonSpeedAccuracy": speed_points, "catastrophicFailure": catastrophic_rows},
+        "sourceRefs": [ref(real_info["summary"], "", "canonical_source_file"), ref(real_info["evidence"], "", "canonical_source_file"), ref(unet_info, "", "canonical_source_file"), ref(runtime_info["csvInfo"], "", "canonical_source_file"), ref(feature_info, "", "canonical_source_file"), ref(keypoint_info, "", "canonical_source_file"), ref(temporal_completion_info, "", "canonical_source_file")],
+    }
+    registry = {
+        "schema": REAL_VALIDATION_REGISTRY_SCHEMA, "version": version, "status": "DEVELOPMENT",
+        "population": population, "conditions": conditions,
+        "metricDefinitions": {
+            "diameterArePercent": {"label": "Family-macro diameter absolute relative error", "unit": "%", "direction": "lower", "aggregation": "unweighted acquisition-family means"},
+            "gt20FractionRetainedPercent": {"label": "Retained frames with diameter ARE >20%", "unit": "%", "direction": "lower", "denominator": "retained frames"},
+        },
+        "rosterRoles": ["PUBLISHED", "MATCHED_CONTROL", "INTERNAL_CUSTOM", "DEPLOYMENT_VARIANT", "NATIVE_WORKFLOW_ONLY", "BLOCKED"],
+        "sourceFingerprintSha256": fingerprint,
+    }
+    return overview, registry
+
+
+EXACT_GT_SEVERITY_METHODS = (
+    "segformer_b2", "mouse_pupil_analysis_v020", "meye_released",
+    "standard_dlc_matched", "unet_b2_matched",
+)
+
+
+def build_exact_gt_severity_rows(
+    execution_rows: list[dict[str, str]], execution_rows_info: dict[str, Any],
+    frame_rows_by_method: dict[str, dict[str, dict[str, str]]], frame_metric_sources: dict[str, dict[str, Any]],
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Group frozen per-frame scores by source-defined operation severity.
+
+    Each cell is the unweighted mean of measured, accepted frame-level diameter
+    ARE values. This is a deterministic grouping of canonical score rows; it
+    does not infer scores from the frozen visual example assets or compute a CI.
+    """
+    spatial = [row for row in execution_rows if row.get("kind") == "spatial"]
+    cases_by_key: dict[str, dict[str, Any]] = {}
+    for row in spatial:
+        case_id = str(row.get("execution_id") or "")
+        if not case_id or case_id in cases_by_key:
+            raise ValueError("Exact-GT spatial execution rows must have unique non-empty IDs for severity grouping.")
+        family = str(row.get("operation_family") or "")
+        operation = json.loads(row.get("operation_json") or "{}")
+        if operation.get("family") != family:
+            raise ValueError(f"Exact-GT operation family disagrees with operation_json for {case_id}.")
+        if family == "motion_blur":
+            severity_field = "kernel_length_px"
+        elif family == "latent_occlusion":
+            severity_field = "visible_fraction"
+        elif family == "crop_truncation":
+            severity_field = "target_visible_fraction"
+        elif family == "combined_pupil":
+            severity_field = "categorical_condition"
+        else:
+            raise ValueError(f"Unrecognized frozen Exact-GT operation family for severity grouping: {family}")
+        severity = "single" if severity_field == "categorical_condition" else operation.get(severity_field)
+        if severity is None:
+            raise ValueError(f"Canonical Exact-GT severity field {severity_field} is missing for {case_id}.")
+        cases_by_key[case_id] = {"caseId": case_id, "operationFamily": family, "severity": severity, "severityField": severity_field, "operation": operation, "groundTruthSha256": row.get("primary_gt_sha256")}
+    if len(cases_by_key) != 252:
+        raise ValueError(f"Severity table expects the 252 frozen spatial cases; found {len(cases_by_key)}.")
+
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for case in cases_by_key.values():
+        groups[(case["operationFamily"], str(case["severity"]))].append(case)
+    rows: list[dict[str, Any]] = []
+    source_ref_map: dict[str, dict[str, Any]] = {}
+    for method_id in EXACT_GT_SEVERITY_METHODS:
+        method_rows = frame_rows_by_method.get(method_id)
+        source_info = frame_metric_sources.get(method_id)
+        if method_rows is None or source_info is None:
+            raise ValueError(f"Selected Exact-GT severity method lacks a canonical frame table: {method_id}")
+        source_ref_map[method_id] = export_source_ref(source_info["path"], source_info["sha256"], kind="exact_gt_frame_metric_source")
+        if not set(cases_by_key).issubset(method_rows):
+            raise ValueError(f"{method_id} Exact-GT frame rows do not cover all 252 frozen spatial execution IDs.")
+        for (operation_family, severity), cases in sorted(groups.items(), key=lambda item: (item[0][0], float(item[0][1]) if re.fullmatch(r"-?\d+(?:\.\d+)?", item[0][1]) else item[0][1])):
+            values: list[float] = []
+            case_ids: list[str] = []
+            for case in cases:
+                case_id = case["caseId"]
+                row = method_rows[case_id]
+                row_family = str(row.get("operation_family") or operation_family)
+                if row_family != operation_family:
+                    raise ValueError(f"{method_id} operation family mismatch at Exact-GT case {case_id}.")
+                row_gt = row.get("primary_gt_sha256") or row.get("gt_mask_sha256")
+                # The GT hash is checked by joining the scored row to its
+                # source execution identity; field names vary by runner.
+                exec_gt = case.get("groundTruthSha256")
+                if row_gt and exec_gt and row_gt.lower() != exec_gt.lower():
+                    raise ValueError(f"{method_id} GT hash differs from the frozen execution row for {case_id}.")
+                case_ids.append(case_id)
+                valid = str(row.get("valid") or "").strip().lower() in {"true", "1", "yes"}
+                value = as_number(row.get("diameter_are"))
+                if valid and value is not None:
+                    values.append(value)
+            attempted = len(cases)
+            accepted = len(values)
+            mean_are = sum(values) / accepted if accepted else None
+            severity_source_value = cases[0]["severity"]
+            if cases[0]["severityField"] == "kernel_length_px":
+                severity_label = f"{severity_source_value} px"
+            elif cases[0]["severityField"] == "visible_fraction":
+                severity_label = f"{float(severity_source_value) * 100:g}% visible"
+            elif cases[0]["severityField"] == "target_visible_fraction":
+                severity_label = f"{float(severity_source_value) * 100:g}% target visible"
+            else:
+                severity_label = "compound transform"
+            id_parts = [method_id, operation_family, severity.replace(".", "p")]
+            rows.append({
+                "id": "__".join(id_parts), "methodId": method_id, "method": display_method(method_id),
+                "operationFamily": operation_family, "transform": operation_family,
+                "severity": severity_source_value, "severityValue": severity_source_value, "severityLabel": severity_label,
+                "severityField": cases[0]["severityField"],
+                "metric": "diameter_are", "metricId": "diameter_are", "unit": "%",
+                "value": mean_are * 100 if mean_are is not None else None,
+                "valuePercent": mean_are * 100 if mean_are is not None else None,
+                "accepted": accepted, "attempted": attempted,
+                "coverage": accepted / attempted if attempted else None,
+                "caseIds": case_ids,
+                "status": "MEASURED" if mean_are is not None else "NOT_MEASURED",
+                "aggregation": "mean of accepted frame-level diameter_are values within this frozen operation-family × severity cell; no CI computed",
+                "sourceRefs": [source_ref_map[method_id], export_source_ref(execution_rows_info["path"], execution_rows_info["sha256"], row_id=f"{operation_family}:{severity}", kind="exact_gt_execution_case_group")],
+            })
+    metadata = {
+        "schema": "mouse-pupillometry-exact-gt-severity.v2",
+        "metric": "diameter_are", "unit": "%", "caseCount": len(cases_by_key),
+        "operationFamilies": sorted({row["operationFamily"] for row in cases_by_key.values()}),
+        "methodIds": list(EXACT_GT_SEVERITY_METHODS),
+        "selectionPolicy": "SegFormer B2 headline; published mouse-pupil-analysis, released MEYE, Standard DLC; one B2-matched U-Net architecture control.",
+        "severityPolicy": {
+            "motion_blur": "kernel_length_px; 5 and 9 px",
+            "latent_occlusion": "visible_fraction; source levels retained",
+            "crop_truncation": "target_visible_fraction; edge directions pooled within level and attempted counts retained",
+            "combined_pupil": "one categorical compound transform, not an ordinal severity",
+        },
+        "aggregationPolicy": "Mean of measured accepted per-frame diameter ARE rows within each source-defined cell. Rejected/missing rows remain in attempted denominator. Uncertainty intervals are not computed.",
+        "sourceRefs": [export_source_ref(execution_rows_info["path"], execution_rows_info["sha256"], kind="canonical_exact_gt_execution_rows")] + list(source_ref_map.values()),
+        "rows": rows,
+    }
+    return rows, metadata
+
+
+def build_native_cpu_runtime_export(
+    rows: list[dict[str, str]], csv_info: dict[str, Any], verification: dict[str, Any], verification_info: dict[str, Any],
+) -> dict[str, Any]:
+    expected_sha = str((verification.get("table") or {}).get("sha256") or "").lower()
+    if expected_sha != str(csv_info.get("sha256") or "").lower():
+        raise ValueError("Controlled native CPU runtime table hash does not match its verification report.")
+    expected_methods = set(verification.get("methods", []))
+    methods = {str(row.get("method_id") or "") for row in rows}
+    if verification.get("status") != "PASS" or len(rows) != as_number(verification.get("method_count")) or methods != expected_methods:
+        raise ValueError("Controlled native CPU runtime population does not match the passing verification report.")
+    hardware = verification.get("shared_hardware") or {}
+    batch_sizes = [int(match.group(1)) for row in rows if (match := re.search(r"/batch(\d+)$", str(row.get("condition_id") or "")))]
+    if len(batch_sizes) != len(rows) or set(batch_sizes) != {1} or as_number(verification.get("shared_stream_samples")) is None:
+        raise ValueError("Controlled native CPU runtime rows must share the verified batch-one corpus protocol.")
+    output_rows: list[dict[str, Any]] = []
+    for row in rows:
+        method_id = str(row["method_id"])
+        output_rows.append({
+            "conditionId": row.get("condition_id"), "methodId": method_id, "method": display_method(method_id),
+            "rosterRole": "NATIVE_WORKFLOW_ONLY", "hardware": hardware, "batchSize": 1,
+            "corpusSampleCount": as_number(verification.get("shared_stream_samples")),
+            "sharedStreamIdentitySha256": verification.get("shared_stream_identity_sha256"),
+            "latencyMs": as_number(row.get("end_to_end_p50_ms")),
+            "endToEndP50Ms": as_number(row.get("end_to_end_p50_ms")),
+            "endToEndP95Ms": as_number(row.get("end_to_end_p95_ms")),
+            "endToEndP99Ms": as_number(row.get("end_to_end_p99_ms")),
+            "endToEndFps": as_number(row.get("end_to_end_fps")),
+            "sustainedEndToEndFps": as_number(row.get("sustained_end_to_end_fps")),
+            "inferenceFps": as_number(row.get("inference_fps")),
+            "initializationMs": as_number(row.get("initialization_ms")),
+            "ramPeakDeltaBytes": as_number(row.get("ram_peak_delta_bytes")),
+            "checkpointOrEngineBytes": as_number(row.get("checkpoint_or_engine_bytes")),
+            "nativeParityMode": row.get("native_parity_mode"),
+            "statefulCondition": row.get("stateful_condition"),
+            "stageP50Ms": {key: as_number(row.get(key)) for key in (
+                "preprocessing_p50_ms", "host_to_device_transfer_p50_ms", "model_or_algorithm_p50_ms",
+                "postprocessing_p50_ms", "geometry_extraction_p50_ms", "confidence_validity_p50_ms",
+            )},
+            "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+            "sourceRefs": [
+                export_source_ref(csv_info["path"], csv_info["sha256"], row_id=method_id, kind="controlled_native_cpu_runtime_row"),
+                export_source_ref(verification_info["path"], verification_info["sha256"], row_id=method_id, kind="runtime_population_verification"),
+            ],
+        })
+    return {
+        "schema": "mouse-pupillometry-native-cpu-runtime.v2",
+        "status": "VERIFIED_SEPARATE_NATIVE_WORKFLOW_COMPARISON",
+        "comparableToCommonA5000": False,
+        "hardware": hardware,
+        "sharedStreamSamples": as_number(verification.get("shared_stream_samples")),
+        "sharedStreamIdentitySha256": verification.get("shared_stream_identity_sha256"),
+        "notes": verification.get("notes"),
+        "safety": verification.get("protected_counters"),
+        "conditions": output_rows,
+        "excludedMethods": [
+            {"methodId": method_id, "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION", "reason": "No row is present in the verified eight-method native CPU population."}
+            for method_id in (
+                "facemap_raw", "facemap_processed", "eyeloop", "pupil_dlc_gm", "standard_dlc_matched",
+                "dlc_zoo_mouse_pupil_vclose", "neuropupil_animal", "segformer_b0", "segformer_b1", "segformer_b2",
+                "unet_small", "unet_base", "unet_b2_matched", "meye_released", "meye_matched",
+            )
+        ],
+        "sourceRefs": [
+            export_source_ref(csv_info["path"], csv_info["sha256"], kind="canonical_runtime_population_csv"),
+            export_source_ref(verification_info["path"], verification_info["sha256"], kind="canonical_runtime_population_verification"),
+        ],
+    }
+
+
 def _walk_strings(value: Any):
     if isinstance(value, dict):
         for child in value.values():
@@ -2630,7 +3115,7 @@ def verify_output(output_dir: Path = DEFAULT_OUT, *, verify_canonical_inputs: bo
         "benchmark_manifest.json", "methods.json", "real_validation.json", "geometry.json",
         "segmentation.json", "coverage_risk.json", "exact_gt.json", "temporal.json",
         "runtime.json", "deployment.json", "capabilities.json", "provenance.json", "visual_cases.json",
-        "WEBSITE_VISUAL_CASES.json",
+        "WEBSITE_VISUAL_CASES.json", "overview_v2.json", "real_validation_v2.json", "visual_case_index_v2.json", "exact_gt_severity_v2.json", "native_cpu_runtime_v2.json",
     }
     if not output_dir.is_dir():
         raise FileNotFoundError(f"Export directory does not exist: {output_dir}")
@@ -2642,10 +3127,17 @@ def verify_output(output_dir: Path = DEFAULT_OUT, *, verify_canonical_inputs: bo
     provenance = json.loads((output_dir / "provenance.json").read_text(encoding="utf-8"))
     visual = json.loads((output_dir / "visual_cases.json").read_text(encoding="utf-8"))
     website_visual = json.loads((output_dir / "WEBSITE_VISUAL_CASES.json").read_text(encoding="utf-8"))
+    overview = json.loads((output_dir / "overview_v2.json").read_text(encoding="utf-8"))
+    real_validation_v2 = json.loads((output_dir / "real_validation_v2.json").read_text(encoding="utf-8"))
+    split_index = json.loads((output_dir / "visual_case_index_v2.json").read_text(encoding="utf-8"))
+    exact_severity = json.loads((output_dir / "exact_gt_severity_v2.json").read_text(encoding="utf-8"))
+    native_cpu_runtime = json.loads((output_dir / "native_cpu_runtime_v2.json").read_text(encoding="utf-8"))
     if manifest.get("externalEvaluation") != "NOT_OPENED":
         raise ValueError("Export must remain development-labeled with external evaluation not opened.")
     if manifest.get("status") != "DEVELOPMENT":
         raise ValueError("Export status is not DEVELOPMENT.")
+    if manifest.get("schemaVersion") != SCHEMA_VERSION or overview.get("schema") != OVERVIEW_SCHEMA or real_validation_v2.get("schema") != REAL_VALIDATION_REGISTRY_SCHEMA or split_index.get("schema") != VISUAL_CASE_INDEX_SCHEMA:
+        raise ValueError("A v2 route-level export has an unexpected schema version.")
 
     # Verify every exported data file against its content hash and every input
     # against the canonical hash read at export time.
@@ -2676,7 +3168,7 @@ def verify_output(output_dir: Path = DEFAULT_OUT, *, verify_canonical_inputs: bo
     computed_fingerprint = hashlib.sha256(fingerprint_payload).hexdigest()
     if computed_fingerprint != manifest.get("sourceFingerprintSha256"):
         raise ValueError("Manifest source fingerprint does not match provenance inputs.")
-    expected_version = f"benchmark-data-dev-v1+{computed_fingerprint[:16]}"
+    expected_version = f"benchmark-data-dev-v2+{computed_fingerprint[:16]}"
     if manifest.get("version") != expected_version or provenance.get("version") != expected_version:
         raise ValueError("Version string does not match the manifest source fingerprint.")
 
@@ -2688,6 +3180,67 @@ def verify_output(output_dir: Path = DEFAULT_OUT, *, verify_canonical_inputs: bo
     case_by_id = {str(case.get("id")): case for case in visual.get("cases", []) if case.get("id")}
     if len(case_ids) != manifest.get("visualCaseCount"):
         raise ValueError("Manifest visual case count does not match visual_cases.json.")
+    split_cases = split_index.get("cases", [])
+    if len(split_cases) != len(case_by_id) or {str(row.get("id")) for row in split_cases} != set(case_by_id):
+        raise ValueError("The split visual case index must preserve every full visual case ID exactly once.")
+    for row in split_cases:
+        case_id = str(row.get("id") or "")
+        file_name = str(row.get("file") or "")
+        if not file_name.startswith("cases/") or ".." in PurePosixPath(file_name).parts:
+            raise ValueError(f"Unsafe split visual case file reference for {case_id}.")
+        case_path = output_dir / file_name
+        if not case_path.is_file():
+            raise ValueError(f"Split visual case file is missing for {case_id}: {file_name}")
+        split_case = json.loads(case_path.read_text(encoding="utf-8")).get("case")
+        if split_case != case_by_id.get(case_id):
+            raise ValueError(f"Split visual case content differs from full visual_cases.json for {case_id}.")
+    if len(overview.get("figures", {}).get("accuracyCoverage", [])) > 40 or (output_dir / "overview_v2.json").stat().st_size >= 100_000:
+        raise ValueError("Overview route export exceeds its compact payload contract.")
+    if overview.get("safety", {}).get("allenModelScoring") != 0 or overview.get("safety", {}).get("legacyProtectedInferenceQueries") != 0:
+        raise ValueError("Overview safety counters must be copied from source and remain zero.")
+    conditions = real_validation_v2.get("conditions", [])
+    condition_ids = [str(row.get("conditionId") or "") for row in conditions]
+    if not conditions or len(condition_ids) != len(set(condition_ids)) or not all(isinstance(row.get("primary"), bool) for row in conditions):
+        raise ValueError("The unified validation registry must have unique condition IDs and explicit primary booleans.")
+    for row in conditions:
+        for source_ref in row.get("sourceRefs", []):
+            if not source_ref.get("path") or not source_ref.get("sha256") or not source_ref.get("type"):
+                raise ValueError(f"Registry source reference is not fully typed and hashed: {row.get('conditionId')}")
+    for figure_name in ("accuracyCoverage", "practicalCoverage", "commonSpeedAccuracy", "pairedArchitecture"):
+        for point in overview.get("figures", {}).get(figure_name, []):
+            for source_ref in point.get("sourceRefs", []):
+                if not source_ref.get("path") or not source_ref.get("sha256") or not source_ref.get("type"):
+                    raise ValueError(f"Overview {figure_name} contains an untyped or unhashed source reference.")
+    severity_rows = exact_severity.get("rows", [])
+    severity_keys = [(row.get("methodId"), row.get("operationFamily"), str(row.get("severity"))) for row in severity_rows]
+    if exact_severity.get("schema") != "mouse-pupillometry-exact-gt-severity.v2" or len(severity_rows) != len(EXACT_GT_SEVERITY_METHODS) * 9 or len(severity_keys) != len(set(severity_keys)):
+        raise ValueError("Quantitative Exact-GT severity export must preserve each selected method × frozen severity cell exactly once.")
+    for method_id in EXACT_GT_SEVERITY_METHODS:
+        method_cells = [row for row in severity_rows if row.get("methodId") == method_id]
+        if sum(int(row.get("attempted") or 0) for row in method_cells) != 252:
+            raise ValueError(f"Exact-GT severity cells do not preserve the full attempted denominator for {method_id}.")
+        for row in method_cells:
+            if int(row.get("accepted") or 0) > int(row.get("attempted") or 0) or len(row.get("caseIds", [])) != row.get("attempted"):
+                raise ValueError(f"Exact-GT severity row has inconsistent accepted/attempted counts: {row.get('id')}")
+            for source_ref in row.get("sourceRefs", []):
+                if not source_ref.get("path") or not source_ref.get("sha256") or not source_ref.get("type"):
+                    raise ValueError(f"Exact-GT severity source reference is incomplete: {row.get('id')}")
+    native_conditions = native_cpu_runtime.get("conditions", [])
+    if (native_cpu_runtime.get("schema") != "mouse-pupillometry-native-cpu-runtime.v2"
+            or native_cpu_runtime.get("comparableToCommonA5000") is not False
+            or len(native_conditions) != 8
+            or native_cpu_runtime.get("safety", {}).get("allen_model_scoring") != 0
+            or native_cpu_runtime.get("safety", {}).get("legacy_protected_inference_queries") != 0):
+        raise ValueError("Separate native CPU runtime population is missing, mixed with A5000, or fails its safety/status contract.")
+    for condition in native_conditions:
+        if condition.get("batchSize") != 1 or condition.get("corpusSampleCount") != native_cpu_runtime.get("sharedStreamSamples") or condition.get("latencyMs") is None:
+            raise ValueError(f"Native CPU runtime condition has an inconsistent shared protocol: {condition.get('conditionId')}")
+        for source_ref in condition.get("sourceRefs", []):
+            if not source_ref.get("path") or not source_ref.get("sha256") or not source_ref.get("type"):
+                raise ValueError(f"Native CPU runtime source reference is incomplete: {condition.get('conditionId')}")
+    target_cards = [card for path in data_json if (data := json.loads(path.read_text(encoding="utf-8"))) for card in data.get("cards", []) if card.get("direction") == "target"]
+    if any(card.get("targetValue") != (1 if "gain" in str(card.get("id", "")).lower() else 0) for card in target_cards):
+        raise ValueError("Every target-direction card must carry its explicit canonical targetValue.")
     website_cases = website_visual.get("cases", [])
     website_by_id = {str(case.get("id")): case for case in website_cases if case.get("id")}
     real_case_by_id = {key: case for key, case in case_by_id.items() if case.get("category") == "real_validation"}
@@ -3013,7 +3566,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
     if str(severity_prediction_media_manifest.get("sourceGridManifestSha256") or "").lower() != severity_media_info["sha256"].lower():
         raise ValueError("Exact-GT severity prediction masks were not staged against the current frozen severity media manifest.")
     execution_rows_rel = f"{EXP}/exact_gt_execution_v2_1/EXACT_GT_V2_1_EXECUTION_ROWS.csv"
-    execution_rows_info = register_input(input_path(execution_rows_rel), "Exact-GT severity execution IDs and row indices")
+    execution_rows, execution_rows_info = read_csv(execution_rows_rel, "Exact-GT severity execution IDs and row indices")
     if str(severity_prediction_media_manifest.get("executionRowsSha256") or "").lower() != execution_rows_info["sha256"].lower():
         raise ValueError("Exact-GT severity prediction mask staging uses a different frozen execution-row table.")
     severity_pupil_gt_manifest, severity_pupil_gt_info = read_json(
@@ -3070,6 +3623,10 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         severity_pupil_gt_manifest,
         severity_pupil_gt_info,
     )
+    exact_gt_severity_rows, exact_gt_severity_doc = build_exact_gt_severity_rows(
+        execution_rows, execution_rows_info,
+        exact_info["frameRowsByMethod"], exact_info["frameMetricSources"],
+    )
     visual_cases = real_visual_cases + exact_visual_cases + temporal_visual_cases
     exact_case_ids = [c["id"] for c in exact_visual_cases]
     if exact_case_ids:
@@ -3083,6 +3640,33 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         card["visualCaseIds"] = temporal_case_ids
         card["visualEvidenceUnavailableReason"] = None
 
+    # Route-level summaries use these already canonical aggregate artifacts;
+    # source hashes are registered before fingerprinting and are rechecked by
+    # the export verifier.
+    feature_atlas, feature_info = read_json(FEATURE_ATLAS_PATH, "canonical feature atlas aggregates, family intervals, Dice, and MPA validation values")
+    keypoint_coverage, keypoint_info = read_json(KEYPOINT_COVERAGE_PATH, "canonical precomputed DLC and Pupil-DLC prospective coverage operating points")
+    temporal_completion, temporal_completion_info = read_json(TEMPORAL_CANONICAL_COMPLETION_PATH, "hash-bound V2.2 temporal corpus and completion counts")
+    mpa_summary, mpa_summary_info = read_json(MPA_MAPPING_FIXED_SUMMARY_PATH, "official mapping-fixed mouse-pupil-analysis v0.2.0 validation summary")
+    mpa_manifest, mpa_manifest_info = read_json(MPA_MAPPING_FIXED_MANIFEST_PATH, "official mapping-fixed mouse-pupil-analysis v0.2.0 run manifest")
+    mpa_feature_row = next((method for card in feature_atlas.get("cards", []) if card.get("id") == "feature-diameter_are" for method in card.get("methods", []) if method.get("method_id") == "mouse_pupil_analysis_v020"), {})
+    mpa_frame_rows, mpa_frame_info = read_external_csv_reference(
+        str(mpa_feature_row.get("source") or MPA_MAPPING_FIXED_FRAMES_PATH),
+        str(mpa_feature_row.get("source_sha256") or ""),
+        "official MPA V0.2.0 per-frame validation rows for hash and denominator verification",
+    )
+    if len(mpa_frame_rows) != int(as_number(mpa_summary.get("attempted")) or -1):
+        raise ValueError("The mapping-fixed mouse-pupil-analysis per-frame row count does not match its canonical summary denominator.")
+    atlas_validation_sha = str((feature_atlas.get("feature_v10") or {}).get("validation_manifest_sha256") or "").lower()
+    if not atlas_validation_sha or str(mpa_manifest.get("validation_manifest_sha256") or "").lower() != atlas_validation_sha:
+        raise ValueError("The mapping-fixed mouse-pupil-analysis run manifest does not match the feature atlas validation-manifest identity.")
+    temporal_sequence_counts = [as_number(row.get("sequence_count")) for row in temporal_data.get("summaries", []) if as_number(row.get("sequence_count")) is not None]
+    if (as_number(temporal_completion.get("seed_count")) != as_number((temporal_data.get("sourcePopulation") or {}).get("seedCount"))
+            or temporal_sequence_counts and as_number(temporal_completion.get("sequence_count")) != max(temporal_sequence_counts)):
+        raise ValueError("The temporal completion corpus counts do not match the exported canonical temporal metric summaries.")
+    native_cpu_rows, native_cpu_csv_info = read_csv(NATIVE_CPU_RUNTIME_CSV_PATH, "verified separate native CPU runtime population")
+    native_cpu_verification, native_cpu_verification_info = read_json(NATIVE_CPU_RUNTIME_VERIFICATION_PATH, "native CPU runtime table hash, hardware, stream, and protected-counter verification")
+    native_cpu_runtime_export = build_native_cpu_runtime_export(native_cpu_rows, native_cpu_csv_info, native_cpu_verification, native_cpu_verification_info)
+
     identity_export = normalize_identity(identity, all_method_metadata)
     identity_export_info = identity_info
     # Input fingerprint is deterministic and includes every canonical file read.
@@ -3091,7 +3675,39 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         ensure_ascii=False, separators=(",", ":"),
     ).encode("utf-8")
     fingerprint = hashlib.sha256(fingerprint_payload).hexdigest()
-    version = f"benchmark-data-dev-v1+{fingerprint[:16]}"
+    version = f"benchmark-data-dev-v2+{fingerprint[:16]}"
+
+    overview_export, real_validation_export = build_overview_exports(
+        real_summary=real_summary, real_info=real_info,
+        unet_rows=unet_rows, unet_info=unet_info,
+        runtime_rows=runtime_rows, runtime_info=runtime_info,
+        feature_atlas=feature_atlas, feature_info=feature_info,
+        keypoint=keypoint_coverage, keypoint_info=keypoint_info,
+        mpa_summary=mpa_summary, mpa_summary_info=mpa_summary_info, mpa_manifest_info=mpa_manifest_info, mpa_frame_info=mpa_frame_info,
+        execution_rows=execution_rows, temporal_data=temporal_data, temporal_completion=temporal_completion, temporal_completion_info=temporal_completion_info, fingerprint=fingerprint, version=version,
+    )
+    visual_case_index = {
+        "schema": VISUAL_CASE_INDEX_SCHEMA,
+        "version": version,
+        "cases": [],
+    }
+    case_files: dict[str, Any] = {}
+    for case in visual_cases:
+        case_id = str(case.get("id") or "")
+        if not case_id:
+            raise ValueError("Cannot split a visual case without a stable ID.")
+        case_filename = f"cases/{hashlib.sha256(case_id.encode('utf-8')).hexdigest()[:20]}.json"
+        category = case.get("category")
+        mode = case.get("mode") or ("representative" if case.get("representative") else None)
+        visual_case_index["cases"].append({
+            "id": case_id, "label": case.get("label") or case_id,
+            "category": category, "mode": mode, "file": case_filename,
+            "metricIds": case.get("metricIds") or [],
+            "perturbationType": case.get("perturbationType"), "severity": case.get("severity"),
+        })
+        case_files[case_filename] = {"case": case}
+    if len(visual_case_index["cases"]) != len(visual_cases):
+        raise ValueError("Split visual case index lost a full-bundle case.")
 
     attach_version(categories, version)
     # The visual identity source carries no scientific outputs. It remains a
@@ -3110,6 +3726,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
             "schemaVersion": SCHEMA_VERSION,
             "category": "exact_gt",
             "cards": categories["exact_gt"],
+            "severityRows": [row for row in exact_gt_severity_rows if row.get("methodId") == "segformer_b2"],
             "severityGrid": {
                 "status": "FROZEN_EXAMPLES_ONLY",
                 "caseCount": len(severity_media_manifest.get("cases", [])),
@@ -3137,6 +3754,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         },
         "temporal.json": {"schemaVersion": SCHEMA_VERSION, "category": "temporal", "cards": categories["temporal"], "data": temporal_data},
         "runtime.json": {"schemaVersion": SCHEMA_VERSION, "category": "runtime", "cards": categories["runtime"]},
+        "native_cpu_runtime_v2.json": native_cpu_runtime_export,
         "deployment.json": {"schemaVersion": SCHEMA_VERSION, "category": "deployment", "cards": categories["deployment"]},
         "capabilities.json": {
             "schemaVersion": SCHEMA_VERSION,
@@ -3149,6 +3767,10 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
             "capabilityCount": capability_matrix["capabilityCount"],
         },
         "visual_cases.json": {"schemaVersion": SCHEMA_VERSION, "cases": visual_cases},
+        "exact_gt_severity_v2.json": exact_gt_severity_doc,
+        "overview_v2.json": overview_export,
+        "real_validation_v2.json": real_validation_export,
+        "visual_case_index_v2.json": visual_case_index,
         "WEBSITE_VISUAL_CASES.json": website_visual_cases,
         "provenance.json": {
             "schemaVersion": SCHEMA_VERSION,
@@ -3157,7 +3779,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
             "freezeStatus": "DEVELOPMENT_NOT_FORMALLY_FROZEN",
             "generatedAt": None,
             "generatedAtPolicy": "Omitted to keep identical canonical inputs byte-reproducible.",
-            "sourcePolicy": "Only whitelisted canonical CSV/JSON files and bounded media manifests are read. No scientific values are recomputed.",
+            "sourcePolicy": "Only whitelisted canonical CSV/JSON files and bounded media manifests are read. Reported scientific values pass through; Exact-GT severity cells are deterministic means grouped from hash-verified canonical frame rows, with accepted and attempted counts preserved and no inferred examples or confidence intervals.",
             "inputs": [_INPUTS[p] for p in sorted(_INPUTS)],
             "evidenceGroups": {
                 "methodIdentity": {"path": identity_export_info["path"], "sha256": identity_export_info["sha256"]},
@@ -3190,6 +3812,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
                 },
                 "temporal": temporal_info,
                 "runtime": {"csv": runtime_info["csvInfo"], "completion": runtime_info["completionInfo"]},
+                "nativeCpuRuntime": {"csv": native_cpu_csv_info, "verification": native_cpu_verification_info, "methodCount": len(native_cpu_runtime_export["conditions"])},
                 "deployment": {"matrix": deployment_info["matrixInfo"], "int8": deployment_info["int8Info"]},
                 "capabilities": capability_info,
                 "visualJoin": visual_join_info,
@@ -3197,6 +3820,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
             "excludedInputFamilies": ["Allen/external evaluation", "protected material"],
         },
     }
+    data_files.update(case_files)
     output_dir.mkdir(parents=True, exist_ok=True)
     file_entries = {}
     for name, content in data_files.items():
@@ -3233,6 +3857,11 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         "capabilityDefinitionCount": capability_matrix["capabilityCount"],
         "capabilityMethodCount": capability_matrix["methodCount"],
         "visualCaseCount": len(visual_cases),
+        "splitVisualCaseCount": len(visual_case_index["cases"]),
+        "realValidationConditionCount": len(real_validation_export["conditions"]),
+        "exactGtSeverityRowCount": len(exact_gt_severity_rows),
+        "exactGtSeverityMethodCount": len(EXACT_GT_SEVERITY_METHODS),
+        "overviewSizeBytes": len(json.dumps(overview_export, ensure_ascii=False, separators=(",", ":")).encode("utf-8")),
         "realValidationVisualCaseCount": len(real_visual_cases),
         "websiteVisualCaseCount": len(website_visual_cases.get("cases", [])),
         "exactGtVisualCaseCount": len(exact_visual_cases),
@@ -3247,6 +3876,7 @@ def build(output_dir: Path = DEFAULT_OUT) -> dict[str, Any]:
         "riskCoveragePopulatedMethodCount": sum(bool(row.get("riskCoverage")) for row in risk_coverage_info.get("methods", {}).values()),
         "exactGtSpatialMethodCount": len(exact_sources),
         "runtimeMethodCount": as_number(runtime_info["completion"].get("verified_method_count")),
+        "nativeCpuRuntimeMethodCount": len(native_cpu_runtime_export["conditions"]),
         "deploymentConditionCount": len(deployment_rows),
         "deploymentStatusCounts": dict(sorted(deployment_status_counts.items())),
         "gates": {

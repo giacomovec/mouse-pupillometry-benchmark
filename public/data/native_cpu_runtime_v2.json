@@ -1,0 +1,513 @@
+{
+  "schema": "mouse-pupillometry-native-cpu-runtime.v2",
+  "status": "VERIFIED_SEPARATE_NATIVE_WORKFLOW_COMPARISON",
+  "comparableToCommonA5000": false,
+  "hardware": {
+    "hostname": "Mac-2.lan",
+    "logical_cpu_count": 12,
+    "machine": "arm64",
+    "platform": "macOS-27.0-arm64-arm-64bit"
+  },
+  "sharedStreamSamples": 14,
+  "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+  "notes": {
+    "native_environments": "same physical Mac CPU and frozen stream; method-native Python/dependency environments retained",
+    "purest": "14 state-isolated trackers prevent unrelated seed-frame state contamination",
+    "starburst_swirski2d": "official binary is natively stochastic; structural/API parity recorded, not false bitwise parity"
+  },
+  "safety": {
+    "allen_model_scoring": 0,
+    "legacy_protected_inference_queries": 0
+  },
+  "conditions": [
+    {
+      "conditionId": "classical_fixed/cpu_native/frozen_seed14/batch1",
+      "methodId": "classical_fixed",
+      "method": "Fixed ellipse",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 1.8294375040568411,
+      "endToEndP50Ms": 1.8294375040568411,
+      "endToEndP95Ms": 5.7484038479742585,
+      "endToEndP99Ms": 6.083102252159733,
+      "endToEndFps": 546.6161034648438,
+      "sustainedEndToEndFps": 426.90987798412465,
+      "inferenceFps": 879.2174947701706,
+      "initializationMs": 0.009625015081837773,
+      "ramPeakDeltaBytes": 1507328,
+      "checkpointOrEngineBytes": null,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.658791497698985,
+        "host_to_device_transfer_p50_ms": 0.00029199873097240925,
+        "model_or_algorithm_p50_ms": 1.137375002144836,
+        "postprocessing_p50_ms": 0.00033300602808594704,
+        "geometry_extraction_p50_ms": 0.09581248741596937,
+        "confidence_validity_p50_ms": 0.0017089914763346314
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "classical_fixed"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "classical_fixed"
+        }
+      ]
+    },
+    {
+      "conditionId": "mouse_pupil_analysis_v020/cpu_native/frozen_seed14/batch1",
+      "methodId": "mouse_pupil_analysis_v020",
+      "method": "mouse-pupil-analysis v0.2.0",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 8.764917001826689,
+      "endToEndP50Ms": 8.764917001826689,
+      "endToEndP95Ms": 9.837416965456214,
+      "endToEndP99Ms": 10.418093671905808,
+      "endToEndFps": 114.09121156442107,
+      "sustainedEndToEndFps": 112.90315145448155,
+      "inferenceFps": 119.47669687340596,
+      "initializationMs": 5.463999987114221,
+      "ramPeakDeltaBytes": 12746752,
+      "checkpointOrEngineBytes": 1904564,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.6604999944102019,
+        "host_to_device_transfer_p50_ms": 0.00041601015254855156,
+        "model_or_algorithm_p50_ms": 8.369832998141646,
+        "postprocessing_p50_ms": 0.02752050932031125,
+        "geometry_extraction_p50_ms": 0.16572901222389191,
+        "confidence_validity_p50_ms": 0.02541701542213559
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "mouse_pupil_analysis_v020"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "mouse_pupil_analysis_v020"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_starburst_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_starburst_v001",
+      "method": "pypupilext starburst v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 4.078812518855557,
+      "endToEndP50Ms": 4.078812518855557,
+      "endToEndP95Ms": 16.490451761637814,
+      "endToEndP99Ms": 16.862527313351166,
+      "endToEndFps": 245.16939559668273,
+      "sustainedEndToEndFps": 193.78149421495567,
+      "inferenceFps": 290.81218225739417,
+      "initializationMs": 0.0036669953260570765,
+      "ramPeakDeltaBytes": 344064,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "STRUCTURAL_API_PARITY_NATIVE_STOCHASTIC",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.4020000051241368,
+        "host_to_device_transfer_p50_ms": 0.0003340246621519327,
+        "model_or_algorithm_p50_ms": 3.4386454935884103,
+        "postprocessing_p50_ms": 0.005228983354754746,
+        "geometry_extraction_p50_ms": 0.01595850335434079,
+        "confidence_validity_p50_ms": 0.01779201556928456
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_starburst_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_starburst_v001"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_swirski2d_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_swirski2d_v001",
+      "method": "pypupilext swirski2d v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 32.365687991841696,
+      "endToEndP50Ms": 32.365687991841696,
+      "endToEndP95Ms": 126.8709437630605,
+      "endToEndP99Ms": 134.6016545718885,
+      "endToEndFps": 30.89691775599105,
+      "sustainedEndToEndFps": 20.07550872038301,
+      "inferenceFps": 35.47286434702496,
+      "initializationMs": 0.004583009285852313,
+      "ramPeakDeltaBytes": 3391488,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "STRUCTURAL_API_PARITY_NATIVE_STOCHASTIC",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.44191701454110444,
+        "host_to_device_transfer_p50_ms": 0.0005420006345957518,
+        "model_or_algorithm_p50_ms": 28.190562516101636,
+        "postprocessing_p50_ms": 0.012042000889778137,
+        "geometry_extraction_p50_ms": 0.033916483516804874,
+        "confidence_validity_p50_ms": 0.02670849789865315
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_swirski2d_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_swirski2d_v001"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_excuse_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_excuse_v001",
+      "method": "pypupilext excuse v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 0.9451249934500083,
+      "endToEndP50Ms": 0.9451249934500083,
+      "endToEndP95Ms": 3.4053499970468692,
+      "endToEndP99Ms": 3.59645324468147,
+      "endToEndFps": 1058.0611103613717,
+      "sustainedEndToEndFps": 815.6197787229622,
+      "inferenceFps": 1745.5190337574318,
+      "initializationMs": 0.0072499969974160194,
+      "ramPeakDeltaBytes": 278528,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.38625000161118805,
+        "host_to_device_transfer_p50_ms": 0.0003340246621519327,
+        "model_or_algorithm_p50_ms": 0.5728955002268776,
+        "postprocessing_p50_ms": 0.003916997229680419,
+        "geometry_extraction_p50_ms": 0.012228993000462651,
+        "confidence_validity_p50_ms": 0.014958000974729657
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_excuse_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_excuse_v001"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_else_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_else_v001",
+      "method": "pypupilext else v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 1.0994579934049398,
+      "endToEndP50Ms": 1.0994579934049398,
+      "endToEndP95Ms": 3.403389583399985,
+      "endToEndP99Ms": 3.508385090099182,
+      "endToEndFps": 909.539069249089,
+      "sustainedEndToEndFps": 729.7566171211662,
+      "inferenceFps": 1380.580471729376,
+      "initializationMs": 0.0016659905668348074,
+      "ramPeakDeltaBytes": 2572288,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.3876879927702248,
+        "host_to_device_transfer_p50_ms": 0.000333995558321476,
+        "model_or_algorithm_p50_ms": 0.7243330037454143,
+        "postprocessing_p50_ms": 0.003583991201594472,
+        "geometry_extraction_p50_ms": 0.011604002793319523,
+        "confidence_validity_p50_ms": 0.014103992725722492
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_else_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_else_v001"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_pure_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_pure_v001",
+      "method": "pypupilext pure v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 1.1781454813899472,
+      "endToEndP50Ms": 1.1781454813899472,
+      "endToEndP95Ms": 2.8322898957412685,
+      "endToEndP99Ms": 2.9684629931580275,
+      "endToEndFps": 848.7916100312369,
+      "sustainedEndToEndFps": 731.8843269962563,
+      "inferenceFps": 1159.812957065902,
+      "initializationMs": 0.010207993909716606,
+      "ramPeakDeltaBytes": 1294336,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "NOT_STATEFUL_OR_NOT_APPLICABLE",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.3990420082118362,
+        "host_to_device_transfer_p50_ms": 0.000333995558321476,
+        "model_or_algorithm_p50_ms": 0.862207991303876,
+        "postprocessing_p50_ms": 0.004395507858134806,
+        "geometry_extraction_p50_ms": 0.014104502042755485,
+        "confidence_validity_p50_ms": 0.016542006051167846
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_pure_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_pure_v001"
+        }
+      ]
+    },
+    {
+      "conditionId": "pypupilext_purest_v001/cpu_native/frozen_seed14/batch1",
+      "methodId": "pypupilext_purest_v001",
+      "method": "pypupilext purest v001",
+      "rosterRole": "NATIVE_WORKFLOW_ONLY",
+      "hardware": {
+        "hostname": "Mac-2.lan",
+        "logical_cpu_count": 12,
+        "machine": "arm64",
+        "platform": "macOS-27.0-arm64-arm-64bit"
+      },
+      "batchSize": 1,
+      "corpusSampleCount": 14,
+      "sharedStreamIdentitySha256": "bf498d243614b840133f33ca02096f72b93ec67ffbbe330ebb5c79b3bdfd567e",
+      "latencyMs": 0.7407505036098883,
+      "endToEndP50Ms": 0.7407505036098883,
+      "endToEndP95Ms": 2.8057083502062596,
+      "endToEndP99Ms": 2.981411063519772,
+      "endToEndFps": 1349.9822074054828,
+      "sustainedEndToEndFps": 930.8918633885012,
+      "inferenceFps": 2702.5492617681934,
+      "initializationMs": 0.01200000406242907,
+      "ramPeakDeltaBytes": 4636672,
+      "checkpointOrEngineBytes": 5084336,
+      "nativeParityMode": "EXACT_NUMERIC_PARITY",
+      "statefulCondition": "14 state-isolated trackers, one per unrelated frozen seed; state retained across repeated observations of that seed",
+      "stageP50Ms": {
+        "preprocessing_p50_ms": 0.384916493203491,
+        "host_to_device_transfer_p50_ms": 0.00037500285543501377,
+        "model_or_algorithm_p50_ms": 0.3700210072565824,
+        "postprocessing_p50_ms": 0.003665991243906319,
+        "geometry_extraction_p50_ms": 0.01164599962066859,
+        "confidence_validity_p50_ms": 0.015583005733788013
+      },
+      "protocol": "Controlled CPU/native workflow timing; batch-one, shared frozen 14-sample stream. Separate from common CUDA A5000 timing.",
+      "sourceRefs": [
+        {
+          "type": "controlled_native_cpu_runtime_row",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+          "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+          "rowId": "pypupilext_purest_v001"
+        },
+        {
+          "type": "runtime_population_verification",
+          "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+          "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+          "rowId": "pypupilext_purest_v001"
+        }
+      ]
+    }
+  ],
+  "excludedMethods": [
+    {
+      "methodId": "facemap_raw",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "facemap_processed",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "eyeloop",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "pupil_dlc_gm",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "standard_dlc_matched",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "dlc_zoo_mouse_pupil_vclose",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "neuropupil_animal",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "segformer_b0",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "segformer_b1",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "segformer_b2",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "unet_small",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "unet_base",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "unet_b2_matched",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "meye_released",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    },
+    {
+      "methodId": "meye_matched",
+      "status": "NATIVE_RUNTIME_NOT_MEASURED_IN_THIS_POPULATION",
+      "reason": "No row is present in the verified eight-method native CPU population."
+    }
+  ],
+  "sourceRefs": [
+    {
+      "type": "canonical_runtime_population_csv",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+      "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63"
+    },
+    {
+      "type": "canonical_runtime_population_verification",
+      "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+      "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac"
+    }
+  ]
+}

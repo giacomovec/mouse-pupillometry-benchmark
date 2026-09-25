@@ -1,0 +1,2048 @@
+{
+  "case": {
+    "id": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+    "label": "Exact-GT V2.1 · row 116 · crop_truncation",
+    "mode": "worst_case",
+    "outcomeSelected": true,
+    "representative": false,
+    "category": "exact_gt",
+    "sourceId": "Matteo__20240723_120756_frame_389.png",
+    "sourcePopulation": "Exact-GT V2.1 frozen spatial perturbation corpus",
+    "selectionRoles": [
+      "neuropupil_animal_worst_valid"
+    ],
+    "perturbation": "crop_truncation",
+    "perturbationType": "crop_truncation",
+    "severity": "left edge; 26.2% pupil visible",
+    "severityValue": 0.7381275440976933,
+    "severityUnit": "pupil_truncated_fraction",
+    "parameters": {
+      "edge": "left",
+      "family": "crop_truncation",
+      "output_shape": [
+        134,
+        134
+      ],
+      "target_visible_fraction": 0.25
+    },
+    "transform": {
+      "exactGTRasterToTransformedSourceXY": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "nativeImageHeight": 134,
+      "nativeImageWidth": 134,
+      "nativePredictionToTransformedSourceXY": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "originalSourceToTransformedSourceXY": [
+        [
+          1.0,
+          0.0,
+          -56.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+      "verified": true
+    },
+    "sourceHash": "ab04e8eb0c6d5d2536f9dc82b56e7487e2bad53c4d0da9f6c80c4729b433ab00",
+    "originalGroundTruthHash": "6c3e0f16a412883273970ded41aaff7e24de9678934cc5665d486a602d6fef65",
+    "transformedSourceHash": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+    "gtHash": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+    "gtNativeHash": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+    "gtPupilMaskHash": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+    "width": 134,
+    "height": 134,
+    "frames": [
+      {
+        "frameIndex": 0,
+        "sourceFrameNumber": null,
+        "timestampMs": null,
+        "width": 134,
+        "height": 134,
+        "sourceId": "Matteo__20240723_120756_frame_389.png",
+        "sourceSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png",
+        "originalSourceSrc": "/media/exact-gt/sources/ab04e8eb0c6d5d2536f9dc82b56e7487e2bad53c4d0da9f6c80c4729b433ab00.png",
+        "transformedSourceSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png",
+        "reference": {
+          "src": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png",
+          "image": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/transformed.png",
+          "gt": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-pupil-mask.png",
+          "mask": {
+            "src": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-pupil-mask.png"
+          },
+          "sourceSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+          "gtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+          "pupilMaskSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+          "gtNativeSrc": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-native.png",
+          "coordinateSpace": "frozen transformed-source pixel coordinates; no resizing",
+          "geometry": {
+            "center": {
+              "x": 3.7202072538860103,
+              "y": 64.43005181347151
+            },
+            "ellipse": {
+              "cx": 3.7202072538860103,
+              "cy": 64.43005181347151,
+              "major": 24.63857269309446,
+              "minor": 10.763763869441126,
+              "angleRad": 1.5945647103295533
+            },
+            "diameter": 15.67594437773643,
+            "area": 193,
+            "orientationAvailable": true,
+            "mask": {
+              "src": "/media/exact-gt/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0/exact-gt-pupil-mask.png"
+            }
+          }
+        },
+        "methods": {
+          "mouse_pupil_analysis_v020": {
+            "methodId": "mouse_pupil_analysis_v020",
+            "methodName": "mouse-pupil-analysis v0.2.0",
+            "family": "mouse_pupil_analysis",
+            "familyId": "mouse_pupil_analysis",
+            "architecture": "mouse_pupil_analysis_v020",
+            "representation": "mask",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "mouse_pupil_analysis_v020",
+            "color": "#15826A",
+            "familyColor": "#15826A",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": null,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": null,
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0.006678452170496956,
+              "iou": 0.0033504138746551044,
+              "assd_px": 59.359195709228516,
+              "hd95_px": 109.11473083496094
+            },
+            "values": {
+              "dice": 0.006678452170496956,
+              "iou": 0.0033504138746551044,
+              "assd_px": 59.359195709228516,
+              "hd95_px": 109.11473083496094,
+              "diameter_are": 4.037681842074677,
+              "diameter_mae_px": 63.294475971359006,
+              "diameter_signed_error_px": 63.294475971359006,
+              "center_error_px": 75.49825339114851,
+              "area_are": 24.378238341968913,
+              "major_axis_are": 3.568416641245319,
+              "minor_axis_are": 7.904692217145264,
+              "orientation_error_deg": 61.290233275984384
+            },
+            "nativeMethodId": "mouse_pupil_analysis_v020",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/mouse_pupil_analysis_v020/FRAME_METRICS.csv",
+              "frameMetricsSha256": "1e808b4eb2ae232e2e8324a0e3ff33ea38f09ea45091518dc5e559169066ee7a",
+              "rowIndex": 116,
+              "executionId": null,
+              "sourceSampleId": null,
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "segformer_b0": {
+            "methodId": "segformer_b0",
+            "methodName": "SegFormer B0",
+            "family": "segformer",
+            "familyId": "segformer",
+            "architecture": "segformer_b0",
+            "representation": "native mask + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "segformer_b0",
+            "color": "#75A9E8",
+            "familyColor": "#347CC5",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.8227648735046387,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 99.52988047808765,
+                "y": 58.48207171314741
+              },
+              "ellipse": {
+                "cx": 99.52988047808765,
+                "cy": 58.48207171314741,
+                "major": 108.68290978961001,
+                "minor": 30.84566428618678,
+                "angleRad": 1.4615455810948579
+              },
+              "diameter": 53.63066409766648,
+              "area": 2259,
+              "orientationAvailable": true
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 90.83281707763672,
+              "hd95_px": 107.93256225585938
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 90.83281707763672,
+              "hd95_px": 107.93256225585938,
+              "diameter_are": 2.421207858700672,
+              "diameter_mae_px": 37.954719719930054,
+              "diameter_signed_error_px": null,
+              "center_error_px": 95.9941245629239,
+              "area_are": 10.704663212435234,
+              "major_axis_are": 3.4110878963403164,
+              "minor_axis_are": 1.8656949985459261,
+              "orientation_error_deg": 7.62143469965331
+            },
+            "nativeMethodId": "segformer_b0",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b0_v21/FRAME_METRICS.csv",
+              "frameMetricsSha256": "3e75bd1090a1931d8657fb287ec884fe93fef96b41cff4f6bb2be96e810ffe6c",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "segformer_b1": {
+            "methodId": "segformer_b1",
+            "methodName": "SegFormer B1",
+            "family": "segformer",
+            "familyId": "segformer",
+            "architecture": "segformer_b1",
+            "representation": "native mask + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "segformer_b1",
+            "color": "#347CC5",
+            "familyColor": "#347CC5",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.823377251625061,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 99.98837209302326,
+                "y": 65.62949260042284
+              },
+              "ellipse": {
+                "cx": 99.98837209302326,
+                "cy": 65.62949260042284,
+                "major": 97.51906171314722,
+                "minor": 30.823698874463492,
+                "angleRad": 1.5436384060074106
+              },
+              "diameter": 49.08125119267976,
+              "area": 1892,
+              "orientationAvailable": true
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 97.09515380859375,
+              "hd95_px": 114.55194091796875
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 97.09515380859375,
+              "hd95_px": 114.55194091796875,
+              "diameter_are": 2.1309916653179,
+              "diameter_mae_px": 33.40530681494333,
+              "diameter_signed_error_px": null,
+              "center_error_px": 96.27563668808793,
+              "area_are": 8.803108808290155,
+              "major_axis_are": 2.957983399764031,
+              "minor_axis_are": 1.8636543172387443,
+              "orientation_error_deg": 2.917862303857615
+            },
+            "nativeMethodId": "segformer_b1",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b1_v21/FRAME_METRICS.csv",
+              "frameMetricsSha256": "c9753d0d0f1104c393a2d08b0ea04604758b3bbb966a1fafa69bb70648a91d0e",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "segformer_b2": {
+            "methodId": "segformer_b2",
+            "methodName": "SegFormer B2",
+            "family": "segformer",
+            "familyId": "segformer",
+            "architecture": "segformer_b2",
+            "representation": "native mask + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "segformer_b2",
+            "color": "#174A8B",
+            "familyColor": "#347CC5",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.7250967621803284,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 87.65614798694233,
+                "y": 60.59738846572361
+              },
+              "ellipse": {
+                "cx": 87.65614798694233,
+                "cy": 60.59738846572361,
+                "major": 89.20985497594585,
+                "minor": 14.88724597906128,
+                "angleRad": 1.529937262566894
+              },
+              "diameter": 34.20682887394876,
+              "area": 919,
+              "orientationAvailable": true
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 79.89469146728516,
+              "hd95_px": 89.22659301757812
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 79.89469146728516,
+              "hd95_px": 89.22659301757812,
+              "diameter_are": 1.182122368495425,
+              "diameter_mae_px": 18.53088449621233,
+              "diameter_signed_error_px": null,
+              "center_error_px": 84.0233982595343,
+              "area_are": 3.761658031088083,
+              "major_axis_are": 2.620739565037751,
+              "minor_axis_are": 0.38308923900931435,
+              "orientation_error_deg": 3.702879997502565
+            },
+            "nativeMethodId": "segformer_b2",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/segformer_b2_v21/FRAME_METRICS.csv",
+              "frameMetricsSha256": "a673d6a6a8025e62ffd184dce1a262224ddb2fe982bbb33e6f25ac469b300571",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "classical_fixed": {
+            "methodId": "classical_fixed",
+            "methodName": "Fixed dark-component ellipse v1",
+            "family": "classical_fixed",
+            "familyId": "classical_fixed",
+            "architecture": "classical_fixed",
+            "representation": "native component + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "classical_fixed",
+            "color": "#656B72",
+            "familyColor": "#656B72",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": "NO_COMPONENT",
+            "geometry": null,
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": null,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": null,
+              "center_error_px": null,
+              "area_are": null,
+              "major_axis_are": null,
+              "minor_axis_are": null,
+              "orientation_error_deg": null
+            },
+            "nativeMethodId": "classical_fixed",
+            "nativeIdentity": {
+              "nativeOutputSha256": "c213c944736fac95e79a4ef53c9350f15bffd098aebdfa148783adf7d598dfa8"
+            },
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/classical_fixed_v1/FRAME_METRICS.csv",
+              "frameMetricsSha256": "548020df1a8aaec82c50ee1f112d129baa7789cc38909652be3e4a62864abdb5",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "c213c944736fac95e79a4ef53c9350f15bffd098aebdfa148783adf7d598dfa8",
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "else": {
+            "methodId": "else",
+            "methodName": "PupilEXT ElSe",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "else",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "else",
+            "color": "#626262",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": -1,
+            "threshold": null,
+            "rejectionReason": "native_invalid_or_degenerate_ellipse",
+            "geometry": {
+              "center": {
+                "x": 93,
+                "y": 53
+              },
+              "ellipse": null,
+              "diameter": 0,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 0,
+                "heightPx": 0,
+                "angleDegrees": 0
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": null,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": null,
+              "center_error_px": null,
+              "area_are": null,
+              "major_axis_are": null,
+              "minor_axis_are": null,
+              "orientation_error_deg": null
+            },
+            "nativeMethodId": "else",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 0,
+              "heightPx": 0,
+              "angleDegrees": 0
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_else_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "cef92679cda95f6ce846902b4a5de474cf3c51b4682562bac9802e81bc500c8a",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "excuse": {
+            "methodId": "excuse",
+            "methodName": "PupilEXT ExCuSe",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "excuse",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "excuse",
+            "color": "#8c8c8c",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": -1,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 98,
+                "y": 66
+              },
+              "ellipse": null,
+              "diameter": 36,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 36,
+                "heightPx": 36,
+                "angleDegrees": 0
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 84.59090423583984,
+              "hd95_px": 102.30240249633789
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 84.59090423583984,
+              "hd95_px": 102.30240249633789,
+              "diameter_are": 1.3753919774706924,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": 21.56056813641549,
+              "center_error_px": 94.27232975267171,
+              "area_are": 4.642487046632124,
+              "major_axis_are": 0.5111927777128072,
+              "minor_axis_are": 2.4591485079519355,
+              "orientation_error_deg": 43.638171938114695
+            },
+            "nativeMethodId": "excuse",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 36,
+              "heightPx": 36,
+              "angleDegrees": 0
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_excuse_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "70e84dae228c301a915c6fe40a39fa4b2696616cfa2c17ef7cf84d49654222c4",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "pure": {
+            "methodId": "pure",
+            "methodName": "PupilEXT PuRe",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "pure",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "pure",
+            "color": "#aeaeae",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 5.6600189208984375,
+                "y": 128.3336639404297
+              },
+              "ellipse": null,
+              "diameter": 9,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 5.923566818237305,
+                "heightPx": 9.75657844543457,
+                "angleDegrees": 65.7461166381836
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 55.14883041381836,
+              "hd95_px": 69.2867546081543
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 55.14883041381836,
+              "hd95_px": 69.2867546081543,
+              "diameter_are": 0.4565510257947238,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": -7.1568684859566005,
+              "center_error_px": 63.680945266118854,
+              "area_are": 0.7046632124352331,
+              "major_axis_are": 0.5349065673040776,
+              "minor_axis_are": 0.4095163123401553,
+              "orientation_error_deg": 68.66068334184266
+            },
+            "nativeMethodId": "pure",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 5.923566818237305,
+              "heightPx": 9.75657844543457,
+              "angleDegrees": 65.7461166381836
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_pure_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "e48b9ab22e8f11dc41b55b5d1d934366175da43d1e8071b9427d1eca4acc2779",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "purest": {
+            "methodId": "purest",
+            "methodName": "PupilEXT PuReST",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "purest",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "purest",
+            "color": "#626262",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native_temporal",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 5.6600189208984375,
+                "y": 128.3336639404297
+              },
+              "ellipse": null,
+              "diameter": 9,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 5.923566818237305,
+                "heightPx": 9.75657844543457,
+                "angleDegrees": 65.7461166381836
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 55.14883041381836,
+              "hd95_px": 69.2867546081543
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 55.14883041381836,
+              "hd95_px": 69.2867546081543,
+              "diameter_are": 0.4565510257947238,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": -7.1568684859566005,
+              "center_error_px": 63.680945266118854,
+              "area_are": 0.7046632124352331,
+              "major_axis_are": 0.5349065673040776,
+              "minor_axis_are": 0.4095163123401553,
+              "orientation_error_deg": 68.66068334184266
+            },
+            "nativeMethodId": "purest",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 5.923566818237305,
+              "heightPx": 9.75657844543457,
+              "angleDegrees": 65.7461166381836
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_purest_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "48759d37f67b4a4e2ee38681a5f96aa594dfa9bb4d5ab310538c91fc4dfc7570",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "starburst": {
+            "methodId": "starburst",
+            "methodName": "PupilEXT Starburst",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "starburst",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "starburst",
+            "color": "#8c8c8c",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": -1,
+            "threshold": null,
+            "rejectionReason": "native_invalid_or_degenerate_ellipse",
+            "geometry": {
+              "center": {
+                "x": 0,
+                "y": 0
+              },
+              "ellipse": null,
+              "diameter": 0,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 0,
+                "heightPx": 0,
+                "angleDegrees": 0
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": null,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": null,
+              "center_error_px": null,
+              "area_are": null,
+              "major_axis_are": null,
+              "minor_axis_are": null,
+              "orientation_error_deg": null
+            },
+            "nativeMethodId": "starburst",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 0,
+              "heightPx": 0,
+              "angleDegrees": 0
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_starburst_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "68c94efad584f2f4baff70e2bd3064d0c0b1a8bc5762fa503def8a6f1e8c4617",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "swirski2d": {
+            "methodId": "swirski2d",
+            "methodName": "PupilEXT Swirski2D",
+            "family": "pupilext",
+            "familyId": "pupilext",
+            "architecture": "swirski2d",
+            "representation": "ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "swirski2d",
+            "color": "#aeaeae",
+            "familyColor": "#8C8C8C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": -1,
+            "threshold": null,
+            "rejectionReason": "native_invalid_or_degenerate_ellipse",
+            "geometry": {
+              "center": {
+                "x": 0,
+                "y": 0
+              },
+              "ellipse": null,
+              "diameter": 0,
+              "area": null,
+              "orientationAvailable": true,
+              "nativeEllipse": {
+                "widthPx": 0,
+                "heightPx": 0,
+                "angleDegrees": 0
+              }
+            },
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": null,
+              "diameter_mae_px": null,
+              "diameter_signed_error_px": null,
+              "center_error_px": null,
+              "area_are": null,
+              "major_axis_are": null,
+              "minor_axis_are": null,
+              "orientation_error_deg": null
+            },
+            "nativeMethodId": "swirski2d",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": {
+              "widthPx": 0,
+              "heightPx": 0,
+              "angleDegrees": 0
+            },
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/exact_gt_execution_v2_1/pypupilext_swirski2d_v001/FRAME_METRICS.csv",
+              "frameMetricsSha256": "a79c7aeb5e644225b051e211b4033e5bf874fe3894fd12ba9a0b2f0f56eac9d6",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "meye_released": {
+            "methodId": "meye_released",
+            "methodName": "MEYE v0.1.1",
+            "family": "meye",
+            "familyId": "meye",
+            "architecture": "meye_released",
+            "representation": "native mask + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "meye_released",
+            "color": "#E59A5C",
+            "familyColor": "#BB6532",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.8779579401016235,
+            "threshold": null,
+            "rejectionReason": "NONE",
+            "geometry": {
+              "center": {
+                "x": 3.2481751824817517,
+                "y": 63.43795620437956
+              },
+              "ellipse": {
+                "cx": 3.2481751824817517,
+                "cy": 63.43795620437956,
+                "major": 19.81163540721699,
+                "minor": 9.717142571292092,
+                "angleRad": 1.5181544241943543
+              },
+              "diameter": 13.207339536360731,
+              "area": 137,
+              "orientationAvailable": true,
+              "mask": {
+                "src": "/media/exact-gt/predictions/meye_released/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png"
+              }
+            },
+            "keypoints": [],
+            "predictionMask": "/media/exact-gt/predictions/meye_released/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+            "maskComparison": {
+              "src": "/media/exact-gt/prediction-comparisons/meye_released/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+              "sha256": "7147af54e584e702ebbb2db087fd13209a04ab07e581214501a368467445aca5",
+              "legend": {
+                "truePositive": "#22c55e",
+                "falsePositive": "#3b82f6",
+                "falseNegative": "#ef4444",
+                "background": "#000000"
+              },
+              "coordinateSystem": "pixel-for-pixel transformed-source raster; no resize"
+            },
+            "maskComparisonUnavailableReason": null,
+            "maskMetrics": {
+              "dice": 0.8303030303030303,
+              "iou": 0.7098445595854922,
+              "assd_px": 0.9520372152328491,
+              "hd95_px": 3
+            },
+            "values": {
+              "dice": 0.8303030303030303,
+              "iou": 0.7098445595854922,
+              "assd_px": 0.9520372152328491,
+              "hd95_px": 3,
+              "diameter_are": 0.1574772646477175,
+              "diameter_mae_px": 2.468604841375699,
+              "diameter_signed_error_px": null,
+              "center_error_px": 1.098666452574992,
+              "area_are": 0.29015544041450775,
+              "major_axis_are": 0.19590977716133445,
+              "minor_axis_are": 0.097235624159356,
+              "orientation_error_deg": 4.377986906933891
+            },
+            "nativeMethodId": "meye_released",
+            "nativeIdentity": {
+              "nativeOutputSha256": "530af28f84c75383f2ec57145c6aab641f2fc2b0f6998f0b152995f98dffd11f"
+            },
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": "29ed0f4743f50f44968eb60887819e6b97cbab9148ba56a8c3d531c06b49a77a",
+            "maskOverlayUnavailableReason": null,
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_meye_exact_gt_v21/collected/meye_released/scored/FRAME_METRICS.csv",
+              "frameMetricsSha256": "191ec443ca2a94c11672c3e4d41f100bc44cd430614cc87fe778f641e4365496",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "530af28f84c75383f2ec57145c6aab641f2fc2b0f6998f0b152995f98dffd11f",
+              "maskOutputSha256": "530af28f84c75383f2ec57145c6aab641f2fc2b0f6998f0b152995f98dffd11f",
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": "benchmark_site/media_export/exact_gt_v21_prediction_comparison_media_v1.json",
+              "predictionComparisonManifestSha256": "0a81422f6b405c8f4635303b9ff9d7d18efcb330ed26f85bac4ee637ec0968a5",
+              "predictionMaskSha256": "29ed0f4743f50f44968eb60887819e6b97cbab9148ba56a8c3d531c06b49a77a",
+              "predictionMaskCoordinateSystem": "source_raster_xy_top_left",
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "meye_matched": {
+            "methodId": "meye_matched",
+            "methodName": "MEYE matched mask-only",
+            "family": "meye",
+            "familyId": "meye",
+            "architecture": "meye_matched",
+            "representation": "native mask + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "meye_matched",
+            "color": "#BB6532",
+            "familyColor": "#BB6532",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 1,
+            "threshold": null,
+            "rejectionReason": "NONE",
+            "geometry": {
+              "center": {
+                "x": 124.32071458953637,
+                "y": 66.35474266269672
+              },
+              "ellipse": {
+                "cx": 124.32071458953637,
+                "cy": 66.35474266269672,
+                "major": 158.09375199497606,
+                "minor": 21.97375461718095,
+                "angleRad": 1.5556148454111802
+              },
+              "diameter": 54.71184670318091,
+              "area": 2351,
+              "orientationAvailable": true,
+              "mask": {
+                "src": "/media/exact-gt/predictions/meye_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png"
+              }
+            },
+            "keypoints": [],
+            "predictionMask": "/media/exact-gt/predictions/meye_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+            "maskComparison": {
+              "src": "/media/exact-gt/prediction-comparisons/meye_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+              "sha256": "40d4105637a3eae0128cd19715cc11cf39e71ad994fbbd0f4f2b6e83f6f05c5a",
+              "legend": {
+                "truePositive": "#22c55e",
+                "falsePositive": "#3b82f6",
+                "falseNegative": "#ef4444",
+                "background": "#000000"
+              },
+              "coordinateSystem": "pixel-for-pixel transformed-source raster; no resize"
+            },
+            "maskComparisonUnavailableReason": null,
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 113.20746612548828,
+              "hd95_px": 129.7507080078125
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 113.20746612548828,
+              "hd95_px": 129.7507080078125,
+              "diameter_are": 2.4901786702487123,
+              "diameter_mae_px": 39.03590232544448,
+              "diameter_signed_error_px": null,
+              "center_error_px": 120.61586464674265,
+              "area_are": 11.181347150259068,
+              "major_axis_are": 5.41651421793948,
+              "minor_axis_are": 1.0414563979395315,
+              "orientation_error_deg": 2.2316628724274423
+            },
+            "nativeMethodId": "meye_matched",
+            "nativeIdentity": {
+              "nativeOutputSha256": "40837659c5d76141cefefd4c30be25f4d4381b5fe0069e3ee6c5ed051dd675c1"
+            },
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": "02841da9941c2e98666dca8a9bae5e515f18ed03f60a826ff4c0a2971fa67ccd",
+            "maskOverlayUnavailableReason": null,
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_meye_matched_exact_gt_v21/scored/meye_matched_spatial_v21/FRAME_METRICS.csv",
+              "frameMetricsSha256": "a742b56ce0277519172d05007f8f47bc9889ae57b2fbf7e16ff4a080ac17abf3",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "40837659c5d76141cefefd4c30be25f4d4381b5fe0069e3ee6c5ed051dd675c1",
+              "maskOutputSha256": "40837659c5d76141cefefd4c30be25f4d4381b5fe0069e3ee6c5ed051dd675c1",
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": "benchmark_site/media_export/exact_gt_v21_prediction_comparison_media_v1.json",
+              "predictionComparisonManifestSha256": "0a81422f6b405c8f4635303b9ff9d7d18efcb330ed26f85bac4ee637ec0968a5",
+              "predictionMaskSha256": "02841da9941c2e98666dca8a9bae5e515f18ed03f60a826ff4c0a2971fa67ccd",
+              "predictionMaskCoordinateSystem": "source_raster_xy_top_left",
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "unet_small": {
+            "methodId": "unet_small",
+            "methodName": "Vanilla U-Net small",
+            "family": "vanilla_unet",
+            "familyId": "vanilla_unet",
+            "architecture": "unet_small",
+            "representation": "native V2.1 source output; per-frame canonical score row",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "unet_small",
+            "color": "#16547e",
+            "familyColor": "#1F78B4",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.9684462547302246,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 101.61208948119943,
+                "y": 55.26606377915279
+              },
+              "ellipse": {
+                "cx": 101.61208948119943,
+                "cy": 55.26606377915279,
+                "major": 128.62680264211906,
+                "minor": 24.225646430300838,
+                "angleRad": 1.5544492732681063
+              },
+              "diameter": 51.72113961900469,
+              "area": 2101,
+              "orientationAvailable": true,
+              "mask": {
+                "src": "/media/exact-gt/predictions/unet_small/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png"
+              }
+            },
+            "keypoints": [],
+            "predictionMask": "/media/exact-gt/predictions/unet_small/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+            "maskComparison": {
+              "src": "/media/exact-gt/prediction-comparisons/unet_small/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+              "sha256": "ba3cc1abf5f7bf10e1619b5f79cc10ac88b6a2ea801bc4cacd7b4d055ea02f2c",
+              "legend": {
+                "truePositive": "#22c55e",
+                "falsePositive": "#3b82f6",
+                "falseNegative": "#ef4444",
+                "background": "#000000"
+              },
+              "coordinateSystem": "pixel-for-pixel transformed-source raster; no resize"
+            },
+            "maskComparisonUnavailableReason": null,
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 95.53630065917969,
+              "hd95_px": 111.25923156738281
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 95.53630065917969,
+              "hd95_px": 111.25923156738281,
+              "diameter_are": 2.299395454124028,
+              "diameter_mae_px": 36.04519524126826,
+              "diameter_signed_error_px": null,
+              "center_error_px": 98.31988243839258,
+              "area_are": 9.8860103626943,
+              "major_axis_are": 4.220546021246179,
+              "minor_axis_are": 1.2506668414641355,
+              "orientation_error_deg": 2.2984452369435946
+            },
+            "nativeMethodId": "unet_small",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": "059d0ee3c6885c4f88dde950f0898ce2d011563e9d07a4ca17272ec7b231ca5f",
+            "maskOverlayUnavailableReason": null,
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_unet_exact_gt_v21/collected/small/FRAME_METRICS.csv",
+              "frameMetricsSha256": "a4a220bda0e5c6029ee37d46667da92629a05c4f51dad256f2614e39b567c54f",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": "benchmark_site/media_export/exact_gt_v21_prediction_comparison_media_v1.json",
+              "predictionComparisonManifestSha256": "0a81422f6b405c8f4635303b9ff9d7d18efcb330ed26f85bac4ee637ec0968a5",
+              "predictionMaskSha256": "059d0ee3c6885c4f88dde950f0898ce2d011563e9d07a4ca17272ec7b231ca5f",
+              "predictionMaskCoordinateSystem": "source_raster_xy_top_left",
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "unet_base": {
+            "methodId": "unet_base",
+            "methodName": "Vanilla U-Net base",
+            "family": "vanilla_unet",
+            "familyId": "vanilla_unet",
+            "architecture": "unet_base",
+            "representation": "native V2.1 source output; per-frame canonical score row",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "unet_base",
+            "color": "#1f78b4",
+            "familyColor": "#1F78B4",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.8336014747619629,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 108.26030534351145,
+                "y": 54.087786259541986
+              },
+              "ellipse": {
+                "cx": 108.26030534351145,
+                "cy": 54.087786259541986,
+                "major": 125.59643230562004,
+                "minor": 26.101602111908342,
+                "angleRad": 1.518602951581378
+              },
+              "diameter": 40.84046772017998,
+              "area": 1310,
+              "orientationAvailable": true,
+              "mask": {
+                "src": "/media/exact-gt/predictions/unet_base/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png"
+              }
+            },
+            "keypoints": [],
+            "predictionMask": "/media/exact-gt/predictions/unet_base/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+            "maskComparison": {
+              "src": "/media/exact-gt/prediction-comparisons/unet_base/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+              "sha256": "da33ad4c6ff3a78898520504c5e2829693c4b54621b00b31dca7525524cd9f4f",
+              "legend": {
+                "truePositive": "#22c55e",
+                "falsePositive": "#3b82f6",
+                "falseNegative": "#ef4444",
+                "background": "#000000"
+              },
+              "coordinateSystem": "pixel-for-pixel transformed-source raster; no resize"
+            },
+            "maskComparisonUnavailableReason": null,
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 104.33470153808594,
+              "hd95_px": 116.30078125
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 104.33470153808594,
+              "hd95_px": 116.30078125,
+              "diameter_are": 1.6052955238973137,
+              "diameter_mae_px": 25.16452334244355,
+              "diameter_signed_error_px": null,
+              "center_error_px": 105.0504381969752,
+              "area_are": 5.787564766839378,
+              "major_axis_are": 4.0975530875951005,
+              "minor_axis_are": 1.4249512000176932,
+              "orientation_error_deg": 4.352288180661406
+            },
+            "nativeMethodId": "unet_base",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": "92d498539e360971c3bb11999c904652e93b74a0247ffca9b30e6619b0828701",
+            "maskOverlayUnavailableReason": null,
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_unet_exact_gt_v21/collected/base/FRAME_METRICS.csv",
+              "frameMetricsSha256": "ab76f91b56f882461f2b6795e5c26d47630ee4050e6c3475315e4e8ce42d5180",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": "benchmark_site/media_export/exact_gt_v21_prediction_comparison_media_v1.json",
+              "predictionComparisonManifestSha256": "0a81422f6b405c8f4635303b9ff9d7d18efcb330ed26f85bac4ee637ec0968a5",
+              "predictionMaskSha256": "92d498539e360971c3bb11999c904652e93b74a0247ffca9b30e6619b0828701",
+              "predictionMaskCoordinateSystem": "source_raster_xy_top_left",
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "unet_b2_matched": {
+            "methodId": "unet_b2_matched",
+            "methodName": "Vanilla U-Net large matched",
+            "family": "vanilla_unet",
+            "familyId": "vanilla_unet",
+            "architecture": "unet_b2_matched",
+            "representation": "native V2.1 source output; per-frame canonical score row",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "unet_b2_matched",
+            "color": "#62a0ca",
+            "familyColor": "#1F78B4",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.9702703356742859,
+            "threshold": null,
+            "rejectionReason": null,
+            "geometry": {
+              "center": {
+                "x": 85.51602814698984,
+                "y": 65.26192337763878
+              },
+              "ellipse": {
+                "cx": 85.51602814698984,
+                "cy": 65.26192337763878,
+                "major": 117.87784926208595,
+                "minor": 82.8244288724926,
+                "angleRad": 1.7200015574410599
+              },
+              "diameter": 40.35434769286047,
+              "area": 1279,
+              "orientationAvailable": true,
+              "mask": {
+                "src": "/media/exact-gt/predictions/unet_b2_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png"
+              }
+            },
+            "keypoints": [],
+            "predictionMask": "/media/exact-gt/predictions/unet_b2_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+            "maskComparison": {
+              "src": "/media/exact-gt/prediction-comparisons/unet_b2_matched/52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0.png",
+              "sha256": "825733ccc62bb77d1e094288b3c5ff50e3e161e5420c457ee2f4f9a0c7733216",
+              "legend": {
+                "truePositive": "#22c55e",
+                "falsePositive": "#3b82f6",
+                "falseNegative": "#ef4444",
+                "background": "#000000"
+              },
+              "coordinateSystem": "pixel-for-pixel transformed-source raster; no resize"
+            },
+            "maskComparisonUnavailableReason": null,
+            "maskMetrics": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 67.53990173339844,
+              "hd95_px": 96.46714057922364
+            },
+            "values": {
+              "dice": 0,
+              "iou": 0,
+              "assd_px": 67.53990173339844,
+              "hd95_px": 96.46714057922364,
+              "diameter_are": 1.5742849502689769,
+              "diameter_mae_px": 24.678403315124044,
+              "diameter_signed_error_px": null,
+              "center_error_px": 81.8000508916467,
+              "area_are": 5.626943005181347,
+              "major_axis_are": 3.7842807588900613,
+              "minor_axis_are": 6.694745990074661,
+              "orientation_error_deg": 7.1870019349171
+            },
+            "nativeMethodId": "unet_b2_matched",
+            "nativeIdentity": null,
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": "87eed04bf7b2fbb611ac19e2e43c890875df9539220554528f122b9acf9361ff",
+            "maskOverlayUnavailableReason": null,
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_unet_exact_gt_v21/collected/b2_matched/FRAME_METRICS.csv",
+              "frameMetricsSha256": "c1c480d0decd8f10853373ddba5753ac18f14014d9e6b802dfa4c7f7f7a130df",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": null,
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": "benchmark_site/media_export/exact_gt_v21_prediction_comparison_media_v1.json",
+              "predictionComparisonManifestSha256": "0a81422f6b405c8f4635303b9ff9d7d18efcb330ed26f85bac4ee637ec0968a5",
+              "predictionMaskSha256": "87eed04bf7b2fbb611ac19e2e43c890875df9539220554528f122b9acf9361ff",
+              "predictionMaskCoordinateSystem": "source_raster_xy_top_left",
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "dlc_zoo_mouse_pupil_vclose": {
+            "methodId": "dlc_zoo_mouse_pupil_vclose",
+            "methodName": "DLC Model Zoo mouse_pupil_vclose",
+            "family": "deeplabcut",
+            "familyId": "deeplabcut",
+            "architecture": "dlc_zoo_mouse_pupil_vclose",
+            "representation": "native keypoints + native fit + common geometry",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "dlc_zoo_mouse_pupil_vclose",
+            "color": "#A48BCA",
+            "familyColor": "#7956A6",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": 0.002510224934667349,
+            "threshold": 0.6,
+            "rejectionReason": "NONE",
+            "geometry": {
+              "center": {
+                "x": 31.883788866289336,
+                "y": 87.17853630403688
+              },
+              "ellipse": {
+                "cx": 31.883788866289336,
+                "cy": 87.17853630403688,
+                "major": 141.36045519609561,
+                "minor": 61.75846648700428,
+                "angleRad": 0.9952360213495831
+              },
+              "diameter": 93.4355656846778,
+              "area": 6856.686921887623,
+              "orientationAvailable": true
+            },
+            "keypoints": [
+              {
+                "name": "DRpupil",
+                "score": 0.9987653493881226,
+                "x": 37.34943187236786,
+                "y": 39.576106548309326
+              },
+              {
+                "name": "Dpupil",
+                "score": 0.8615342378616333,
+                "x": 3.8221571892499924,
+                "y": 22.273783922195435
+              },
+              {
+                "name": "LDpupil",
+                "score": 0.002510224934667349,
+                "x": 84.04953543096781,
+                "y": 6.249904155731201
+              },
+              {
+                "name": "Lpupil",
+                "score": 0.12241090834140778,
+                "x": 72.56984400749207,
+                "y": 83.13609313964844
+              },
+              {
+                "name": "RVupil",
+                "score": 0.9997510313987732,
+                "x": 40.22732448577881,
+                "y": 102.60334253311157
+              },
+              {
+                "name": "Rpupil",
+                "score": 0.9983968138694763,
+                "x": 59.765779465436935,
+                "y": 79.31655478477478
+              },
+              {
+                "name": "VLpupil",
+                "score": 0.9406571984291077,
+                "x": 86.36468362808228,
+                "y": 144.01499605178833
+              },
+              {
+                "name": "Vpupil",
+                "score": 0.8493046760559082,
+                "x": 6.336691856384277,
+                "y": 112.84162497520447
+              }
+            ],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": 4.9604425375085235,
+              "diameter_mae_px": 77.75962130694137,
+              "diameter_signed_error_px": 77.75962130694137,
+              "center_error_px": 36.20332686171253,
+              "area_are": 34.52687524294105,
+              "major_axis_are": 4.737363805806623,
+              "minor_axis_are": 4.737627398380572,
+              "orientation_error_deg": 34.33900441966106
+            },
+            "nativeMethodId": "dlc_model_zoo_mouse_pupil_vclose",
+            "nativeIdentity": {
+              "keypointArraySha256": "119ff2ce6c1dc6fa76c9d42ba464d52023dc2bf5fb4be30d7ba58df3008ee491",
+              "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial/native_predictions.jsonl",
+              "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+              "nativeRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+              "scoredOutputSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+              "scoredRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0"
+            },
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_dlc_zoo_exact_gt_v21/results/dlc_zoo_v21_spatial_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+              "frameMetricsSha256": "bdd5f8074f7509dbf2b190546afefc25c07d30430c58a3af74020f6c040b4f30",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "cee4b088b65093651f086a6a2c30e85153bfb1bbb72b60343d6b07dbc9c1b5bc",
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "neuropupil_animal": {
+            "methodId": "neuropupil_animal",
+            "methodName": "NeuroPupil Animal Model",
+            "family": "neuropupil",
+            "familyId": "neuropupil",
+            "architecture": "neuropupil_animal",
+            "representation": "native four-point direct geometry",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "neuropupil_animal",
+            "color": "#5C893E",
+            "familyColor": "#5C893E",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": true,
+            "acceptance": "ACCEPTED",
+            "confidence": null,
+            "threshold": null,
+            "rejectionReason": "NONE",
+            "geometry": {
+              "center": {
+                "x": 70.41936349868774,
+                "y": 83.57785558700562
+              },
+              "ellipse": {
+                "cx": 70.41936349868774,
+                "cy": 83.57785558700562,
+                "major": 120.80222986767181,
+                "minor": 81.89062965268383,
+                "angleRad": 2.7416842566783863
+              },
+              "diameter": 101.34642976017781,
+              "area": 8066.902153334447,
+              "orientationAvailable": true
+            },
+            "keypoints": [
+              {
+                "missing": false,
+                "name": "top",
+                "score": 0.24905027449131012,
+                "x": 104.5151138305664,
+                "y": 130.24093627929688
+              },
+              {
+                "missing": false,
+                "name": "bottom",
+                "score": 0.594313383102417,
+                "x": 27.65201759338379,
+                "y": 101.98957061767578
+              },
+              {
+                "missing": false,
+                "name": "right",
+                "score": 0.21494871377944946,
+                "x": 130.3904266357422,
+                "y": 27.52425193786621
+              },
+              {
+                "missing": false,
+                "name": "left",
+                "score": 0.3228822946548462,
+                "x": 19.119895935058594,
+                "y": 74.5566635131836
+              }
+            ],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null,
+              "diameter_are": 5.465092457467114,
+              "diameter_mae_px": 85.67048538244138,
+              "diameter_signed_error_px": 85.67048538244138,
+              "center_error_px": 69.39319731153941,
+              "area_are": 40.79742048359817,
+              "major_axis_are": 3.9029719120673514,
+              "minor_axis_are": 6.607992022676706,
+              "orientation_error_deg": 65.72510860274976
+            },
+            "nativeMethodId": "neuropupil_animal",
+            "nativeIdentity": {
+              "keypointArraySha256": "3759d5c64a1f2113837ee11530de51918b73cfc1eb5b6d3e722b359037549108",
+              "nativeOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial/NATIVE_PREDICTIONS.csv",
+              "nativeOutputSha256": "d3af5d824a18daca7b77b73273fadad906e7d6867abf9d22d70e6ae85e9f429e",
+              "nativeRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "scoredOutputPath": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+              "scoredOutputSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+              "scoredRowIdentity": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0"
+            },
+            "unavailable": false,
+            "status": "MEASURED_ACCEPTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_neuropupil_spatial_v21/results/neuropupil_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+              "frameMetricsSha256": "41acaf9e6bbfebe3a62155fbcbd2c57711338db6b41507fc3eba125e8dd5ab13",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "3759d5c64a1f2113837ee11530de51918b73cfc1eb5b6d3e722b359037549108",
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "standard_dlc_matched": {
+            "methodId": "standard_dlc_matched",
+            "methodName": "Standard DLC matched adapter",
+            "family": "deeplabcut",
+            "familyId": "deeplabcut",
+            "architecture": "standard_dlc_matched",
+            "representation": "native keypoints + native fit + common geometry",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "standard_dlc_matched",
+            "color": "#7956A6",
+            "familyColor": "#7956A6",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "matched",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": 0.06037812680006027,
+            "threshold": null,
+            "rejectionReason": "DLC_LT6_AT_0P8",
+            "geometry": null,
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {},
+            "nativeMethodId": "standard_dlc_matched",
+            "nativeIdentity": {
+              "nativeOutputSha256": "a87540bb98bc726198f2e661b17b3ae060a4c13ac295d335bc02e4c9da7964db"
+            },
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_standard_dlc_spatial_v21/results/standard_dlc_v21_spatial_scored_geometry_only/FRAME_GEOMETRY_METRICS.csv",
+              "frameMetricsSha256": "882437811aca776f8742b3e028cd26e380e70db6ba54f7f19ca4d8df5bb4ed3e",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "a87540bb98bc726198f2e661b17b3ae060a4c13ac295d335bc02e4c9da7964db",
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          },
+          "pupil_dlc_gm": {
+            "methodId": "pupil_dlc_gm",
+            "methodName": "Pupil-DLC General Model",
+            "family": "pupil_dlc",
+            "familyId": "pupil_dlc",
+            "architecture": "pupil_dlc_gm",
+            "representation": "native keypoints + native fit + common ellipse",
+            "operatingPoint": "frozen Exact-GT V2.1 spatial output",
+            "colorKey": "pupil_dlc_gm",
+            "color": "#BD417C",
+            "familyColor": "#BD417C",
+            "canonical": true,
+            "isCanonical": true,
+            "nativeOrMatched": "native",
+            "accepted": false,
+            "acceptance": "REJECTED",
+            "confidence": 1.685070492385421e-05,
+            "threshold": null,
+            "rejectionReason": "PUPIL_DLC_LT6_AT_0P9",
+            "geometry": null,
+            "keypoints": [],
+            "predictionMask": null,
+            "maskComparison": null,
+            "maskComparisonUnavailableReason": "A hash-joined native segmentation mask and exact-GT pixel comparison is not available for this method/case.",
+            "maskMetrics": {
+              "dice": null,
+              "iou": null,
+              "assd_px": null,
+              "hd95_px": null
+            },
+            "values": {},
+            "nativeMethodId": "pupil_dlc_gm",
+            "nativeIdentity": {
+              "nativeOutputSha256": "c5eec2f14fa42682df3207789a5aaac2b92736f396d0827f87d82b76f108233b"
+            },
+            "unavailable": false,
+            "status": "MEASURED_REJECTED",
+            "predictionMaskSha256": null,
+            "maskOverlayUnavailableReason": "No method prediction-mask asset is present in the bounded static media export.",
+            "nativeEllipse": null,
+            "provenance": {
+              "frameMetricsFile": "parallel_handoffs/benchmark_expansion_20260919/closure_pupil_dlc_gm_exact_gt_v21/results/pupil_dlc_gm_v21_spatial_geometry_only_v4/FRAME_GEOMETRY_METRICS.csv",
+              "frameMetricsSha256": "5e5cc139f29fad711b8810374a4d4bd61a2c72051cf0318e75bfef9ca7cc6c79",
+              "rowIndex": 116,
+              "executionId": "52f5e954fe32e054fe78627c4478b6207438a78207555f2d39968f396d0914c0",
+              "sourceSampleId": "Matteo__20240723_120756_frame_389.png",
+              "sourceImageSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+              "primaryGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+              "nativeOutputSha256": "c5eec2f14fa42682df3207789a5aaac2b92736f396d0827f87d82b76f108233b",
+              "maskOutputSha256": null,
+              "predictionMediaManifest": "parallel_handoffs/benchmark_expansion_20260919/visual_qc_prior_worst_20260924_v1/EXACT_GT_V21_PUBLIC_PREDICTION_MEDIA_HASH_MANIFEST_V1.json",
+              "predictionMediaManifestSha256": "b04012193eadbfc5847c0594bde2c1720529b79247abe0a2502290414cdfeb75",
+              "predictionComparisonManifest": null,
+              "predictionComparisonManifestSha256": null,
+              "predictionMaskSha256": null,
+              "predictionMaskCoordinateSystem": null,
+              "nativeArrayPath": null,
+              "nativeArraySha256": null,
+              "nativePredictionCsvPath": null,
+              "nativePredictionCsvSha256": null
+            }
+          }
+        },
+        "mediaHashes": {
+          "originalSourceSha256": "ab04e8eb0c6d5d2536f9dc82b56e7487e2bad53c4d0da9f6c80c4729b433ab00",
+          "originalGroundTruthSha256": "6c3e0f16a412883273970ded41aaff7e24de9678934cc5665d486a602d6fef65",
+          "transformedSourceSha256": "a4579e395de8ef205c447188f4daeb26ec56fc13de8b101fffa9c58ab530c3c8",
+          "exactGtSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+          "exactGtNativeSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+          "exactGtPupilMaskSha256": "5677ed7e762b72f5b3492bd8e08cf3c9c851adc0ded74ba75067993a5bc15216",
+          "binaryPupilGtSha256": null
+        },
+        "transform": {
+          "exactGTRasterToTransformedSourceXY": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "nativeImageHeight": 134,
+          "nativeImageWidth": 134,
+          "nativePredictionToTransformedSourceXY": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "originalSourceToTransformedSourceXY": [
+            [
+              1.0,
+              0.0,
+              -56.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "verification": "native group dimensions equal frozen transformed source dimensions; execution id/frame map and native keypoint rows match; off-frame predictions, if any, remain in the same mapped pixel coordinate system",
+          "verified": true
+        }
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "temporal",
   "cards": [
     {
@@ -400,7 +400,7 @@
       "overlayType": "center_acceleration_error_rmse_px_per_sec2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_acceleration_error_rmse_px_per_sec2-median",
@@ -800,7 +800,7 @@
       "overlayType": "center_acceleration_error_rmse_px_per_sec2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_frame_delta_rmse_px-mean",
@@ -1200,7 +1200,7 @@
       "overlayType": "center_frame_delta_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_frame_delta_rmse_px-median",
@@ -1600,7 +1600,7 @@
       "overlayType": "center_frame_delta_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_trajectory_rmse_px-mean",
@@ -2000,7 +2000,7 @@
       "overlayType": "center_trajectory_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_trajectory_rmse_px-median",
@@ -2400,7 +2400,7 @@
       "overlayType": "center_trajectory_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_velocity_error_rmse_px_per_sec-mean",
@@ -2800,7 +2800,7 @@
       "overlayType": "center_velocity_error_rmse_px_per_sec",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_velocity_error_rmse_px_per_sec-median",
@@ -3200,7 +3200,7 @@
       "overlayType": "center_velocity_error_rmse_px_per_sec",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_x_high_frequency_residual_power_px2-mean",
@@ -3600,7 +3600,7 @@
       "overlayType": "center_x_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_x_high_frequency_residual_power_px2-median",
@@ -4000,7 +4000,7 @@
       "overlayType": "center_x_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_y_high_frequency_residual_power_px2-mean",
@@ -4400,7 +4400,7 @@
       "overlayType": "center_y_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-center_y_high_frequency_residual_power_px2-median",
@@ -4800,7 +4800,7 @@
       "overlayType": "center_y_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_acceleration_error_rmse_px_per_sec2-mean",
@@ -5200,7 +5200,7 @@
       "overlayType": "diameter_acceleration_error_rmse_px_per_sec2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_acceleration_error_rmse_px_per_sec2-median",
@@ -5600,7 +5600,7 @@
       "overlayType": "diameter_acceleration_error_rmse_px_per_sec2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_frame_delta_rmse_px-mean",
@@ -6000,7 +6000,7 @@
       "overlayType": "diameter_frame_delta_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_frame_delta_rmse_px-median",
@@ -6400,7 +6400,7 @@
       "overlayType": "diameter_frame_delta_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_high_frequency_residual_power_px2-mean",
@@ -6800,7 +6800,7 @@
       "overlayType": "diameter_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_high_frequency_residual_power_px2-median",
@@ -7200,7 +7200,7 @@
       "overlayType": "diameter_high_frequency_residual_power_px2",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_step_gain-mean",
@@ -7600,7 +7600,8 @@
       "overlayType": "diameter_step_gain",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 1,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_step_gain-median",
@@ -8000,7 +8001,8 @@
       "overlayType": "diameter_step_gain",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 1,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_step_onset_error_frames-mean",
@@ -8400,7 +8402,7 @@
       "overlayType": "diameter_step_onset_error_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_step_onset_error_frames-median",
@@ -8800,7 +8802,7 @@
       "overlayType": "diameter_step_onset_error_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_trajectory_rmse_px-mean",
@@ -9200,7 +9202,7 @@
       "overlayType": "diameter_trajectory_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_trajectory_rmse_px-median",
@@ -9600,7 +9602,7 @@
       "overlayType": "diameter_trajectory_rmse_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_velocity_error_rmse_px_per_sec-mean",
@@ -10000,7 +10002,7 @@
       "overlayType": "diameter_velocity_error_rmse_px_per_sec",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-diameter_velocity_error_rmse_px_per_sec-median",
@@ -10400,7 +10402,7 @@
       "overlayType": "diameter_velocity_error_rmse_px_per_sec",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-dropped_frame_recovery_error_px-mean",
@@ -10800,7 +10802,7 @@
       "overlayType": "dropped_frame_recovery_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-dropped_frame_recovery_error_px-median",
@@ -11200,7 +11202,7 @@
       "overlayType": "dropped_frame_recovery_error_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-false_static_center_jitter_px-mean",
@@ -11600,7 +11602,7 @@
       "overlayType": "false_static_center_jitter_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-false_static_center_jitter_px-median",
@@ -12000,7 +12002,7 @@
       "overlayType": "false_static_center_jitter_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-false_static_diameter_jitter_px-mean",
@@ -12400,7 +12402,7 @@
       "overlayType": "false_static_diameter_jitter_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-false_static_diameter_jitter_px-median",
@@ -12800,7 +12802,7 @@
       "overlayType": "false_static_diameter_jitter_px",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-occlusion_recovery_delay_frames-mean",
@@ -13200,7 +13202,7 @@
       "overlayType": "occlusion_recovery_delay_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-occlusion_recovery_delay_frames-median",
@@ -13600,7 +13602,7 @@
       "overlayType": "occlusion_recovery_delay_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-position_step_gain-mean",
@@ -14000,7 +14002,8 @@
       "overlayType": "position_step_gain",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 1,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-position_step_gain-median",
@@ -14400,7 +14403,8 @@
       "overlayType": "position_step_gain",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 1,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-position_step_onset_error_frames-mean",
@@ -14800,7 +14804,7 @@
       "overlayType": "position_step_onset_error_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-position_step_onset_error_frames-median",
@@ -15200,7 +15204,7 @@
       "overlayType": "position_step_onset_error_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-saccade_recovery_delay_frames-mean",
@@ -15600,7 +15604,7 @@
       "overlayType": "saccade_recovery_delay_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-saccade_recovery_delay_frames-median",
@@ -16000,7 +16004,7 @@
       "overlayType": "saccade_recovery_delay_frames",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-sine3HzGain",
@@ -16766,7 +16770,8 @@
       "overlayType": "sine3HzGain",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 1,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "temporal-sine3HzPhaseLagSec",
@@ -17532,11 +17537,12 @@
       "overlayType": "sine3HzPhaseLagSec",
       "runtimeProtocol": null,
       "visualEvidenceUnavailableReason": null,
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "targetValue": 0,
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     }
   ],
   "data": {
-    "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+    "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
     "summaries": [
       {
         "methodId": "mouse_pupil_analysis_v020",
@@ -35604,6 +35610,6 @@
       "truthRows": null,
       "note": "Frame-pooled and sequence-summary values are method-specific; pupil_dlc_gm has sparse valid sequences, and no interpolation is applied."
     },
-    "version": "benchmark-data-dev-v1+40f1e28815b5f39c"
+    "version": "benchmark-data-dev-v2+387caf3b9034bbc4"
   }
 }

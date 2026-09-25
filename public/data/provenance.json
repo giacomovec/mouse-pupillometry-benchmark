@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
-  "version": "benchmark-data-dev-v1+40f1e28815b5f39c",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
+  "version": "benchmark-data-dev-v2+387caf3b9034bbc4",
   "freeze": null,
   "freezeStatus": "DEVELOPMENT_NOT_FORMALLY_FROZEN",
   "generatedAt": null,
   "generatedAtPolicy": "Omitted to keep identical canonical inputs byte-reproducible.",
-  "sourcePolicy": "Only whitelisted canonical CSV/JSON files and bounded media manifests are read. No scientific values are recomputed.",
+  "sourcePolicy": "Only whitelisted canonical CSV/JSON files and bounded media manifests are read. Reported scientific values pass through; Exact-GT severity cells are deterministic means grouped from hash-verified canonical frame rows, with accepted and attempted counts preserved and no inferred examples or confidence intervals.",
   "inputs": [
     {
       "path": "benchmark_site/media_export/exact_gt_selected_cases_20260924_v1.json",
@@ -242,6 +242,14 @@
       ]
     },
     {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/KEYPOINT_COVERAGE_FORENSIC_V10.json",
+      "sha256": "8c6ffcce92bbbf17f927b151f3fd34ed1e23904f40ba74a8ccb6149c48bcc4a0",
+      "sizeBytes": 826857,
+      "roles": [
+        "canonical precomputed DLC and Pupil-DLC prospective coverage operating points"
+      ]
+    },
+    {
       "path": "parallel_handoffs/benchmark_expansion_20260919/METHOD_CAPABILITY_MATRIX_V2.csv",
       "sha256": "081b73a67ce698eb1c84dea1475df5889a44bf4bf6462397d30403df8ad2ea9c",
       "sizeBytes": 1400530,
@@ -258,11 +266,27 @@
       ]
     },
     {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/MEYE_RELEASED_V22_TEMPORAL_COMPLETION_20260923.json",
+      "sha256": "0a42dd5623e182daa161b236f234cbba6cf6a578dd1aec83e4b222c22e8fe1bb",
+      "sizeBytes": 3834,
+      "roles": [
+        "hash-bound V2.2 temporal corpus and completion counts"
+      ]
+    },
+    {
       "path": "parallel_handoffs/benchmark_expansion_20260919/UNET_VS_SEGFORMER_FINAL.csv",
       "sha256": "08166bf738ca2233636d0c34f09e7b8ac666e31e33bc80587e163067ed0bb773",
       "sizeBytes": 7150,
       "roles": [
         "corrected U-Net and SegFormer architecture comparison"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/benchmark_ui_v10/BENCHMARK_UI_DATA.json",
+      "sha256": "f892dbab8b6ab8ae2d07c9758073e582531bd36eca0c55c4e47cc8e4bba3b11e",
+      "sizeBytes": 6860288,
+      "roles": [
+        "canonical feature atlas aggregates, family intervals, Dice, and MPA validation values"
       ]
     },
     {
@@ -509,6 +533,30 @@
       "sizeBytes": 1365,
       "roles": [
         "Exact-GT V2.1 spatial score summary"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/FRAME_METRICS.csv",
+      "sha256": "b7c851b600fcd8174debbac0db66c6972722b8f73217dac5d71cf2249895a852",
+      "sizeBytes": 698252,
+      "roles": [
+        "official MPA V0.2.0 per-frame validation rows for hash and denominator verification"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/RUN_MANIFEST.json",
+      "sha256": "23c3783e16a394cd5befd9b36bf2768ad691bb741a33aa88a26c7c6135ff1ede",
+      "sizeBytes": 4792,
+      "roles": [
+        "official mapping-fixed mouse-pupil-analysis v0.2.0 run manifest"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/comparator_execution_v7/mouse_pupil_analysis_v020_static_v3_mapping_fixed/SUMMARY.json",
+      "sha256": "f38869e22e8d5ad16c2a930d79d0577434f34beb719caedb2cd121da7917ca85",
+      "sizeBytes": 1794,
+      "roles": [
+        "official mapping-fixed mouse-pupil-analysis v0.2.0 validation summary"
       ]
     },
     {
@@ -957,7 +1005,8 @@
       "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
       "sizeBytes": 18087,
       "roles": [
-        "real validation score provenance and frame-metric links"
+        "real validation score provenance and frame-metric links",
+        "v2 registry source-row joins"
       ]
     },
     {
@@ -966,6 +1015,22 @@
       "sizeBytes": 13107,
       "roles": [
         "real validation method-level summaries"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+      "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+      "sizeBytes": 5946,
+      "roles": [
+        "verified separate native CPU runtime population"
+      ]
+    },
+    {
+      "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+      "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+      "sizeBytes": 2474,
+      "roles": [
+        "native CPU runtime table hash, hardware, stream, and protected-counter verification"
       ]
     },
     {
@@ -1153,7 +1218,8 @@
         "sha256": "a1d69d3500edce7c8b491d499c060100e2c4a9352b14657cd534697f68807e2b",
         "sizeBytes": 18087,
         "roles": [
-          "real validation score provenance and frame-metric links"
+          "real validation score provenance and frame-metric links",
+          "v2 registry source-row joins"
         ]
       }
     },
@@ -71444,7 +71510,7 @@
         "overlayType": "risk",
         "runtimeProtocol": null,
         "visualEvidenceUnavailableReason": "This card contains population-level precomputed risk curves; synchronized alternate-threshold frame states are unavailable.",
-        "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+        "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
       },
       "methods": {
         "classical_fixed": {
@@ -142226,6 +142292,25 @@
           "common A5000 protocol, scope, and qualified exclusions"
         ]
       }
+    },
+    "nativeCpuRuntime": {
+      "csv": {
+        "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/CONTROLLED_CPU_RUNTIME_POPULATION.csv",
+        "sha256": "27fafcb2704512c9efe7e052d84db8920fc04e4f43f562c253d57d3f82557e63",
+        "sizeBytes": 5946,
+        "roles": [
+          "verified separate native CPU runtime population"
+        ]
+      },
+      "verification": {
+        "path": "parallel_handoffs/benchmark_expansion_20260919/runtime_benchmark/population_v2/VERIFICATION.json",
+        "sha256": "ac6342151e388f97a27f51df470e0e8b26126ba18179f855b75a13ef686914ac",
+        "sizeBytes": 2474,
+        "roles": [
+          "native CPU runtime table hash, hardware, stream, and protected-counter verification"
+        ]
+      },
+      "methodCount": 8
     },
     "deployment": {
       "matrix": {

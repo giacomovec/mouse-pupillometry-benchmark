@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "mouse-pupillometry-benchmark-export.v1",
+  "schemaVersion": "mouse-pupillometry-benchmark-export.v2",
   "category": "runtime",
   "cards": [
     {
@@ -357,7 +357,7 @@
       "overlayType": "end_to_end_p50_ms",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-end_to_end_p95_ms",
@@ -714,7 +714,7 @@
       "overlayType": "end_to_end_p95_ms",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-end_to_end_p99_ms",
@@ -1071,7 +1071,7 @@
       "overlayType": "end_to_end_p99_ms",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-fps_at_median_p50",
@@ -1428,7 +1428,7 @@
       "overlayType": "fps_at_median_p50",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-peak_vram_mib",
@@ -1785,7 +1785,7 @@
       "overlayType": "peak_vram_mib",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-peak_process_ram_mib",
@@ -2142,7 +2142,7 @@
       "overlayType": "peak_process_ram_mib",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-model_size_bytes",
@@ -2499,7 +2499,7 @@
       "overlayType": "model_size_bytes",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-parameter_count_if_defined",
@@ -2856,7 +2856,7 @@
       "overlayType": "parameter_count_if_defined",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     },
     {
       "id": "runtime-common-load_init_ms",
@@ -3213,7 +3213,7 @@
       "overlayType": "load_init_ms",
       "runtimeProtocol": "8ec059e6fbfa1884ec658f3de52efc53b2c2194cc2cea719a211e9d933ab8d79",
       "visualEvidenceUnavailableReason": "The runtime tournament contains timing, memory, and replay records but no synchronized image or prediction media.",
-      "benchmarkVersion": "benchmark-data-dev-v1+40f1e28815b5f39c"
+      "benchmarkVersion": "benchmark-data-dev-v2+387caf3b9034bbc4"
     }
   ]
 }
