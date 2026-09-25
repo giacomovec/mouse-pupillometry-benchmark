@@ -40,21 +40,15 @@ jobs:
         run: npm run build
       - name: Verify built scientific export and media hashes
         run: python3 export/build_benchmark_data.py --verify-export-only --output-dir dist/data
-      - name: Report Pages eligibility boundary
-        if: vars.PAGES_DEPLOY_ENABLED != 'true'
-        run: echo 'GitHub Pages deployment is paused because this private repository is not eligible under the current GitHub plan. Enable Pages after a plan change, then set PAGES_DEPLOY_ENABLED=true.' >> "$GITHUB_STEP_SUMMARY"
       - name: Configure GitHub Pages
-        if: vars.PAGES_DEPLOY_ENABLED == 'true'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload GitHub Pages artifact
-        if: vars.PAGES_DEPLOY_ENABLED == 'true'
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
           path: dist
 
   deploy:
     needs: build
-    if: vars.PAGES_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
